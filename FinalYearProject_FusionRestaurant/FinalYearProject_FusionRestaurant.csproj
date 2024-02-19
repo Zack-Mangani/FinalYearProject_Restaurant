@@ -103,6 +103,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Assets\Images\testimage.jpg" />
+    <Content Include="Assets\Images\AboutImage1.jpg" />
+    <Content Include="Assets\Images\AboutImage2.jpg" />
+    <Content Include="Assets\Images\AboutImage3.jpg" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />

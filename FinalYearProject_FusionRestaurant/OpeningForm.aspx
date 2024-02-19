@@ -15,6 +15,8 @@
     <style>
         body, html {
             font-family: 'Raleway', sans-serif;
+            background-color: #F6F6F6; 
+
         }
 
         .img-fluid {
@@ -35,7 +37,7 @@
         }
 
         #welcome-section {
-            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhwVhIgOouv6YNuQvEZe-kJhIuYxl6KjDmju8_Hkcenw&s');
+            background-image: url('Assets/Images/testimage.jpg');
             background-size: cover;
             background-position: center;
             min-height: 100vh;
@@ -47,29 +49,7 @@
             color: #363435;
         }
 
-        .about-section {
-            display: flex;
-            flex-direction: row; /* Changed to row to align items horizontally */
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #f2f2f2;
-            min-height: 100vh; /* This will make it the same height as the welcome-section */
-        }
-
-        /* Ensure content within about-section is also centered */
-        .about-content, .about-images {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        /* Add this to make sure images do not stretch beyond their natural size */
-        .about-images img {
-            max-width: 100%;
-            height: auto;
-            max-height: 100%; /* Add this line */
-        }
+        
 
         #welcome-section h1, #welcome-section h2 {
             -webkit-text-stroke: 1px #F6F6F6;
@@ -117,6 +97,7 @@
 
         .navbar .btn-outline-success {
             border: 1px solid #F6F6F6;
+            margin-right: 10px; /* Adjust the value as needed */
             color: #F6F6F6;
             background-color: transparent;
         }
@@ -128,14 +109,26 @@
 
         .about-section {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 20px;
-            background-color: #f6f6f6; 
+            min-height: 100vh;
+            background-color: #f6f6f6; /* Your desired background color */
+        }
+
+        #aboutUsSection {
+            min-height: 100vh;
+            /* Other styles */
         }
 
         .about-content {
             max-width: 50%;
+        }
+
+        .about-icon {
+            font-size: 3rem; /* Adjust size as needed */
+            color: #363435; /* The color you want for your icon */
+            margin-bottom: 15px;
         }
 
         .social-media {
@@ -143,14 +136,27 @@
         }
 
         .social-media a {
-            margin-right: 10px;
+            display: inline-flex; /* Use flexbox for centering */
+            align-items: center; /* Center align items vertically */
+            justify-content: center; /* Center align items horizontally */
+            margin-right: 10px; /* Adjust spacing as needed */
             text-decoration: none;
-            color: #000; /* Change to match your design */
+            font-size: 45px; /* Adjust the size of the icon */
+            color: #f6f6f6; /* Icon color */
+            border: 2px solid #f6f6f6; /* Adjust border size and color as needed */
+            border-radius: 40%; /* Circular border */
+            width: 60px; /* Adjust width for bigger size */
+            height: 60px; /* Adjust height for bigger size */
+            background-color: #363435; /* Grey background */
+            transition: all 0.3s ease;
         }
 
         .social-media a:hover {
-            color: #555; /* Change to match your design */
+            background-color: #a9a9a9; /* Slightly lighter grey on hover */
+            border-color: #a9a9a9;
         }
+
+
 
         .about-images {
             max-width: 50%;
@@ -163,10 +169,11 @@
         }
 
         .btn-primary {
-            background-color: #000; /* Change to match your design */
+            background-color: #B01F21; /* Change to match your design */
             color: #fff;
             text-decoration: none;
             padding: 10px 20px;
+            border: #B01F21;
             border-radius: 5px;
             display: inline-block;
         }
@@ -175,9 +182,78 @@
             background-color: #333; /* Change to match your design */
         }
 
-        /* Font Awesome Icons */
         .fab {
-            font-size: 24px; /* Change as per your design */
+            font-size: 30px; /* Change as per your design */
+        }
+
+        @media (max-width: 768px) {
+        .about-section {
+            flex-direction: column;
+        }
+
+        .about-content, .about-images {
+            width: 100%;
+            max-width: none;
+        }
+
+    }
+
+        .about-images {
+            position: relative;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-rotate {
+            position: absolute;
+            width: 33%; /* Adjust the width as necessary */
+            transition: transform 0.3s ease;
+        }
+
+        .img-1 {
+            transform: rotate(-10deg);
+            left: 10%; /* Adjust as necessary */
+            top: -20%; /* Adjust as necessary */
+            z-index: 2;
+        }
+
+        .img-2 {
+            transform: rotate(5deg);
+            left: 15%; /* Adjust as necessary */
+            top: 10%; /* Adjust as necessary */
+        }
+
+        .img-3 {
+            transform: rotate(-5deg);
+            left: 35%; /* Adjust as necessary */
+            top: 5%; /* Adjust as necessary */
+        }
+
+        .search-box {
+            position: relative;
+            width: fit-content;
+            margin-right: 10px; /* Adjust as necessary */
+        }
+
+        .form-inline .form-control {
+            background-color: transparent;
+            border: 1px solid #F6F6F6;
+            color: #F6F6F6;
+            border-radius: 0;
+            padding-right: 50px; /* Make padding to fit the button inside */
+        }
+
+        .form-inline .btn-outline-success {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: 1px solid #F6F6F6;
+            color: #F6F6F6;
+            background-color: transparent;
+            border-top-right-radius: 0.25rem; /* Match the border-radius of the form-control */
+            border-bottom-right-radius: 0.25rem; /* Match the border-radius of the form-control */
         }
 
 
@@ -212,8 +288,12 @@
 
             <li class="nav-item">
                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                   <div class="search-box">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <i class="fas fa-microphone"></i>
+
+                  </div>
                </form>  
             </li>
             <li class="nav-item">
@@ -229,42 +309,59 @@
     <div id="welcome-section">
         <h1>Veranda Fusion Restaurant</h1>
         <h2>Pizza, Pasta & Grill</h2>
-        <button type="button" class="btn btn-primary mt-3">ABOUT US</button>
+        <button type="button" class="btn btn-primary mt-3" onclick="location.href='#aboutUsSection'">ABOUT US</button>
     </div>
 
 
 
        
-           <h2>ABOUT US</h2>
+      
         
-    <div class="about-section">
+    <div id="aboutUsSection" class="about-section">
+        <div class="about-images">
+                 <img src="Assets\Images\AboutImage1.jpg" alt="First Image Description" class="img-rotate img-1">
+                 <img src="Assets\Images\AboutImage2.jpg" alt="Second Image Description" class="img-rotate img-2">
+                 <img src="Assets\Images\AboutImage3.jpg" alt="Third Image Description" class="img-rotate img-3">
+         </div>
 
-             <div class="about-images">
-            <img src="path-to-your-image.jpg" alt="Image description">
-            <!-- Add more images as needed -->
-        </div>
-
-         <div class="about-content">
-           <p>A new concept and eatery in the heart of St. Julian's, the Veranda Fusion Restaurant is your next food destination.</p>
-           <p>The menu is a mix of local pizza, pasta and grill Mediterranean cuisine favourites, together with choices real charcoal grilled meats and concepts from Eastern Europe.</p>
-           <p>There is an ample choice of both alfresco dining and welcoming stylish airconditioned interiors. Set just off Balluta Bay, the Veranda Fusion Restaurant is ideally located right between the hustle and bustle of central St. Julian's and the more family friendly seafront promenade. </p>
-           <p>So whatever your mood, be it a divine pizza, tasty pasta or genuine BBQ experience, check us out and we will repay you with welcoming service and great dining.</p>       
-       
-            <!-- Add more paragraphs as needed -->
-             <div class="social-media">
-                <a href="https://www.facebook.com/verandagillandwine" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/verandamalta/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tripadvisor.com/Restaurant_Review-g227101-d25252242-Reviews-Veranda_Fusion_Restaurant-Saint_Julian_s_Island_of_Malta.html" target="_blank"><i class="fab fa-tripadvisor"></i></a>
-
-                <a href="your-other-social-media" target="_blank"><i class="social-icon-class"></i></a>
+        <div class="about-content">
+            <div class="about-icon">
+                <i class="fas fa-utensils"></i> <!-- Change to your desired icon -->
             </div>
-            <a href="#viewMenuSection" class="btn btn-primary">VIEW MENU</a>
-      </div>
+            <h2>ABOUT US</h2>
+               <p>A new concept and eatery in the heart of St. Julian's, the Veranda Fusion Restaurant is your next food destination.</p>
+               <p>The menu is a mix of local pizza, pasta and grill Mediterranean cuisine favourites, together with choices real charcoal grilled meats and concepts from Eastern Europe.</p>
+               <p>There is an ample choice of both alfresco dining and welcoming stylish airconditioned interiors. Set just off Balluta Bay, the Veranda Fusion Restaurant is ideally located right between the hustle and bustle of central St. Julian's and the more family friendly seafront promenade. </p>
+               <p>So whatever your mood, be it a divine pizza, tasty pasta or genuine BBQ experience, check us out and we will repay you with welcoming service and great dining.</p>       
        
+                <!-- Add more paragraphs as needed -->
+                 <div class="social-media">
+                    <a href="https://www.facebook.com/verandagillandwine" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/verandamalta/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tripadvisor.com/Restaurant_Review-g227101-d25252242-Reviews-Veranda_Fusion_Restaurant-Saint_Julian_s_Island_of_Malta.html" target="_blank"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            <a href="#viewMenuSection" class="btn btn-primary">VIEW MENU</a>
+        </div>
     </div>
+
+      
 
     <!-- jQuery and Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</body>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+    
+    </body>
 </html>
