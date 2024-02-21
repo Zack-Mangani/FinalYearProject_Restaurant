@@ -281,38 +281,28 @@
         }
 
 
-
-        #menu-categories {
-            display: flex;
-            justify-content: center;
-            padding-left: 0; /* remove padding if it's not necessary */
-            margin-top: 20px; /* add some spacing from the top */
-            border-bottom: 2px solid #ccc; /* adds a bottom border to the whole navbar */
-            padding: 0;
-            margin: 0;
-            display: inline-block; /* Centers the list */
-            text-align: left; /* Aligns the text within the list */
+        /* Styles for each individual category item */
+        #menu-categories li {
+            background-color: #333;
+            border: none;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-radius: 20px;
+            display: inline-block; /* Use inline-block for horizontal layout */
+            margin: 0 10px; /* Adjust as needed for spacing between items */
+            flex: 0 0 auto; /* Do not grow or shrink */
+            min-width: calc(25% - 20px); /* Adjust the width to fit 4 items, subtract the total margin space */
         }
 
-            #menu-categories li {
-                background-color: #333; /* dark background for the button */
-                border: none;
-                color: white;
-                text-align: center;
-                padding: 10px 20px;
-                text-decoration: none;
-                font-size: 16px; /* Adjust font size as needed */
-                cursor: pointer;
-                transition: background-color 0.3s;
-                border-radius: 20px; /* rounded corners */
-                margin: 0 5px; /* spacing between buttons */
-                display: inline-block; /* Puts list items in a line */
-                margin-right: 10px; /* Spacing between items, adjust as needed */
-            }
 
-                #menu-categories li:hover, #menu-categories li.active {
-                    background-color: #B01F21; /* blue background for active/hover state */
-                }
+            #menu-categories li:hover, #menu-categories li.active {
+                background-color: #B01F21; /* blue background for active/hover state */
+            }
 
         .menu-item {
             display: none;
@@ -348,6 +338,7 @@
             display: flex;
             flex-direction: column; /* Stacks items vertically */
             align-items: center; /* Centers items horizontally */
+            justify-content: center;
         }
 
         .menu-categories {
@@ -367,13 +358,11 @@
             overflow-x: hidden;
             white-space: nowrap;
             scroll-behavior: smooth;
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            flex-wrap: nowrap;
         }
-
-            #menu-categories li {
-                flex: 0 0 25%; /* Adjust the width to show 4 items at a time */
-                display: inline-block;
-                /* other styles... */
-            }
 
         /* Custom styles for the carousel control (arrows) */
         .carousel-control-prev-icon,
@@ -389,20 +378,29 @@
 
         .menu-navigation {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
+            position: relative; /* Ensure that the navigation arrows are positioned relative to this container */
         }
 
-        .menu-control-prev,
-        .menu-control-next {
-            height: 50px;
-            width: 50px;
-            background-color: black;
-            color: white;
-            text-align: center;
-            line-height: 50px; /* Adjust this to vertically center the arrows if not using SVG */
-            margin: 0 10px;
+
+
+        /* Adjust arrow button positioning */
+        .menu-control-prev, .menu-control-next {
+            position: absolute; /* Position arrows absolutely within the parent */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust alignment to the middle */
+            z-index: 10; /* Ensure arrows are above other content */
             cursor: pointer;
+            flex: 0 0 auto; /* Do not grow or shrink */
+        }
+
+        .menu-control-prev {
+            left: 0; /* Position at the start of the categories */
+        }
+
+        .menu-control-next {
+            right: 0; /* Position at the end of the categories */
         }
 
         /* Use SVG or Font Awesome icons for the arrows */
@@ -415,6 +413,30 @@
 
         .menu-control-next-icon:before {
             content: '\f105'; /* FontAwesome right arrow */
+        }
+
+        .menu-control-prev-icon, .menu-control-next-icon {
+            font-size: 24px;
+        }
+
+        .container.menu-navigation {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* Add more styling here */
+        }
+
+        .menu-categories-scroll {
+            overflow-x: auto;
+            flex: 1; /* Allow this to take up available space */
+            min-width: 0; /* Allows this element to shrink as needed */
+        }
+
+        .row.align-items-center.justify-content-between {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%; /* Ensure the row takes full width */
         }
     </style>
 </head>
@@ -523,11 +545,16 @@
 
     <div class="menu-section">
         <div class="about-icon">
-            <i class="fas fa-utensils icon"></i>
             <!-- Change to your desired icon -->
         </div>
 
         <div class="container">
+
+            <i class="fas fa-utensils icon"></i>
+
+
+
+
 
             <div class="header">
                 <h1>FOOD MENU</h1>
@@ -536,57 +563,115 @@
 
 
 
-                <div class="menu-categories">
+                <%-- <div class="container menu-navigation">
+    <div class="row align-items-center justify-content-between">
+        <!-- Previous Arrow -->
+        <div class="col-auto">
+            <div class="menu-control-prev" role="button">
+                <span class="menu-control-prev-icon" aria-hidden="true">«</span>
+            </div>
+        </div>
 
-                    <div class="menu-navigation">
-                        <a class="menu-control-prev" href="#" role="button">
-                            <span class="menu-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <ul id="menu-categories">
-                            <li class="active" onclick="showMenu('pizza', this)">Pizza</li>
-                            <li onclick="showMenu('salad', this)">Salad</li>
-                            <li onclick="showMenu('beer', this)">Beer</li>
-                            <li onclick="showMenu('maindishes', this)">MAIN DISHES</li>
-                            <li onclick="showMenu('maindishes', this)">MAIN DISHES</li>
-                        </ul>
-                        <a class="menu-control-next" href="#" role="button">
-                            <span class="menu-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+        <!-- Menu Categories -->
+        <div class="col">
+            <div class="d-flex justify-content-center menu-categories-scroll">
+                <ul id="menu-categories" class="list-unstyled d-flex justify-content-between mb-0">
+                    <li class="active" onclick="showMenu('pizza', this)">Starters</li>
+                    <li onclick="showMenu('salad', this)">Salads</li>
+                    <li onclick="showMenu('beer', this)">Platters</li>
+                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
+                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
+                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
+                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
+                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
+                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
+                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
+                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
+                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
+                    <!-- Add more categories as needed -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Next Arrow -->
+        <div class="col-auto">
+            <div class="menu-control-next" role="button">
+                <span class="menu-control-next-icon" aria-hidden="true">»</span>
+            </div>
+        </div>
+    </div>
+</div>--%>
+
+
+
+                <!-- Neeeeeeeew -->
+
+                <div class="container menu-navigation">
+                    <div class="row align-items-center justify-content-between">
+                        <!-- Previous Arrow -->
+                        <div class="col-auto">
+                            <div class="menu-control-prev" role="button">
+                                <img src="Assets\Images\leftArrow.png" alt="Previous" class="menu-control-prev-icon">
+                            </div>
+                        </div>
+
+                        <!-- Menu Categories -->
+                        <div class="col overflow-hidden">
+                            <div class="d-flex justify-content-center menu-categories-scroll">
+                                <ul id="menu-categories" class="list-unstyled d-flex mb-0">
+                                    <li class="active" onclick="showMenu('starters', this)">Starters</li>
+                                    <li onclick="showMenu('salad', this)">Salads</li>
+                                    <li onclick="showMenu('beer', this)">Platters</li>
+                                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
+                                    <li onclick="showMenu('maindishes', this)">Main Dishes</li>
+                                    <li onclick="showMenu('maindishes', this)">Burgers</li>
+                                    <li onclick="showMenu('maindishes', this)">Gluten Free</li>
+                                    <li onclick="showMenu('maindishes', this)">Pasta</li>
+                                    <li onclick="showMenu('maindishes', this)">Pizza</li>
+                                    <li onclick="showMenu('maindishes', this)">Risotto</li>
+                                    <li onclick="showMenu('maindishes', this)">Desserts</li>
+                                    <!-- Add more categories as needed -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Next Arrow -->
+                        <div class="col-auto">
+                            <div class="menu-control-next" role="button">
+                                <img src="Assets\Images\rightArrow.png" alt="Next" class="menu-control-next-icon">
+                            </div>
+                        </div>
                     </div>
-
-
-
                 </div>
+                <!-- Neeeeeeeew -->
 
 
                 <div class="menu-items">
                     <section class="menu">
-                        <!-- Pizza Items -->
-                        <div id="pizzaCarousel" class="carousel slide" data-interval="false">
+                        <!-- Starterss Items -->
+                        <div id="starterCarousel" class="carousel slide" data-interval="false">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="d-flex justify-content-around">
-                                        <div class="menu-item pizza">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Pizza-3007395.jpg/1280px-Pizza-3007395.jpg" alt="Pepperoni Pizza">
-                                            <h3>Pepperoni Pizza</h3>
-                                            <p>Classic with cheese and pepperoni</p>
-                                            <p class="price">$18.00</p>
+                                        <div class="menu-item starters">
+                                            <img src="Assets\Images\Bruschetta.jpg" alt="Bruschetta">
+                                            <h3>Bruschetta</h3>
+                                            <p>with tomatoes, mus of cheese and home made pesto</p>
+                                            <p class="price">€6.98</p>
                                         </div>
 
-                                        <div class="menu-item pizza">
-                                            <img src="margherita_pizza.jpg" alt="Margherita Pizza">
-                                            <h3>Margherita Pizza</h3>
-                                            <p>Tomatoes, mozzarella, and basil</p>
-                                            <p class="price">$20.00</p>
+                                        <div class="menu-item starters">
+                                            <img src="Assets\Images\BruschettaVeranda.jpg" alt="Bruschetta Veranda">
+                                            <h3>Bruschetta "Veranda"</h3>
+                                            <p>with lukanka and Ajvar</p>
+                                            <p class="price">€6.98</p>
                                         </div>
 
-                                        <div class="menu-item pizza">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Pizza-3007395.jpg/1280px-Pizza-3007395.jpg" alt="Pepperoni Pizza">
-                                            <h3>Pepperoni Pizza</h3>
-                                            <p>Classic with cheese and pepperoni</p>
-                                            <p class="price">$18.00</p>
+                                        <div class="menu-item starters">
+                                            <img src="Assets\Images\ChickenWings.jpeg" alt="Chicken Wings">
+                                            <h3>Chicken Wings</h3>
+                                            <p>with french fries and BBQ sauce</p>
+                                            <p class="price">€11.98</p>
                                         </div>
 
 
@@ -594,30 +679,63 @@
                                 </div>
                                 <div class="carousel-item">
                                     <div class="d-flex justify-content-around">
-                                        <div class="menu-item pizza">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Pizza-3007395.jpg/1280px-Pizza-3007395.jpg" alt="Pepperoni Pizza">
-                                            <h3>Pepperoni Pizza</h3>
-                                            <p>Classic with cheese and pepperoni</p>
-                                            <p class="price">$18.00</p>
+                                        <div class="menu-item starters">
+                                            <img src="Assets\Images\Mushrooms.jpeg" alt="Stuffed mushrooms">
+                                            <h3>Stuffed mushrooms</h3>
+                                            <p>charcoal grilled, stuffed with butter, bacon and cheese</p>
+                                            <p class="price">€8.78</p>
                                         </div>
 
-                                        <div class="menu-item pizza">
-                                            <img src="margherita_pizza.jpg" alt="Margherita Pizza">
-                                            <h3>Margherita Pizza</h3>
-                                            <p>Tomatoes, mozzarella, and basil</p>
-                                            <p class="price">$20.00</p>
+                                        <div class="menu-item starters">
+                                            <img src="Assets\Images\shrimpss.jpeg" alt="Shrimps">
+                                            <h3>Shrimps with Pernod and cherry tomatoes</h3>
+                                            <p>glazed with butter and dill</p>
+                                            <p class="price">€14.78</p>
                                         </div>
 
-                                        <!-- Add more pizza items or empty divs to fill space if needed -->
+                                        <div class="menu-item starters">
+                                            <img src="Assets\Images\freshVegtables.jpg" alt="Fresh vegetables">
+                                            <h3>Fresh vegetables</h3>
+                                            <p>charcoal grilled with aromatic marinate and mozzarella di'Bufala</p>
+                                            <p class="price">€11.98</p>
+                                        </div>
+
                                     </div>
                                 </div>
+
+                                <div class="carousel-item">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item starters">
+                                            <img src="Assets\Images\KingPrawns.jpeg" alt="King Prawns">
+                                            <h3>King Prawns</h3>
+                                            <p>6 king prawns fried in garlic oil, sweet chilli and fresh herbs served with special dip</p>
+                                            <p class="price">€11.78</p>
+                                        </div>
+
+                                        <div class="menu-item starters">
+                                            <img src="Assets\Images\fistomisto.jpg" alt="Frito Mistos">
+                                            <h3>Frito Misto</h3>
+                                            <p>with home made tzatziki sauce, breaded calamari, lanterini, shrimps and mussel meat</p>
+                                            <p class="price">€15.98</p>
+                                        </div>
+
+                                        <div class="menu-item starters">
+                                            <img src="Assets\Images\muscels.jpg" alt="Veranda Mussels">
+                                            <h3>Veranda Mussels</h3>
+                                            <p>fresh mussels, butter sauce, white wine with garlic and lemon slices, onions and parsley</p>
+                                            <p class="price">€10.98</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
                                 <!-- Add more .carousel-item as needed -->
                             </div>
-                            <a class="carousel-control-prev" href="#pizzaCarousel" role="button" data-slide="prev">
+                            <a class="carousel-control-prev" href="#starterCarousel" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
-                            <a class="carousel-control-next" href="#pizzaCarousel" role="button" data-slide="next">
+                            <a class="carousel-control-next" href="#starterCarousel" role="button" data-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
@@ -625,19 +743,102 @@
 
 
                         <!-- Salad Items -->
-                        <div class="menu-item salad">
-                            <img src="caesar_salad.jpg" alt="Caesar Salad">
-                            <h3>Caesar Salad</h3>
-                            <p>Crisp romaine with parmesan and croutons</p>
-                            <p class="price">$12.00</p>
+
+
+                        <div id="saladCarousel" class="carousel slide" data-interval="false">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item salad">
+                                            <img src="Assets\Images\Bruschetta.jpg" alt="Bruschetta">
+                                            <h3>Bruschetta</h3>
+                                            <p>with tomatoes, mus of cheese and home made pesto</p>
+                                            <p class="price">€6.98</p>
+                                        </div>
+
+                                        <div class="menu-item salad">
+                                            <img src="Assets\Images\BruschettaVeranda.jpg" alt="Bruschetta Veranda">
+                                            <h3>Bruschetta "Veranda"</h3>
+                                            <p>with lukanka and Ajvar</p>
+                                            <p class="price">€6.98</p>
+                                        </div>
+
+                                        <div class="menu-item salad">
+                                            <img src="Assets\Images\ChickenWings.jpeg" alt="Chicken Wings">
+                                            <h3>Chicken Wings</h3>
+                                            <p>with french fries and BBQ sauce</p>
+                                            <p class="price">€11.98</p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item salad">
+                                            <img src="Assets\Images\Mushrooms.jpeg" alt="Stuffed mushrooms">
+                                            <h3>Stuffed mushrooms</h3>
+                                            <p>charcoal grilled, stuffed with butter, bacon and cheese</p>
+                                            <p class="price">€8.78</p>
+                                        </div>
+
+                                        <div class="menu-item starters">
+                                            <img src="Assets\Images\shrimpss.jpeg" alt="Shrimps">
+                                            <h3>Shrimps with Pernod and cherry tomatoes</h3>
+                                            <p>glazed with butter and dill</p>
+                                            <p class="price">€14.78</p>
+                                        </div>
+
+                                        <div class="menu-item starters">
+                                            <img src="Assets\Images\freshVegtables.jpg" alt="Fresh vegetables">
+                                            <h3>Fresh vegetables</h3>
+                                            <p>charcoal grilled with aromatic marinate and mozzarella di'Bufala</p>
+                                            <p class="price">€11.98</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item starters">
+                                            <img src="Assets\Images\KingPrawns.jpeg" alt="King Prawns">
+                                            <h3>King Prawns</h3>
+                                            <p>6 king prawns fried in garlic oil, sweet chilli and fresh herbs served with special dip</p>
+                                            <p class="price">€11.78</p>
+                                        </div>
+
+                                        <div class="menu-item salad">
+                                            <img src="Assets\Images\fistomisto.jpg" alt="Frito Mistos">
+                                            <h3>Frito Misto</h3>
+                                            <p>with home made tzatziki sauce, breaded calamari, lanterini, shrimps and mussel meat</p>
+                                            <p class="price">€15.98</p>
+                                        </div>
+
+                                        <div class="menu-item salad">
+                                            <img src="Assets\Images\muscels.jpg" alt="Veranda Mussels">
+                                            <h3>Veranda Mussels</h3>
+                                            <p>fresh mussels, butter sauce, white wine with garlic and lemon slices, onions and parsley</p>
+                                            <p class="price">€10.98</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- Add more .carousel-item as needed -->
+                            </div>
+                            <a class="carousel-control-prev" href="#saladCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#saladCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
                         </div>
 
-                        <div class="menu-item salad">
-                            <img src="greek_salad.jpg" alt="Greek Salad">
-                            <h3>Greek Salad</h3>
-                            <p>Feta, olives, and fresh vegetables</p>
-                            <p class="price">$14.00</p>
-                        </div>
+
+
 
                         <!-- Beer Items -->
                         <div class="menu-item beer">
@@ -667,62 +868,58 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function (event) {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-
-                document.querySelector('.menu-control-next').addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.getElementById('menu-categories').scrollBy({ left: 250, behavior: 'smooth' }); // scroll by the width of one category item
-                });
-
-                // Function to scroll categories left
-                document.querySelector('.menu-control-prev').addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.getElementById('menu-categories').scrollBy({ left: -250, behavior: 'smooth' }); // scroll by the width of one category item
-                });
+        document.addEventListener("DOMContentLoaded", function () {
+            // Configure the click listeners for scrolling the menu categories
+            document.querySelector('.menu-control-next').addEventListener('click', function () {
+                document.querySelector('#menu-categories').scrollLeft += 100;
             });
 
-            var pizzaMenuButton = document.querySelector('#menu-categories li');
-            showMenu('pizza', pizzaMenuButton);
-        });
-    </script>
+            document.querySelector('.menu-control-prev').addEventListener('click', function () {
+                document.querySelector('#menu-categories').scrollLeft -= 100;
+            });
 
-    <script>
-        // ... existing functions ...
-
-        // Enhance showMenu function to handle the active state of buttons
-        function showMenu(category, element) {
-            // Hide all menus
-            var menus = document.getElementsByClassName('menu-item');
-            for (var i = 0; i < menus.length; i++) {
-                menus[i].style.display = 'none';
+            var startersButton = document.querySelector('#menu-categories li:first-child');
+            if (startersButton) {
+                showMenu('starters', startersButton); // Make sure 'starters' is the correct category name
             }
+        });
 
-            // Remove active class from all buttons
-            var buttons = document.querySelectorAll('#menu-categories li');
-            buttons.forEach(function (button) {
+        function showMenu(category, element) {
+            // Hide all menu items first
+            document.querySelectorAll('.menu-item').forEach(function (menuItem) {
+                menuItem.style.display = 'none';
+            });
+
+            // Hide all carousels
+            document.querySelectorAll('.carousel').forEach(function (carousel) {
+                carousel.style.display = 'none';
+            });
+
+            // Deactivate all category buttons
+            document.querySelectorAll('#menu-categories li').forEach(function (button) {
                 button.classList.remove('active');
             });
 
-            // Add active class to the clicked button
+            // Activate the selected category button
             element.classList.add('active');
 
-            // Show the selected category
-            var selectedMenu = document.getElementsByClassName(category);
-            for (var i = 0; i < selectedMenu.length; i++) {
-                selectedMenu[i].style.display = 'block';
+            // Display the selected category's menu items
+            document.querySelectorAll('.' + category).forEach(function (item) {
+                item.style.display = 'block';
+            });
+
+            // Display the corresponding carousel for the selected category
+            var selectedCarousel = document.getElementById(category + 'Carousel');
+            if (selectedCarousel) {
+                selectedCarousel.style.display = 'block';
+            } else {
+                console.error('No carousel found with ID:', category + 'Carousel');
             }
         }
 
-        if (category === 'pizza') {
-            $('#pizzaCarousel').carousel();
-        }
+
+
+
     </script>
 
 </body>

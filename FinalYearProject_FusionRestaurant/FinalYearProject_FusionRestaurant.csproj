@@ -103,6 +103,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Assets\Images\Bruschetta.jpg" />
+    <Content Include="Assets\Images\BruschettaVeranda.jpg" />
+    <Content Include="Assets\Images\ChickenWings.jpeg" />
+    <Content Include="Assets\Images\fistomisto.jpg" />
+    <Content Include="Assets\Images\freshVegtables.jpg" />
+    <Content Include="Assets\Images\KingPrawns.jpeg" />
+    <Content Include="Assets\Images\muscels.jpg" />
+    <Content Include="Assets\Images\Mushrooms.jpeg" />
+    <Content Include="Assets\Images\rightArrow.png" />
+    <Content Include="Assets\Images\leftArrow.png" />
+    <Content Include="Assets\Images\shrimpss.jpeg" />
     <Content Include="Assets\Images\testimage.jpg" />
     <Content Include="Assets\Images\AboutImage1.jpg" />
     <Content Include="Assets\Images\AboutImage2.jpg" />
