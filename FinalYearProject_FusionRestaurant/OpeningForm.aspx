@@ -128,11 +128,10 @@
             font-size: 3rem; /* Adjust size as needed */
             color: #363435; /* The color you want for your icon */
             margin-bottom: 15px;
-            display: flex; /* Enables Flexbox layout */
-            justify-content: center; /* Centers horizontally */
-            align-items: center; /* Centers vertically */
-            height: 100px; /* Set to the height of your container, or as needed */
-            width: 100px; /* Set to the width of your container, or as needed */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
         }
 
         .social-media {
@@ -158,8 +157,8 @@
             }
 
                 .social-media a:hover {
-                    background-color: #a9a9a9; /* Slightly lighter grey on hover */
-                    border-color: #a9a9a9;
+                    background-color: #B01F21; /* Slightly lighter grey on hover */
+                    border-color: #B01F21;
                 }
 
 
@@ -245,7 +244,7 @@
 
         .header {
             text-align: center;
-            padding: 20px;
+            padding: 5px;
         }
 
         .content {
@@ -278,11 +277,19 @@
 
         .menu-section {
             text-align: center; /* Centers the menu title */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh;
+            background-color: #f6f6f6; /* Your desired background color */
+       
+
         }
 
 
         /* Styles for each individual category item */
-        #menu-categories li {
+        #bar-menu-categories li, #menu-categories li {
             background-color: #333;
             border: none;
             color: white;
@@ -301,6 +308,9 @@
 
 
             #menu-categories li:hover, #menu-categories li.active {
+                background-color: #B01F21; /* blue background for active/hover state */
+            } 
+            #bar-menu-categories li:hover, #bar-menu-categories li.active {
                 background-color: #B01F21; /* blue background for active/hover state */
             }
 
@@ -341,7 +351,7 @@
             justify-content: center;
         }
 
-        .menu-categories {
+        .bar-menu-categories, .menu-categories {
             order: 1;
             flex: 1; /* Adjust as needed */
             padding-right: 20px; /* Spacing between categories and items */
@@ -353,7 +363,7 @@
             flex: 3; /* Adjust as needed */
         }
 
-        #menu-categories {
+        #bar-menu-categories, #menu-categories {
             display: flex;
             overflow-x: hidden;
             white-space: nowrap;
@@ -438,6 +448,37 @@
             align-items: center;
             width: 100%; /* Ensure the row takes full width */
         }
+
+        .about-icon .icon {
+            width: 80px; /* Adjust width as needed */
+            height: auto; /* This will maintain the aspect ratio of the image */
+            display: block; /* This can center the image in the div if needed */
+            margin: 0 auto; /* This centers the image horizontally within the div */
+        }
+
+
+    .menu-toggle {
+    /* Add styling for your toggle switch container */
+}
+
+.toggle-button {
+    /* Add styling for your toggle buttons */
+}
+
+.toggle-button.active {
+    /* Add styling for the active toggle button */
+}
+
+.menu-content {
+    display: none;
+    /* Add styling for your menu content */
+}
+
+.menu-content.active {
+    display: block;
+}
+
+
     </style>
 </head>
 <body>
@@ -454,7 +495,7 @@
                     <a class="nav-link" href="#welcome-section">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#viewMenuSection">VIEW MENU</a>
+                    <a class="nav-link" href="#menu-section">VIEW MENU</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#gallerySection">GALLERY</a>
@@ -498,8 +539,7 @@
     <div id="aboutUsSection" class="about-section">
         <div class="container">
             <div class="about-icon">
-                <i class="fas fa-utensils icon"></i>
-                <!-- Change to your desired icon -->
+                <img src="Assets\Images\about-us.png" alt="About Us Icon" class="icon">
             </div>
             <div class="header">
                 <h1>ABOUT US</h1>
@@ -543,15 +583,14 @@
 
 
 
-    <div class="menu-section">
-        <div class="about-icon">
-            <!-- Change to your desired icon -->
-        </div>
+    <div id="menu-section" class="menu-section">
+
 
         <div class="container">
 
-            <i class="fas fa-utensils icon"></i>
-
+<div class="about-icon">
+                <img src="Assets\Images\FoodMenuIcon.png" alt="Food Menu Icon" class="icon">
+            </div>
 
 
 
@@ -561,50 +600,15 @@
             </div>
             <div class="menu-container">
 
+                <!-- Toggle Switch -->
+<div class="menu-toggle">
+    <button id="foodMenuButton" class="toggle-button active">FOOD MENU</button>
+    <button id="barMenuButton" class="toggle-button">BAR MENU</button>
+</div>
 
-
-                <%-- <div class="container menu-navigation">
-    <div class="row align-items-center justify-content-between">
-        <!-- Previous Arrow -->
-        <div class="col-auto">
-            <div class="menu-control-prev" role="button">
-                <span class="menu-control-prev-icon" aria-hidden="true">«</span>
-            </div>
-        </div>
-
-        <!-- Menu Categories -->
-        <div class="col">
-            <div class="d-flex justify-content-center menu-categories-scroll">
-                <ul id="menu-categories" class="list-unstyled d-flex justify-content-between mb-0">
-                    <li class="active" onclick="showMenu('pizza', this)">Starters</li>
-                    <li onclick="showMenu('salad', this)">Salads</li>
-                    <li onclick="showMenu('beer', this)">Platters</li>
-                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
-                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
-                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
-                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
-                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
-                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
-                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
-                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
-                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
-                    <!-- Add more categories as needed -->
-                </ul>
-            </div>
-        </div>
-
-        <!-- Next Arrow -->
-        <div class="col-auto">
-            <div class="menu-control-next" role="button">
-                <span class="menu-control-next-icon" aria-hidden="true">»</span>
-            </div>
-        </div>
-    </div>
-</div>--%>
-
-
-
-                <!-- Neeeeeeeew -->
+<!-- Food Menu Content -->
+<div id="foodMenuContent" class="menu-content active">
+  <!-- Neeeeeeeew -->
 
                 <div class="container menu-navigation">
                     <div class="row align-items-center justify-content-between">
@@ -621,15 +625,15 @@
                                 <ul id="menu-categories" class="list-unstyled d-flex mb-0">
                                     <li class="active" onclick="showMenu('starters', this)">Starters</li>
                                     <li onclick="showMenu('salad', this)">Salads</li>
-                                    <li onclick="showMenu('beer', this)">Platters</li>
-                                    <li onclick="showMenu('maindishes', this)">Fusion Main Dishes</li>
+                                    <li onclick="showMenu('platters', this)">Platters</li>
+                                    <li onclick="showMenu('fusionmaindishes', this)">Fusion Main Dishes</li>
                                     <li onclick="showMenu('maindishes', this)">Main Dishes</li>
-                                    <li onclick="showMenu('maindishes', this)">Burgers</li>
-                                    <li onclick="showMenu('maindishes', this)">Gluten Free</li>
+                                    <li onclick="showMenu('burgers', this)">Burgers</li>
+                                    <li onclick="showMenu('glutenFree', this)">Gluten Free</li>
                                     <li onclick="showMenu('maindishes', this)">Pasta</li>
                                     <li onclick="showMenu('maindishes', this)">Pizza</li>
                                     <li onclick="showMenu('maindishes', this)">Risotto</li>
-                                    <li onclick="showMenu('maindishes', this)">Desserts</li>
+                                    <li onclick="showMenu('deserts', this)">Desserts</li>
                                     <!-- Add more categories as needed -->
                                 </ul>
                             </div>
@@ -643,13 +647,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- Neeeeeeeew -->
+                <!-- Neeeeeeeew --></div>
 
-
-                <div class="menu-items">
+                 <div class="menu-items">
                     <section class="menu">
                         <!-- Starterss Items -->
-                        <div id="starterCarousel" class="carousel slide" data-interval="false">
+                        <div id="startersCarousel" class="carousel slide" data-interval="false">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <div class="d-flex justify-content-around">
@@ -731,11 +734,11 @@
 
                                 <!-- Add more .carousel-item as needed -->
                             </div>
-                            <a class="carousel-control-prev" href="#starterCarousel" role="button" data-slide="prev">
+                            <a class="carousel-control-prev" href="#startersCarousel" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Previous</span>
                             </a>
-                            <a class="carousel-control-next" href="#starterCarousel" role="button" data-slide="next">
+                            <a class="carousel-control-next" href="#startersCarousel" role="button" data-slide="next">
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
@@ -750,24 +753,24 @@
                                 <div class="carousel-item active">
                                     <div class="d-flex justify-content-around">
                                         <div class="menu-item salad">
-                                            <img src="Assets\Images\Bruschetta.jpg" alt="Bruschetta">
-                                            <h3>Bruschetta</h3>
-                                            <p>with tomatoes, mus of cheese and home made pesto</p>
-                                            <p class="price">€6.98</p>
+                                            <img src="Assets\Images\salad1.jpg" alt="Misto mare salad VERANDA" class="menu-img" data-toggle="modal" data-target="#imageModal">>
+                                            <h3>Misto mare salad "VERANDA"</h3>
+                                            <p>with seafood calamari, octopus, shrimps, on a fresh salad mix, avocado, cherry tomatoes, olives slices, mediterranean sauce</p>
+                                            <p class="price">€16.78</p>
                                         </div>
 
                                         <div class="menu-item salad">
-                                            <img src="Assets\Images\BruschettaVeranda.jpg" alt="Bruschetta Veranda">
-                                            <h3>Bruschetta "Veranda"</h3>
-                                            <p>with lukanka and Ajvar</p>
-                                            <p class="price">€6.98</p>
+                                            <img src="Assets\Images\salad2.jpeg" alt="Mix fresh salads with backed goat cheese">
+                                            <h3>Mix fresh salads with backed goat cheese</h3>
+                                            <p>cherry tomatoes, walnuts and balsamic dressing</p>
+                                            <p class="price">€13.98</p>
                                         </div>
 
                                         <div class="menu-item salad">
-                                            <img src="Assets\Images\ChickenWings.jpeg" alt="Chicken Wings">
-                                            <h3>Chicken Wings</h3>
-                                            <p>with french fries and BBQ sauce</p>
-                                            <p class="price">€11.98</p>
+                                            <img src="Assets\Images\salad3.jpg" alt="Burrata with Avocado Salad">
+                                            <h3>Burrata with Avocado Salad</h3>
+                                            <p>mozzarella BURRATA, tomatoes, cherry tomatoes, avocado, pesto, rucola, balsamic reduction</p>
+                                            <p class="price">€14.98</p>
                                         </div>
 
 
@@ -776,24 +779,24 @@
                                 <div class="carousel-item">
                                     <div class="d-flex justify-content-around">
                                         <div class="menu-item salad">
-                                            <img src="Assets\Images\Mushrooms.jpeg" alt="Stuffed mushrooms">
-                                            <h3>Stuffed mushrooms</h3>
-                                            <p>charcoal grilled, stuffed with butter, bacon and cheese</p>
-                                            <p class="price">€8.78</p>
+                                            <img src="Assets\Images\salad4.jpeg" alt="Veranda Caesar Salad">
+                                            <h3>"Veranda" Caesar Salad</h3>
+                                            <p>with Caesar dressing, grilled chicken, crunchy bacon, fresh iceberg, green salad, cherry tomatoes, parmesan, croutons</p>
+                                            <p class="price">€14.98</p>
                                         </div>
 
-                                        <div class="menu-item starters">
-                                            <img src="Assets\Images\shrimpss.jpeg" alt="Shrimps">
-                                            <h3>Shrimps with Pernod and cherry tomatoes</h3>
-                                            <p>glazed with butter and dill</p>
-                                            <p class="price">€14.78</p>
+                                        <div class="menu-item salad">
+                                            <img src="Assets\Images\salad5.jpg" alt="Greek Salad">
+                                            <h3>Greek Salad</h3>
+                                            <p>from Greece with love, tomatoes, cucumbers, fresh peppers, feta cheese, red onions, olives, olive oil, oregano</p>
+                                            <p class="price">€9.98</p>
                                         </div>
 
-                                        <div class="menu-item starters">
-                                            <img src="Assets\Images\freshVegtables.jpg" alt="Fresh vegetables">
-                                            <h3>Fresh vegetables</h3>
-                                            <p>charcoal grilled with aromatic marinate and mozzarella di'Bufala</p>
-                                            <p class="price">€11.98</p>
+                                        <div class="menu-item salad">
+                                            <img src="Assets\Images\salad6.jpeg" alt="Shopska Salad">
+                                            <h3>Shopska Salad</h3>
+                                            <p>traditional Bulgarian salad with tomatoes, cucumbers, fresh pepper, white Bulgarian cheese, onion, parsley</p>
+                                            <p class="price">€9.98</p>
                                         </div>
 
                                     </div>
@@ -801,25 +804,18 @@
 
                                 <div class="carousel-item">
                                     <div class="d-flex justify-content-around">
-                                        <div class="menu-item starters">
-                                            <img src="Assets\Images\KingPrawns.jpeg" alt="King Prawns">
-                                            <h3>King Prawns</h3>
-                                            <p>6 king prawns fried in garlic oil, sweet chilli and fresh herbs served with special dip</p>
-                                            <p class="price">€11.78</p>
+                                        <div class="menu-item salad">
+                                            <img src="Assets\Images\salad7.jpeg" alt="Vitamin Salad">
+                                            <h3>Vitamin Salad</h3>
+                                            <p>beetroot, carrots, apple, backed walnuts, special dressing and grilled chicken fillet</p>
+                                            <p class="price">€12.98</p>
                                         </div>
 
                                         <div class="menu-item salad">
-                                            <img src="Assets\Images\fistomisto.jpg" alt="Frito Mistos">
-                                            <h3>Frito Misto</h3>
-                                            <p>with home made tzatziki sauce, breaded calamari, lanterini, shrimps and mussel meat</p>
-                                            <p class="price">€15.98</p>
-                                        </div>
-
-                                        <div class="menu-item salad">
-                                            <img src="Assets\Images\muscels.jpg" alt="Veranda Mussels">
-                                            <h3>Veranda Mussels</h3>
-                                            <p>fresh mussels, butter sauce, white wine with garlic and lemon slices, onions and parsley</p>
-                                            <p class="price">€10.98</p>
+                                            <img src="Assets\Images\salad8.jpg" alt="Balkan Salad">
+                                            <h3>Balkan Salad</h3>
+                                            <p>traditional Bulgarian salad, charcoal grilled peppers, charcoal grilled eggplant, tomatoes, white Bulgarian cheese and parsley</p>
+                                            <p class="price">€11.98</p>
                                         </div>
 
                                     </div>
@@ -836,6 +832,309 @@
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
+
+
+
+                         <!-- Platters Items -->
+
+
+                        <div id="plattersCarousel" class="carousel slide" data-interval="false">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item platters">
+                                            <img src="Assets\Images\platters1.jpeg" alt="VERANDA sea food hot patter" class="menu-img" data-toggle="modal" data-target="#imageModal">>
+                                            <h3>"VERANDA" sea food hot patter</h3>
+                                            <p>octopus, calamari, shrimps, fresh mussels with shells, olives, Frito misto, mixed greens and tzatziki sauce</p>
+                                            <p class="price">€64.98</p>
+                                        </div>
+
+                                        <div class="menu-item platters">
+                                            <img src="Assets\Images\platters2.jpeg" alt="VERANDA mix meat hot platter">
+                                            <h3>"VERANDA" mix meat hot platter</h3>
+                                            <p>BBQ grilled gurmanska pljeskavica, pork neck steak, chicken nozeti, chicken fillet greek style, homemade flat sausage, karnache served with French fries, mix salads and bruschetta</p>
+                                            <p class="price">€54.98</p>
+                                        </div>
+
+                                        <div class="menu-item platters">
+                                            <img src="Assets\Images\platters3.jpeg" alt="Cold cuts Antipasta platter">
+                                            <h3>Cold cuts Antipasta platter</h3>
+                                            <p>selection, of dry meats and cheese, served with bruschetta</p>
+                                            <p class="price">€25.78</p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item platters">
+                                            <img src="Assets\Images\platters4.jpeg" alt="LOCAL Platter">
+                                            <h3>LOCAL Platter</h3>
+                                            <p>octopus in butter and garlic, shrimps, buratta, rucola with cherry served with garlic bruschetta and home made pesto</p>
+                                            <p class="price">€32.98</p>
+                                        </div>
+
+                                     
+                                    </div>
+                                </div>                      
+
+                                <!-- Add more .carousel-item as needed -->
+                            </div>
+                            <a class="carousel-control-prev" href="#plattersCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#plattersCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+
+
+
+
+
+
+
+
+
+                           <!-- Fusion Main Dishes Items -->
+
+
+                        <div id="fusionmaindishesCarousel" class="carousel slide" data-interval="false">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item fusionmaindishes">
+                                            <img src="Assets\Images\Fmain1.jpeg" alt="Gurmanska Pleskavica" class="menu-img" data-toggle="modal" data-target="#imageModal">>
+                                            <h3>Gurmanska Pleskavica</h3>
+                                            <p>charcoal grilled minced meat, with fresh spices, bacon and cheese, served with french fries and ajvar</p>
+                                            <p class="price">€14.78</p>
+                                        </div>
+
+                                        <div class="menu-item fusionmaindishes">
+                                            <img src="Assets\Images\Fmain2.jpeg" alt="Chevapi 10pices">
+                                            <h3>Chevapi 10pices</h3>
+                                            <p>traditional, charcoal grilled minced meat rolls, served with french fries and ajvar</p>
+                                            <p class="price">€14.78</p>
+                                        </div>
+
+                                        <div class="menu-item fusionmaindishes">
+                                            <img src="Assets\Images\Fmain3.jpg" alt="Chicken Noisette">
+                                            <h3>Chicken Noisette</h3>
+                                            <p>charcoal grilled chicken skewer wrapped in bacon and filled with cheese, served with french fries and ajvar</p>
+                                            <p class="price">€15.98</p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item fusionmaindishes">
+                                            <img src="Assets\Images\Fmain4.jpeg" alt="Stuffed Eggplant Karniyarik">
+                                            <h3>Stuffed Eggplant Karniyarik</h3>
+                                            <p>eggplants, ground beef filling, mozzarella and tomato sauce</p>
+                                            <p class="price">€13.98</p>
+                                        </div>  
+                                        
+                                        <div class="menu-item fusionmaindishes">
+                                            <img src="Assets\Images\Fmain5.jpeg" alt="Karnache">
+                                            <h3>Karnache</h3>
+                                            <p>traditional Bulgarian charcoal grilled meat sausage, served with french fries and ajvar</p>
+                                            <p class="price">€13.78</p>
+                                        </div>
+
+                                          <div class="menu-item fusionmaindishes">
+                                            <img src="Assets\Images\Fmain6.jpeg" alt="Beef Olives">
+                                            <h3>Beef Olives</h3>
+                                            <p>bacon, eggs, cheddar cheese and parsley wrapped in slice beef, slow cooked in red wine, served with roasted potatoes</p>
+                                            <p class="price">€24.78</p>
+                                        </div>
+                                     
+                                    </div>
+                                </div>             
+                                
+
+                                <div class="carousel-item">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item fusionmaindishes">
+                                            <img src="Assets\Images\Fmain7.jpeg" alt="Chicken Masala">
+                                            <h3>Chicken Masala</h3>
+                                            <p>Rich and creamy flavoursome chicken in a incredible curry sauce served with cashew nut rice</p>
+                                            <p class="price">€15.78</p>
+                                        </div>                                       
+                                    </div>
+                                </div>  
+
+                                <!-- Add more .carousel-item as needed -->
+                            </div>
+                            <a class="carousel-control-prev" href="#fusionmaindishesCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#fusionmaindishesCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+                        
+                           <!-- Burgers Items -->
+
+
+                        <div id="burgersCarousel" class="carousel slide" data-interval="false">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item burgers">
+                                            <img src="Assets\Images\burger1.jpeg" alt="Chicken Burger" class="menu-img" data-toggle="modal" data-target="#imageModal">>
+                                            <h3>Chicken Burger</h3>
+                                            <p>grilled chicken fillet, cheddar cheese, lettuce, pickles, tomatoes, dressing, French fries</p>
+                                            <p class="price">€14.98</p>
+                                        </div>
+
+                                        <div class="menu-item burgers">
+                                            <img src="Assets\Images\burger2.jpeg" alt="Veranda BEEF Burger" class="menu-img" data-toggle="modal" data-target="#imageModal">
+                                            <h3>"Veranda" BEEF Burger</h3>
+                                            <p>beef burger, cheddar cheese, tomatoes, onion rings, bacon, pickles, honey-mustard dressing, French fries and salad</p>
+                                            <p class="price">€16.78</p>
+                                        </div>
+
+                                        <div class="menu-item burgers">
+                                            <img src="Assets\Images\burger3.jpeg" alt="Avocado Burger vegetarian">
+                                            <h3>Avocado Burger vegetarian</h3>
+                                            <p>Avocado burger fried with avocado slices, cheddar, fresh greens, salsa tomatoes special mideterian sauce served with French fries</p>
+                                            <p class="price">€11.98</p>
+                                        </div>
+
+
+                                    </div>
+                                </div>            
+                                 
+
+                                <!-- Add more .carousel-item as needed -->
+                            </div>
+                          <%--  <a class="carousel-control-prev" href="#burgersCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#burgersCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>--%>
+                        </div>
+
+
+                         <!-- Gluten Free Items -->
+                        <div id="glutenFreeCarousel" class="carousel slide" data-interval="false">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item glutenFree">
+                                            <img src="Assets\Images\glutenFree1.jpg" alt="Ricotta Ravioli" class="menu-img" data-toggle="modal" data-target="#imageModal">>
+                                            <h3>Ricotta Ravioli</h3>
+                                            <p>with tomato sauce and parsley</p>
+                                            <p class="price">€15.98</p>
+                                        </div>
+
+                                        <div class="menu-item glutenFree">
+                                            <img src="Assets\Images\glutenFree2.jpg" alt="Tortellini Spinach" class="menu-img" data-toggle="modal" data-target="#imageModal">
+                                            <h3>Tortellini Spinach</h3>
+                                            <p>creamy sauce, fresh tomatoes</p>
+                                            <p class="price">€15.98</p>
+                                        </div>
+                                    </div>
+                                </div>       
+
+                                        <!-- Add more .carousel-item as needed -->
+                            </div>
+                            <a class="carousel-control-prev" href="#glutenFreeCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#glutenFreeCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+
+
+
+
+
+
+
+                         <!-- Deserts Items -->
+                        <div id="desertsCarousel" class="carousel slide" data-interval="false">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item deserts">
+                                            <img src="Assets\Images\desert1.jpg" alt="Home made Biscuit cake with Nutella" class="menu-img" data-toggle="modal" data-target="#imageModal">>
+                                            <h3>Home made Biscuit cake with Nutella</h3>
+                                            <p>ingredients is a secret, delicious</p>
+                                            <p class="price">€5.58</p>
+                                        </div>
+
+                                        <div class="menu-item deserts">
+                                            <img src="Assets\Images\desert2.jpg" alt="Set of ice cream" class="menu-img" data-toggle="modal" data-target="#imageModal">
+                                            <h3>Set of ice cream</h3>
+                                            <p>chocolate, vanilla or strawberry</p>
+                                            <p class="price">€15.98</p>
+                                        </div>
+
+                                         <div class="menu-item deserts">
+                                            <img src="Assets\Images\desert3.jpeg" alt="Soufflé chocolate" class="menu-img" data-toggle="modal" data-target="#imageModal">
+                                            <h3>Soufflé chocolate</h3>
+                                            <p>with scoop of ice-cream</p>
+                                            <p class="price">€4.98</p>
+                                        </div>
+
+                                    </div>
+                                </div>     
+                                
+                                 <div class="carousel-item">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item deserts">
+                                            <img src="Assets\Images\desert4.jpeg" alt="Fresh Sweets From Our Display">
+                                            <h3>Fresh Sweets From Our Display</h3>
+                                            <p class="price">€5.78</p>
+                                        </div>  
+                                        </div>  
+
+                                        <!-- Add more .carousel-item as needed -->
+                            </div>
+                            <a class="carousel-control-prev" href="#desertsCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#desertsCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                            </div>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -856,8 +1155,208 @@
                         </div>
                     </section>
                 </div>
+
+
+<!-- Bar Menu Content -->
+<div id="barMenuContent" class="menu-content">
+    <!-- Bar menu items go here -->
+
+    <div class="container menu-navigation">
+                    <div class="row align-items-center justify-content-between">
+                        <!-- Previous Arrow -->
+                        <div class="col-auto">
+                            <div class="menu-control-prev" role="button">
+                                <img src="Assets\Images\leftArrow.png" alt="Previous" class="menu-control-prev-icon">
+                            </div>
+                        </div>
+
+                        <!-- Menu Categories -->
+                        <div class="col overflow-hidden">
+                            <div class="d-flex justify-content-center menu-categories-scroll">
+                                <ul id="bar-menu-categories" class="list-unstyled d-flex mb-0">
+                                    <li data-category="hello" class="active" onclick="showMenu('hello', this)">Beers</li>
+                                    <li data-category="tt"  onclick="showMenu('tt', this)">Coctails</li>
+                                    <li onclick="showMenu('platters', this)">Soft Drinks</li>
+                                    <li onclick="showMenu('fusionmaindishes', this)">Hot Drinks</li>
+                                    <li onclick="showMenu('maindishes', this)">White Wines</li>
+                                    <li onclick="showMenu('burgers', this)">Red Wines</li>
+                                    <li onclick="showMenu('glutenFree', this)">Rose Wines</li>
+                                    <li onclick="showMenu('maindishes', this)">Pasta</li>
+                                    <li onclick="showMenu('maindishes', this)">Pizza</li>
+                                    <li onclick="showMenu('maindishes', this)">Risotto</li>
+                                    <li onclick="showMenu('deserts', this)">Desserts</li>
+                                    <!-- Add more categories as needed -->
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Next Arrow -->
+                        <div class="col-auto">
+                            <div class="menu-control-next" role="button">
+                                <img src="Assets\Images\rightArrow.png" alt="Next" class="menu-control-next-icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+     <div class="menu-items">
+                    <section class="menu">
+                        <!-- Starterss Items -->
+                        <div id="helloCarousel" class="carousel slide" data-interval="false">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item hello">
+                                            <img src="Assets\Images\Bruschetta.jpg" alt="Bruschetta">
+                                            <h3>Bruschetta</h3>
+                                            <p>with tomatoes, mus of cheese and home made pesto</p>
+                                            <p class="price">€6.98</p>
+                                        </div>
+
+                                        <div class="menu-item hello">
+                                            <img src="Assets\Images\BruschettaVeranda.jpg" alt="Bruschetta Veranda">
+                                            <h3>Bruschetta "Veranda"</h3>
+                                            <p>with lukanka and Ajvar</p>
+                                            <p class="price">€6.98</p>
+                                        </div>
+
+                                        <div class="menu-item lol">
+                                            <img src="Assets\Images\ChickenWings.jpeg" alt="Chicken Wings">
+                                            <h3>Chicken Wings</h3>
+                                            <p>with french fries and BBQ sauce</p>
+                                            <p class="price">€11.98</p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item hello">
+                                            <img src="Assets\Images\Mushrooms.jpeg" alt="Stuffed mushrooms">
+                                            <h3>Stuffed mushrooms</h3>
+                                            <p>charcoal grilled, stuffed with butter, bacon and cheese</p>
+                                            <p class="price">€8.78</p>
+                                        </div>
+
+                                        <div class="menu-item lol">
+                                            <img src="Assets\Images\shrimpss.jpeg" alt="Shrimps">
+                                            <h3>Shrimps with Pernod and cherry tomatoes</h3>
+                                            <p>glazed with butter and dill</p>
+                                            <p class="price">€14.78</p>
+                                        </div>
+
+                                        <div class="menu-item lol">
+                                            <img src="Assets\Images\freshVegtables.jpg" alt="Fresh vegetables">
+                                            <h3>Fresh vegetables</h3>
+                                            <p>charcoal grilled with aromatic marinate and mozzarella di'Bufala</p>
+                                            <p class="price">€11.98</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item lol">
+                                            <img src="Assets\Images\KingPrawns.jpeg" alt="King Prawns">
+                                            <h3>King Prawns</h3>
+                                            <p>6 king prawns fried in garlic oil, sweet chilli and fresh herbs served with special dip</p>
+                                            <p class="price">€11.78</p>
+                                        </div>
+
+                                        <div class="menu-item lol">
+                                            <img src="Assets\Images\fistomisto.jpg" alt="Frito Mistos">
+                                            <h3>Frito Misto</h3>
+                                            <p>with home made tzatziki sauce, breaded calamari, lanterini, shrimps and mussel meat</p>
+                                            <p class="price">€15.98</p>
+                                        </div>
+
+                                        <div class="menu-item lol">
+                                            <img src="Assets\Images\muscels.jpg" alt="Veranda Mussels">
+                                            <h3>Veranda Mussels</h3>
+                                            <p>fresh mussels, butter sauce, white wine with garlic and lemon slices, onions and parsley</p>
+                                            <p class="price">€10.98</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- Add more .carousel-item as needed -->
+                            </div>
+                            <a class="carousel-control-prev" href="#helloCarousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#helloCarousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+
+<!-- tet-->
+
+
+                        <div id="ttCarousel" class="carousel slide" data-interval="false">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="d-flex justify-content-around">
+                                        <div class="menu-item tt">
+                                            <img src="Assets\Images\Bruschetta.jpg" alt="Bruschetta">
+                                            <h3>Bruschetta</h3>
+                                            <p>with tomatoes, mus of cheese and home made pesto</p>
+                                            <p class="price">€6.98</p>
+                                        </div>
+
+                                        <div class="menu-item tt">
+                                            <img src="Assets\Images\BruschettaVeranda.jpg" alt="Bruschetta Veranda">
+                                            <h3>Bruschetta "Veranda"</h3>
+                                            <p>with lukanka and Ajvar</p>
+                                            <p class="price">€6.98</p>
+                                        </div>
+
+                                        <div class="menu-item tt">
+                                            <img src="Assets\Images\ChickenWings.jpeg" alt="Chicken Wings">
+                                            <h3>Chicken Wings</h3>
+                                            <p>with french fries and BBQ sauce</p>
+                                            <p class="price">€11.98</p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+</section>
+</div>
+
+
+
+              
+
+
             </div>
         </div>
+
+
+
+<!-- Image Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="" id="imagePreview" alt="Menu Item" style="width: 100%;">
+      </div>
+    </div>
+  </div>
+</div>
     </div>
 
 
@@ -867,60 +1366,165 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Configure the click listeners for scrolling the menu categories
-            document.querySelector('.menu-control-next').addEventListener('click', function () {
-                document.querySelector('#menu-categories').scrollLeft += 100;
-            });
+      <script>
+          document.addEventListener("DOMContentLoaded", function () {
+              // Configure the click listeners for scrolling the menu categories
+              document.querySelectorAll('.menu-control-next').forEach(function (button) {
+                  button.addEventListener('click', function () {
+                      // Determine which menu is active
+                      if (document.getElementById('foodMenuContent').classList.contains('active')) {
+                          document.querySelector('#menu-categories').scrollLeft += 100;
+                      } else if (document.getElementById('barMenuContent').classList.contains('active')) {
+                          document.querySelector('#bar-menu-categories').scrollLeft += 100;
+                      }
+                  });
+              });
 
-            document.querySelector('.menu-control-prev').addEventListener('click', function () {
-                document.querySelector('#menu-categories').scrollLeft -= 100;
-            });
+              // Attach event listeners for both the food and bar menu 'previous' buttons
+              document.querySelectorAll('.menu-control-prev').forEach(function (button) {
+                  button.addEventListener('click', function () {
+                      // Determine which menu is active
+                      if (document.getElementById('foodMenuContent').classList.contains('active')) {
+                          document.querySelector('#menu-categories').scrollLeft -= 100;
+                      } else if (document.getElementById('barMenuContent').classList.contains('active')) {
+                          document.querySelector('#bar-menu-categories').scrollLeft -= 100;WW
+                      }
+                  });
+              });
 
-            var startersButton = document.querySelector('#menu-categories li:first-child');
-            if (startersButton) {
-                showMenu('starters', startersButton); // Make sure 'starters' is the correct category name
-            }
-        });
+             
 
-        function showMenu(category, element) {
-            // Hide all menu items first
-            document.querySelectorAll('.menu-item').forEach(function (menuItem) {
-                menuItem.style.display = 'none';
-            });
+              showMenu('starters', document.querySelector('#menu-categories li.active') || document.querySelector('#menu-categories li:first-child'));
 
-            // Hide all carousels
-            document.querySelectorAll('.carousel').forEach(function (carousel) {
-                carousel.style.display = 'none';
-            });
+              // Setup click event listeners for the menu and bar buttons
+              document.getElementById('foodMenuButton').addEventListener('click', function () {
+                  toggleMenu('food');
+              });
 
-            // Deactivate all category buttons
-            document.querySelectorAll('#menu-categories li').forEach(function (button) {
-                button.classList.remove('active');
-            });
+              document.getElementById('barMenuButton').addEventListener('click', function () {
+                  toggleMenu('bar');
+              });
 
-            // Activate the selected category button
-            element.classList.add('active');
-
-            // Display the selected category's menu items
-            document.querySelectorAll('.' + category).forEach(function (item) {
-                item.style.display = 'block';
-            });
-
-            // Display the corresponding carousel for the selected category
-            var selectedCarousel = document.getElementById(category + 'Carousel');
-            if (selectedCarousel) {
-                selectedCarousel.style.display = 'block';
-            } else {
-                console.error('No carousel found with ID:', category + 'Carousel');
-            }
-        }
-
+                  const images = document.querySelectorAll('.menu-img');
+                  images.forEach(image => {
+                      image.addEventListener('click', function () {
+                          const src = this.getAttribute('src');
+                          document.getElementById('imagePreview').src = src;
+                          $('#imageModalLabel').text(this.alt); // Optional: Update the modal title to the image's alt text
+                      });
+                  });
+             
 
 
 
-    </script>
+          });
+          
+          function toggleMenu(type) {
+              console.log('toggleMenu called with type:', type); // Debugging line
+
+              var foodMenuContent = document.getElementById('foodMenuContent');
+              var barMenuContent = document.getElementById('barMenuContent');
+              var foodMenuButton = document.getElementById('foodMenuButton');
+              var barMenuButton = document.getElementById('barMenuButton');
+              var menuCategories = document.getElementById('menu-categories');
+              var startersCategory = menuCategories.querySelector('li:first-child');
+
+              // Hide all menu items
+              document.querySelectorAll('.menu-item').forEach(function (menuItem) {
+                  menuItem.style.display = 'none';
+              });
+
+              // Remove active class from all category buttons
+              document.querySelectorAll('#menu-categories li').forEach(function (button) {
+                  button.classList.remove('active');
+              });
+
+              if (type === 'food') {
+                  foodMenuContent.classList.add('active');
+                  barMenuContent.classList.remove('active');
+                  foodMenuButton.classList.add('active');
+                  barMenuButton.classList.remove('active');
+
+                  // Show the starters category by default when switching to the food menu
+                  showMenu('starters', document.querySelector('#menu-categories li.active') || document.querySelector('#menu-categories li:first-child'));
+
+              } else if (type === 'bar') {
+                  barMenuContent.classList.add('active');
+                  foodMenuContent.classList.remove('active');
+                  barMenuButton.classList.add('active');
+                  foodMenuButton.classList.remove('active');
+
+                  // Ensure the starters carousel and other elements are not displayed
+                  document.getElementById('startersCarousel').style.display = 'none';
+                  startersCategory.classList.remove('active');
+
+                  showMenu('hello', document.querySelector('#bar-menu-categories li.active') || document.querySelector('#bar-menu-categories li:first-child'));
+
+
+              }
+          }
+
+          // Debugging lines to see if event listeners are being attached properly
+          console.log('Attaching event listeners...');
+
+          
+
+          function showMenu(category, element) {
+              // Hide all menu items first
+              document.querySelectorAll('.menu-item').forEach(function (menuItem) {
+                  menuItem.style.display = 'none';
+              });
+
+              // Hide all carousels
+              document.querySelectorAll('.carousel').forEach(function (carousel) {
+                  carousel.style.display = 'none';
+              });
+
+              // Remove 'active' class from all category buttons in both menus
+              document.querySelectorAll('#menu-categories li, #bar-menu-categories li').forEach(function (li) {
+                  li.classList.remove('active');
+              });
+
+              // Add 'active' class to the clicked category
+              if (element) {
+                  element.classList.add('active');
+              }
+
+              // Display the selected category's menu items
+              document.querySelectorAll('.' + category).forEach(function (item) {
+                  item.style.display = 'block';
+              });
+
+              console.log('Category:', category);
+              var selectedCarousel = document.getElementById(category + 'Carousel');
+              if (selectedCarousel) {
+                  console.log('Found carousel for category:', category);
+                  selectedCarousel.style.display = 'block';
+              } else {
+                  console.error('No carousel found with ID:', category + 'Carousel');
+              }
+          }
+
+       
+
+          document.querySelectorAll('#food-menu-categories li').forEach(function (li) {
+              li.addEventListener('click', function () {
+                  console.log("Category clicked:", this.innerText); // Debugging line
+                  showMenu(this.getAttribute('data-category'), this);
+              });
+          });
+          
+          
+          document.querySelectorAll('#bar-menu-categories li').forEach(function (li) {
+              li.addEventListener('click', function () {
+                  // Assuming 'data-category' attribute holds the category identifier for bar menu items
+                  var category = this.getAttribute('data-category');
+                  showMenu(category, this);
+              });
+          });
+
+
+      </script>
 
 </body>
 </html>
