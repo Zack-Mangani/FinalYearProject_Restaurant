@@ -104,6 +104,8 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Assets\Images\about-us.png" />
+    <Content Include="Assets\Images\contactIcon.png" />
+    <Content Include="Assets\Images\loc-icon.png" />
     <Content Include="Assets\Images\Bruschetta.jpg" />
     <Content Include="Assets\Images\BruschettaVeranda.jpg" />
     <Content Include="Assets\Images\burger1.jpeg" />
@@ -126,8 +128,17 @@
     <Content Include="Assets\Images\FoodMenuIcon.png" />
     <Content Include="Assets\Images\fistomisto.jpg" />
     <Content Include="Assets\Images\freshVegtables.jpg" />
+    <Content Include="Assets\Images\gallery.jpg" />
+    <Content Include="Assets\Images\gallery1.jpg" />
+    <Content Include="Assets\Images\gallery3.jpg" />
+    <Content Include="Assets\Images\gallery4.jpg" />
+    <Content Include="Assets\Images\gallery5.jpg" />
+    <Content Include="Assets\Images\gallery6.jpg" />
+    <Content Include="Assets\Images\gallery9.jpg" />
     <Content Include="Assets\Images\glutenFree1.jpg" />
     <Content Include="Assets\Images\glutenFree2.jpg" />
+    <Content Include="Assets\Images\FeedbackIcon.png" />
+    <Content Include="Assets\Images\galleryicon.png" />
     <Content Include="Assets\Images\KingPrawns.jpeg" />
     <Content Include="Assets\Images\main1.jpeg" />
     <Content Include="Assets\Images\main10.jpeg" />
@@ -153,6 +164,7 @@
     <Content Include="Assets\Images\main9.jpeg" />
     <Content Include="Assets\Images\muscels.jpg" />
     <Content Include="Assets\Images\Mushrooms.jpeg" />
+    <Content Include="Assets\Images\OpenIcon.png" />
     <Content Include="Assets\Images\pizza.jpg" />
     <Content Include="Assets\Images\platters1.jpeg" />
     <Content Include="Assets\Images\platters2.jpeg" />
@@ -180,6 +192,8 @@
     <Content Include="Assets\Images\AboutImage1.jpg" />
     <Content Include="Assets\Images\AboutImage2.jpg" />
     <Content Include="Assets\Images\AboutImage3.jpg" />
+    <Content Include="Assets\Images\phone-icon.png" />
+    <Content Include="Assets\Images\microphone_icon.png" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />

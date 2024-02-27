@@ -3,14 +3,15 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Veranda Fusion Restaurant</title>
-    <link rel="website icon" type="png" href="Assets/Logo/logoRestaurant.png">
+    <link rel="website icon" type="png" href="Assets/Logo/logoRestaurant.png"/>
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet".#/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css/"/>
+
 
     <style>
         body, html {
@@ -495,13 +496,13 @@
                     <a class="nav-link" href="#menu-section">VIEW MENU</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#gallerySection">GALLERY</a>
+                    <a class="nav-link" href="#gallery-section">GALLERY</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contactSection">CONTACT</a>
+                    <a class="nav-link" href="#contact-section">CONTACT</a>
                 </li>
                 <li class="nav-item">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">BOOK</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0" href="#book-section" type="submit">BOOK</button>
                 </li>
 
                 <li class="nav-item">
@@ -1742,351 +1743,825 @@
                     </div>
 
                 </div>
+            </div>
+        </div>
 
 
+    </div>
+
+    <!-- Feedback -->
+    <div class="feedback-wrapper">
+        <div class="feedback-container">
+            <div class="about-icon">
+                <img src="Assets\Images\FeedbackIcon.png" alt="Feedback Icon" class="icon">
             </div>
 
-                 <div class="feedback-wrapper">
+            <div class="header">
+                <h1>OUR CLIENTS FEEDBACK</h1>
+            </div>
+            <div class="feedback-navigation left" onclick="changeFeedback(-1)">&lt;</div>
+            <div id="feedback-box" class="feedback-box">
+                <div class="stars">★★★★★</div>
+                <div class="feedback-title"></div>
+                <div class="feedback-text"></div>
+                <div class="feedback-author"></div>
+            </div>
+            <div class="feedback-navigation right" onclick="changeFeedback(1)">
+                &gt;
+            </div>
+        </div>
+    </div>
+    <!-- Feedback -->
 
-                <div class="feedback-container">
-                      <div class="about-icon">
-                <img src="Assets\Images\FoodMenuIcon.png" alt="Feedback Icon" class="icon">
+
+    <!-- Gallery -->
+
+    <div id="gallery-section">
+        <div class="container">
+            <div class="about-icon">
+                <img src="Assets\Images\galleryicon.png" alt="Feedback Icon" class="icon">
             </div>
 
-                    <div class="feedback-header">OUR CLIENTS FEEDBACK</div>
-                    <div class="feedback-navigation left" onclick="changeFeedback(-1)">&lt;</div>
-                    <div id="feedback-box" class="feedback-box">
-                        <div class="stars">★★★★★</div>
-                        <div class="feedback-title"></div>
-                        <div class="feedback-text"></div>
-                        <div class="feedback-author"></div>
-                    </div>
-                    <div class="feedback-navigation right" onclick="changeFeedback(1)">&gt;</div>
+            <div class="header">
+                <h1>GALLERY</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <img
+                        src="Assets\Images\gallery1.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4"
+                        alt="Boat on Calm Water" />
+
+                    <img
+                        src="Assets\Images\gallery.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4"
+                        alt="Wintry Mountain Landscape" />
                 </div>
-  </div>
 
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img
+                        src="Assets\Images\gallery3.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4"
+                        alt="Mountains in the Clouds" />
 
+                    <img
+                        src="Assets\Images\gallery4.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4"
+                        alt="Boat on Calm Water" />
+                </div>
 
-            <!-- Image Modal -->
-            <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img
+                        src="Assets\Images\gallery6.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4"
+                        alt="Waves at Sea" />
+
+                    <img
+                        src="Assets\Images\gallery6.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4"
+                        alt="Yosemite National Park" />
+                </div>
+            </div>
+        </div>
+        <!-- Gallery -->
+
+        <button id="toggleContact">Contact</button>
+<button id="toggleBook">Book a Table</button>
+
+        <!-- Contact -->
+
+         <div id="contact-section">
+        <div class="container">
+
+            <div class="about-icon">
+                <img src="Assets\Images\contactIcon.png" alt="Feedback Icon" class="icon">
+            </div>
+
+            <div class="header">
+                <h1>CONTACT</h1>
+            </div>
+        <div class="contact-wrapper">
+            <div class="contact-card">
+                <div class="contact-info">
+                    <div class="info-section">
+                        <img src="Assets\Images\OpenIcon.png" alt="Clock Icon" class="icon">
+                        <div class="info-text">
+                            <h2>Opening Times</h2>
+                            <p>Mon-Sun<br>
+                                11:30am - 11:30pm</p>
                         </div>
-                        <div class="modal-body">
-                            <img src="" id="imagePreview" alt="Menu Item" style="width: 100%;">
+                    </div>
+                    <div class="info-section">
+                        <img src="Assets\Images\loc-icon.png" alt="Location Icon" class="icon">
+                        <div class="info-text">
+                            <h2>Address</h2>
+                            <p>Saint George's Road<br>
+                                St. Julian's STJ 1304<br>
+                                Malta</p>
                         </div>
+                    </div>
+                    <div class="info-section">
+                        <img src="Assets\Images\phone-icon.png" alt="Phone Icon" class="icon">
+                        <div class="info-text">
+                            <h2>Telephone Number</h2>
+                            <p>+356 2138 8881</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="map"></div>
+            </div>
+        </div>
+            </div>
+             </div>
+        <!-- Contact -->
+
+
+        <!-- Book -->
+        
+         <div id="book-section">
+        <div class="container">
+
+            <div class="about-icon">
+                <img src="Assets\Images\contactIcon.png" alt="Feedback Icon" class="icon">
+            </div>
+
+
+          <div class="book-wrapper">
+        <div class="reservation-form">
+  <h1 class="form-title">BOOK A TABLE</h1>
+  <form onsubmit="return validateForm()">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="firstName">Name</label>
+        <input type="text" id="firstName" placeholder="First" /> 
+          
+          
+          <button type="button" onclick="startSpeechRecognition('firstName')">
+          <img src="Assets\Images\microphone_icon.png" alt="Start Speech"/>
+        </button>
+
+
+      </div>
+      <div class="form-group">
+        <label for="lastName">Surname</label>
+        <input type="text" id="lastName" placeholder="Last"/>
+        <button type="button" onclick="startSpeechRecognition('lastName')">
+          <img src="Assets\Images\microphone_icon.png" alt="Start Speech"/>
+        </button>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" placeholder="#### ####"/>
+        <button type="button" onclick="startSpeechRecognition('phone')">
+          <img src="Assets\Images\microphone_icon.png" alt="Start Speech"/>
+        </button>
+      </div>
+      <div class="form-group">
+        <label for="persons">Number of persons</label>
+        <input type="number" id="persons" placeholder="Number of Persons">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="date">Reservation Date</label>
+        <input type="date" id="date">
+      </div>
+      <div class="form-group">
+        <label for="time">Reservation Time</label>
+        <input type="time" id="time">
+      </div>
+    </div>
+    <button type="submit" class="form-button">BOOK IT!</button>
+  </form>
+            <div id="notification" class="notification"></div>
+            </div>
+              </div>
+            </div>
+             
+
+  
+
+</div>
+
+                <!-- Book -->
+
+
+
+
+        <!-- Image Modal -->
+        <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <img src="" id="imagePreview" alt="Menu Item" style="width: 100%;">
                     </div>
                 </div>
             </div>
         </div>
 
+        <footer>
+            <div class="footer-content">
+                <p>© COPYRIGHT 2023 VERANDA FUSION RESTAURANT</p>
+                <p>WEB DESIGN BY ZACK MANGANI</p>
+            </div>
+        </footer>
+
+
+    </div>
 
 
 
-        <!-- jQuery and Bootstrap JS -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                // Configure the click listeners for scrolling the menu categories
-                document.querySelectorAll('.menu-control-next').forEach(function (button) {
-                    button.addEventListener('click', function () {
-                        // Determine which menu is active
-                        if (document.getElementById('foodMenuContent').classList.contains('active')) {
-                            document.querySelector('#menu-categories').scrollLeft += 100;
-                        } else if (document.getElementById('barMenuContent').classList.contains('active')) {
-                            document.querySelector('#bar-menu-categories').scrollLeft += 100;
-                        }
-                    });
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Configure the click listeners for scrolling the menu categories
+            document.querySelectorAll('.menu-control-next').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    // Determine which menu is active
+                    if (document.getElementById('foodMenuContent').classList.contains('active')) {
+                        document.querySelector('#menu-categories').scrollLeft += 100;
+                    } else if (document.getElementById('barMenuContent').classList.contains('active')) {
+                        document.querySelector('#bar-menu-categories').scrollLeft += 100;
+                    }
                 });
+            });
 
-                // Attach event listeners for both the food and bar menu 'previous' buttons
-                document.querySelectorAll('.menu-control-prev').forEach(function (button) {
-                    button.addEventListener('click', function () {
-                        // Determine which menu is active
-                        if (document.getElementById('foodMenuContent').classList.contains('active')) {
-                            document.querySelector('#menu-categories').scrollLeft -= 100;
-                        } else if (document.getElementById('barMenuContent').classList.contains('active')) {
-                            document.querySelector('#bar-menu-categories').scrollLeft -= 100; WW
-                        }
-                    });
+            // Attach event listeners for both the food and bar menu 'previous' buttons
+            document.querySelectorAll('.menu-control-prev').forEach(function (button) {
+                button.addEventListener('click', function () {
+                    // Determine which menu is active
+                    if (document.getElementById('foodMenuContent').classList.contains('active')) {
+                        document.querySelector('#menu-categories').scrollLeft -= 100;
+                    } else if (document.getElementById('barMenuContent').classList.contains('active')) {
+                        document.querySelector('#bar-menu-categories').scrollLeft -= 100; WW
+                    }
                 });
+            });
 
 
 
+            showMenu('starters', document.querySelector('#menu-categories li.active') || document.querySelector('#menu-categories li:first-child'));
+
+            // Setup click event listeners for the menu and bar buttons
+            document.getElementById('foodMenuButton').addEventListener('click', function () {
+                toggleMenu('food');
+            });
+
+            document.getElementById('barMenuButton').addEventListener('click', function () {
+                toggleMenu('bar');
+            });
+
+            const images = document.querySelectorAll('.menu-img');
+            images.forEach(image => {
+                image.addEventListener('click', function () {
+                    const src = this.getAttribute('src');
+                    document.getElementById('imagePreview').src = src;
+                    $('#imageModalLabel').text(this.alt); // Optional: Update the modal title to the image's alt text
+                });
+            });
+
+
+
+
+        });
+
+        function toggleMenu(type) {
+            console.log('toggleMenu called with type:', type); // Debugging line
+
+            var foodMenuContent = document.getElementById('foodMenuContent');
+            var barMenuContent = document.getElementById('barMenuContent');
+            var foodMenuButton = document.getElementById('foodMenuButton');
+            var barMenuButton = document.getElementById('barMenuButton');
+            var menuCategories = document.getElementById('menu-categories');
+            var startersCategory = menuCategories.querySelector('li:first-child');
+
+            // Hide all menu items
+            document.querySelectorAll('.menu-item').forEach(function (menuItem) {
+                menuItem.style.display = 'none';
+            });
+
+            // Remove active class from all category buttons
+            document.querySelectorAll('#menu-categories li').forEach(function (button) {
+                button.classList.remove('active');
+            });
+
+            if (type === 'food') {
+                foodMenuContent.classList.add('active');
+                barMenuContent.classList.remove('active');
+                foodMenuButton.classList.add('active');
+                barMenuButton.classList.remove('active');
+
+                // Show the starters category by default when switching to the food menu
                 showMenu('starters', document.querySelector('#menu-categories li.active') || document.querySelector('#menu-categories li:first-child'));
 
-                // Setup click event listeners for the menu and bar buttons
-                document.getElementById('foodMenuButton').addEventListener('click', function () {
-                    toggleMenu('food');
-                });
+            } else if (type === 'bar') {
+                barMenuContent.classList.add('active');
+                foodMenuContent.classList.remove('active');
+                barMenuButton.classList.add('active');
+                foodMenuButton.classList.remove('active');
 
-                document.getElementById('barMenuButton').addEventListener('click', function () {
-                    toggleMenu('bar');
-                });
+                // Ensure the starters carousel and other elements are not displayed
+                document.getElementById('startersCarousel').style.display = 'none';
+                startersCategory.classList.remove('active');
 
-                const images = document.querySelectorAll('.menu-img');
-                images.forEach(image => {
-                    image.addEventListener('click', function () {
-                        const src = this.getAttribute('src');
-                        document.getElementById('imagePreview').src = src;
-                        $('#imageModalLabel').text(this.alt); // Optional: Update the modal title to the image's alt text
-                    });
-                });
+                showMenu('hello', document.querySelector('#bar-menu-categories li.active') || document.querySelector('#bar-menu-categories li:first-child'));
 
 
+            }
+        }
+
+        // Debugging lines to see if event listeners are being attached properly
+        console.log('Attaching event listeners...');
 
 
+
+        function showMenu(category, element) {
+            // Hide all menu items first
+            document.querySelectorAll('.menu-item').forEach(function (menuItem) {
+                menuItem.style.display = 'none';
             });
 
-            function toggleMenu(type) {
-                console.log('toggleMenu called with type:', type); // Debugging line
-
-                var foodMenuContent = document.getElementById('foodMenuContent');
-                var barMenuContent = document.getElementById('barMenuContent');
-                var foodMenuButton = document.getElementById('foodMenuButton');
-                var barMenuButton = document.getElementById('barMenuButton');
-                var menuCategories = document.getElementById('menu-categories');
-                var startersCategory = menuCategories.querySelector('li:first-child');
-
-                // Hide all menu items
-                document.querySelectorAll('.menu-item').forEach(function (menuItem) {
-                    menuItem.style.display = 'none';
-                });
-
-                // Remove active class from all category buttons
-                document.querySelectorAll('#menu-categories li').forEach(function (button) {
-                    button.classList.remove('active');
-                });
-
-                if (type === 'food') {
-                    foodMenuContent.classList.add('active');
-                    barMenuContent.classList.remove('active');
-                    foodMenuButton.classList.add('active');
-                    barMenuButton.classList.remove('active');
-
-                    // Show the starters category by default when switching to the food menu
-                    showMenu('starters', document.querySelector('#menu-categories li.active') || document.querySelector('#menu-categories li:first-child'));
-
-                } else if (type === 'bar') {
-                    barMenuContent.classList.add('active');
-                    foodMenuContent.classList.remove('active');
-                    barMenuButton.classList.add('active');
-                    foodMenuButton.classList.remove('active');
-
-                    // Ensure the starters carousel and other elements are not displayed
-                    document.getElementById('startersCarousel').style.display = 'none';
-                    startersCategory.classList.remove('active');
-
-                    showMenu('hello', document.querySelector('#bar-menu-categories li.active') || document.querySelector('#bar-menu-categories li:first-child'));
-
-
-                }
-            }
-
-            // Debugging lines to see if event listeners are being attached properly
-            console.log('Attaching event listeners...');
-
-
-
-            function showMenu(category, element) {
-                // Hide all menu items first
-                document.querySelectorAll('.menu-item').forEach(function (menuItem) {
-                    menuItem.style.display = 'none';
-                });
-
-                // Hide all carousels
-                document.querySelectorAll('.carousel').forEach(function (carousel) {
-                    carousel.style.display = 'none';
-                });
-
-                // Remove 'active' class from all category buttons in both menus
-                document.querySelectorAll('#menu-categories li, #bar-menu-categories li').forEach(function (li) {
-                    li.classList.remove('active');
-                });
-
-                // Add 'active' class to the clicked category
-                if (element) {
-                    element.classList.add('active');
-                }
-
-                // Display the selected category's menu items
-                document.querySelectorAll('.' + category).forEach(function (item) {
-                    item.style.display = 'block';
-                });
-
-                console.log('Category:', category);
-                var selectedCarousel = document.getElementById(category + 'Carousel');
-                if (selectedCarousel) {
-                    console.log('Found carousel for category:', category);
-                    selectedCarousel.style.display = 'block';
-                } else {
-                    console.error('No carousel found with ID:', category + 'Carousel');
-                }
-            }
-
-
-
-            document.querySelectorAll('#food-menu-categories li').forEach(function (li) {
-                li.addEventListener('click', function () {
-                    console.log("Category clicked:", this.innerText); // Debugging line
-                    showMenu(this.getAttribute('data-category'), this);
-                });
+            // Hide all carousels
+            document.querySelectorAll('.carousel').forEach(function (carousel) {
+                carousel.style.display = 'none';
             });
 
-
-            document.querySelectorAll('#bar-menu-categories li').forEach(function (li) {
-                li.addEventListener('click', function () {
-                    // Assuming 'data-category' attribute holds the category identifier for bar menu items
-                    var category = this.getAttribute('data-category');
-                    showMenu(category, this);
-                });
+            // Remove 'active' class from all category buttons in both menus
+            document.querySelectorAll('#menu-categories li, #bar-menu-categories li').forEach(function (li) {
+                li.classList.remove('active');
             });
 
-
-        </script>
-
-
-        <script>
-            //dan tal feedback
-            let feedbacks = [
-                {
-                    title: "Best restaurant from St.Julian Malta",
-                    text: "This restaurant is perfect for all occasions, good food, good people (Dian the best waiter, kind and funny) Recommend it 100%",
-                    author: "- Andrei T"
-                },
-                // Add more feedback entries here
-                {
-                    title: "Stunning Views",
-                    text: "Absolutely stunning views and incredibly delicious seafood. A must-visit for anyone traveling to Malta!",
-                    author: "- Maria L"
-                },
-                {
-                    title: "Historic Ambiance",
-                    text: "The ambiance takes you back in time and the food seals the deal. Excellent service and a great wine selection.",
-                    author: "- John D"
-                }
-            ];
-
-            let currentFeedbackIndex = 0;
-
-            function displayFeedback() {
-                const feedbackBox = document.getElementById('feedback-box');
-                feedbackBox.querySelector('.feedback-title').innerText = feedbacks[currentFeedbackIndex].title;
-                feedbackBox.querySelector('.feedback-text').innerText = feedbacks[currentFeedbackIndex].text;
-                feedbackBox.querySelector('.feedback-author').innerText = feedbacks[currentFeedbackIndex].author;
+            // Add 'active' class to the clicked category
+            if (element) {
+                element.classList.add('active');
             }
 
-            function changeFeedback(direction) {
-                currentFeedbackIndex += direction;
-                if (currentFeedbackIndex < 0) {
-                    currentFeedbackIndex = feedbacks.length - 1;
-                } else if (currentFeedbackIndex >= feedbacks.length) {
-                    currentFeedbackIndex = 0;
-                }
-                displayFeedback();
-            }
+            // Display the selected category's menu items
+            document.querySelectorAll('.' + category).forEach(function (item) {
+                item.style.display = 'block';
+            });
 
+            console.log('Category:', category);
+            var selectedCarousel = document.getElementById(category + 'Carousel');
+            if (selectedCarousel) {
+                console.log('Found carousel for category:', category);
+                selectedCarousel.style.display = 'block';
+            } else {
+                console.error('No carousel found with ID:', category + 'Carousel');
+            }
+        }
+
+
+
+        document.querySelectorAll('#food-menu-categories li').forEach(function (li) {
+            li.addEventListener('click', function () {
+                console.log("Category clicked:", this.innerText); // Debugging line
+                showMenu(this.getAttribute('data-category'), this);
+            });
+        });
+
+
+        document.querySelectorAll('#bar-menu-categories li').forEach(function (li) {
+            li.addEventListener('click', function () {
+                // Assuming 'data-category' attribute holds the category identifier for bar menu items
+                var category = this.getAttribute('data-category');
+                showMenu(category, this);
+            });
+        });
+
+
+    </script>
+
+
+    <script>
+        //dan tal feedback
+        let feedbacks = [
+            {
+                title: "Best restaurant from St.Julian Malta",
+                text: "This restaurant is perfect for all occasions, good food, good people (Dian the best waiter, kind and funny) Recommend it 100%",
+                author: "- Andrei T"
+            },
+            // Add more feedback entries here
+            {
+                title: "Stunning Views",
+                text: "Absolutely stunning views and incredibly delicious seafood. A must-visit for anyone traveling to Malta!",
+                author: "- Maria L"
+            },
+            {
+                title: "Historic Ambiance",
+                text: "The ambiance takes you back in time and the food seals the deal. Excellent service and a great wine selection.",
+                author: "- John D"
+            }
+        ];
+
+        let currentFeedbackIndex = 0;
+
+        function displayFeedback() {
+            const feedbackBox = document.getElementById('feedback-box');
+            feedbackBox.querySelector('.feedback-title').innerText = feedbacks[currentFeedbackIndex].title;
+            feedbackBox.querySelector('.feedback-text').innerText = feedbacks[currentFeedbackIndex].text;
+            feedbackBox.querySelector('.feedback-author').innerText = feedbacks[currentFeedbackIndex].author;
+        }
+
+        function changeFeedback(direction) {
+            currentFeedbackIndex += direction;
+            if (currentFeedbackIndex < 0) {
+                currentFeedbackIndex = feedbacks.length - 1;
+            } else if (currentFeedbackIndex >= feedbacks.length) {
+                currentFeedbackIndex = 0;
+            }
             displayFeedback();
-        </script>
+        }
+
+        displayFeedback();
+    </script>
 
 
-        <style>
-  .feedback-wrapper {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f7f7f7;
-  }
+    <style>
+        /*feedbck u footer*/
+        .feedback-wrapper {
+            font-family: 'Raleway', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+        }
 
-  .feedback-container {
-    width: 600px;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border-radius: 20px;
-    position: relative;
-  }
+        .feedback-container {
+            width: 600px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
 
-  .feedback-header {
-    font-size: 24px;
-    color: #333333;
-    margin-bottom: 20px;
-  }
+        .feedback-header {
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
 
-  .feedback-box {
-    background-color: #333333;
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 15px;
-    margin: 0 30px;
-    position: relative;
-  }
+        .feedback-box {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 0 30px;
+            position: relative;
+        }
 
-  
 
-.feedback-box::after {
-  content: '';
-  position: absolute;
-  bottom: -20px; /* Adjust this value to move the tail up or down */
-  left: 50%;
-  transform: translateX(-50%);
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-top: 20px solid #333333; /* This should match the feedback box's background color */
-}
 
-  .feedback-title {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
+            .feedback-box::after {
+                content: '';
+                position: absolute;
+                bottom: -20px; /* Adjust this value to move the tail up or down */
+                left: 50%;
+                transform: translateX(-50%);
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-top: 20px solid #333333; /* This should match the feedback box's background color */
+            }
 
-  .stars {
-    color: #FFD700;
-    margin-bottom: 15px;
-    font-size: 70px; /* Adjust the font size as needed to make the stars bigger */
-}
+        .feedback-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 24px;
+        }
 
-  .feedback-text {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
+        .stars {
+            color: #FFD700;
+            margin-bottom: 15px;
+            font-size: 70px; /* Adjust the font size as needed to make the stars bigger */
+        }
 
-  .feedback-author {
-    font-style: italic;
-    color: #aaaaaa;
-  }
+        .feedback-text {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
 
-  .feedback-navigation {
-    color: #cccccc;
-    font-size: 30px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    user-select: none;
-  }
+        .feedback-author {
+            font-style: italic;
+            color: #aaaaaa;
+        }
 
-  .feedback-navigation.left {
-    left: 10px;
-  }
+        .feedback-navigation {
+            color: #cccccc;
+            font-size: 30px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            user-select: none;
+        }
 
-  .feedback-navigation.right {
-    right: 10px;
-  }
+            .feedback-navigation.left {
+                left: 10px;
+            }
+
+            .feedback-navigation.right {
+                right: 10px;
+            }
+
+
+        /*footer*/
+
+        footer {
+            background-color: #B01F21; /* Dark red color */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Raleway', sans-serif;
+            padding-top: 30px;
+        }
+
+        .footer-content p {
+            margin: 0;
+            padding: 5px;
+        }
+    </style>
+
+
+    <script>
+        /*contact*/
+
+        function initMap() {
+            var location = { lat: 35.9125, lng: 14.5028 }; // Coordinates of St. Julian's
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: location
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
+
+    <style>
+        /*contact*/
+        .contact-wrapper {
+            font-family: 'Raleway', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            justify-content: center;
+        }
+
+        .contact-card {
+            display: flex;
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .contact-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .info-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px; /* Adds space between the sections */
+        }
+
+        .icon {
+            width: 40px; /* Adjust size as needed */
+            margin-right: 20px;
+        }
+
+        .info-text h2 {
+            margin: 0 0 10px 0; /* Added 10px bottom margin */
+            font-size: 20px; /* Increased font size */
+            font-weight: normal;
+        }
+
+        .info-text p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6; /* Adjust line height for better readability */
+        }
+
+        #map {
+            flex-grow: 1;
+            min-width: 300px; /* Adjust as needed */
+            height: 400px; /* Adjust as needed */
+        }
+    </style>
+
+
+    <style>
+        /*        book styles
+*/
+
+        #book-section {
+            display: none;
+        }
+
+        .book-wrapper {
+            font-family: 'Raleway', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .reservation-form {
+            background: #363435;
+            padding: 20px;
+            border-radius: 8px;
+            width: 900px; 
+            color: #f6f6f6;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            width: 48%; /* Adjust width for spacing */
+        }
+
+            .form-group label {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .form-group input[type="text"],
+            .form-group input[type="tel"],
+            .form-group input[type="number"],
+            .form-group input[type="date"],
+            .form-group input[type="time"] {
+                padding: 10px;
+                border-radius: 20px;
+                border: none;
+                box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+                background: #ecf0f1;
+                color: #34495e;
+            }
+
+        .form-button {
+            width: 100%;
+            padding: 15px;
+            border-radius: 20px;
+            border: none;
+            background-color: #B01F21;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 1rem;
+        }
+
+            .form-button:hover {
+                background-color: #363435;
+            }
+    </style>
+
+    
+<style>
+    .notification {
+        color: #ffffff;
+        background-color: #e74c3c;
+        text-align: center;
+        padding: 10px;
+        margin-bottom: 20px;
+        display: none; /* Initially hidden */
+        border-radius: 5px;
+    }
+
+        .notification.success {
+            background-color: #2ecc71;
+        }
 </style>
+
+
+    
+  <script>
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.onresult = function (event) {
+          var speechResult = event.results[0][0].transcript;
+          var activeInput = document.querySelector('.input-active');
+          if (activeInput) {
+              activeInput.value = speechResult;
+          }
+      };
+
+      function startSpeechRecognition(event) {
+          var inputField = event.target.closest('.form-group').querySelector('input');
+          document.querySelectorAll('input').forEach(input => input.classList.remove('input-active'));
+          inputField.classList.add('input-active');
+          recognition.start();
+      }
+
+      document.querySelectorAll('.form-group button').forEach(button => {
+          button.addEventListener('click', startSpeechRecognition);
+      });
+  </script>
+<script>
+    //contact script
+    function validateForm() {
+        var notification = document.getElementById('notification');
+        // Clear previous messages
+        notification.style.display = 'none';
+        notification.innerHTML = '';
+
+        var firstName = document.getElementById('firstName').value;
+        var lastName = document.getElementById('lastName').value;
+        var phone = document.getElementById('phone').value;
+        var persons = document.getElementById('persons').value;
+        var date = document.getElementById('date').value;
+        var time = document.getElementById('time').value;
+
+        if (!firstName || !lastName || !phone || !persons || !date || !time) {
+            displayNotification('All fields must be filled out', false);
+            return false;
+        }
+
+        // Check if phone number is exactly 8 digits
+        if (!/^\d{8}$/.test(phone)) {
+            displayNotification('Phone number must be exactly 8 digits', false);
+            return false;
+        }
+
+        var currentDate = new Date();
+        var reservationDate = new Date(date);
+        currentDate.setHours(0, 0, 0, 0); // Reset time part for accurate comparison
+        if (reservationDate < currentDate) {
+            displayNotification('Reservation date must be in the future', false);
+            return false;
+        }
+
+        var reservationTime = time.split(':');
+        var hours = parseInt(reservationTime[0], 10);
+        var minutes = parseInt(reservationTime[1], 10);
+        // Adjusting condition to check within the 11:30 AM to 11:30 PM range
+        if (hours < 11 || (hours === 11 && minutes < 30) || hours > 23 || (hours === 23 && minutes > 30)) {
+            displayNotification('Reservation time must be between 11:30 AM and 11:30 PM', false);
+            return false;
+        }
+
+        // If all validations passed, display a success message
+        displayNotification('Reservation successful!', true);
+        // Prevent actual form submission for demonstration
+        return false;
+    }
+
+    function displayNotification(message, isSuccess) {
+        var notification = document.getElementById('notification');
+        notification.innerHTML = message;
+        notification.className = isSuccess ? 'notification success' : 'notification';
+        notification.style.display = 'block'; // Show notification
+    }
+
+</script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsCmXBRVldFnmUC-TiRAfHK23TQQv0Zwc&callback=initMap" async defer></script>
 </body>
 </html>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const contactSection = document.getElementById('contact-section');
+        const bookSection = document.getElementById('book-section');
+        const toggleContact = document.getElementById('toggleContact');
+        const toggleBook = document.getElementById('toggleBook');
+
+        toggleContact.addEventListener('click', function () {
+            contactSection.style.display = 'block';
+            bookSection.style.display = 'none';
+        });
+
+        toggleBook.addEventListener('click', function () {
+            contactSection.style.display = 'none';
+            bookSection.style.display = 'block';
+        });
+    });
+</script>
 
 
