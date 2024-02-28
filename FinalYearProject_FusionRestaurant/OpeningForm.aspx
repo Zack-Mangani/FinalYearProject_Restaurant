@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Veranda Fusion Restaurant</title>
-    <link rel="website icon" type="png" href="Assets/Logo/logoRestaurant.png"/>
+    <link rel="website icon" type="png" href="Assets/Logo/logoRestaurant.png" />
     <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet".#/>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css/"/>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css/" />
 
 
     <style>
@@ -37,7 +37,7 @@
             }
 
         #welcome-section {
-            background-image: url('Assets/Images/testimage.jpg');
+            background-image: url('Assets/Images/HomeImage.png');
             background-size: cover;
             background-position: center;
             min-height: 100vh;
@@ -214,9 +214,38 @@
 
         .search-box {
             position: relative;
-            width: fit-content;
-            margin-right: 10px; /* Adjust as necessary */
+            display: flex;
+            align-items: center;
         }
+
+            .search-box .form-control {
+                padding-right: 2.5rem; /* Make room for the microphone button */
+                border-radius: 20px; /* Rounded corners for the input */
+                border: 1px solid #ced4da; /* Default Bootstrap border color */
+            }
+
+            .search-box button {
+                position: absolute;
+                right: 0;
+                border: none;
+                background: none;
+                outline: none;
+                cursor: pointer;
+            }
+
+                /* If you are using FontAwesome, the 'fas' classes will apply the icons. */
+                /* Make sure you include the FontAwesome library in your head tag. */
+
+                /* Optional: hide the outline that appears when the button is clicked */
+                .search-box button:focus {
+                    outline: none;
+                }
+
+                /* Optional: add hover effect for the buttons */
+                .search-box button:hover {
+                    opacity: 0.7;
+                }
+
 
         .form-inline .form-control {
             background-color: transparent;
@@ -462,12 +491,25 @@
         }
 
         .toggle-button {
-            /* Add styling for your toggle buttons */
-        }
+    background: none; /* No background */
+    border: none; /* No border */
+    font-size: 25px; /* Set the font size as needed */
+    color: #363435; /* Reddish color as seen in the image */
+    padding: 10px 20px; /* Adjust padding as needed */
+    font-weight: bold; /* Make the text bold */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+    text-transform: uppercase; /* Uppercase letters */
+}
 
-            .toggle-button.active {
-                /* Add styling for the active toggle button */
-            }
+.toggle-button:hover {
+    color: #B01F21; /* Darker reddish color on hover */
+}
+
+.toggle-button.active {
+    color: #B01F21; /* Darker reddish color for the active button */
+    text-decoration: underline; /* Underline for the active button */
+}
+
 
         .menu-content {
             display: none;
@@ -478,6 +520,46 @@
                 display: block;
             }
     </style>
+    <script>
+        //search
+        function startDictation() {
+            // Check if the browser supports speech recognition
+            if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+                // Create a new instance of the webkitSpeechRecognition
+                var recognition = new webkitSpeechRecognition();
+
+                // Set properties for the recognition
+                recognition.continuous = false; // The default is single-shot recognition
+                recognition.interimResults = false; // We don't need interim results for this use case
+
+                // Define what happens when recognition starts
+                recognition.onstart = function () {
+                    document.getElementById('searchbox1').placeholder = 'Listening...'; // Feedback to show it's listening
+                };
+
+                // Define what happens when the recognition service returns a result
+                recognition.onresult = function (event) {
+                    var transcript = event.results[0][0].transcript; // Get the transcript of the spoken text
+                    document.getElementById('searchbox1').value = transcript; // Set the content of the text input to the transcript
+                    recognition.stop(); // Stop the recognition
+                };
+
+                // Define what happens when recognition ends
+                recognition.onend = function () {
+                    document.getElementById('searchbox1').placeholder = 'Search'; // Reset the placeholder
+                };
+
+                // Start the speech recognition
+                recognition.start();
+            } else {
+                // If the browser doesn't support speech recognition, maybe hide the button or inform the user
+                alert('Sorry, your browser does not support speech recognition.');
+            }
+        }
+
+
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
@@ -499,20 +581,27 @@
                     <a class="nav-link" href="#gallery-section">GALLERY</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact-section">CONTACT</a>
+                    <a class="nav-link" href="#contact-section" id="navContact">CONTACT</a>
                 </li>
                 <li class="nav-item">
-                    <button class="btn btn-outline-success my-2 my-sm-0" href="#book-section" type="submit">BOOK</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0" id="navBook" onclick="location.href='#book-section'" type="submit">BOOK</button>
                 </li>
 
                 <li class="nav-item">
-                    <form class="form-inline my-2 my-lg-0">
+                    <form class="form-inline my-2 my-lg-0" id="searchbox">
                         <div class="search-box">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-
+                            <input class="form-control" type="search" id="searchbox1" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">
+                                <i class="fas fa-search"></i>
+                                <!-- Magnifying glass icon (you can use FontAwesome or similar) -->
+                            </button>
+                            <button class="btn" type="button" onclick="startDictation()">
+                                <i class="fas fa-microphone"></i>
+                                <!-- Microphone icon (also FontAwesome or similar) -->
+                            </button>
                         </div>
                     </form>
+
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#settingsSection">
@@ -571,7 +660,7 @@
                         <a href="https://www.tripadvisor.com/Restaurant_Review-g227101-d25252242-Reviews-Veranda_Fusion_Restaurant-Saint_Julian_s_Island_of_Malta.html" target="_blank"><i class="fab fa-tripadvisor"></i></a>
                     </div>
                     <div class="menu-button">
-                        <a href="#viewMenuSection" class="btn btn-primary" target="_blank">VIEW MENU</a>
+                        <button type="button" class="btn btn-primary mt-3" onclick="location.href='#menu-section'">VIEW MENU</button>
                     </div>
                 </div>
             </div>
@@ -587,15 +676,9 @@
         <div class="container">
 
             <div class="about-icon">
-                <img src="Assets\Images\FoodMenuIcon.png" alt="Food Menu Icon" class="icon">
+                <img id="menuIcon" src="Assets\Images\FoodMenuIcon.png" alt="Food Menu Icon" class="icon"/>
             </div>
 
-
-
-
-            <div class="header">
-                <h1>FOOD MENU</h1>
-            </div>
             <div class="menu-container">
 
                 <!-- Toggle Switch -->
@@ -606,7 +689,6 @@
 
                 <!-- Food Menu Content -->
                 <div id="foodMenuContent" class="menu-content active">
-                    <!-- Neeeeeeeew -->
 
                     <div class="container menu-navigation">
                         <div class="row align-items-center justify-content-between">
@@ -632,7 +714,6 @@
                                         <li onclick="showMenu('maindishes', this)">Pizza</li>
                                         <li onclick="showMenu('maindishes', this)">Risotto</li>
                                         <li onclick="showMenu('deserts', this)">Desserts</li>
-                                        <!-- Add more categories as needed -->
                                     </ul>
                                 </div>
                             </div>
@@ -645,7 +726,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Neeeeeeeew -->
                 </div>
 
                 <div class="menu-items">
@@ -1757,7 +1837,7 @@
             </div>
 
             <div class="header">
-                <h1>OUR CLIENTS FEEDBACK</h1>
+                <h1>TESTIMONIALS</h1>
             </div>
             <div class="feedback-navigation left" onclick="changeFeedback(-1)">&lt;</div>
             <div id="feedback-box" class="feedback-box">
@@ -1796,6 +1876,11 @@
                         src="Assets\Images\gallery.jpg"
                         class="w-100 shadow-1-strong rounded mb-4"
                         alt="Wintry Mountain Landscape" />
+
+                    <img
+                        src="Assets\Images\gallery.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4"
+                        alt="Wintry Mountain Landscape" />
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-lg-0">
@@ -1803,6 +1888,11 @@
                         src="Assets\Images\gallery3.jpg"
                         class="w-100 shadow-1-strong rounded mb-4"
                         alt="Mountains in the Clouds" />
+
+                    <img
+                        src="Assets\Images\gallery4.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4"
+                        alt="Boat on Calm Water" />
 
                     <img
                         src="Assets\Images\gallery4.jpg"
@@ -1820,132 +1910,145 @@
                         src="Assets\Images\gallery6.jpg"
                         class="w-100 shadow-1-strong rounded mb-4"
                         alt="Yosemite National Park" />
+                    <img
+                        src="Assets\Images\gallery6.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4"
+                        alt="Yosemite National Park" />
                 </div>
             </div>
         </div>
         <!-- Gallery -->
 
-        <button id="toggleContact">Contact</button>
-<button id="toggleBook">Book a Table</button>
+
 
         <!-- Contact -->
 
-         <div id="contact-section">
         <div class="container">
-
+            <div class="menu-container">
             <div class="about-icon">
-                <img src="Assets\Images\contactIcon.png" alt="Feedback Icon" class="icon">
+                <img id="ContactIcon" src="Assets\Images\contactIcon.png" alt="Feedback Icon" class="icon"/>
             </div>
+            <div class="menu-toggle">
 
-            <div class="header">
-                <h1>CONTACT</h1>
-            </div>
-        <div class="contact-wrapper">
-            <div class="contact-card">
-                <div class="contact-info">
-                    <div class="info-section">
-                        <img src="Assets\Images\OpenIcon.png" alt="Clock Icon" class="icon">
-                        <div class="info-text">
-                            <h2>Opening Times</h2>
-                            <p>Mon-Sun<br>
-                                11:30am - 11:30pm</p>
-                        </div>
-                    </div>
-                    <div class="info-section">
-                        <img src="Assets\Images\loc-icon.png" alt="Location Icon" class="icon">
-                        <div class="info-text">
-                            <h2>Address</h2>
-                            <p>Saint George's Road<br>
-                                St. Julian's STJ 1304<br>
-                                Malta</p>
-                        </div>
-                    </div>
-                    <div class="info-section">
-                        <img src="Assets\Images\phone-icon.png" alt="Phone Icon" class="icon">
-                        <div class="info-text">
-                            <h2>Telephone Number</h2>
-                            <p>+356 2138 8881</p>
-                        </div>
-                    </div>
-                </div>
-                <div id="map"></div>
+                <button id="toggleContact" class="toggle-button active">Contact</button>
+                <button id="toggleBook" class="toggle-button">Book a Table</button>
             </div>
         </div>
+        <div id="contact-section">
+            <div class="container">
+
+
+                <div class="contact-wrapper">
+                    <div class="contact-card">
+                        <div class="contact-info">
+                            <div class="info-section">
+                                <img src="Assets\Images\OpenIcon.png" alt="Clock Icon" class="icon">
+                                <div class="info-text">
+                                    <h2>Opening Times</h2>
+                                    <p>
+                                        Mon-Sun<br>
+                                        11:30am - 11:30pm
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-section">
+                                <img src="Assets\Images\loc-icon.png" alt="Location Icon" class="icon">
+                                <div class="info-text">
+                                    <h2>Address</h2>
+                                    <p>
+                                        Saint George's Road<br>
+                                        St. Julian's STJ 1304<br>
+                                        Malta
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="info-section">
+                                <img src="Assets\Images\phone-icon.png" alt="Phone Icon" class="icon">
+                                <div class="info-text">
+                                    <h2>Telephone Number</h2>
+                                    <p>+356 2138 8881</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="map"></div>
+                    </div>
+                </div>
             </div>
-             </div>
+        </div>
+
         <!-- Contact -->
 
 
         <!-- Book -->
-        
-         <div id="book-section">
-        <div class="container">
 
-            <div class="about-icon">
-                <img src="Assets\Images\contactIcon.png" alt="Feedback Icon" class="icon">
+        <div id="book-section">
+            <div class="container">
+                <div class="book-wrapper">
+                    <div class="reservation-form">
+                        <h1 class="form-title">BOOK A TABLE</h1>
+                        <form onsubmit="return validateForm()">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">Name</label>
+                                    <div class="form-input-box">
+                                        <input type="text" id="firstName" placeholder="First" />
+                                        <button class="mic-btn" type="button" onclick="startSpeechRecognition('firstName')">
+                                            <img src="Assets/Images/microphone_icon.png" alt="Start Speech" />
+                                        </button>
+                                    </div>
+
+
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Surname</label>
+                                    <div class="form-input-box">
+
+                                        <input type="text" id="lastName" placeholder="Last" />
+                                        <button class="mic-btn" type="button" onclick="startSpeechRecognition('lastName')">
+                                            <img src="Assets\Images\microphone_icon.png" alt="Start Speech" />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <div class="form-input-box">
+                                        <input type="tel" id="phone" placeholder="#### ####" />
+                                        <button class="mic-btn" type="button" onclick="startSpeechRecognition('phone')">
+                                            <img src="Assets\Images\microphone_icon.png" alt="Start Speech" />
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="persons">Number of persons</label>
+                                    <input type="number" id="persons" placeholder="Number of Persons" />
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="date">Reservation Date</label>
+                                    <input type="date" id="date" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="time">Reservation Time</label>
+                                    <input type="time" id="time" />
+                                </div>
+                            </div>
+                            <button type="submit" class="form-button">BOOK IT!</button>
+                        </form>
+                        <div id="notification" class="notification"></div>
+                    </div>
+                </div>
+            </div>
             </div>
 
 
-          <div class="book-wrapper">
-        <div class="reservation-form">
-  <h1 class="form-title">BOOK A TABLE</h1>
-  <form onsubmit="return validateForm()">
-    <div class="form-row">
-      <div class="form-group">
-        <label for="firstName">Name</label>
-        <input type="text" id="firstName" placeholder="First" /> 
-          
-          
-          <button type="button" onclick="startSpeechRecognition('firstName')">
-          <img src="Assets\Images\microphone_icon.png" alt="Start Speech"/>
-        </button>
 
+        </div>
 
-      </div>
-      <div class="form-group">
-        <label for="lastName">Surname</label>
-        <input type="text" id="lastName" placeholder="Last"/>
-        <button type="button" onclick="startSpeechRecognition('lastName')">
-          <img src="Assets\Images\microphone_icon.png" alt="Start Speech"/>
-        </button>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label for="phone">Phone</label>
-        <input type="tel" id="phone" placeholder="#### ####"/>
-        <button type="button" onclick="startSpeechRecognition('phone')">
-          <img src="Assets\Images\microphone_icon.png" alt="Start Speech"/>
-        </button>
-      </div>
-      <div class="form-group">
-        <label for="persons">Number of persons</label>
-        <input type="number" id="persons" placeholder="Number of Persons">
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="form-group">
-        <label for="date">Reservation Date</label>
-        <input type="date" id="date">
-      </div>
-      <div class="form-group">
-        <label for="time">Reservation Time</label>
-        <input type="time" id="time">
-      </div>
-    </div>
-    <button type="submit" class="form-button">BOOK IT!</button>
-  </form>
-            <div id="notification" class="notification"></div>
-            </div>
-              </div>
-            </div>
-             
-
-  
-
-</div>
-
-                <!-- Book -->
+        <!-- Book -->
 
 
 
@@ -2046,6 +2149,8 @@
             var barMenuButton = document.getElementById('barMenuButton');
             var menuCategories = document.getElementById('menu-categories');
             var startersCategory = menuCategories.querySelector('li:first-child');
+            const menuIcon = document.getElementById('menuIcon'); // Get the image element by its ID
+
 
             // Hide all menu items
             document.querySelectorAll('.menu-item').forEach(function (menuItem) {
@@ -2062,6 +2167,8 @@
                 barMenuContent.classList.remove('active');
                 foodMenuButton.classList.add('active');
                 barMenuButton.classList.remove('active');
+                menuIcon.src = 'Assets/Images/FoodMenuIcon.png'; // Change image source for food menu
+
 
                 // Show the starters category by default when switching to the food menu
                 showMenu('starters', document.querySelector('#menu-categories li.active') || document.querySelector('#menu-categories li:first-child'));
@@ -2071,6 +2178,8 @@
                 foodMenuContent.classList.remove('active');
                 barMenuButton.classList.add('active');
                 foodMenuButton.classList.remove('active');
+                menuIcon.src = 'Assets/Images/BarMenuIcon.png'; // Change image source for bar menu
+
 
                 // Ensure the starters carousel and other elements are not displayed
                 document.getElementById('startersCarousel').style.display = 'none';
@@ -2292,6 +2401,56 @@
             margin: 0;
             padding: 5px;
         }
+        /*        form style
+*/
+        label {
+            font-size: 18px; /* This sets the font size to 18 pixels for all labels */
+        }
+
+        .form-input-box {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid #ccc; /* Example border, change as needed */
+            border-radius: 20px; /* Rounded borders as per your image */
+            width: 300px; /* Adjust width as needed */
+        }
+
+            .form-input-box input[type="text"] {
+                flex-grow: 1;
+                border: none;
+                border-radius: 20px; /* Ensure the input has rounded corners */
+                padding: 10px;
+                padding-right: 40px; /* Make padding to accommodate the microphone icon */
+                height: 40px; /* Adjust height as needed */
+            }
+
+            .
+            form-input-box input[type="tel"] {
+                flex-grow: 1;
+                border: none;
+                border-radius: 20px; /* Ensure the input has rounded corners */
+                padding: 10px;
+                padding-right: 40px; /* Make padding to accommodate the microphone icon */
+                height: 40px; /* Adjust height as needed */
+            }
+
+            .form-input-box .mic-btn {
+                margin-left: -40px; /* Negative margin to pull the button into the input */
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+
+                .form-input-box .mic-btn img {
+                    width: 24px; /* Adjust as needed */
+                    height: auto;
+                }
+
+            /* Remove input focus outline */
+            .form-input-box input[type="text"]:focus {
+                outline: none;
+            }
     </style>
 
 
@@ -2385,7 +2544,7 @@
             background: #363435;
             padding: 20px;
             border-radius: 8px;
-            width: 900px; 
+            width: 900px;
             color: #f6f6f6;
         }
 
@@ -2442,106 +2601,106 @@
             }
     </style>
 
-    
-<style>
-    .notification {
-        color: #ffffff;
-        background-color: #e74c3c;
-        text-align: center;
-        padding: 10px;
-        margin-bottom: 20px;
-        display: none; /* Initially hidden */
-        border-radius: 5px;
-    }
 
-        .notification.success {
-            background-color: #2ecc71;
+    <style>
+        .notification {
+            color: #ffffff;
+            background-color: #e74c3c;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            display: none; /* Initially hidden */
+            border-radius: 5px;
         }
-</style>
+
+            .notification.success {
+                background-color: #2ecc71;
+            }
+    </style>
 
 
-    
-  <script>
-      var recognition = new webkitSpeechRecognition();
 
-      recognition.onresult = function (event) {
-          var speechResult = event.results[0][0].transcript;
-          var activeInput = document.querySelector('.input-active');
-          if (activeInput) {
-              activeInput.value = speechResult;
-          }
-      };
+    <script>
+        var recognition = new webkitSpeechRecognition();
 
-      function startSpeechRecognition(event) {
-          var inputField = event.target.closest('.form-group').querySelector('input');
-          document.querySelectorAll('input').forEach(input => input.classList.remove('input-active'));
-          inputField.classList.add('input-active');
-          recognition.start();
-      }
+        recognition.onresult = function (event) {
+            var speechResult = event.results[0][0].transcript;
+            var activeInput = document.querySelector('.input-active');
+            if (activeInput) {
+                activeInput.value = speechResult;
+            }
+        };
 
-      document.querySelectorAll('.form-group button').forEach(button => {
-          button.addEventListener('click', startSpeechRecognition);
-      });
-  </script>
-<script>
-    //contact script
-    function validateForm() {
-        var notification = document.getElementById('notification');
-        // Clear previous messages
-        notification.style.display = 'none';
-        notification.innerHTML = '';
+        function startSpeechRecognition(event) {
+            var inputField = event.target.closest('.form-group').querySelector('input');
+            document.querySelectorAll('input').forEach(input => input.classList.remove('input-active'));
+            inputField.classList.add('input-active');
+            recognition.start();
+        }
 
-        var firstName = document.getElementById('firstName').value;
-        var lastName = document.getElementById('lastName').value;
-        var phone = document.getElementById('phone').value;
-        var persons = document.getElementById('persons').value;
-        var date = document.getElementById('date').value;
-        var time = document.getElementById('time').value;
+        document.querySelectorAll('.form-group button').forEach(button => {
+            button.addEventListener('click', startSpeechRecognition);
+        });
+    </script>
+    <script>
+        //contact script
+        function validateForm() {
+            var notification = document.getElementById('notification');
+            // Clear previous messages
+            notification.style.display = 'none';
+            notification.innerHTML = '';
 
-        if (!firstName || !lastName || !phone || !persons || !date || !time) {
-            displayNotification('All fields must be filled out', false);
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var phone = document.getElementById('phone').value;
+            var persons = document.getElementById('persons').value;
+            var date = document.getElementById('date').value;
+            var time = document.getElementById('time').value;
+
+            if (!firstName || !lastName || !phone || !persons || !date || !time) {
+                displayNotification('All fields must be filled out', false);
+                return false;
+            }
+
+            // Check if phone number is exactly 8 digits
+            if (!/^\d{8}$/.test(phone)) {
+                displayNotification('Phone number must be exactly 8 digits', false);
+                return false;
+            }
+
+            var currentDate = new Date();
+            var reservationDate = new Date(date);
+            currentDate.setHours(0, 0, 0, 0); // Reset time part for accurate comparison
+            if (reservationDate < currentDate) {
+                displayNotification('Reservation date must be in the future', false);
+                return false;
+            }
+
+            var reservationTime = time.split(':');
+            var hours = parseInt(reservationTime[0], 10);
+            var minutes = parseInt(reservationTime[1], 10);
+            // Adjusting condition to check within the 11:30 AM to 11:30 PM range
+            if (hours < 11 || (hours === 11 && minutes < 30) || hours > 23 || (hours === 23 && minutes > 30)) {
+                displayNotification('Reservation time must be between 11:30 AM and 11:30 PM', false);
+                return false;
+            }
+
+            // If all validations passed, display a success message
+            displayNotification('Reservation successful!', true);
+            // Prevent actual form submission for demonstration
             return false;
         }
 
-        // Check if phone number is exactly 8 digits
-        if (!/^\d{8}$/.test(phone)) {
-            displayNotification('Phone number must be exactly 8 digits', false);
-            return false;
+        function displayNotification(message, isSuccess) {
+            var notification = document.getElementById('notification');
+            notification.innerHTML = message;
+            notification.className = isSuccess ? 'notification success' : 'notification';
+            notification.style.display = 'block'; // Show notification
         }
 
-        var currentDate = new Date();
-        var reservationDate = new Date(date);
-        currentDate.setHours(0, 0, 0, 0); // Reset time part for accurate comparison
-        if (reservationDate < currentDate) {
-            displayNotification('Reservation date must be in the future', false);
-            return false;
-        }
+    </script>
 
-        var reservationTime = time.split(':');
-        var hours = parseInt(reservationTime[0], 10);
-        var minutes = parseInt(reservationTime[1], 10);
-        // Adjusting condition to check within the 11:30 AM to 11:30 PM range
-        if (hours < 11 || (hours === 11 && minutes < 30) || hours > 23 || (hours === 23 && minutes > 30)) {
-            displayNotification('Reservation time must be between 11:30 AM and 11:30 PM', false);
-            return false;
-        }
-
-        // If all validations passed, display a success message
-        displayNotification('Reservation successful!', true);
-        // Prevent actual form submission for demonstration
-        return false;
-    }
-
-    function displayNotification(message, isSuccess) {
-        var notification = document.getElementById('notification');
-        notification.innerHTML = message;
-        notification.className = isSuccess ? 'notification success' : 'notification';
-        notification.style.display = 'block'; // Show notification
-    }
-
-</script>
-
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsCmXBRVldFnmUC-TiRAfHK23TQQv0Zwc&callback=initMap" async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsCmXBRVldFnmUC-TiRAfHK23TQQv0Zwc&callback=initMap" async defer></script>
 </body>
 </html>
 
@@ -2551,16 +2710,55 @@
         const bookSection = document.getElementById('book-section');
         const toggleContact = document.getElementById('toggleContact');
         const toggleBook = document.getElementById('toggleBook');
+        const ContactIcon = document.getElementById('ContactIcon');
+
+
+        function setActiveButton(button) {
+            toggleContact.classList.remove('active');
+            toggleBook.classList.remove('active');
+            button.classList.add('active');
+        }
+
 
         toggleContact.addEventListener('click', function () {
             contactSection.style.display = 'block';
             bookSection.style.display = 'none';
+            setActiveButton(toggleContact); 
+            ContactIcon.src = 'Assets/Images/contactIcon.png'; // Change image source for food menu
+            
+
         });
 
         toggleBook.addEventListener('click', function () {
             contactSection.style.display = 'none';
             bookSection.style.display = 'block';
+            setActiveButton(toggleBook); // Set active styling on contact button
+            ContactIcon.src = 'Assets/Images/bookIcon.png'; // Change image source for food menu
+
+
+
         });
+    });
+</script>
+<script>// Function to simulate button click and navigate to section of navbr
+    function navigateAndToggle(buttonId, sectionId) {
+        // Simulate button click
+        document.getElementById(buttonId).click();
+
+        // Scroll to the section smoothly
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Add click event listener to the CONTACT navigation link
+    document.getElementById('navContact').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+        navigateAndToggle('toggleContact', 'contact-section');
+    });
+
+    // Add click event listener to the BOOK navigation button
+    document.getElementById('navBook').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default button behavior
+        navigateAndToggle('toggleBook', 'book-section');
     });
 </script>
 

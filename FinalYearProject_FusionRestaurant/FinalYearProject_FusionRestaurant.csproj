@@ -104,7 +104,10 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Assets\Images\about-us.png" />
+    <Content Include="Assets\Images\BarMenuIcon.png" />
     <Content Include="Assets\Images\contactIcon.png" />
+    <Content Include="Assets\Images\HomeImage.png" />
+    <Content Include="Assets\Images\bookIcon.png" />
     <Content Include="Assets\Images\loc-icon.png" />
     <Content Include="Assets\Images\Bruschetta.jpg" />
     <Content Include="Assets\Images\BruschettaVeranda.jpg" />
