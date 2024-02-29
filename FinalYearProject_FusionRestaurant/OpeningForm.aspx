@@ -142,23 +142,23 @@
         }
 
             .social-media a {
-                display: inline-flex; /* Use flexbox for centering */
-                align-items: center; /* Center align items vertically */
-                justify-content: center; /* Center align items horizontally */
-                margin-right: 10px; /* Adjust spacing as needed */
+                display: inline-flex; 
+                align-items: center; 
+                justify-content: center; 
+                margin-right: 10px; 
                 text-decoration: none;
-                font-size: 45px; /* Adjust the size of the icon */
-                color: #f6f6f6; /* Icon color */
-                border: 2px solid #f6f6f6; /* Adjust border size and color as needed */
-                border-radius: 40%; /* Circular border */
-                width: 60px; /* Adjust width for bigger size */
-                height: 60px; /* Adjust height for bigger size */
-                background-color: #363435; /* Grey background */
+                font-size: 45px; 
+                color: #f6f6f6; 
+                border: 2px solid #f6f6f6; 
+                border-radius: 40%; 
+                width: 60px; 
+                height: 60px; 
+                background-color: #363435; 
                 transition: all 0.3s ease;
             }
 
                 .social-media a:hover {
-                    background-color: #B01F21; /* Slightly lighter grey on hover */
+                    background-color: #B01F21; 
                     border-color: #B01F21;
                 }
 
@@ -604,7 +604,7 @@
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#settingsSection">
+                    <a class="nav-link" data-toggle="modal" data-target="#preferencesModal">
                         <i class="fas fa-cog"></i>SETTINGS
                     </a>
                 </li>
@@ -617,8 +617,12 @@
         <h1>Veranda Fusion Restaurant</h1>
         <h2>Pizza, Pasta & Grill</h2>
         <button type="button" class="btn btn-primary mt-3" onclick="location.href='#aboutUsSection'">ABOUT US</button>
-    </div>
+<!-- Button trigger modal -->
+        </div>
 
+
+
+    
 
 
 
@@ -880,7 +884,7 @@
                                 <div class="carousel-item active">
                                     <div class="d-flex justify-content-around">
                                         <div class="menu-item salad">
-                                            <img src="Assets\Images\salad1.jpg" alt="Misto mare salad VERANDA" class="menu-img" data-toggle="modal" data-target="#imageModal">>
+                                            <img src="Assets\Images\salad1.jpg" alt="Misto mare salad VERANDA" class="menu-img" data-toggle="modal" data-target="#imageModal">
                                             <h3>Misto mare salad "VERANDA"</h3>
                                             <p>with seafood calamari, octopus, shrimps, on a fresh salad mix, avocado, cherry tomatoes, olives slices, mediterranean sauce</p>
                                             <p class="price">€16.78</p>
@@ -1622,29 +1626,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-                            <!-- Beer Items -->
-                            <div class="menu-item beer">
-                                <img src="lager_beer.jpg" alt="Lager Beer">
-                                <h3>Lager Beer</h3>
-                                <p>Smooth and crisp with a clean finish</p>
-                                <p class="price">$6.00</p>
-                            </div>
-
-                            <div class="menu-item beer">
-                                <img src="ipa_beer.jpg" alt="IPA Beer">
-                                <h3>IPA Beer</h3>
-                                <p>Bold and hoppy with a citrus kick</p>
-                                <p class="price">$7.00</p>
-                            </div>
+                           
                     </section>
                 </div>
 
@@ -1833,7 +1815,7 @@
     <div class="feedback-wrapper">
         <div class="feedback-container">
             <div class="about-icon">
-                <img src="Assets\Images\FeedbackIcon.png" alt="Feedback Icon" class="icon">
+                <img src="Assets\Images\FeedbackIcon.png" alt="Feedback Icon" class="icon"/>
             </div>
 
             <div class="header">
@@ -1878,7 +1860,7 @@
                         alt="Wintry Mountain Landscape" />
 
                     <img
-                        src="Assets\Images\gallery.jpg"
+                        src="Assets\Images\gallery11.jpg"
                         class="w-100 shadow-1-strong rounded mb-4"
                         alt="Wintry Mountain Landscape" />
                 </div>
@@ -1890,7 +1872,7 @@
                         alt="Mountains in the Clouds" />
 
                     <img
-                        src="Assets\Images\gallery4.jpg"
+                        src="Assets\Images\beef.jpg"
                         class="w-100 shadow-1-strong rounded mb-4"
                         alt="Boat on Calm Water" />
 
@@ -1911,7 +1893,7 @@
                         class="w-100 shadow-1-strong rounded mb-4"
                         alt="Yosemite National Park" />
                     <img
-                        src="Assets\Images\gallery6.jpg"
+                        src="Assets\Images\gallery12.jpg"
                         class="w-100 shadow-1-strong rounded mb-4"
                         alt="Yosemite National Park" />
                 </div>
@@ -2064,12 +2046,154 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <img src="" id="imagePreview" alt="Menu Item" style="width: 100%;">
+                        <img src="" id="imagePreview" alt="Menu Item" style="width: 100%;"/>
                     </div>
                 </div>
             </div>
         </div>
 
+
+        <!-- Modal -->
+<div class="modal fade" id="preferencesModal" tabindex="-1" role="dialog" aria-labelledby="preferencesModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="preferencesModalLabel">Manage Preferences</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Font Size Slider -->
+        <label for="fontSizeSlider" class="form-label">Font Size</label>
+        <p>Adjust the text size of the platform</p>
+        <input type="range" class="form-range" id="fontSizeSlider" min="0" max="100" step="1">
+
+        <!-- Voice Over Toggle -->
+        <div class="form-check form-switch my-3">
+          <input class="form-check-input" type="checkbox" id="voiceOverToggle">
+          <label class="form-check-label" for="voiceOverToggle">Voice Over</label>
+            <p>Toggle spoken feedback for screen elements</p>
+        </div>
+
+        <!-- Interface Theme Selection -->
+        <label for="themeSelection" class="form-label">Interface Theme</label>
+          <p>Customize your application theme</p>
+        <div id="themeSelection" class="my-3">
+          <button type="button" class="btn">System</button>
+          <button type="button" class="btn">Light</button>
+          <button type="button" class="btn">Dark</button>
+        </div>
+
+        <!-- Brightness Slider -->
+        <label for="brightnessSlider" class="form-label">Brightness</label>
+         <p>Adjust the brightness of the application theme</p>
+        <input type="range" class="form-range" id="brightnessSlider" min="0" max="100" step="1">
+
+        <!-- Contrast Slider -->
+        <label for="contrastSlider" class="form-label">Contrast</label>
+          <p>Adjust the contrast of the application theme</p>
+        <input type="range" class="form-range" id="contrastSlider" min="0" max="100" step="1">
+      </div>
+      <div class="modal-footer">
+            <button type="button" class="btn btn-outline-light" id="resetPreferences">Reset to defaults</button>
+
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Save Preferences</button>
+      </div>
+    </div>
+  </div>
+</div>
+        <style>/* Modal content general styling */
+/* Reset button styling */
+#resetPreferences {
+    color: #aaa; /* Light text for the reset link */
+    border: 1px solid #aaa; /* Light border for the reset button */
+    background-color: transparent; /* Transparent background for the reset button */
+    margin-top: 10px; /* Spacing from the content above */
+}
+
+#resetPreferences:hover {
+    color: #fff; /* White text on hover for better contrast */
+    border-color: #fff; /* White border on hover for better contrast */
+    background-color: #555; /* Slightly darker background on hover */
+    text-decoration: none; /* No underline on hover */
+}
+
+.modal-content {
+    background-color: #333; /* Dark background */
+    color: white; /* Light text */
+    border-radius: 15px; /* Rounded corners */
+}
+
+/* Modal header styling */
+.modal-header {
+    border-bottom: 1px solid #444; /* Slightly lighter border for separation */
+}
+
+.modal-title {
+    color: #aaa; /* Lighter text for the title */
+}
+
+/* Modal body styling */
+.modal-body {
+    font-size: 1rem; /* Standard font size */
+}
+
+.modal-body p {
+    color: #bbb; /* Lighter text for descriptions */
+}
+
+/* Slider styling */
+.form-range {
+    background-color: #555; /* Darker background for sliders */
+    border-radius: 10px; /* Rounded corners for sliders */
+}
+
+
+
+
+/* Toggle switch */
+.form-check-input:checked {
+    background-color: #2196f3; /* Blue background for checked state */
+    border-color: #2196f3; /* Blue border for checked state */
+}
+
+/* Modal footer styling */
+.modal-footer {
+    border-top: 1px solid #444; /* Slightly lighter border for separation */
+    padding: 1rem; /* Padding around the buttons */
+}
+
+/* Reset button styling */
+.btn-secondary {
+    background-color: #555; /* Darker background for the secondary button */
+}
+
+
+/* Reset link styling */
+#resetPreferences {
+    color: #aaa; /* Light text for the reset link */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Pointer cursor to indicate clickable */
+}
+
+#resetPreferences:hover {
+    color: #ddd; /* Lighter text on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Ensure buttons fit well */
+.btn {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Add spacing and alignment for theme buttons */
+#themeSelection .btn {
+    width: 80px; /* Fixed width for a uniform look */
+    margin: 0 5px; /* Margin for spacing */
+    text-align: center; /* Center text */
+}
+</style>
         <footer>
             <div class="footer-content">
                 <p>© COPYRIGHT 2023 VERANDA FUSION RESTAURANT</p>

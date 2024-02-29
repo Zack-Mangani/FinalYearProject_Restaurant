@@ -105,9 +105,14 @@
     <Content Include="About.aspx" />
     <Content Include="Assets\Images\about-us.png" />
     <Content Include="Assets\Images\BarMenuIcon.png" />
+    <Content Include="Assets\Images\beef.jpg" />
     <Content Include="Assets\Images\contactIcon.png" />
+    <Content Include="Assets\Images\gallery10.jpg" />
+    <Content Include="Assets\Images\gallery11.jpg" />
+    <Content Include="Assets\Images\gallery12.jpg" />
     <Content Include="Assets\Images\HomeImage.png" />
     <Content Include="Assets\Images\bookIcon.png" />
+    <Content Include="Assets\Images\FeedbackIcon.png" />
     <Content Include="Assets\Images\loc-icon.png" />
     <Content Include="Assets\Images\Bruschetta.jpg" />
     <Content Include="Assets\Images\BruschettaVeranda.jpg" />
@@ -140,7 +145,6 @@
     <Content Include="Assets\Images\gallery9.jpg" />
     <Content Include="Assets\Images\glutenFree1.jpg" />
     <Content Include="Assets\Images\glutenFree2.jpg" />
-    <Content Include="Assets\Images\FeedbackIcon.png" />
     <Content Include="Assets\Images\galleryicon.png" />
     <Content Include="Assets\Images\KingPrawns.jpeg" />
     <Content Include="Assets\Images\main1.jpeg" />
