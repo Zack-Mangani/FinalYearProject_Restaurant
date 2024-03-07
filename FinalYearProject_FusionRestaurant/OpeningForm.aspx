@@ -2980,7 +2980,7 @@ body.dark {
 
     <footer>
         <div class="footer-content">
-            <p>© COPYRIGHT 2023 VERANDA FUSION RESTAURANT</p>
+            <p>© COPYRIGHT 2023  FUSION RESTAURANT</p>
             <p>WEB DESIGN BY ZACK MANGANI</p>
         </div>
     </footer>
