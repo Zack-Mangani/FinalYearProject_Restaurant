@@ -104,15 +104,22 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="Assets\Images\about-us.png" />
+    <Content Include="Assets\Images\about-usW.png" />
     <Content Include="Assets\Images\BarMenuIcon.png" />
+    <Content Include="Assets\Images\BarMenuIconDark.png" />
     <Content Include="Assets\Images\beef.jpg" />
     <Content Include="Assets\Images\contactIcon.png" />
+    <Content Include="Assets\Images\DarkMenuIcon.png" />
+    <Content Include="Assets\Images\FeedbackIconW.png" />
     <Content Include="Assets\Images\gallery10.jpg" />
     <Content Include="Assets\Images\gallery11.jpg" />
     <Content Include="Assets\Images\gallery12.jpg" />
+    <Content Include="Assets\Images\gallery15.jpg" />
+    <Content Include="Assets\Images\galleryiconW.png" />
     <Content Include="Assets\Images\HomeImage.png" />
     <Content Include="Assets\Images\bookIcon.png" />
     <Content Include="Assets\Images\FeedbackIcon.png" />
+    <Content Include="Assets\Images\leftArrowW.png" />
     <Content Include="Assets\Images\loc-icon.png" />
     <Content Include="Assets\Images\Bruschetta.jpg" />
     <Content Include="Assets\Images\BruschettaVeranda.jpg" />
@@ -179,6 +186,7 @@
     <Content Include="Assets\Images\platters4.jpeg" />
     <Content Include="Assets\Images\rightArrow.png" />
     <Content Include="Assets\Images\leftArrow.png" />
+    <Content Include="Assets\Images\rightArrowW.png" />
     <Content Include="Assets\Images\salad1.jpg" />
     <Content Include="Assets\Images\salad2.jpeg" />
     <Content Include="Assets\Images\salad3.jpg" />
@@ -221,6 +229,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="Assets\Images\gallery14.jpg" />
     <Content Include="Global.asax" />
     <Content Include="OpeningForm.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />

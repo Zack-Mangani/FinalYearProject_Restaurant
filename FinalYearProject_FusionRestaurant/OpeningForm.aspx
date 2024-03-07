@@ -14,10 +14,18 @@
 
 
     <style>
+        :root {
+            --base-font-size: 20px; /* Default base font size */
+             --background-color: #f6f6f6;
+    --text-color: #363435;
+        }
+
         body, html {
             font-family: 'Raleway', sans-serif;
-            background-color: #F6F6F6;
+           background-color: var(--background-color);
+           color: var(--text-color);
         }
+
 
         .img-fluid {
             max-height: 100px;
@@ -30,6 +38,7 @@
 
         .navbar-brand, .nav-link {
             color: #F6F6F6 !important;
+            font-size: var(--base-font-size);
         }
 
             .nav-link:hover {
@@ -52,7 +61,7 @@
 
 
             #welcome-section h1, #welcome-section h2 {
-                -webkit-text-stroke: 1px #F6F6F6;
+                -webkit-text-stroke: 0px #F6F6F6;
                 text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
             }
 
@@ -77,7 +86,6 @@
             }
         }
 
-        /* Search form styling */
         .form-inline .form-control {
             background-color: transparent;
             border: 1px solid #F6F6F6;
@@ -97,7 +105,7 @@
 
         .navbar .btn-outline-success {
             border: 1px solid #F6F6F6;
-            margin-right: 10px; /* Adjust the value as needed */
+            margin-right: 10px;
             color: #F6F6F6;
             background-color: transparent;
         }
@@ -112,22 +120,17 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
-            min-height: 100vh;
-            background-color: #f6f6f6; /* Your desired background color */
+            background-color: var(--background-color); /* Your desired background color */
         }
 
-        #aboutUsSection {
-            min-height: 100vh;
-            /* Other styles */
-        }
 
         .about-content {
             max-width: 50%;
         }
 
         .about-icon {
-            font-size: 3rem; /* Adjust size as needed */
-            color: #363435; /* The color you want for your icon */
+            font-size: 3rem; 
+            color: var(--text-color);
             margin-bottom: 15px;
             display: block;
             margin-left: auto;
@@ -142,23 +145,23 @@
         }
 
             .social-media a {
-                display: inline-flex; 
-                align-items: center; 
-                justify-content: center; 
-                margin-right: 10px; 
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 10px;
                 text-decoration: none;
-                font-size: 45px; 
-                color: #f6f6f6; 
-                border: 2px solid #f6f6f6; 
-                border-radius: 40%; 
-                width: 60px; 
-                height: 60px; 
-                background-color: #363435; 
+                font-size: 45px;
+                color: #f6f6f6;
+                border: 2px solid #f6f6f6;
+                border-radius: 40%;
+                width: 60px;
+                height: 60px;
+                background-color: #363435;
                 transition: all 0.3s ease;
             }
 
                 .social-media a:hover {
-                    background-color: #B01F21; 
+                    background-color: #B01F21;
                     border-color: #B01F21;
                 }
 
@@ -168,11 +171,15 @@
             max-width: 50%;
         }
 
-            .about-images img {
-                max-width: 100%;
-                height: auto;
-                display: block;
-            }
+        p {
+            font-size: var(--base-font-size);
+        }
+
+        .about-images img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
 
         .btn-primary {
             background-color: #B01F21; /* Change to match your design */
@@ -189,7 +196,7 @@
             }
 
         .fab {
-            font-size: 30px; /* Change as per your design */
+            font-size: var(--base-font-size); /* Change as per your design */
         }
 
         @media (max-width: 768px) {
@@ -233,9 +240,6 @@
                 cursor: pointer;
             }
 
-                /* If you are using FontAwesome, the 'fas' classes will apply the icons. */
-                /* Make sure you include the FontAwesome library in your head tag. */
-
                 /* Optional: hide the outline that appears when the button is clicked */
                 .search-box button:focus {
                     outline: none;
@@ -277,6 +281,14 @@
             padding: 5px;
         }
 
+        h1 {
+            font-size: calc(var(--base-font-size) + 10px);
+        }
+
+        .contact-wrapper {
+            padding-bottom: 20px;
+        }
+
         .content {
             display: flex;
             justify-content: space-between;
@@ -306,41 +318,40 @@
         }
 
         .menu-section {
-            text-align: center; /* Centers the menu title */
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            min-height: 100vh;
-            background-color: #f6f6f6; /* Your desired background color */
+            background-color: var(--background-color); 
         }
 
 
-        /* Styles for each individual category item */
         #bar-menu-categories li, #menu-categories li {
-            background-color: #333;
+            background-color: #363435;
             border: none;
-            color: white;
+            color: #F6F6F6;
             text-align: center;
             padding: 10px 20px;
             text-decoration: none;
-            font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s;
             border-radius: 20px;
-            display: inline-block; /* Use inline-block for horizontal layout */
-            margin: 0 10px; /* Adjust as needed for spacing between items */
-            flex: 0 0 auto; /* Do not grow or shrink */
-            min-width: calc(25% - 20px); /* Adjust the width to fit 4 items, subtract the total margin space */
+            display: inline-block; 
+            margin: 0 10px; 
+            flex: 0 0 auto; 
+            min-width: calc(25% - 20px); 
+            font-size: calc(var(--base-font-size) + 3px);
+            border-style: solid;
+            border-color: #f6f6f6;
         }
 
 
             #menu-categories li:hover, #menu-categories li.active {
-                background-color: #B01F21; /* blue background for active/hover state */
+                background-color: #B01F21;
             }
 
             #bar-menu-categories li:hover, #bar-menu-categories li.active {
-                background-color: #B01F21; /* blue background for active/hover state */
+                background-color: #B01F21;
             }
 
         .menu-item {
@@ -350,8 +361,8 @@
             margin: 10px;
             padding: 10px;
             width: 250px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Add shadow for depth */
-            background-color: #363435; /* Ensure background is white */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #363435;
         }
 
             .menu-item img {
@@ -362,10 +373,14 @@
             .menu-item h3 {
                 margin: 0;
                 color: #f3f3f3;
+                padding-top: 12px;
+                font-size: calc(var(--base-font-size) + 5px);
             }
 
             .menu-item p {
                 color: #f3f3f3;
+                padding-top: 5px;
+                font-size: var(--base-font-size);
             }
 
             .menu-item .price {
@@ -375,21 +390,21 @@
 
         .menu-container {
             display: flex;
-            flex-direction: column; /* Stacks items vertically */
-            align-items: center; /* Centers items horizontally */
+            flex-direction: column; 
+            align-items: center; 
             justify-content: center;
         }
 
         .bar-menu-categories, .menu-categories {
             order: 1;
-            flex: 1; /* Adjust as needed */
-            padding-right: 20px; /* Spacing between categories and items */
+            flex: 1; 
+            padding-right: 25px; 
         }
 
         .menu-items {
-            order: 2; /* Ensures that items are below the categories */
+            order: 2; 
             width: 100%;
-            flex: 3; /* Adjust as needed */
+            flex: 3; 
         }
 
         #bar-menu-categories, #menu-categories {
@@ -403,16 +418,16 @@
             flex-wrap: nowrap;
         }
 
-        /* Custom styles for the carousel control (arrows) */
+       
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
-            height: 50px; /* increase the size of the icons */
-            width: 50px; /* increase the size of the icons */
+            height: 50px; 
+            width: 50px; 
             outline: black;
             background-size: 50%, 50%;
             border-radius: 50%;
-            border: 1px solid black; /* add border color */
-            background-color: black; /* change background color */
+            border: 1px solid black; 
+            background-color: black; 
         }
 
         .menu-navigation {
@@ -479,36 +494,32 @@
         }
 
         .about-icon .icon {
-            width: 80px; /* Adjust width as needed */
-            height: auto; /* This will maintain the aspect ratio of the image */
-            display: block; /* This can center the image in the div if needed */
-            margin: 0 auto; /* This centers the image horizontally within the div */
+            width: 80px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
         }
 
-
-        .menu-toggle {
-            /* Add styling for your toggle switch container */
-        }
 
         .toggle-button {
-    background: none; /* No background */
-    border: none; /* No border */
-    font-size: 25px; /* Set the font size as needed */
-    color: #363435; /* Reddish color as seen in the image */
-    padding: 10px 20px; /* Adjust padding as needed */
-    font-weight: bold; /* Make the text bold */
-    transition: color 0.3s ease; /* Smooth transition for color change */
-    text-transform: uppercase; /* Uppercase letters */
-}
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: var(--text-color);
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            text-transform: uppercase;
+        }
 
-.toggle-button:hover {
-    color: #B01F21; /* Darker reddish color on hover */
-}
+            .toggle-button:hover {
+                color: #B01F21;
+            }
 
-.toggle-button.active {
-    color: #B01F21; /* Darker reddish color for the active button */
-    text-decoration: underline; /* Underline for the active button */
-}
+            .toggle-button.active {
+                color: #B01F21;
+                text-decoration: underline;
+            }
 
 
         .menu-content {
@@ -519,7 +530,626 @@
             .menu-content.active {
                 display: block;
             }
+
+        img.img-rotate.img-1 {
+            margin-top: 12px;
+            transform: rotate(-5.96deg);
+            width: 25vw;
+            height: auto;
+        }
+
+        img.img-rotate.img-2 {
+            margin-top: 245px;
+            margin-left: -303px;
+            transform: rotate(4.41deg);
+            width: 25vw;
+            height: auto;
+        }
+
+        img.img-rotate.img-3 {
+            margin-top: 195px;
+            transform: rotate(-16.28deg);
+            width: 25vw;
+            height: auto;
+            margin-left: 25px;
+        }
+
+        h5 {
+            font-size: calc(var(--base-font-size) + 10px);
+        }
+
+        .modal-body p {
+            color: #f6f6f6;
+        }
+
+
+
+        .close {
+            float: right;
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1;
+            color: #f6f6f6;
+            text-shadow: 0 1px 0 #fff;
+            opacity: .5;
+        }
+
+
+        /* Modal content general styling */
+        /* Reset button styling */
+        #resetPreferences {
+            color: #aaa; /* Light text for the reset link */
+            border: 1px solid #aaa; /* Light border for the reset button */
+            background-color: transparent; /* Transparent background for the reset button */
+            margin-top: 10px; /* Spacing from the content above */
+        }
+
+            #resetPreferences:hover {
+                color: #fff; /* White text on hover for better contrast */
+                border-color: #fff; /* White border on hover for better contrast */
+                background-color: #555; /* Slightly darker background on hover */
+                text-decoration: none; /* No underline on hover */
+            }
+
+        .modal-content {
+            background-color: #363435;
+            color: #f6f6f6; 
+            border-radius: 15px; 
+        }
+
+        /* Modal header styling */
+        .modal-header {
+            border-bottom: 1px solid #444; 
+        }
+
+        .modal-title {
+            color: #f6f6f6;
+            font-size: calc(var(--base-font-size) + 15px);
+            font-weight: bold;
+        }
+
+        /* Modal body styling */
+        .modal-body {
+            font-size: 1rem; /* Standard font size */
+        }
+
+            .modal-body p {
+                color: #bbb; /* Lighter text for descriptions */
+            }
+
+
+
+
+
+        /* Toggle switch */
+        .form-check-input:checked {
+            background-color: #2196f3; /* Blue background for checked state */
+            border-color: #2196f3; /* Blue border for checked state */
+        }
+
+        /* Modal footer styling */
+        .modal-footer {
+            border-top: 1px solid #444; /* Slightly lighter border for separation */
+            padding: 1rem; /* Padding around the buttons */
+        }
+
+        /* Reset button styling */
+        .btn-secondary {
+            background-color: #555; /* Darker background for the secondary button */
+        }
+
+
+        /* Reset link styling */
+        #resetPreferences {
+            color: #aaa; /* Light text for the reset link */
+            text-decoration: none; /* No underline */
+            cursor: pointer; /* Pointer cursor to indicate clickable */
+        }
+
+            #resetPreferences:hover {
+                color: #ddd; /* Lighter text on hover */
+                text-decoration: underline; /* Underline on hover */
+            }
+
+        /* Ensure buttons fit well */
+        .btn {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Add spacing and alignment for theme buttons */
+        #themeSelection .btn {
+            width: 80px; /* Fixed width for a uniform look */
+            margin: 0 5px; /* Margin for spacing */
+            text-align: center; 
+        }
+
+
+        /* Base Styles */
+        .feedback-wrapper {
+            font-family: 'Raleway', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--background-color);;
+            padding: 20px;
+        }
+
+        .feedback-container {
+            width: 100%; /* Start with 100% width for small devices */
+            max-width: 70%; /* Max width to prevent it from becoming too wide on larger screens */
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            box-sizing: border-box; /* Ensure padding doesn't affect the overall width */
+        }
+
+        .feedback-header,
+        .feedback-title,
+        .feedback-text,
+        .feedback-author {
+            margin: 0 auto; /* Centering text elements */
+            padding: 0 15px; /* Adding padding for small screens */
+        }
+
+        .feedback-header {
+            font-size: 1.5rem; /* Responsive font size */
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .feedback-box {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 0 auto; /* Center the box and remove side margins */
+            width: 75%; /* Adjust width to accommodate padding */
+            position: relative;
+            border-style: solid;
+            border-color: #f6f6f6;
+        }
+
+            .feedback-box::after {
+                content: '';
+                position: absolute;
+                bottom: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-top: 20px solid var(--text-color);
+            }
+
+        .feedback-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: calc(var(--base-font-size) + 5px);
+            font-family: 'Raleway', sans-serif;
+            text-align: left;
+        }
+
+        .stars {
+            color: #FFD700;
+            margin-bottom: 15px;
+            font-size: 4.375rem; /* Responsive font size */
+        }
+
+        .feedback-text {
+            font-size: var(--base-font-size);
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .feedback-author {
+            font-style: italic;
+            color: #aaaaaa;
+            font-size: calc(var(--base-font-size) + 5px);
+            text-align: left;
+        }
+
+        .feedback-navigation {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            user-select: none;
+        }
+
+            .feedback-navigation.left {
+                left: 10px;
+            }
+
+            .feedback-navigation.right {
+                right: 10px;
+            }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .feedback-container {
+                max-width: 90%; /* Allow more width on smaller screens */
+            }
+
+            .feedback-header, .feedback-title, .feedback-text, .feedback-author {
+                font-size: smaller; /* Adjust font size for smaller screens */
+            }
+
+            .stars {
+                font-size: 3rem; /* Smaller stars for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .feedback-navigation {
+                display: none; /* Hide navigation on very small screens */
+            }
+        }
+
+
+        /*footer*/
+
+        footer {
+            background-color: #B01F21; /* Dark red color */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-family: 'Raleway', sans-serif;
+            padding-top: 20px;
+        }
+
+        .footer-content p {
+            margin: 0;
+            padding: 5px;
+        }
+        /*        form style
+*/
+        label {
+            font-size: calc(var(--base-font-size) + 5px);
+            font-weight: bold;
+        }
+
+        .form-input-box {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid #ccc; /* Example border, change as needed */
+            border-radius: 20px; /* Rounded borders as per your image */
+            width: 300px; /* Adjust width as needed */
+        }
+
+            .form-input-box input[type="text"] {
+                flex-grow: 1;
+                border: none;
+                border-radius: 20px; /* Ensure the input has rounded corners */
+                padding: 10px;
+                padding-right: 40px; /* Make padding to accommodate the microphone icon */
+                height: 40px; /* Adjust height as needed */
+            }
+
+            .form-input-box input[type="tel"] {
+                flex-grow: 1;
+                border: none;
+                border-radius: 20px; /* Ensure the input has rounded corners */
+                padding: 10px;
+                padding-right: 40px; /* Make padding to accommodate the microphone icon */
+                height: 40px; /* Adjust height as needed */
+            }
+
+            .form-input-box .mic-btn {
+                margin-left: -40px; /* Negative margin to pull the button into the input */
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+
+                .form-input-box .mic-btn img {
+                    width: 24px; /* Adjust as needed */
+                    height: auto;
+                }
+
+            /* Remove input focus outline */
+            .form-input-box input[type="text"]:focus {
+                outline: none;
+            }
+
+        /*contact*/
+
+
+        .contact-card {
+            display: flex;
+            flex-direction: row; /* Align children horizontally */
+            align-items: stretch;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 40px auto; /* Increase margin for more space around the card */
+            max-width: 1100px; /* Increase the max-width for a larger card */
+        }
+
+        .contact-info {
+            padding: 40px; /* Increase padding for more space inside the info section */
+            background-color: #363435; /* Dark background */
+            color: #fff;
+            flex-basis: 50%; /* Increase the width of the contact info section */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Spread out the content vertically */
+            border-style: solid;
+            border-color: #f6f6f6;
+            }
+
+        .info-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px; /* Add more space between info sections */
+        }
+
+            .info-section .icon {
+                width: 50px;
+                height: 50px;
+                margin-right: 20px;
+            }
+
+        .info-text h2 {
+            font-weight: bold;
+            font-size: calc(var(--base-font-size) + 5px);
+            margin-bottom: 10px;
+        }
+
+        .info-text p {
+            font-size: var(--base-font-size);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        #map {
+            flex-grow: 1; /* Allow the map to fill the remaining space */
+            /* The width and height will be automatically adjusted by flexbox */
+        }
+
+        @media (max-width: 768px) {
+            .contact-card {
+                flex-direction: column; /* Stack the children vertically on smaller screens */
+            }
+
+            .contact-info {
+                order: 2; /* Ensure the contact info is below the map on small screens */
+                width: 100%; /* Full width on small screens */
+                padding: 20px; /* Adjust padding on smaller screens */
+            }
+
+            #map {
+                order: 1; /* Map comes first */
+                height: 300px; /* Set a fixed height for the map on small screens */
+                width: 100%; /* Ensure the map is full width on smaller screens */
+            }
+        }
+
+
+
+        /*        book styles
+*/
+
+        #book-section {
+            display: none;
+        }
+
+        .book-wrapper {
+            font-family: 'Raleway', sans-serif;
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .reservation-form {
+            background: #363435;
+            padding: 20px;
+            border-radius: 8px;
+            color: #f6f6f6;
+            width: calc(100% - 60px); /* Adjusted to account for the left and right margins */
+            border-style: solid;
+            border-color: #f6f6f6;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            width: 48%; /* Adjust width for spacing */
+        }
+
+            .form-group label {
+                font-size: calc(var(--base-font-size) + 5px);
+                margin-bottom: 0.5rem;
+            }
+
+            .form-group input[type="text"],
+            .form-group input[type="tel"],
+            .form-group input[type="number"],
+            .form-group input[type="date"],
+            .form-group input[type="time"] {
+                padding: 10px;
+                border-radius: 20px;
+                border: none;
+                box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
+                background: #ecf0f1;
+                color: #34495e;
+            }
+
+        .form-button {
+            width: 100%;
+            padding: 15px;
+            border-radius: 20px;
+            border: none;
+            background-color: #B01F21;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 1rem;
+        }
+
+            .form-button:hover {
+                background-color: #363435;
+            }
+
+
+
+
+        .notification {
+            color: #ffffff;
+            background-color: #e74c3c;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 20px;
+            display: none; /* Initially hidden */
+            border-radius: 5px;
+        }
+
+            .notification.success {
+                background-color: #2ecc71;
+            }
+
+
+
+
+
+        h4 {
+            color: #999;
+            font-weight: 500;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        html h4:after {
+            content: "%";
+            padding-left: 1px;
+        }
+
+        html input[type=range] {
+            outline: 0;
+            border: 0;
+            border-radius: 500px;
+            width: 400px;
+            max-width: 100%;
+            margin: 24px 0 16px;
+            transition: box-shadow 0.2s ease-in-out;
+        }
+
+        @media screen and (-webkit-min-device-pixel-ratio: 0) {
+            html input[type=range] {
+                overflow: hidden;
+                height: 40px;
+                -webkit-appearance: none;
+                background-color: #ddd;
+            }
+
+                html input[type=range]::-webkit-slider-runnable-track {
+                    height: 40px;
+                    -webkit-appearance: none;
+                    color: #444;
+                    -webkit-transition: box-shadow 0.2s ease-in-out;
+                    transition: box-shadow 0.2s ease-in-out;
+                }
+
+                html input[type=range]::-webkit-slider-thumb {
+                    width: 40px;
+                    -webkit-appearance: none;
+                    height: 40px;
+                    cursor: ew-resize;
+                    background: #fff;
+                    box-shadow: -340px 0 0 320px #B01F21, inset 0 0 0 40px #B01F21;
+                    border-radius: 50%;
+                    -webkit-transition: box-shadow 0.2s ease-in-out;
+                    transition: box-shadow 0.2s ease-in-out;
+                    position: relative;
+                }
+
+                html input[type=range]:active::-webkit-slider-thumb {
+                    background: #fff;
+                    box-shadow: -340px 0 0 320px #B01F21, inset 0 0 0 3px #B01F21;
+                }
+        }
+
+
+
+        /* Existing styles remain unchanged */
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 440px; /* Adjust based on slider width + label padding */
+        }
+
+        .settings-label {
+            color: #333; /* Match your design */
+            font-size: var(--base-font-size); /* Adjust as needed */
+            padding: 0 10px; /* Space around labels */
+        }
+
+
+        .toggle-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; /* Adjust based on your layout */
+        }
+
+        #toggleSwitch {
+            height: 0;
+            width: 0;
+            visibility: hidden;
+        }
+
+        .toggle-label {
+            cursor: pointer;
+            text-indent: -9999px;
+            width: 60px; /* Toggle width */
+            height: 30px; /* Toggle height */
+            background: grey;
+            display: block;
+            border-radius: 100px;
+            position: relative;
+        }
+
+            .toggle-label:after {
+                content: '';
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                width: 20px;
+                height: 20px;
+                background: #fff;
+                border-radius: 90px;
+                transition: 0.3s;
+            }
+
+        #toggleSwitch:checked + .toggle-label {
+            background: #b01f21;
+        }
+
+            #toggleSwitch:checked + .toggle-label:after {
+                left: calc(100% - 5px);
+                transform: translateX(-100%);
+            }
     </style>
+
+
+
+
     <script>
         //search
         function startDictation() {
@@ -588,19 +1218,42 @@
                 </li>
 
                 <li class="nav-item">
-                    <form class="form-inline my-2 my-lg-0" id="searchbox">
+                    <%-- <form class="form-inline my-2 my-lg-0" id="searchbox">
                         <div class="search-box">
                             <input class="form-control" type="search" id="searchbox1" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">
-                                <i class="fas fa-search"></i>
-                                <!-- Magnifying glass icon (you can use FontAwesome or similar) -->
-                            </button>
+                            
                             <button class="btn" type="button" onclick="startDictation()">
                                 <i class="fas fa-microphone"></i>
                                 <!-- Microphone icon (also FontAwesome or similar) -->
                             </button>
+
+                           
                         </div>
+                        <div class="search-btr">
+                         <button class="btn btn-outline-success" type="submit">
+                                <i class="fas fa-search"></i>
+                                <!-- Magnifying glass icon (you can use FontAwesome or similar) -->
+                            </button>
+                            </div>
+                    </form>--%>
+
+                    <form class="form-inline my-2 my-lg-0" id="searchbox8">
+                        <div class="search-box">
+                            <!-- Grouping the text input and search button together -->
+                            <input class="form-control" type="search" id="searchbox" placeholder="Search" aria-label="Search">
+
+                            <button class="btn microphone" type="button" id="microphone" onclick="startDictation()">
+                                <i class="fas fa-microphone"></i>
+                                <!-- Microphone icon -->
+                            </button>
+                            <button class="btn subButton" type="submit">
+                                <i class="fas fa-search"></i>
+                                <!-- Magnifying glass icon -->
+                            </button>
+                        </div>
+
                     </form>
+
 
                 </li>
                 <li class="nav-item">
@@ -617,12 +1270,11 @@
         <h1>Veranda Fusion Restaurant</h1>
         <h2>Pizza, Pasta & Grill</h2>
         <button type="button" class="btn btn-primary mt-3" onclick="location.href='#aboutUsSection'">ABOUT US</button>
-<!-- Button trigger modal -->
-        </div>
+    </div>
 
 
 
-    
+
 
 
 
@@ -630,7 +1282,7 @@
     <div id="aboutUsSection" class="about-section">
         <div class="container">
             <div class="about-icon">
-                <img src="Assets\Images\about-us.png" alt="About Us Icon" class="icon">
+                <img id="aboutIcon" src="Assets\Images\about-us.png" alt="About Us Icon" class="icon"/>
             </div>
             <div class="header">
                 <h1>ABOUT US</h1>
@@ -641,14 +1293,14 @@
                     <!-- Image gallery -->
                     <div class="image-gallery">
                         <div>
-                            <img src="Assets\Images\AboutImage1.jpg" alt="First Image Description" class="img-rotate img-1">
+                            <img src="Assets\Images\AboutImage1.jpg" class="img-rotate img-1 menu-img" data-toggle="modal" data-target="#imageModal" />
+                            <img src="Assets\Images\AboutImage3.jpg" class="img-rotate img-3 menu-img" data-toggle="modal" data-target="#imageModal" />
+
                         </div>
                         <div>
-                            <img src="Assets\Images\AboutImage2.jpg" alt="Second Image Description" class="img-rotate img-2">
+                            <img src="Assets\Images\AboutImage2.jpg" class="img-rotate img-2 menu-img" data-toggle="modal" data-target="#imageModal" />
                         </div>
-                        <div>
-                            <img src="Assets\Images\AboutImage3.jpg" alt="Third Image Description" class="img-rotate img-3">
-                        </div>
+
                     </div>
                 </div>
                 <div class="right-column">
@@ -672,15 +1324,13 @@
     </div>
 
 
-
-
     <div id="menu-section" class="menu-section">
 
 
         <div class="container">
 
             <div class="about-icon">
-                <img id="menuIcon" src="Assets\Images\FoodMenuIcon.png" alt="Food Menu Icon" class="icon"/>
+                <img id="menuIcon" src="Assets\Images\FoodMenuIcon.png" alt="Food Menu Icon" class="icon" />
             </div>
 
             <div class="menu-container">
@@ -699,7 +1349,7 @@
                             <!-- Previous Arrow -->
                             <div class="col-auto">
                                 <div class="menu-control-prev" role="button">
-                                    <img src="Assets\Images\leftArrow.png" alt="Previous" class="menu-control-prev-icon">
+                                    <img id="leftArrowMenu" src="Assets\Images\leftArrow.png" alt="Previous" class="menu-control-prev-icon" />
                                 </div>
                             </div>
 
@@ -725,7 +1375,7 @@
                             <!-- Next Arrow -->
                             <div class="col-auto">
                                 <div class="menu-control-next" role="button">
-                                    <img src="Assets\Images\rightArrow.png" alt="Next" class="menu-control-next-icon">
+                                    <img id="rightMenu" src="Assets\Images\rightArrow.png" alt="Next" class="menu-control-next-icon">
                                 </div>
                             </div>
                         </div>
@@ -1622,11 +2272,6 @@
                                     </a>
                                 </div>
                             </div>
-
-
-
-
-                           
                     </section>
                 </div>
 
@@ -1640,7 +2285,7 @@
                             <!-- Previous Arrow -->
                             <div class="col-auto">
                                 <div class="menu-control-prev" role="button">
-                                    <img src="Assets\Images\leftArrow.png" alt="Previous" class="menu-control-prev-icon">
+                                    <img id="leftArrowMenuD" src="Assets\Images\leftArrow.png" alt="Previous" class="menu-control-prev-icon">
                                 </div>
                             </div>
 
@@ -1666,7 +2311,7 @@
                             <!-- Next Arrow -->
                             <div class="col-auto">
                                 <div class="menu-control-next" role="button">
-                                    <img src="Assets\Images\rightArrow.png" alt="Next" class="menu-control-next-icon">
+                                    <img id="rightMenuD" src="Assets\Images\rightArrow.png" alt="Next" class="menu-control-next-icon">
                                 </div>
                             </div>
                         </div>
@@ -1815,21 +2460,25 @@
     <div class="feedback-wrapper">
         <div class="feedback-container">
             <div class="about-icon">
-                <img src="Assets\Images\FeedbackIcon.png" alt="Feedback Icon" class="icon"/>
+                <img id="feedbackIcon" src="Assets\Images\FeedbackIcon.png" alt="Feedback Icon" class="icon" />
             </div>
 
             <div class="header">
                 <h1>TESTIMONIALS</h1>
             </div>
-            <div class="feedback-navigation left" onclick="changeFeedback(-1)">&lt;</div>
+            <div class="feedback-navigation left" onclick="changeFeedback(-1)">
+                <img id="FeedbackLeftIcon" src="Assets\Images\leftArrow.png" alt="Previous" class="menu-control-prev-icon">
+            </div>
             <div id="feedback-box" class="feedback-box">
                 <div class="stars">★★★★★</div>
                 <div class="feedback-title"></div>
                 <div class="feedback-text"></div>
                 <div class="feedback-author"></div>
             </div>
+
+
             <div class="feedback-navigation right" onclick="changeFeedback(1)">
-                &gt;
+                <img id="FeedbackRightIcon" src="Assets\Images\rightArrow.png" alt="Next" class="menu-control-next-icon"/>
             </div>
         </div>
     </div>
@@ -1841,7 +2490,7 @@
     <div id="gallery-section">
         <div class="container">
             <div class="about-icon">
-                <img src="Assets\Images\galleryicon.png" alt="Feedback Icon" class="icon">
+                <img id="galleryIcon" src="Assets\Images\galleryicon.png" alt="Feedback Icon" class="icon"/>
             </div>
 
             <div class="header">
@@ -1851,64 +2500,65 @@
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
                     <img
                         src="Assets\Images\gallery1.jpg"
-                        class="w-100 shadow-1-strong rounded mb-4"
-                        alt="Boat on Calm Water" />
+                        class="w-100 shadow-1-strong rounded mb-4 menu-img"
+                        data-toggle="modal" data-target="#imageModal" />
 
                     <img
                         src="Assets\Images\gallery.jpg"
-                        class="w-100 shadow-1-strong rounded mb-4"
-                        alt="Wintry Mountain Landscape" />
+                        class="w-100 shadow-1-strong rounded mb-4 menu-img"
+                        data-toggle="modal" data-target="#imageModal" />
 
                     <img
-                        src="Assets\Images\gallery11.jpg"
-                        class="w-100 shadow-1-strong rounded mb-4"
-                        alt="Wintry Mountain Landscape" />
+                        src="Assets\Images\gallery15.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4 menu-img"
+                        data-toggle="modal" data-target="#imageModal" />
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-lg-0">
                     <img
                         src="Assets\Images\gallery3.jpg"
-                        class="w-100 shadow-1-strong rounded mb-4"
-                        alt="Mountains in the Clouds" />
+                        class="w-100 shadow-1-strong rounded mb-4 menu-img"
+                        data-toggle="modal" data-target="#imageModal" />
 
                     <img
                         src="Assets\Images\beef.jpg"
-                        class="w-100 shadow-1-strong rounded mb-4"
-                        alt="Boat on Calm Water" />
+                        class="w-100 shadow-1-strong rounded mb-4 menu-img"
+                        data-toggle="modal" data-target="#imageModal" />
 
                     <img
-                        src="Assets\Images\gallery4.jpg"
-                        class="w-100 shadow-1-strong rounded mb-4"
-                        alt="Boat on Calm Water" />
+                        src="Assets\Images\gallery14.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4 menu-img"
+                        data-toggle="modal" data-target="#imageModal" />
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-lg-0">
                     <img
                         src="Assets\Images\gallery6.jpg"
-                        class="w-100 shadow-1-strong rounded mb-4"
-                        alt="Waves at Sea" />
+                        class="w-100 shadow-1-strong rounded mb-4 menu-img"
+                        data-toggle="modal" data-target="#imageModal" />
 
                     <img
                         src="Assets\Images\gallery6.jpg"
-                        class="w-100 shadow-1-strong rounded mb-4"
-                        alt="Yosemite National Park" />
+                        class="w-100 shadow-1-strong rounded mb-4 menu-img"
+                        data-toggle="modal" data-target="#imageModal" />
                     <img
-                        src="Assets\Images\gallery12.jpg"
-                        class="w-100 shadow-1-strong rounded mb-4"
-                        alt="Yosemite National Park" />
+                        src="Assets\Images\gallery4.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4 menu-img"
+                        data-toggle="modal" data-target="#imageModal" />
                 </div>
             </div>
         </div>
-        <!-- Gallery -->
+    </div>
+    <!-- Gallery -->
 
 
 
-        <!-- Contact -->
+    <!-- Contact -->
 
-        <div class="container">
-            <div class="menu-container">
+    <div class="container">
+        <div class="menu-container">
             <div class="about-icon">
-                <img id="ContactIcon" src="Assets\Images\contactIcon.png" alt="Feedback Icon" class="icon"/>
+                <img id="ContactIcon" src="Assets\Images\contactIcon.png" alt="Feedback Icon" class="icon" />
             </div>
             <div class="menu-toggle">
 
@@ -2024,185 +2674,319 @@
                     </div>
                 </div>
             </div>
-            </div>
-
-
-
         </div>
 
-        <!-- Book -->
+
+
+    </div>
+
+    <!-- Book -->
 
 
 
 
-        <!-- Image Modal -->
-        <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <img src="" id="imagePreview" alt="Menu Item" style="width: 100%;"/>
-                    </div>
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+
+                </div>
+                <div class="modal-body">
+                    <img src="" id="imagePreview" alt="Menu Item" style="width: 100%;" />
                 </div>
             </div>
         </div>
-
-
-        <!-- Modal -->
-<div class="modal fade" id="preferencesModal" tabindex="-1" role="dialog" aria-labelledby="preferencesModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="preferencesModalLabel">Manage Preferences</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <!-- Font Size Slider -->
-        <label for="fontSizeSlider" class="form-label">Font Size</label>
-        <p>Adjust the text size of the platform</p>
-        <input type="range" class="form-range" id="fontSizeSlider" min="0" max="100" step="1">
-
-        <!-- Voice Over Toggle -->
-        <div class="form-check form-switch my-3">
-          <input class="form-check-input" type="checkbox" id="voiceOverToggle">
-          <label class="form-check-label" for="voiceOverToggle">Voice Over</label>
-            <p>Toggle spoken feedback for screen elements</p>
-        </div>
-
-        <!-- Interface Theme Selection -->
-        <label for="themeSelection" class="form-label">Interface Theme</label>
-          <p>Customize your application theme</p>
-        <div id="themeSelection" class="my-3">
-          <button type="button" class="btn">System</button>
-          <button type="button" class="btn">Light</button>
-          <button type="button" class="btn">Dark</button>
-        </div>
-
-        <!-- Brightness Slider -->
-        <label for="brightnessSlider" class="form-label">Brightness</label>
-         <p>Adjust the brightness of the application theme</p>
-        <input type="range" class="form-range" id="brightnessSlider" min="0" max="100" step="1">
-
-        <!-- Contrast Slider -->
-        <label for="contrastSlider" class="form-label">Contrast</label>
-          <p>Adjust the contrast of the application theme</p>
-        <input type="range" class="form-range" id="contrastSlider" min="0" max="100" step="1">
-      </div>
-      <div class="modal-footer">
-            <button type="button" class="btn btn-outline-light" id="resetPreferences">Reset to defaults</button>
-
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary">Save Preferences</button>
-      </div>
     </div>
-  </div>
-</div>
-        <style>/* Modal content general styling */
-/* Reset button styling */
-#resetPreferences {
-    color: #aaa; /* Light text for the reset link */
-    border: 1px solid #aaa; /* Light border for the reset button */
-    background-color: transparent; /* Transparent background for the reset button */
-    margin-top: 10px; /* Spacing from the content above */
-}
 
-#resetPreferences:hover {
-    color: #fff; /* White text on hover for better contrast */
-    border-color: #fff; /* White border on hover for better contrast */
-    background-color: #555; /* Slightly darker background on hover */
-    text-decoration: none; /* No underline on hover */
-}
+    <!-- Modal -->
+    <div class="modal fade" id="preferencesModal" tabindex="-1" role="dialog" aria-labelledby="preferencesModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title w-100" id="preferencesModalLabel">Manage Preferences</h5>
+                    <button type="button" class="close" id="closePreferences" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
 
-.modal-content {
-    background-color: #333; /* Dark background */
-    color: white; /* Light text */
-    border-radius: 15px; /* Rounded corners */
-}
+                </div>
+                <div class="modal-body">
+                    <!-- Font Size Slider -->
+                    <div class="row align-items-center mb-3">
+                        <div class="col-sm-8">
+                            <label for="fontSizeRangeSlider" class="form-label">Font Size</label>
+                            <p>Adjust the text size of the platform</p>
+                        </div>
+                        <div class="col-sm-4 slider-container">
+                            <div class="label">0</div>
+                            <input type="range" id="fontSizeRangeSlider" value="50" min="50" max="100" />
+                            <div class="label">100</div>
 
-/* Modal header styling */
-.modal-header {
-    border-bottom: 1px solid #444; /* Slightly lighter border for separation */
-}
+                        </div>
+                    </div>
 
-.modal-title {
-    color: #aaa; /* Lighter text for the title */
-}
+                    <!-- Voice Over Toggle -->
+                    <div class="row align-items-center mb-3">
+                        <div class="col-sm-8">
+                            <label class="form-check-label" for="toggleSwitch">Voice Over</label>
+                            <p>Toggle spoken feedback for screen elements</p>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="checkbox" id="toggleSwitch" />
+                            <label for="toggleSwitch" class="toggle-label"></label>
+                        </div>
+                    </div>
 
-/* Modal body styling */
-.modal-body {
-    font-size: 1rem; /* Standard font size */
-}
+                    <!-- Interface Theme Selection -->
+                    <div class="row align-items-center mb-3">
+                        <div class="col-sm-8">
+                            <label for="themeSelection" class="form-label">Interface Theme</label>
+                            <p>Customize your application theme</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <div id="themeSelection">
+                                <button type="button" class="btn" data-theme="light">Light</button>
+                                <button type="button" class="btn" data-theme="dark">Dark</button>
+                            </div>
+                        </div>
+                    </div>
 
-.modal-body p {
-    color: #bbb; /* Lighter text for descriptions */
-}
+                    <!-- Brightness Slider -->
+                    <div class="row align-items-center mb-3">
+                        <div class="col-sm-8">
+                            <label for="brightnessSlider" class="form-label">Brightness</label>
+                            <p>Adjust the brightness of the application theme</p>
+                        </div>
+                        <div class="col-sm-4 slider-container">
+                            <div class="label">0</div>
+                            <input type="range" id="brightnessSlider" value="50" min="30" max="100" />
+                            <div class="label">100</div>
+                        </div>
+                    </div>
 
-/* Slider styling */
-.form-range {
-    background-color: #555; /* Darker background for sliders */
-    border-radius: 10px; /* Rounded corners for sliders */
-}
-
-
-
-
-/* Toggle switch */
-.form-check-input:checked {
-    background-color: #2196f3; /* Blue background for checked state */
-    border-color: #2196f3; /* Blue border for checked state */
-}
-
-/* Modal footer styling */
-.modal-footer {
-    border-top: 1px solid #444; /* Slightly lighter border for separation */
-    padding: 1rem; /* Padding around the buttons */
-}
-
-/* Reset button styling */
-.btn-secondary {
-    background-color: #555; /* Darker background for the secondary button */
-}
-
-
-/* Reset link styling */
-#resetPreferences {
-    color: #aaa; /* Light text for the reset link */
-    text-decoration: none; /* No underline */
-    cursor: pointer; /* Pointer cursor to indicate clickable */
-}
-
-#resetPreferences:hover {
-    color: #ddd; /* Lighter text on hover */
-    text-decoration: underline; /* Underline on hover */
-}
-
-/* Ensure buttons fit well */
-.btn {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-/* Add spacing and alignment for theme buttons */
-#themeSelection .btn {
-    width: 80px; /* Fixed width for a uniform look */
-    margin: 0 5px; /* Margin for spacing */
-    text-align: center; /* Center text */
-}
-</style>
-        <footer>
-            <div class="footer-content">
-                <p>© COPYRIGHT 2023 VERANDA FUSION RESTAURANT</p>
-                <p>WEB DESIGN BY ZACK MANGANI</p>
+                    <!-- Contrast Slider -->
+                    <div class="row align-items-center mb-3">
+                        <div class="col-sm-8">
+                            <label for="contrastSlider" class="form-label">Contrast</label>
+                            <p>Adjust the contrast of the application theme</p>
+                        </div>
+                        <div class="col-sm-4 slider-container">
+                            <div class="label">0</div>
+                            <input type="range" id="contrastSlider" value="50" min="30" max="100" />
+                            <div class="label">100</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" id="resetPreferences">Reset to defaults</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Save Preferences</button>
+                </div>
             </div>
-        </footer>
-
-
+        </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var themeButtons = document.querySelectorAll('#themeSelection .btn');
+
+            themeButtons.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var theme = this.getAttribute('data-theme'); // Get the theme from the button
+
+                    // Update the body class with the selected theme
+                    document.body.className = ''; // Clear existing theme classes
+                    document.body.classList.add(theme); // Add the selected theme class
+
+                    // Optionally, save the selected theme to local storage
+                    localStorage.setItem('selectedTheme', theme);
+                });
+            });
+
+            // Optionally, apply the saved theme on page load
+            var savedTheme = localStorage.getItem('selectedTheme');
+            if (savedTheme) {
+                document.body.className = '';
+                document.body.classList.add(savedTheme);
+            }
+        });
+    </script>
+
+    <script>
+
+
+</script>
+    <style>/* Default system theme styles */
+
+/* Light theme styles */
+body.light {
+    --background-color: #f6f6f6;
+    --text-color: #363435;
+      --icon-color: #363435;
+
+}
+
+/* Dark theme styles */
+body.dark {
+    --background-color: #363435;
+    --text-color: #f6f6f6;
+      --icon-color: #f6f6f6;
+
+}
+
+
+/*body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}*/
+</style>
+   
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function applyTheme(theme) {
+            document.body.className = '';
+            document.body.classList.add(theme);
+        }
+
+        // Directly apply the Light theme without checking localStorage
+        applyTheme('light');
+
+        // Setup theme selection buttons
+        var themeButtons = document.querySelectorAll('#themeSelection .btn');
+        themeButtons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var theme = this.getAttribute('data-theme');
+                applyTheme(theme);
+                // Note: This will apply the selected theme when clicked,
+                // but it won't persist after a page reload since we're not using localStorage to save the preference.
+            });
+        });
+    });
+
+
+
+</script>
+
+    <script><!-- Include this at the bottom of your HTML, right before the closing </body> tag -->
+
+    // Function to adjust brightness
+    function adjustBrightness() {
+        var brightnessValue = document.getElementById('brightnessSlider').value;
+        document.body.style.filter = `brightness(${brightnessValue}%)`;
+    }
+
+    // Function to adjust contrast
+    function adjustContrast() {
+        var contrastValue = document.getElementById('contrastSlider').value;
+        document.body.style.filter = `contrast(${contrastValue}%)`;
+    }
+
+    // Event listeners for the sliders
+    document.getElementById('brightnessSlider').addEventListener('input', adjustBrightness);
+    document.getElementById('contrastSlider').addEventListener('input', adjustContrast);
+
+    // Function to reset brightness and contrast to defaults
+    function resetPreferences() {
+        document.getElementById('brightnessSlider').value = 100; // Default brightness
+        document.getElementById('contrastSlider').value = 100; // Default contrast
+        adjustBrightness();
+        adjustContrast();
+        document.documentElement.style.setProperty('--base-font-size', '20px');
+
+    }
+
+    document.getElementById('resetPreferences').addEventListener('click', resetPreferences);
+
+
+
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.getElementById('fontSizeRangeSlider');
+            slider.addEventListener('input', function () {
+                const scaleFactor = slider.value; // Assuming the slider value is between 0 and 100
+                const newBaseSize = scaleFactor / 50 * 20; // Example: slider at 50 equals 16px base size
+                document.documentElement.style.setProperty('--base-font-size', `${newBaseSize}px`);
+            });
+        });
+    </script>
+
+
+
+    <script>
+        // Optimized function to speak text immediately on hover
+        function speakText(event) {
+            var text = event.target.textContent || event.target.innerText;
+            if (!text.trim()) return; // Skip empty text nodes
+
+            var synth = window.speechSynthesis;
+            if (synth.speaking) {
+                synth.cancel(); // Only cancel if it's currently speaking
+            }
+
+            // Start speaking with a slight delay to ensure cancellation is processed
+            setTimeout(() => {
+                var utterance = new SpeechSynthesisUtterance(text);
+                synth.speak(utterance);
+            }, 10); // A minimal delay can help in ensuring a smooth transition between speeches
+        }
+
+        // Function to stop speaking
+        function stopSpeaking() {
+            var synth = window.speechSynthesis;
+            if (synth.speaking) {
+                synth.cancel();
+            }
+        }
+
+        // Function to add or remove speech synthesis event listeners based on toggle
+        function toggleVoiceOver() {
+            const isChecked = document.getElementById('toggleSwitch').checked;
+            const textElements = document.querySelectorAll('p, label, h1, h2, h3, h4, h5, h6, div'); // Extend selector as needed
+
+            textElements.forEach(el => {
+                if (isChecked) {
+                    el.addEventListener('mouseenter', speakText);
+                    el.addEventListener('mouseleave', stopSpeaking);
+                } else {
+                    el.removeEventListener('mouseenter', speakText);
+                    el.removeEventListener('mouseleave', stopSpeaking);
+                }
+            });
+        }
+
+        // Event listener for the voice-over toggle
+        document.getElementById('toggleSwitch').addEventListener('change', toggleVoiceOver);
+
+        // Initialize
+        toggleVoiceOver();
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+        <div class="footer-content">
+            <p>© COPYRIGHT 2023 VERANDA FUSION RESTAURANT</p>
+            <p>WEB DESIGN BY ZACK MANGANI</p>
+        </div>
+    </footer>
+
+
+
 
 
 
@@ -2291,8 +3075,12 @@
                 barMenuContent.classList.remove('active');
                 foodMenuButton.classList.add('active');
                 barMenuButton.classList.remove('active');
-                menuIcon.src = 'Assets/Images/FoodMenuIcon.png'; // Change image source for food menu
-
+                // Check if the body class is 'dark' to decide which icon to use
+                if (document.body.classList.contains('dark')) {
+                    menuIcon.src = 'Assets/Images/DarkMenuIcon.png'; // Dark theme icon for food menu
+                } else {
+                    menuIcon.src = 'Assets/Images/FoodMenuIcon.png'; // Light theme icon for food menu
+                }
 
                 // Show the starters category by default when switching to the food menu
                 showMenu('starters', document.querySelector('#menu-categories li.active') || document.querySelector('#menu-categories li:first-child'));
@@ -2302,7 +3090,13 @@
                 foodMenuContent.classList.remove('active');
                 barMenuButton.classList.add('active');
                 foodMenuButton.classList.remove('active');
-                menuIcon.src = 'Assets/Images/BarMenuIcon.png'; // Change image source for bar menu
+
+                // Check if the body class is 'dark' to decide which icon to use
+                if (document.body.classList.contains('dark')) {
+                    menuIcon.src = 'Assets/Images/BarMenuIconDark.png'; // Dark theme icon for bar menu
+                } else {
+                    menuIcon.src = 'Assets/Images/BarMenuIcon.png'; // Light theme icon for bar menu
+                }
 
 
                 // Ensure the starters carousel and other elements are not displayed
@@ -2422,160 +3216,7 @@
     </script>
 
 
-    <style>
-        /*feedbck u footer*/
-        .feedback-wrapper {
-            font-family: 'Raleway', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f7f7f7;
-        }
 
-        .feedback-container {
-            width: 600px;
-            padding: 20px;
-            text-align: center;
-            position: relative;
-        }
-
-        .feedback-header {
-            font-size: 24px;
-            color: #333333;
-            margin-bottom: 20px;
-        }
-
-        .feedback-box {
-            background-color: #333333;
-            color: #ffffff;
-            padding: 20px;
-            border-radius: 15px;
-            margin: 0 30px;
-            position: relative;
-        }
-
-
-
-            .feedback-box::after {
-                content: '';
-                position: absolute;
-                bottom: -20px; /* Adjust this value to move the tail up or down */
-                left: 50%;
-                transform: translateX(-50%);
-                border-left: 20px solid transparent;
-                border-right: 20px solid transparent;
-                border-top: 20px solid #333333; /* This should match the feedback box's background color */
-            }
-
-        .feedback-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-            font-size: 24px;
-        }
-
-        .stars {
-            color: #FFD700;
-            margin-bottom: 15px;
-            font-size: 70px; /* Adjust the font size as needed to make the stars bigger */
-        }
-
-        .feedback-text {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .feedback-author {
-            font-style: italic;
-            color: #aaaaaa;
-        }
-
-        .feedback-navigation {
-            color: #cccccc;
-            font-size: 30px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            user-select: none;
-        }
-
-            .feedback-navigation.left {
-                left: 10px;
-            }
-
-            .feedback-navigation.right {
-                right: 10px;
-            }
-
-
-        /*footer*/
-
-        footer {
-            background-color: #B01F21; /* Dark red color */
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            font-family: 'Raleway', sans-serif;
-            padding-top: 30px;
-        }
-
-        .footer-content p {
-            margin: 0;
-            padding: 5px;
-        }
-        /*        form style
-*/
-        label {
-            font-size: 18px; /* This sets the font size to 18 pixels for all labels */
-        }
-
-        .form-input-box {
-            position: relative;
-            display: inline-flex;
-            align-items: center;
-            border: 1px solid #ccc; /* Example border, change as needed */
-            border-radius: 20px; /* Rounded borders as per your image */
-            width: 300px; /* Adjust width as needed */
-        }
-
-            .form-input-box input[type="text"] {
-                flex-grow: 1;
-                border: none;
-                border-radius: 20px; /* Ensure the input has rounded corners */
-                padding: 10px;
-                padding-right: 40px; /* Make padding to accommodate the microphone icon */
-                height: 40px; /* Adjust height as needed */
-            }
-
-            .
-            form-input-box input[type="tel"] {
-                flex-grow: 1;
-                border: none;
-                border-radius: 20px; /* Ensure the input has rounded corners */
-                padding: 10px;
-                padding-right: 40px; /* Make padding to accommodate the microphone icon */
-                height: 40px; /* Adjust height as needed */
-            }
-
-            .form-input-box .mic-btn {
-                margin-left: -40px; /* Negative margin to pull the button into the input */
-                background: none;
-                border: none;
-                cursor: pointer;
-            }
-
-                .form-input-box .mic-btn img {
-                    width: 24px; /* Adjust as needed */
-                    height: auto;
-                }
-
-            /* Remove input focus outline */
-            .form-input-box input[type="text"]:focus {
-                outline: none;
-            }
-    </style>
 
 
     <script>
@@ -2594,153 +3235,7 @@
         }
     </script>
 
-    <style>
-        /*contact*/
-        .contact-wrapper {
-            font-family: 'Raleway', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            justify-content: center;
-        }
 
-        .contact-card {
-            display: flex;
-            background-color: #333;
-            color: white;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .contact-info {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .info-section {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px; /* Adds space between the sections */
-        }
-
-        .icon {
-            width: 40px; /* Adjust size as needed */
-            margin-right: 20px;
-        }
-
-        .info-text h2 {
-            margin: 0 0 10px 0; /* Added 10px bottom margin */
-            font-size: 20px; /* Increased font size */
-            font-weight: normal;
-        }
-
-        .info-text p {
-            margin: 0;
-            font-size: 14px;
-            line-height: 1.6; /* Adjust line height for better readability */
-        }
-
-        #map {
-            flex-grow: 1;
-            min-width: 300px; /* Adjust as needed */
-            height: 400px; /* Adjust as needed */
-        }
-    </style>
-
-
-    <style>
-        /*        book styles
-*/
-
-        #book-section {
-            display: none;
-        }
-
-        .book-wrapper {
-            font-family: 'Raleway', sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .reservation-form {
-            background: #363435;
-            padding: 20px;
-            border-radius: 8px;
-            width: 900px;
-            color: #f6f6f6;
-        }
-
-        .form-title {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .form-row {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            width: 48%; /* Adjust width for spacing */
-        }
-
-            .form-group label {
-                font-size: 1rem;
-                margin-bottom: 0.5rem;
-            }
-
-            .form-group input[type="text"],
-            .form-group input[type="tel"],
-            .form-group input[type="number"],
-            .form-group input[type="date"],
-            .form-group input[type="time"] {
-                padding: 10px;
-                border-radius: 20px;
-                border: none;
-                box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.2);
-                background: #ecf0f1;
-                color: #34495e;
-            }
-
-        .form-button {
-            width: 100%;
-            padding: 15px;
-            border-radius: 20px;
-            border: none;
-            background-color: #B01F21;
-            color: white;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 1rem;
-        }
-
-            .form-button:hover {
-                background-color: #363435;
-            }
-    </style>
-
-
-    <style>
-        .notification {
-            color: #ffffff;
-            background-color: #e74c3c;
-            text-align: center;
-            padding: 10px;
-            margin-bottom: 20px;
-            display: none; /* Initially hidden */
-            border-radius: 5px;
-        }
-
-            .notification.success {
-                background-color: #2ecc71;
-            }
-    </style>
 
 
 
@@ -2837,6 +3332,7 @@
         const ContactIcon = document.getElementById('ContactIcon');
 
 
+
         function setActiveButton(button) {
             toggleContact.classList.remove('active');
             toggleBook.classList.remove('active');
@@ -2847,9 +3343,9 @@
         toggleContact.addEventListener('click', function () {
             contactSection.style.display = 'block';
             bookSection.style.display = 'none';
-            setActiveButton(toggleContact); 
+            setActiveButton(toggleContact);
             ContactIcon.src = 'Assets/Images/contactIcon.png'; // Change image source for food menu
-            
+
 
         });
 
@@ -2864,7 +3360,7 @@
         });
     });
 </script>
-<script>// Function to simulate button click and navigate to section of navbr
+<script>
     function navigateAndToggle(buttonId, sectionId) {
         // Simulate button click
         document.getElementById(buttonId).click();
@@ -2884,6 +3380,82 @@
         event.preventDefault(); // Prevent the default button behavior
         navigateAndToggle('toggleBook', 'book-section');
     });
+
 </script>
+
+<script>
+
+</script>
+
+ <script>
+     // Function to set the image source based on body class
+     function updateImageSource() {
+         var bodyClass = document.body.className; // Get the current class of the body
+         var aboutIcon = document.getElementById('aboutIcon'); // Get the img element
+         var menuIcon = document.getElementById('menuIcon'); // Get the img element
+         var feedbackIcon = document.getElementById('feedbackIcon'); // Get the img element
+         var galleryIcon = document.getElementById('galleryIcon'); // Get the img element
+         var rightIcon = document.getElementById('FeedbackRightIcon'); // Get the img element
+         var leftIcon = document.getElementById('FeedbackLeftIcon'); // Get the img element
+
+         var leftDrinkIcon = document.getElementById('leftArrowMenuD'); // Get the img element
+         var rightDrinkIcon = document.getElementById('rightMenuD'); // Get the img element
+         var leftFoodIcon = document.getElementById('leftArrowMenu'); // Get the img element
+         var rightFoodIcon = document.getElementById('rightMenu'); // Get the img element
+
+
+
+
+         if (bodyClass === "light") {
+             // Set the source for "light" theme
+             aboutIcon.src = "Assets/Images/about-us.png";
+             menuIcon.src = "Assets/Images/FoodMenuIcon.png";// still to arrange
+             feedbackIcon.src = "Assets/Images/FeedbackIcon.png";
+             galleryIcon.src = "Assets/Images/galleryicon.png";
+             leftIcon.src = "Assets/Images/leftArrow.png";
+             rightIcon.src = "Assets/Images/rightArrow.png";
+             leftDrinkIcon.src = "Assets/Images/leftArrow.png";
+             rightDrinkIcon.src = "Assets/Images/rightArrow.png";
+             leftFoodIcon.src = "Assets/Images/leftArrow.png";
+             rightFoodIcon.src = "Assets/Images/rightArrow.png";
+
+         } else if (bodyClass === "dark") {
+             // Set another source for "dark" theme
+
+             aboutIcon.src = "Assets/Images/about-usW.png";
+             feedbackIcon.src = "Assets/Images/FeedbackIconW.png";
+             galleryIcon.src = "Assets/Images/galleryiconW.png";
+             leftIcon.src = "Assets/Images/leftArrowW.png";
+             rightIcon.src = "Assets/Images/rightArrowW.png";
+             leftDrinkIcon.src = "Assets/Images/leftArrowW.png";
+             rightDrinkIcon.src = "Assets/Images/rightArrowW.png";
+             leftFoodIcon.src = "Assets/Images/leftArrowW.png";
+             rightFoodIcon.src = "Assets/Images/rightArrowW.png";
+
+         }
+     }
+
+     // Initialize the observer to monitor class changes on the body
+     var observer = new MutationObserver(function (mutations) {
+         mutations.forEach(function (mutation) {
+             if (mutation.attributeName === "class") {
+                 updateImageSource(); // Call the function to update the image source
+             }
+         });
+     });
+
+     // Configuration of the observer:
+     var config = { attributes: true };
+
+     // Start observing the body element for changes in attributes
+     observer.observe(document.body, config);
+
+     // Also update the image source initially
+     updateImageSource();
+ </script>
+
+
+
+ 
 
 
