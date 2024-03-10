@@ -477,13 +477,12 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            /* Add more styling here */
         }
 
         .menu-categories-scroll {
             overflow-x: auto;
-            flex: 1; /* Allow this to take up available space */
-            min-width: 0; /* Allows this element to shrink as needed */
+            flex: 1;
+            min-width: 0;
         }
 
         .row.align-items-center.justify-content-between {
@@ -1382,286 +1381,6 @@
 
                 <div class="menu-items">
                     <section class="menu">
-                        <!-- A lA Carte Items -->
-                        <%--          <div id="carteCarousel" class="carousel slide" data-interval="false">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <h1>ZUPPE</h1>
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\Bruschetta.jpg" alt="Minestrone con pesto Genovese">
-                                            <h3>Minestrone con pesto Genovese</h3>
-                                            <p>Traditional minestrone soup with pesto Genovese (g ,v)</p>
-                                            <p class="price">€12</p>
-                                        </div>
-
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\BruschettaVeranda.jpg" alt="Bouillabaisse Provencal">
-                                            <h3>Bouillabaisse Provencal"</h3>
-                                            <p>Traditional French fish soup with garlic farmhouse bread</p>
-                                            <p class="price">€22</p>
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <h1>ANTIPASTI</h1>
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\Mushrooms.jpeg" alt="Stuffed mushrooms">
-                                            <h3>Bruschetta Primavera</h3>
-                                            <p>Grilled peppers, courgettes, aubergine, garlic, basil, & virgin olive oil (l, v)</p>
-                                            <p class="price">€12</p>
-                                        </div>
-
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\shrimpss.jpeg" alt="Shrimps">
-                                            <h3>Seppie Stufate alla “Luciana” e Polenta Fritta</h3>
-                                            <p>Cuttlefish in a rich tomato sauce, sweet peas, white wine, garlic & fried polenta</p>
-                                            <p class="price">€17</p>
-                                        </div>
-
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\freshVegtables.jpg" alt="Fresh vegetables">
-                                            <h3>Salsicce Toscane di Fattoria alla Griglia conn Polenta Fritta E Aceto Di Vino Rosso harcoal grilled with aromatic marinate and mozzarella di'Bufala</p>
-                                            <p>Grilled Tuscan sausages, fried polenta & red wine vinegar (l)</p>
-                                                <p class="price">€15</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <h1>ANTIPASTI</h1>
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\KingPrawns.jpeg" alt="Selection Of Italian Ham, Salami & Cheese ">
-                                            <h3>Selection Of Italian Ham, Salami & Cheese </h3>
-                                            <p class="price">€18</p>
-                                        </div>
-
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\fistomisto.jpg" alt="Mozzarelline Fritte e Funghi Prataioli Ripieni al Burro All’Aglio">
-                                            <h3>Mozzarelline Fritte e Funghi Prataioli Ripieni al Burro All’Aglio</h3>
-                                            <p>Mushrooms filled with garlic butter and crispy fried mozzarella balls, served with salsa rossa (l, v)</p>
-                                            <p class="price">€15</p>
-                                        </div>
-
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\muscels.jpg" alt="Calamari Fritti Alla Veneziana">
-                                            <h3>Calamari Fritti Alla Veneziana</h3>
-                                            <p>Crispy squid, garlic mayonnaise</p>
-                                            <p class="price">€14</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <h1>PASTE E RISOTTI</h1>
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters5.jpg" alt="Spaetzli Tirolesi agli Spinaci con Crema di Tartufo e Speck">
-                                            <h3>Spaetzli Tirolesi agli Spinaci con Crema di Tartufo e Speck</h3>
-                                            <p>Spaetzli Tirolesi with spinach tossed with speck, black truffle cream, sage & parmesan (v)</p>
-                                            <p class="price">€16</p>
-                                        </div>
-
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters1.jpg" alt="Conchiglie con Code di Gamberi e Ricotta">
-                                            <h3>Conchiglie con Code di Gamberi e Ricotta</h3>
-                                            <p>Conchiglie pasta, prawns, ricotta cheese, chilli, basil & virgin olive oil</p>
-                                            <p class="price">€19</p>
-                                        </div>
-
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters2.jpg" alt="Penne alla Norma con Melanzane, Peperoncino Rosso, Salsa di Pomodoro,Basilico e Ricotta ">
-                                            <h3>Penne alla Norma con Melanzane, Peperoncino Rosso, Salsa di Pomodoro,Basilico e Ricotta </h3>
-                                            <p>Penne, tomato sauce, egg plant, garlic, red chilli, ricotta & olive oil (v)</p>
-                                            <p class="price">€16</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-                                <div class="carousel-item">
-                                    <h1>PASTE E RISOTTI</h1>
-
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters3.jpg" alt="Risotto con Spinaci e Mascarpone">
-                                            <h3>Risotto con Spinaci e Mascarpone</h3>
-                                            <p>Risotto with spinach & mascarpone cheese (v)</p>
-                                            <p class="price">€17</p>
-                                        </div>
-
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters4.jpg" alt="Rigatoni alla Bolognese">
-                                            <h3>Rigatoni alla Bolognese</h3>
-                                            <p>Rigatoni pasta, traditional beef and pork ragu with red wine</p>
-                                            <p class="price">€16</p>
-                                        </div>
-
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters4.jpg" alt="Risotto con Salsiccia Toscana">
-                                            <h3>Risotto con Salsiccia Toscana</h3>
-                                            <p>Risotto with Tuscan sausage & Chianti red wine</p>
-                                            <p class="price">€17</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="carousel-item">
-                                    <h1>SECONDI</h1>
-
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters3.jpg" alt="Bocconcini di Coda di Rospo in Umido alla Livornese">
-                                            <h3>Bocconcini di Coda di Rospo in Umido alla Livornese</h3>
-                                            <p>Braised chunks of Monkfish in white wine, garlic, tomato sauce, served with toasted garlic bruschetta (l))</p>
-                                            <p class="price">€27</p>
-                                        </div>
-
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters4.jpg" alt="Salmone Scozzese con Salsa di Aragosta">
-                                            <h3>Salmone Scozzese con Salsa di Aragosta </h3>
-                                            <p>Fillet of Scottish salmon, lobster sauce, scallops’ meat & fresh tarragon</p>
-                                            <p class="price">€29</p>
-                                        </div>
-
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters4.jpg" alt="Filetto di Branzino alla Griglia Con Timo Fresco, Olio D'oliva e Limone">
-                                            <h3>Filetto di Branzino alla Griglia Con Timo Fresco, Olio D'oliva e Limone </h3>
-                                            <p>RGrilled fillet of Seabass with fresh thyme, olive oil and lemon (g, l)</p>
-                                            <p class="price">€29</p>
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-
-
-                                <div class="carousel-item">
-                                    <h1>SECONDI</h1>
-
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters3.jpg" alt="Tagliata di Manzo alla Griglia con Rucola">
-                                            <h3>Tagliata di Manzo alla Griglia con Rucola</h3>
-                                            <p>Grilled stirloin steak with rocket salad & rosemary oil (l)</p>
-                                            <p class="price">€28</p>
-                                        </div>
-
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters4.jpg" alt="Salmone Scozzese con Salsa di Aragosta">
-                                            <h3>Filetti di Vitello Funghi Porcini</h3>
-                                            <p>Pan-fried fillets of Veal, porcini mushrooms, sage & Brandy sauce</p>
-                                            <p class="price">€31</p>
-                                        </div>
-
-
-
-
-
-                                    </div>
-                                </div>
-
-
-                                <div class="carousel-item">
-                                    <h1>CONTORNI</h1>
-
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters3.jpg" alt="Rucola & Parmesan Salad">
-                                            <h3>Rucola & Parmesan Salad</h3>
-                                            <p class="price">€7.50</p>
-                                        </div>
-
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters4.jpg" alt="Spicy Roast Potatoes">
-                                            <h3>Spicy Roast Potatoes</h3>
-                                            <p class="price">€4.50</p>
-                                        </div>
-
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters4.jpg" alt="Spinaci al Burro">
-                                            <h3>Spinaci al Burro</h3>
-                                            <p class="price">€4.50</p>
-                                        </div>
-
-
-
-
-
-                                    </div>
-                                </div>
-
-                                <div class="carousel-item">
-                                    <h1>CONTORNI</h1>
-
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters3.jpg" alt="Grilled vegetables, basil, garlic & olive oil">
-                                            <h3>Grilled vegetables, basil, garlic & olive oil</h3>
-                                            <p class="price">€13</p>
-                                        </div>
-
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters4.jpg" alt="Broccoli">
-                                            <h3>Broccoli</h3>
-                                            <p class="price">€4.50</p>
-                                        </div>
-
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters4.jpg" alt="French Fries">
-                                            <h3>French Fries</h3>
-                                            <p class="price">€4.50</p>
-                                        </div>
-
-
-
-
-
-                                    </div>
-                                </div>
-
-
-                                <div class="carousel-item">
-                                    <h1>CONTORNI</h1>
-
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item carte">
-                                            <img src="Assets\Images\starters3.jpg" alt="Peas & Mint">
-                                            <h3>Peas & Mint</h3>
-                                            <p class="price">€.50</p>
-                                        </div>
-
-
-
-
-
-                                    </div>
-                                </div>
-                                <!-- Add more .carousel-item as needed -->
-                            </div>
-                            <a class="carousel-control-prev" href="#carteCarousel" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carteCarousel" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>--%>
-
-
-
 
                         <!-- Carousel container -->
                         <div id="desertCarousel" class="carousel slide" data-interval="false">
@@ -1675,12 +1394,15 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
+                            <p>g = gluten free l = lactose free</p>
+                            <p>Please let your server know if you have any allergies or dietary requirements. Our dishes are made here and may contain trace ingredients.</p>
                         </div>
 
 
                         <div id="childrenCarousel" class="carousel slide" data-interval="false">
                             <div class="carousel-inner">
                                 <!-- Carousel items will be added dynamically here -->
+
                             </div>
                             <a class="carousel-control-prev" href="#childrenCarousel" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -1691,7 +1413,6 @@
                                 <span class="sr-only">Next</span>
                             </a>
                         </div>
-                        <p>*Note that one main course is to be chosen and the children menu cost €14 total</p>
 
                         <div id="carteCarousel" class="carousel slide" data-interval="false">
                             <div class="carousel-inner">
@@ -1705,9 +1426,14 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
+                            <p>v = vegetarian g = gluten free l = lactose free *gluten free spagetti and penne pasta available</p>
+                            <p>Please let your server know if you have any allergies or dietary requirements. Our dishes are made here and may contain trace ingredients.</p>
                         </div>
 
                         <div id="lunchCarousel" class="carousel slide" data-interval="false">
+
+
+
                             <div class="carousel-inner">
                                 <!-- Carousel items will be added dynamically here -->
                             </div>
@@ -1719,7 +1445,11 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
+                            <p>Monday To Friday 12pm-3pm - €25 for 2 courses/€30 for 3 courses </p>
+                            <p>v = vegetarian g = gluten free l = lactose free *gluten free spagetti and penne pasta available</p>
+                            <p>Please let your server know if you have any allergies or dietary requirements. Our dishes are made here and may contain trace ingredients.</p>
                         </div>
+
                         <div id="wineCarousel" class="carousel slide" data-interval="false">
                             <div class="carousel-inner">
                                 <!-- Carousel items will be added dynamically here -->
@@ -1746,9 +1476,10 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                 <span class="sr-only">Next</span>
                             </a>
+                            <p>All spirits are served 50ml as standard, 25ml available on request.</p>
                         </div>
 
-                       
+
 
                         <script>
                             // Your JSON data
@@ -1758,57 +1489,70 @@
                                 "Prosecco & Champagne": [
                                     {
                                         "name": "Prosecco Bandarossa Valdobbiadene Bortolmiol",
-                                        "price": "€39 per bottle"
+                                        "price": "39 per bottle",
+                                        "imageUrl": "Assets/Images/wine1.png" 
                                     },
                                     {
                                         "name": "Sorella Bronca Particella DOCG",
-                                        "price": "€59 per bottle"
+                                        "price": "59 per bottle",
+                                        "imageUrl": "Assets/Images/salad4.jpeg" 
                                     },
                                     {
                                         "name": "Veuve Clicquot Brut",
-                                        "price": "€110 per bottle"
+                                        "price": "110 per bottle",
+                                        "imageUrl": "Assets/Images/wine3.png" 
                                     }
                                 ],
                                 "White Wine": [
                                     {
                                         "name": "Langhe Chardonnay Morino Beni Di Batasiolo 2023",
-                                        "price": "€35 per bottle or €9 per 150ml"
+                                        "price": "35 per bottle or €9 per 150ml",
+                                        "imageUrl": "Assets/Images/wine4.jpg" 
                                     },
                                     {
                                         "name": "Pinot Bianco IGT Tenuta Monteloro Villa Antinori 2022",
-                                        "price": "€38 per bottle"
+                                        "price": "38 per bottle",
+                                        "imageUrl": "Assets/Images/wine5.png" 
                                     },
                                     {
                                         "name": "Vermentino Guado Al Tasso DOC Bolgheri 2022",
-                                        "price": "€38 per bottle"
+                                        "price": "38 per bottle",
+                                        "imageUrl": "Assets/Images/wine6.png" 
                                     }
                                 ],
                                 "Rosé Wine": [
                                     {
                                         "name": "Etna Rosato Murgo Tenuta San Michele 2021",
-                                        "price": "€40 per bottle or €8.50 per 150ml"
+                                        "price": "40 per bottle or €8.50 per 150ml",//12
+                                        "imageUrl": "Assets/Images/wine12.jpg" 
                                     },
                                     {
                                         "name": "Provence Rosé Château Minuty 2022",
-                                        "price": "€40 per bottle"
+                                        "price": "40 per bottle",
+                                        "imageUrl": "Assets/Images/wine7.jpg" 
                                     },
                                     {
                                         "name": "Provence Rosé Whispering Angel Château d'Esclans 2022",
-                                        "price": "€50 per bottle"
+                                        "price": "50 per bottle",
+                                        "imageUrl": "Assets/Images/wine8.jpeg" 
                                     }
                                 ],
                                 "Red Wine": [
                                     {
                                         "name": "Barbera D'Alba Palladino 2019",
-                                        "price": "€28 per bottle"
+                                        "price": "28 per bottle",
+                                        "imageUrl": "Assets/Images/wine9.jpg" 
+
                                     },
                                     {
                                         "name": "Sangiovese Rosso di Montepulciano Poliziano 2021",
-                                        "price": "€29 per bottle or €7 per 150ml"
+                                        "price": "29 per bottle or €7 per 150ml",
+                                        "imageUrl": "Assets/Images/wine10.jpg" 
                                     },
                                     {
                                         "name": "Nero D'Avola Principi Di Butera Amira 2020",
-                                        "price": "€29 per bottle"
+                                        "price": "29 per bottle",
+                                        "imageUrl": "Assets/Images/wine11.jpg" 
                                     }
                                 ]
 
@@ -1819,106 +1563,106 @@
                                 "House Cocktails": [
                                     {
                                         "name": "Villa Bologna Spritz",
-                                        "price": "€11",
+                                        "price": "11",
                                         "description": "Bombay Sapphire Gin, Limoncello di Capri, citrus cordial, lemon juice, Fever Tree Tonic Water"
                                     },
                                     {
                                         "name": "Queen Margarita",
-                                        "price": "€11",
+                                        "price": "11",
                                         "description": "Olmeca Silver Tequila, Lajita Mezcal, honey & ginger syrup, lime juice"
                                     }
                                 ],
                                 "Classic Cocktails": [
                                     {
                                         "name": "Garibaldi",
-                                        "price": "€11",
+                                        "price": "11",
                                         "description": "Campari, fresh orange juice"
                                     },
                                     {
                                         "name": "Sgroppino",
-                                        "price": "€11",
+                                        "price": "11",
                                         "description": "Bandarossa Prosecco, Limoncello di Capri Sorbet"
                                     },
                                     {
                                         "name": "Old Fashioned",
-                                        "price": "€11",
+                                        "price": "11",
                                         "description": "Makers Mark Bourbon, sugar syrup, Angostura Bitters"
                                     },
                                     {
                                         "name": "Pisco Sour",
-                                        "price": "€11",
+                                        "price": "11",
                                         "description": "Capel Pisco, lemon juice, sugar syrup, egg white"
                                     },
                                     {
                                         "name": "Whiskey Sour",
-                                        "price": "€11",
+                                        "price": "11",
                                         "description": "J&B Rare Blended Scotch, lemon juice, sugar syrup, egg white"
                                     },
                                     {
                                         "name": "Margarita",
-                                        "price": "€11",
+                                        "price": "11",
                                         "description": "Olmeca Blanco Tequila, Triple Sec, lime juice"
                                     },
                                     {
                                         "name": "Espresso Martini",
-                                        "price": "€11",
+                                        "price": "11",
                                         "description": "Absolut Vodka, Kahlua, espresso"
                                     },
                                     {
                                         "name": "Negroni",
-                                        "price": "€11",
+                                        "price": "11",
                                         "description": "Bombay Sapphire Gin, Carpano Antica Formula, Campari"
                                     },
                                     {
                                         "name": "Aperol Spritz",
-                                        "price": "€11",
+                                        "price": "11",
                                         "description": "Aperol, Bandarossa Prosecco, Fever Tree Soda Water"
                                     },
                                     {
                                         "name": "Bramble",
-                                        "price": "€11",
+                                        "price": "11",
                                         "description": "Bombay Sapphire Gin, lemon juice, blackberry liqueur"
                                     },
                                     {
                                         "name": "Penicillin",
-                                        "price": "€11",
+                                        "price": "11",
                                         "description": "Johnnie Walker Black Label Whiskey, Laphroaig 10yo, lemon juice, honey & ginger syrup"
                                     },
                                     {
                                         "name": "Sidecar",
-                                        "price": "€11",
+                                        "price": "11",
                                         "description": "Remy Martin VSOP, Grand Marnier, lemon juice"
                                     },
                                     {
                                         "name": "Moscow Mule",
-                                        "price": "€11",
+                                        "price": "11",
                                         "description": "Absolut Vodka, Fever Tree Ginger Beer, lime juice"
                                     },
                                     {
                                         "name": "Dark N' Stormy",
-                                        "price": "€11",
+                                        "price": "11",
                                         "description": "Havana Club 7yo Rum, Fever Tree Ginger Beer, lime juice"
                                     }
                                 ],
                                 "Non-Alcoholic Cocktails & Juices": [
                                     {
                                         "name": "Fresh Orange Juice",
-                                        "price": "€6",
+                                        "price": "6",
                                         "description": ""
                                     },
                                     {
                                         "name": "Virgin Mojito",
-                                        "price": "€7",
+                                        "price": "7",
                                         "description": "Lime juice, Fever Tree Soda Water, mint"
                                     },
                                     {
                                         "name": "Villa Bologna Lemonade",
-                                        "price": "€4.50",
+                                        "price": "4.50",
                                         "description": ""
                                     },
                                     {
                                         "name": "Virgin Spritz",
-                                        "price": "€7",
+                                        "price": "7",
                                         "description": "Martini Vibrante & Martini Floreale, citrus cordial, Fever Tree Soda Water"
                                     }
                                 ],
@@ -1926,77 +1670,77 @@
                                     "Prosecco": [
                                         {
                                             "name": "Prosecco Bandarossa Valdobbiadene Bortolmiol",
-                                            "price": "€8.50"
+                                            "price": "8.50"
                                         }
                                     ],
                                     "Rosé Wine": [
                                         {
                                             "name": "Murgo Etna Rosato",
-                                            "price": "€8.50"
+                                            "price": "8.50"
                                         }
                                     ],
                                     "White Wine": [
                                         {
                                             "name": "Fleur de Thénac White Chateau Thénac Bergerac",
-                                            "price": "€7"
+                                            "price": "7"
                                         },
                                         {
                                             "name": "Gavi de Gavi Reserve Volo Superiore Morgassi",
-                                            "price": "€9"
+                                            "price": "9"
                                         }
                                     ],
                                     "Red Wine": [
                                         {
                                             "name": "Peppoli Chianti Antinori Classico",
-                                            "price": "€9"
+                                            "price": "9"
                                         },
                                         {
                                             "name": "Nero D'Avola Principi Di Butera Amira",
-                                            "price": "€7"
+                                            "price": "7"
                                         },
                                         {
                                             "name": "Fleur de Thénac Red Chateau Thénac Bergerac",
-                                            "price": "€7"
+                                            "price": "7"
                                         }
                                     ],
 
                                     "Tonics & Mixers": [
                                         {
                                             "name": "Fever Tree Tonic",
-                                            "price": "€3.50"
+                                            "price": "3.50"
                                         },
                                         {
                                             "name": "Fever Tree Slim Line Tonic",
-                                            "price": "€4"
+                                            "price": "4"
                                         },
                                         {
                                             "name": "Fever Tree Soda Water",
-                                            "price": "€3.50"
+                                            "price": "3.50"
                                         },
                                         {
                                             "name": "Fever Tree Ginger Beer",
-                                            "price": "€3.50"
+                                            "price": "3.50"
                                         },
                                         {
                                             "name": "John Henry Bitter Lemon",
-                                            "price": "€3.50"
+                                            "price": "3.50"
                                         }
                                     ],
                                     "Mezcal": [
                                         {
                                             "name": "Lajita Reposado",
-                                            "price": "€8"
+                                            "price": "8"
                                         }
                                     ],
                                     "Tequila": [
                                         {
                                             "name": "Olmeca Blanco",
-                                            "price": "€6"
+                                            "price": "6"
                                         },
                                         {
                                             "name": "Patron Silver",
                                             "description": "Gavi de Gavi Reserve Volo Superiore Morgassi",
-                                            "price": "€9"
+                                            "price": "9"
                                         }
                                     ],
 
@@ -2004,77 +1748,77 @@
                                         {
                                             "name": "Moretti Draft",
                                             "description": "250/500ml",
-                                            "price": "€3.50/€6"
+                                            "price": "3.50/€6"
                                         },
                                         {
                                             "name": "Cisk",
                                             "description": "250ml",
-                                            "price": "€3"
+                                            "price": "3"
                                         },
                                         {
                                             "name": "Cisk Excel",
-                                            "price": "€3.50"
+                                            "price": "3.50"
                                         },
                                         {
                                             "name": "Cisk 0%",
-                                            "price": "€3.50"
+                                            "price": "3.50"
                                         },
                                         {
                                             "name": "Farsons Blue Label",
                                             "description": "330ml",
-                                            "price": "€4.5"
+                                            "price": "4.5"
                                         },
                                         {
                                             "name": "Kopperberg Pear Cider",
                                             "description": "330ml",
-                                            "price": "€5.50"
+                                            "price": "5.50"
                                         },
                                         {
                                             "name": "Bullmers Cider",
                                             "description": "500ml",
-                                            "price": "€8"
+                                            "price": "8"
                                         }
                                     ],
                                     "Vodka": [
                                         {
                                             "name": "Belvedere",
-                                            "price": "€10"
+                                            "price": "10"
                                         },
                                         {
                                             "name": "Ciroc",
-                                            "price": "€9"
+                                            "price": "9"
                                         },
                                         {
                                             "name": "Absolut",
-                                            "price": "€6"
+                                            "price": "6"
                                         }
                                     ],
                                     "Gin": [
                                         {
                                             "name": "Monkey 47",
-                                            "price": "€11"
+                                            "price": "11"
                                         },
                                         {
                                             "name": "Hendrick's",
-                                            "price": "€9"
+                                            "price": "9"
                                         },
                                         {
                                             "name": "Bombay Sapphire",
-                                            "price": "€7"
+                                            "price": "7"
                                         }
                                     ],
                                     "Whisky": [
                                         {
                                             "name": "Singleton 12yo",
-                                            "price": "€9"
+                                            "price": "9"
                                         },
                                         {
                                             "name": "Laphroaing 10yo",
-                                            "price": "€10"
+                                            "price": "10"
                                         },
                                         {
                                             "name": "Glenmorangie Quinta Ruban Port",
-                                            "price": "€11"
+                                            "price": "11"
                                         },
                                         {
                                             "name": "Johnnie Walker Black Label",
@@ -2086,11 +1830,11 @@
                                         },
                                         {
                                             "name": "Jameson Black Barrel",
-                                            "price": "€8"
+                                            "price": "8"
                                         },
                                         {
                                             "name": "Makers Mark",
-                                            "price": "€8"
+                                            "price": "8"
                                         }
                                     ],
                                     "Soft Drinks": [
@@ -2100,135 +1844,135 @@
                                         },
                                         {
                                             "name": "San Pellegrino Water",
-                                            "price": "€4/2.75"
+                                            "price": "4/2.75"
                                         },
                                         {
                                             "name": "Coca-Cola/Zero",
-                                            "price": "€3"
+                                            "price": "3"
                                         },
                                         {
                                             "name": "Sprite",
-                                            "price": "€3"
+                                            "price": "3"
                                         },
                                         {
                                             "name": "Fanta",
-                                            "price": "€3"
+                                            "price": "3"
                                         },
                                         {
                                             "name": "Kinnie/Diet",
-                                            "price": "€3"
+                                            "price": "3"
                                         },
                                         {
                                             "name": "Apple Juice",
-                                            "price": "€3"
+                                            "price": "3"
                                         },
                                         {
                                             "name": "Peach Juice",
-                                            "price": "€3"
+                                            "price": "3"
                                         },
                                         {
                                             "name": "Orange Juice",
-                                            "price": "€3"
+                                            "price": "3"
                                         }
                                     ],
                                     "Rum": [
                                         {
                                             "name": "Havana Club Anejo 3yo",
-                                            "price": "€6"
+                                            "price": "6"
                                         },
                                         {
                                             "name": "Bacardi 4yo",
-                                            "price": "€10"
+                                            "price": "10"
                                         },
                                         {
                                             "name": "Havana Selecction De Maestros",
-                                            "price": "€13"
+                                            "price": "13"
                                         }
                                     ],
                                     "Aperitivo": [
                                         {
                                             "name": "Aperol",
-                                            "price": "€8"
+                                            "price": "8"
                                         },
                                         {
                                             "name": "Campari",
-                                            "price": "€8"
+                                            "price": "8"
                                         },
                                         {
                                             "name": "Martini Bianco",
-                                            "price": "€5"
+                                            "price": "5"
                                         },
                                         {
                                             "name": "Martini Extra Dry",
-                                            "price": "€5"
+                                            "price": "5"
                                         },
                                         {
                                             "name": "Carpano Antica Formula",
-                                            "price": "€7"
+                                            "price": "7"
                                         }
                                     ],
                                     "Cognac": [
                                         {
                                             "name": "Remy Martin VSOP",
-                                            "price": "€10"
+                                            "price": "10"
                                         }
                                     ],
                                     "Armagnac": [
                                         {
                                             "name": "Baron De Sigognac 10yo",
-                                            "price": "€10"
+                                            "price": "10"
                                         },
                                         {
                                             "name": "Armagnac",
-                                            "price": "€9"
+                                            "price": "9"
                                         }
                                     ],
                                     "Grappa": [
                                         {
                                             "name": "Borgo Antico San Vitale",
-                                            "price": "€10"
+                                            "price": "10"
                                         },
                                         {
                                             "name": "Passone Bianca",
-                                            "price": "€7"
+                                            "price": "7"
                                         },
                                         {
                                             "name": "Piave Cuore",
-                                            "price": "€6"
+                                            "price": "6"
                                         },
                                         {
                                             "name": "Pinot Nero",
-                                            "price": "€7"
+                                            "price": "7"
                                         }
                                     ],
                                     "Liqueurs": [
                                         {
                                             "name": "Lemoncello di Capri",
-                                            "price": "€6"
+                                            "price": "6"
                                         },
                                         {
                                             "name": "Grand Marnier",
-                                            "price": "€8"
+                                            "price": "8"
                                         },
                                         {
                                             "name": "Fernet Branca",
-                                            "price": "€7"
+                                            "price": "7"
                                         },
                                         {
                                             "name": "Amaro Montenegro",
-                                            "price": "€8"
+                                            "price": "8"
                                         },
                                         {
                                             "name": "Amaro Averna",
-                                            "price": "€8"
+                                            "price": "8"
                                         },
                                         {
                                             "name": "Disaronno Amaretto",
-                                            "price": "€6"
+                                            "price": "6"
                                         },
                                         {
                                             "name": "Frangelico",
-                                            "price": "€6"
+                                            "price": "6"
                                         },
                                         {
                                             "name": "Bayley's",
@@ -2248,13 +1992,13 @@
                                 "Zuppe": [
                                     {
                                         "name": "Minestrone con pesto Genovese",
-                                        "price": "€12",
+                                        "price": "12",
                                         "description": "Traditional minestrone soup with pesto Genovese",
                                         "dietary": ["vegetarian", "gluten-free"]
                                     },
                                     {
                                         "name": "Bouillabaisse Provencal",
-                                        "price": "€22",
+                                        "price": "22",
                                         "description": "Traditional French fish soup with garlic farmhouse bread",
                                         "dietary": []
                                     }
@@ -2262,37 +2006,37 @@
                                 "Antipasti": [
                                     {
                                         "name": "Bruschetta Primavera",
-                                        "price": "€12",
+                                        "price": "12",
                                         "description": "Grilled peppers, courgettes, aubergine, garlic, basil, and virgin olive oil",
                                         "dietary": ["lactose-free", "vegetarian"]
                                     },
                                     {
                                         "name": "Selection Of Italian Ham Salami & Cheese",
-                                        "price": "€18",
+                                        "price": "18",
                                         "description": "",
                                         "dietary": ["gluten"]
                                     },
                                     {
                                         "name": "Seppie Stufate alla 'Luciana' e Polenta Fritta",
-                                        "price": "€17",
+                                        "price": "17",
                                         "description": "Cuttlefish in a rich tomato sauce with sweet peas, white wine, garlic, and fried polenta",
                                         "dietary": []
                                     },
                                     {
                                         "name": "Mozzarelline Fritte e Funghi Prataioli Ripieni al Burro All’Aglio",
-                                        "price": "€15",
+                                        "price": "15",
                                         "description": "Mushrooms filled with garlic butter and crispy fried mozzarella balls served with salsa rossa",
                                         "dietary": ["lactose-free", "vegetarian"]
                                     },
                                     {
                                         "name": "Salsicce Toscane di Fattoria alla Griglia con Polenta Fritta E Aceto Di Vino Rosso",
-                                        "price": "€15",
+                                        "price": "15",
                                         "description": "Grilled Tuscan sausages with fried polenta & red wine vinegar",
                                         "dietary": ["lactose-free"]
                                     },
                                     {
                                         "name": "Calamari Fritti Alla Veneziana",
-                                        "price": "€14",
+                                        "price": "14",
                                         "description": "Crispy squid with garlic mayonnaise",
                                         "dietary": []
                                     }
@@ -2300,37 +2044,37 @@
                                 "Paste e Risotti": [
                                     {
                                         "name": "Spaetzli Tirolesi agli Spinaci con Crema di Tartufo e Speck",
-                                        "price": "€16",
+                                        "price": "16",
                                         "description": "Spaetzli Tirolesi with spinach, speck, black truffle cream, sage, and parmesan",
                                         "dietary": ["vegetarian"]
                                     },
                                     {
                                         "name": "Risotto con Spinaci e Mascarpone",
-                                        "price": "€17",
+                                        "price": "17",
                                         "description": "Risotto with spinach and mascarpone cheese",
                                         "dietary": ["vegetarian"]
                                     },
                                     {
                                         "name": "Conchiglie con Code di Gamberi e Ricotta",
-                                        "price": "€19",
+                                        "price": "19",
                                         "description": "Conchiglie pasta with prawns, ricotta cheese, chilli, basil, and virgin olive oil",
                                         "dietary": []
                                     },
                                     {
                                         "name": "Rigatoni alla Bolognese",
-                                        "price": "€16",
+                                        "price": "16",
                                         "description": "Rigatoni pasta with traditional beef and pork ragu and red wine",
                                         "dietary": ["gluten-free option available"]
                                     },
                                     {
                                         "name": "Penne alla Norma con Melanzane, Peperoncino Rosso, Salsa di Pomodoro, Basilico e Ricotta",
-                                        "price": "€16",
+                                        "price": "16",
                                         "description": "Penne with tomato sauce, eggplant, garlic, red chilli, ricotta, and olive oil",
                                         "dietary": ["vegetarian", "gluten-free option available"]
                                     },
                                     {
                                         "name": "Risotto con Salsiccia Toscana",
-                                        "price": "€17",
+                                        "price": "17",
                                         "description": "Risotto with Tuscan sausage and Chianti red wine",
                                         "dietary": []
                                     }
@@ -2338,31 +2082,31 @@
                                 "Secondi": [
                                     {
                                         "name": "Bocconcini di Coda di Rospo in Umido alla Livornese",
-                                        "price": "€27",
+                                        "price": "27",
                                         "description": "Braised chunks of Monkfish in white wine, garlic, tomato sauce, served with toasted garlic bruschetta",
                                         "dietary": ["lactose-free"]
                                     },
                                     {
                                         "name": "Salmone Scozzese con Salsa di Aragosta",
-                                        "price": "€29",
+                                        "price": "29",
                                         "description": "Fillet of Scottish salmon with lobster sauce, scallops’ meat, & fresh tarragon",
                                         "dietary": []
                                     },
                                     {
                                         "name": "Filetto di Branzino alla Griglia Con Timo Fresco, Olio D'oliva e Limone",
-                                        "price": "€29",
+                                        "price": "29",
                                         "description": "Grilled fillet of Seabass with fresh thyme, olive oil, and lemon",
                                         "dietary": ["gluten-free", "lactose-free"]
                                     },
                                     {
                                         "name": "Tagliata di Manzo alla Griglia con Rucola",
-                                        "price": "€28",
+                                        "price": "28",
                                         "description": "Grilled sirloin steak with rocket salad & rosemary oil",
                                         "dietary": ["lactose-free"]
                                     },
                                     {
                                         "name": "Filetti di Vitello Funghi Porcini",
-                                        "price": "€31",
+                                        "price": "31",
                                         "description": "Pan-fried fillets of Veal with porcini mushrooms, sage, & Brandy sauce",
                                         "dietary": []
                                     }
@@ -2370,43 +2114,43 @@
                                 "Contorni": [
                                     {
                                         "name": "Rucola & Parmesan Salad",
-                                        "price": "€7.50",
+                                        "price": "7.50",
                                         "description": "",
                                         "dietary": []
                                     },
                                     {
                                         "name": "Spicy Roast Potatoes",
-                                        "price": "€4.50",
+                                        "price": "4.50",
                                         "description": "",
                                         "dietary": []
                                     },
                                     {
                                         "name": "Spinaci al Burro",
-                                        "price": "€4.50",
+                                        "price": "4.50",
                                         "description": "",
                                         "dietary": []
                                     },
                                     {
                                         "name": "Grilled Vegetables",
-                                        "price": "€13",
+                                        "price": "13",
                                         "description": "Basil, garlic & olive oil",
                                         "dietary": []
                                     },
                                     {
                                         "name": "Broccoli",
-                                        "price": "€4.50",
+                                        "price": "4.50",
                                         "description": "",
                                         "dietary": []
                                     },
                                     {
                                         "name": "French Fries",
-                                        "price": "€4.50",
+                                        "price": "4.50",
                                         "description": "",
                                         "dietary": []
                                     },
                                     {
                                         "name": "Peas & Mint",
-                                        "price": "€4.50",
+                                        "price": "4.50",
                                         "description": "",
                                         "dietary": []
                                     }
@@ -2418,196 +2162,199 @@
                                 "Desserts": [
                                     {
                                         "name": "Mousse al Cioccolato Fondente con Praline di Niccioline Caramellate",
-                                        "price": "€8",
+                                        "price": "8",
                                         "description": "Dark chocolate mousse with caramelised praline",
                                         "attributes": ["gluten-free"]
                                     },
                                     {
                                         "name": "Arance Marinate al Grand Marnier",
-                                        "price": "€8.50",
+                                        "price": "8.50",
                                         "description": "Marinated oranges in Grand Marnier, lime juice & fresh mint",
                                         "attributes": ["gluten-free", "lactose-free"]
                                     },
                                     {
                                         "name": "Tiramisu’ con Amaretto di Saronno",
-                                        "price": "€8.50",
+                                        "price": "8.50",
                                         "description": "Espresso coffee savoiardi sponge biscuits, mascarpone, dusted with cocoa powder"
                                     },
                                     {
                                         "name": "Torta di Mele",
-                                        "price": "€8.50",
+                                        "price": "8.50",
                                         "description": "Homemade apple tart served with vanilla ice cream"
                                     },
                                     {
                                         "name": "Torta di Ricotta al Forno",
-                                        "price": "€8.50",
+                                        "price": "8.50",
                                         "description": "Homemade baked ricotta cake with wild berry sauce"
                                     },
                                     {
                                         "name": "Profiterole con Panna",
-                                        "price": "€8.50",
+                                        "price": "8.50",
                                         "description": "Homemade profiteroles with cream and warm chocolate sauce"
                                     },
                                     {
                                         "name": "Affogato al Caffe",
-                                        "price": "€5.50",
+                                        "price": "5.50",
                                         "description": "One scoop of gelato with espresso coffee",
                                         "attributes": ["gluten-free"]
                                     },
                                     {
                                         "name": "Gelato",
                                         "prices": {
-                                            "one_scoop": "€3.50",
-                                            "two_scoops": "€6",
-                                            "three_scoops": "€8"
+                                            "one_scoop": "3.50",
+                                            "two_scoops": "6",
+                                            "three_scoops": "8"
                                         },
                                         "flavors": ["Vanilla", "Stracciatella", "Chocolate", "Nocciola", "Pistachio", "Strawberry"]
                                     },
                                     {
                                         "name": "Sorbetto al Limone",
-                                        "price": "€8",
+                                        "price": "8",
                                         "attributes": ["gluten-free", "lactose-free"]
                                     }
                                 ],
                                 "Coffees": [
                                     {
                                         "name": "Cappuccino",
-                                        "price": "€3"
+                                        "price": "3"
                                     },
                                     {
                                         "name": "Caffé Latte",
-                                        "price": "€2.50"
+                                        "price": "2.50"
                                     },
                                     {
                                         "name": "Flat White",
-                                        "price": "€3"
+                                        "price": "3"
                                     },
                                     {
                                         "name": "Espresso",
-                                        "price": "€2"
+                                        "price": "2"
                                     },
                                     {
                                         "name": "Double Espresso",
-                                        "price": "€2.80"
+                                        "price": "2.80"
                                     },
                                     {
                                         "name": "Espresso Longo",
-                                        "price": "€2"
+                                        "price": "2"
                                     },
                                     {
                                         "name": "Espresso Macchiato",
-                                        "price": "€2.50"
+                                        "price": "2.50"
                                     },
                                     {
                                         "name": "Italian Hot Chocolate",
-                                        "price": "€4.50"
+                                        "price": "4.50"
                                     }
                                 ],
                                 "Teas": [
                                     {
                                         "name": "Three Chamomile",
-                                        "price": "€3.50",
+                                        "price": "3.50",
                                         "imageUrl": "Assets/Images/salad4.jpeg" // Replace with your actual image path
 
                                     },
                                     {
                                         "name": "Three Ginger",
-                                        "price": "€3.50"
+                                        "price": "3.50"
                                     },
                                     {
                                         "name": "Three Fennel",
-                                        "price": "€3.50"
+                                        "price": "3.50"
                                     },
                                     {
                                         "name": "Fresh Mint",
-                                        "price": "€3.50"
+                                        "price": "3.50"
                                     },
                                     {
                                         "name": "English Breakfast",
-                                        "price": "€3.50"
+                                        "price": "3.50"
                                     },
                                     {
                                         "name": "Earl Grey",
-                                        "price": "€3.50"
+                                        "price": "3.50"
                                     }
                                 ],
                                 "Cocktails": [
                                     {
                                         "name": "Nuovo Martini",
-                                        "price": "€11"
+                                        "price": "11"
                                     },
                                     {
                                         "name": "Sgroppino",
-                                        "price": "€11"
+                                        "price": "11"
                                     },
                                     {
                                         "name": "Espresso Martini",
-                                        "price": "€11"
+                                        "price": "11"
                                     }
                                 ],
                                 "Amaro & Liquers": [
                                     {
                                         "name": "Limoncello di Capri",
-                                        "price": "€6"
+                                        "price": "6"
                                     },
                                     {
                                         "name": "Frangelico",
-                                        "price": "€6"
+                                        "price": "6"
                                     },
                                     {
                                         "name": "Fernet Branca",
-                                        "price": "€7"
+                                        "price": "7"
                                     },
                                     {
                                         "name": "Montenegro",
-                                        "price": "€8"
+                                        "price": "8"
                                     },
                                     {
                                         "name": "Averna",
-                                        "price": "€8"
+                                        "price": "8"
                                     }
                                 ],
                                 "Grappa": [
                                     {
                                         "name": "Pinot Nero",
-                                        "price": "€6"
+                                        "price": "6"
 
                                     },
                                     {
                                         "name": "Borgo Antico San Vitale",
-                                        "price": "€10"
+                                        "price": "10"
                                     },
                                     {
                                         "name": "Passone Bianca",
-                                        "price": "€7"
+                                        "price": "7"
                                     },
                                     {
                                         "name": "Piave Cuore",
-                                        "price": "€6"
+                                        "price": "6"
                                     }
                                 ]
                             }
 
                             const childrenmenusection = {
-                                "MainCourse": [
+                                "Main Course": [
                                     {
                                         "name": "Penne Pasta",
-                                        "description": "With tomato sauce, bolognese, or butter & cheese"
+                                        "description": "With tomato sauce, bolognese, or butter & cheese",
+                                         "imageUrl": "Assets/Images/children1.jpg" 
                                     },
                                     {
                                         "name": "Fish Goujons",
-                                        "description": "Served with fries & carrot sticks"
+                                        "description": "Served with fries & carrot sticks",
+                                        "imageUrl": "Assets/Images/children2.jpg" 
                                     },
                                     {
                                         "name": "Salmone Scozzese",
                                         "description": "Served with fries & broccoli",
-                                        "extra": "€6"
+                                        "imageUrl": "Assets/Images/children3.jpg" 
                                     }
                                 ],
                                 "Dolci": [
                                     {
                                         "name": "One scoop of ice cream",
-                                        "description": "Vanilla, Stracciatella, Chocoloate, Nocciola or Strawberry"
+                                        "description": "Vanilla, Stracciatella, Chocoloate, Nocciola or Strawberry",
+                                        "imageUrl": "Assets/Images/children4.jpg" 
 
                                     }
                                 ]
@@ -2620,51 +2367,60 @@
                                     {
                                         "name": "Minestrone con Pesto Genovese",
                                         "description": "Traditional minestrone soup with pesto Genovese",
-                                        "dietary": ["gluten-free", "vegetarian"]
+                                        "dietary": ["gluten-free", "vegetarian"],
+                                        "imageUrl": "Assets/Images/lunch1.jpg" 
                                     },
                                     {
                                         "name": "Mozzarelline Fritte e Funghi Prataioli Ripieni al Burro All’aglio",
                                         "description": "Mushrooms filled with garlic butter and crispy fried mozzarella balls served with salsa rossa",
-                                        "dietary": ["lactose-free", "vegetarian"]
+                                        "dietary": ["lactose-free", "vegetarian"],
+                                        "imageUrl": "Assets/Images/lunch2.jpg" 
                                     },
                                     {
                                         "name": "Bruschetta Primavera",
                                         "description": "Grilled peppers, courgettes, aubergine, garlic, basil & virgin olive oil",
-                                        "dietary": ["lactose-free", "vegetarian"]
+                                        "dietary": ["lactose-free", "vegetarian"],
+                                        "imageUrl": "Assets/Images/lunch3.jpg" 
                                     }
                                 ],
-                                "MainCourse": [
+                                "Main Course": [
                                     {
                                         "name": "Risotto con Spinaci e Mascarpone",
                                         "description": "Risotto with spinach & mascarpone cheese",
-                                        "dietary": ["vegetarian"]
+                                        "dietary": ["vegetarian"],
+                                        "imageUrl": "Assets/Images/lunch4.jpg" 
                                     },
                                     {
                                         "name": "Penne alla Norma con Melanzane e Ricotta Salata",
                                         "description": "Penne, tomato sauce, egg plant, garlic, red chilli, salted ricotta & olive oil",
                                         "dietary": ["vegetarian"],
-                                        "note": "gluten-free spaghetti and penne pasta available"
+                                        "note": "gluten-free spaghetti and penne pasta available",
+                                        "imageUrl": "Assets/Images/lunch5.jpg" 
                                     },
                                     {
                                         "name": "Spaetzli Tirolesi agli Spinaci con Crema di Tartufo e Speck",
-                                        "description": "Spinach Spaetzli Tirolesi, speck, black truffle cream, sage & parmesan"
+                                        "description": "Spinach Spaetzli Tirolesi, speck, black truffle cream, sage & parmesan",
+                                        "imageUrl": "Assets/Images/lunch6.jpg" 
                                     }
                                 ],
                                 "Dessert": [
                                     {
                                         "name": "Mousse al Cioccolato Fondente con Praline di Niccioline Caramellate",
                                         "description": "Dark chocolate mousse with caramelised praline",
-                                        "dietary": ["gluten-free"]
+                                        "dietary": ["gluten-free"],
+                                        "imageUrl": "Assets/Images/lunch7.jpg" 
                                     },
                                     {
                                         "name": "Affogato al Caffe",
                                         "description": "One scoop of gelato espresso coffee",
-                                        "dietary": ["gluten-free"]
+                                        "dietary": ["gluten-free"],
+                                        "imageUrl": "Assets/Images/lunch8.jpg" 
                                     },
                                     {
                                         "name": "Arance Marinate al Grand Marnier",
                                         "description": "Marinated oranges in Grand Marnier, lime juice & fresh mint",
-                                        "dietary": ["gluten-free", "lactose-free"]
+                                        "dietary": ["gluten-free", "lactose-free"],
+                                        "imageUrl": "Assets/Images/lunch9.jpg" 
                                     }
                                 ],
 
@@ -2674,240 +2430,75 @@
 
 
 
-                            const menuSections2 = {
+
+
+
+                            const EasterSundaySetMenu = {
+                                "Starters": [
+                                    {
+                                        "name": "Bruschetta Primavera",
+                                        "description": "Grilled peppers courgettes aubergine garlic basil & virgin olive oil",
+                                        "attributes": ["vegetarian", "vegan"],
+                                        "imageUrl": "Assets/Images/easter1.jpg" 
+                                    },
+                                    {
+                                        "name": "Quattro Conchiglie di San-Giacomo con Salsa al Prosecco e Burro al Limone",
+                                        "description": "Four scallops gently pan fried topped with butter lemon & prosecco sauce",
+                                        "attributes": ["gluten-free"],
+                                        "imageUrl": "Assets/Images/easter2.jpg" 
+                                    },
+                                    {
+                                        "name": "Carpaccio Di Manzo Con Burrata Pugliese",
+                                        "description": "Crudo of beef rocket burrata basil & olive oil",
+                                        "attributes": ["gluten-free"],
+                                        "imageUrl": "Assets/Images/easter3.jpg" 
+                                    }
+                                ],
+                                "Main Courses": [
+                                    {
+                                        "name": "Cuore di Filetto di \"Scottona\" con salsa al Gorgonzola Dolce Profumato al Rosmarino",
+                                        "description": "Grilled beef fillet \"Scottona\" gorgonzola sauce & rosemary olive oil served with french fries & rocket",
+                                        "attributes": ["gluten-free"],
+                                        "imageUrl": "Assets/Images/easter4.jpg" 
+                                    },
+                                    {
+                                        "name": "Salmone Scozzese con Salsa di Aragosta",
+                                        "description": "Fillet of Scottish salmon lobster sauce scallops’ meat & fresh tarragon served with roast potatoes & broccoli",
+                                        "imageUrl": "Assets/Images/easter5.jpg" 
+                                    },
+                                    {
+                                        "name": "Conchiglie con Code di Gamberi e Ricotta",
+                                        "description": "Conchiglie pasta prawns ricotta cheese chilli basil & virgin olive oil",
+                                        "imageUrl": "Assets/Images/easter6.jpg" 
+                                    },
+                                    {
+                                        "name": "Penne alla Norma con Melanzane Peperoncino Rosso Salsa di Pomodoro Basilico e Ricotta Salata",
+                                        "description": "Penne tomato sauce eggplant garlic red chilli salted ricotta & olive oil",
+                                        "attributes": ["vegetarian"],
+                                        "imageUrl": "Assets/Images/easter7.jpg" 
+                                    }
+                                ],
                                 "Desserts": [
                                     {
                                         "name": "Mousse al Cioccolato Fondente con Praline di Niccioline Caramellate",
-                                        "price": "€777777",
                                         "description": "Dark chocolate mousse with caramelised praline",
-                                        "attributes": ["gluten-free"]
+                                        "attributes": ["gluten-free"],
+                                        "imageUrl": "Assets/Images/easter8.jpg" 
                                     },
                                     {
-                                        "name": "Arance Marinate al Grand Marnier",
-                                        "price": "€8.50",
-                                        "description": "Marinated oranges in Grand Marnier, lime juice & fresh mint",
-                                        "attributes": ["gluten-free", "lactose-free"]
-                                    },
-                                    {
-                                        "name": "Tiramisu’ con Amaretto di Saronno",
-                                        "price": "€8.50",
-                                        "description": "Espresso coffee savoiardi sponge biscuits, mascarpone, dusted with cocoa powder"
-                                    },
-                                    {
-                                        "name": "Torta di Mele",
-                                        "price": "€8.50",
-                                        "description": "Homemade apple tart served with vanilla ice cream"
-                                    },
-                                    {
-                                        "name": "Torta di Ricotta al Forno",
-                                        "price": "€8.50",
-                                        "description": "Homemade baked ricotta cake with wild berry sauce"
-                                    },
-                                    {
-                                        "name": "Profiterole con Panna",
-                                        "price": "€8.50",
-                                        "description": "Homemade profiteroles with cream and warm chocolate sauce"
-                                    },
-                                    {
-                                        "name": "Affogato al Caffe",
-                                        "price": "€5.50",
-                                        "description": "One scoop of gelato with espresso coffee",
-                                        "attributes": ["gluten-free"]
-                                    },
-                                    {
-                                        "name": "Gelato",
-                                        "prices": {
-                                            "one_scoop": "€3.50",
-                                            "two_scoops": "€6",
-                                            "three_scoops": "€8"
-                                        },
-                                        "flavors": ["Vanilla", "Stracciatella", "Chocolate", "Nocciola", "Pistachio", "Strawberry"]
-                                    },
+                                        "name": "Tiramisu’ con Amaretto Di Saronno",
+                                        "description": "Espresso coffee savoiardi sponge biscuits mascarpone dusted with cocoa powder",
+                                        "imageUrl": "Assets/Images/easter9.jpg"
+},
                                     {
                                         "name": "Sorbetto al Limone",
-                                        "price": "€8",
-                                        "attributes": ["gluten-free", "lactose-free"]
-                                    }
-                                ],
-                                "Coffees": [
-                                    {
-                                        "name": "Cappuccino",
-                                        "price": "€3"
-                                    },
-                                    {
-                                        "name": "Caffé Latte",
-                                        "price": "€2.50"
-                                    },
-                                    {
-                                        "name": "Flat White",
-                                        "price": "€3"
-                                    },
-                                    {
-                                        "name": "Espresso",
-                                        "price": "€2"
-                                    },
-                                    {
-                                        "name": "Double Espresso",
-                                        "price": "€2.80"
-                                    },
-                                    {
-                                        "name": "Espresso Longo",
-                                        "price": "€2"
-                                    },
-                                    {
-                                        "name": "Espresso Macchiato",
-                                        "price": "€2.50"
-                                    },
-                                    {
-                                        "name": "Italian Hot Chocolate",
-                                        "price": "€4.50"
-                                    }
-                                ],
-                                "Teas": [
-                                    {
-                                        "name": "Three Chamomile",
-                                        "price": "€3.50",
-                                        "imageUrl": "Assets/Images/salad4.jpeg" // Replace with your actual image path
-
-                                    },
-                                    {
-                                        "name": "Three Ginger",
-                                        "price": "€3.50"
-                                    },
-                                    {
-                                        "name": "Three Fennel",
-                                        "price": "€3.50"
-                                    },
-                                    {
-                                        "name": "Fresh Mint",
-                                        "price": "€3.50"
-                                    },
-                                    {
-                                        "name": "English Breakfast",
-                                        "price": "€3.50"
-                                    },
-                                    {
-                                        "name": "Earl Grey",
-                                        "price": "€3.50"
-                                    }
-                                ],
-                                "Cocktails": [
-                                    {
-                                        "name": "Nuovo Martini",
-                                        "price": "€11"
-                                    },
-                                    {
-                                        "name": "Sgroppino",
-                                        "price": "€11"
-                                    },
-                                    {
-                                        "name": "Espresso Martini",
-                                        "price": "€11"
-                                    }
-                                ],
-                                "Amaro & Liquers": [
-                                    {
-                                        "name": "Limoncello di Capri",
-                                        "price": "€6"
-                                    },
-                                    {
-                                        "name": "Frangelico",
-                                        "price": "€6"
-                                    },
-                                    {
-                                        "name": "Fernet Branca",
-                                        "price": "€7"
-                                    },
-                                    {
-                                        "name": "Montenegro",
-                                        "price": "€8"
-                                    },
-                                    {
-                                        "name": "Averna",
-                                        "price": "€8"
-                                    }
-                                ],
-                                "Grappa": [
-                                    {
-                                        "name": "Pinot Nero",
-                                        "price": "€6"
-
-                                    },
-                                    {
-                                        "name": "Borgo Antico San Vitale",
-                                        "price": "€10"
-                                    },
-                                    {
-                                        "name": "Passone Bianca",
-                                        "price": "€7"
-                                    },
-                                    {
-                                        "name": "Piave Cuore",
-                                        "price": "€6"
+                                        "description": "Lemon sorbet",
+                                        "attributes": ["gluten-free", "lactose-free"],
+                                        "imageUrl": "Assets/Images/easter10.jpg" 
                                     }
                                 ]
                             }
 
-                            
-                            const  EasterSundaySetMenu ={
-                                    "Starters": [
-                                        {
-                                            "name": "Bruschetta Primavera",
-                                            "description": "Grilled peppers courgettes aubergine garlic basil & virgin olive oil",
-                                            "attributes": ["vegetarian", "vegan"]
-                                        },
-                                        {
-                                            "name": "Quattro Conchiglie di San-Giacomo con Salsa al Prosecco e Burro al Limone",
-                                            "description": "Four scallops gently pan fried topped with butter lemon & prosecco sauce",
-                                            "attributes": ["gluten-free"]
-                                        },
-                                        {
-                                            "name": "Carpaccio Di Manzo Con Burrata Pugliese",
-                                            "description": "Crudo of beef rocket burrata basil & olive oil",
-                                            "attributes": ["gluten-free"]
-                                        }
-                                    ],
-                                        "MainCourses": [
-                                            {
-                                                "name": "Cuore di Filetto di \"Scottona\" con salsa al Gorgonzola Dolce Profumato al Rosmarino",
-                                                "description": "Grilled beef fillet \"Scottona\" gorgonzola sauce & rosemary olive oil served with french fries & rocket",
-                                                "attributes": ["gluten-free"]
-                                            },
-                                            {
-                                                "name": "Salmone Scozzese con Salsa di Aragosta",
-                                                "description": "Fillet of Scottish salmon lobster sauce scallops’ meat & fresh tarragon served with roast potatoes & broccoli",
-                                                "attributes": []
-                                            },
-                                            {
-                                                "name": "Conchiglie con Code di Gamberi e Ricotta",
-                                                "description": "Conchiglie pasta prawns ricotta cheese chilli basil & virgin olive oil",
-                                                "attributes": []
-                                            },
-                                            {
-                                                "name": "Penne alla Norma con Melanzane Peperoncino Rosso Salsa di Pomodoro Basilico e Ricotta Salata",
-                                                "description": "Penne tomato sauce eggplant garlic red chilli salted ricotta & olive oil",
-                                                "attributes": ["vegetarian"]
-                                            }
-                                        ],
-                                            "Desserts": [
-                                                {
-                                                    "name": "Mousse al Cioccolato Fondente con Praline di Niccioline Caramellate",
-                                                    "description": "Dark chocolate mousse with caramelised praline",
-                                                    "attributes": ["gluten-free"]
-                                                },
-                                                {
-                                                    "name": "Tiramisu’ con Amaretto Di Saronno",
-                                                    "description": "Espresso coffee savoiardi sponge biscuits mascarpone dusted with cocoa powder",
-                                                    "attributes": []
-                                                },
-                                                {
-                                                    "name": "Sorbetto al Limone",
-                                                    "description": "Lemon sorbet",
-                                                    "attributes": ["gluten-free", "lactose-free"]
-                                                }
-                                            ]
-                                }
-                            
 
                             const cocktailnightsmenu = {
                                 "Cocktails": [
@@ -2956,48 +2547,51 @@
                                         "description": "Havana Club 7yo Rum, Fever Tree Ginger Beer, lime juice"
                                     }
                                 ],
-                                    "Cicchetti": [
-                                        {
-                                            "name": "Bruschetta Primavera",
-                                            "description": "Grilled peppers, courgettes, aubergine, garlic, basil & virgin olive oil",
-                                            "price": "€12",
-                                            "attributes": ["lactose-free", "vegetarian"]
-                                        },
-                                        {
-                                            "name": "Antipasti Platter",
-                                            "description": "Selection of Italian Ham, Salami & Cheese",
-                                            "price": "€18",
-                                            "attributes": ["gluten-free"]
-                                        },
-                                        {
-                                            "name": "Calamari Fritti Alla Veneziana",
-                                            "description": "Crispy squid, garlic mayonnaise",
-                                            "price": "€14"
-                                        },
-                                        {
-                                            "name": "Salsicce Toscane di Fattoria alla Griglia con Polenta Fritta e Aceto Di Vino Rosso",
-                                            "description": "Grilled Tuscan sausages, fried polenta & red wine vinegar",
-                                            "price": "€15",
-                                            "attributes": ["gluten-free", "lactose-free"]
-                                        },
-                                        {
-                                            "name": "Mozzarelline Fritte e Funghi Prataioli Ripieni al Burro All’aglio",
-                                            "description": "Mushrooms filled with garlic butter and crispy fried mozzarella balls, served with salsa rossa",
-                                            "price": "€15",
-                                            "attributes": ["lactose-free", "vegetarian"]
-                                        }
-                                    ]
+                                "Cicchetti": [
+                                    {
+                                        "name": "Bruschetta Primavera",
+                                        "description": "Grilled peppers, courgettes, aubergine, garlic, basil & virgin olive oil",
+                                        "price": "12",
+                                        "attributes": ["lactose-free", "vegetarian"]
+                                    },
+                                    {
+                                        "name": "Antipasti Platter",
+                                        "description": "Selection of Italian Ham, Salami & Cheese",
+                                        "price": "18",
+                                        "attributes": ["gluten-free"]
+                                    },
+                                    {
+                                        "name": "Calamari Fritti Alla Veneziana",
+                                        "description": "Crispy squid, garlic mayonnaise",
+                                        "price": "14"
+                                    },
+                                    {
+                                        "name": "Salsicce Toscane di Fattoria alla Griglia con Polenta Fritta e Aceto Di Vino Rosso",
+                                        "description": "Grilled Tuscan sausages, fried polenta & red wine vinegar",
+                                        "price": "15",
+                                        "attributes": ["gluten-free", "lactose-free"]
+                                    },
+                                    {
+                                        "name": "Mozzarelline Fritte e Funghi Prataioli Ripieni al Burro All’aglio",
+                                        "description": "Mushrooms filled with garlic butter and crispy fried mozzarella balls, served with salsa rossa",
+                                        "price": "15",
+                                        "attributes": ["lactose-free", "vegetarian"]
+                                    }
+                                ]
                             }
 
                             const thursdaynightmenu = {
-                                "Thursday Nighr Grill Menu NIGHT GRILL MENU": [
+                                "Thursday Night Grill Menu Night Grill Menu": [
                                     {
                                         "name": "GRIGLIATA DI CARNI ALL’ITALIANA CON SPINACI AL BURRO E PATATE ARROSTE PICCANTI AL ROSMARINO",
-                                        "description": "Italian Style BBQ of beef fillet, veal fillets, Tuscan pork sausage & chicken wings marinated in garden fresh herbs & olive oil. Served with buttered spinach, spicy rosemary roast potatoes."
+                                        "description": "Italian Style BBQ of beef fillet, veal fillets, Tuscan pork sausage & chicken wings marinated in garden fresh herbs & olive oil. Served with buttered spinach, spicy rosemary roast potatoes.",
+                                        "imageUrl": "Assets/Images/thursday1.jpg" 
                                     },
                                     {
                                         "name": "Choose Your Sauce",
-                                        "description": "Porcini Mushroom Sauce or Gorgonzola Sauce or Green Peppercorns Sauce"
+                                        "description": "Porcini Mushroom Sauce or Gorgonzola Sauce or Green Peppercorns Sauce",
+                                        "imageUrl": "Assets/Images/thursday2.jpg" 
+
                                     }
                                 ]
                             }
@@ -3116,606 +2710,12 @@
                                 appendCarouselItems('#grigliatanightsCarousel', thursdaynightmenu);
                                 initializeCarousel('#grigliatanightsCarousel');
 
-
-
-                                // You can add more carousels by repeating the above two lines with different selectors and data
                             });
 
 
 
                         </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-                        <%--<%--   <!-- LUNCH SET MENU Items -->
-
-
-                        <div id="lunchCarousel" class="carousel slide" data-interval="false">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <h1>STARTER</h1>
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item lunch">
-                                            <img src="Assets\Images\Fmain1.jpeg" alt="Minestrone con Pesto Genovese" class="menu-img" data-toggle="modal" data-target="#imageModal">>
-                                            <h3>Minestrone con Pesto Genovese</h3>
-                                            <p>Traditional minestrone soup with pesto Genovese (g ,v)</p>
-                                        </div>
-
-                                        <div class="menu-item lunch">
-                                            <img src="Assets\Images\Fmain2.jpeg" alt="Mozzarelline Fritte e Funghi Prataioli Ripieni al Burro All’aglio">
-                                            <h3>Mozzarelline Fritte e Funghi Prataioli Ripieni al Burro All’aglio</h3>
-                                            <p>Mushrooms filled with garlic butter and crispy fried mozzarella balls, served with salsa rossa (l, v)</p>
-                                        </div>
-
-                                        <div class="menu-item lunch">
-                                            <img src="Assets\Images\Fmain3.jpg" alt="Bruschetta Primavera">
-                                            <h3>Bruschetta Primavera</h3>
-                                            <p>Grilled peppers, courgettes, aubergine, garlic, basil, & virgin olive oil (l, v)</p>
-                                        </div>
-
-
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <h1>MAIN COURSE</h1>
-
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item lunch">
-                                            <img src="Assets\Images\Fmain4.jpeg" alt="Risotto con Spinaci e Mascarpone">
-                                            <h3>Risotto con Spinaci e Mascarpone</h3>
-                                            <p>Risotto with spinach & mascarpone cheese (v)</p>
-                                        </div>
-
-                                        <div class="menu-item lunch">
-                                            <img src="Assets\Images\Fmain5.jpeg" alt="Penne alla Norma con Melanzane e Ricotta Salata*">
-                                            <h3>Penne alla Norma con Melanzane e Ricotta Salata*</h3>
-                                            <p>Penne, tomato sauce, egg plant, garlic, red chilli, salted ricotta & olive oil (v)</p>
-                                        </div>
-
-                                        <div class="menu-item lunch">
-                                            <img src="Assets\Images\Fmain6.jpeg" alt="Spaetzli Tirolesi agli Spinaci con Crema di Tartufo e Speck">
-                                            <h3>Spaetzli Tirolesi agli Spinaci con Crema di Tartufo e Speck</h3>
-                                            <p>Spinach Spaetzli Tirolesi, speck, black truffle cream, sage & parmesan</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                  <div class="carousel-item">
-                                    <h1>DESSERT</h1>
-
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item lunch">
-                                            <img src="Assets\Images\Fmain4.jpeg" alt="Mousse al Cioccolato Fondente con Praline di Niccioline Caramellate">
-                                            <h3>Mousse al Cioccolato Fondente con Praline di Niccioline Caramellate</h3>
-                                            <p>Dark chocolate mousse with caramelised praline (g)</p>
-                                        </div>
-
-                                        <div class="menu-item lunch">
-                                            <img src="Assets\Images\Fmain5.jpeg" alt="Affogato al Caffe">
-                                            <h3>Affogato al Caffe</h3>
-                                            <p>One scoop of gelato, espresso coffee (g)</p>
-                                        </div>
-
-                                        <div class="menu-item lunch">
-                                            <img src="Assets\Images\Fmain6.jpeg" alt="Arance Marinate al Grand Marnier">
-                                            <h3>Arance Marinate al Grand Marnier</h3>
-                                            <p>Marinated oranges in Grand Marnier, lime juice & fresh mint (g, l)</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                          <%--      <p>Monday To Friday</p>
-                                <p>12pm-3pm</p>
-                                <p>€25 for 2 courses</p>
-                                <p>€30 for 3 courses</p>--%>
-
-
-
-                        <%--          <!-- Add more .carousel-item as needed -->
-                            </div>
-                            <a class="carousel-control-prev" href="#lunchCarousel" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#lunchCarousel" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                        
-
-
-
-
-                        <!-- Cocktails & Drinks Items -->
-
-
-                      <%--  <div id="cocktailsCarousel" class="carousel slide" data-interval="false">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <h1>HOUSE COCKTAILS - €11</h1>
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item cocktails">
-                                            <img src="Assets\Images\main1.jpeg" alt="Villa Bologna Spritz" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>Villa Bologna Spritz</h3>
-                                            <p>Bombay Sapphire Gin, Limoncello di Capri, citrus cordial, lemon juice, Fever Tree Tonic Water</p>
-                                        </div>
-
-                                        <div class="menu-item cocktails">
-                                            <img src="Assets\Images\main2.jpeg" alt="Queen Margarita" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>Queen Margarita</h3>
-                                            <p>Olmeca Silver Tequila, Lajita Mezcal, honey & ginger syrup, lime juice</p>
-                                        </div>
-
-
-
-
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <h1>CLASSIC COCKTAILS</h1>
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item cocktails">
-                                            <img src="Assets\Images\main4.jpeg" alt="Garibaldi" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>Garibaldi</h3>
-                                            <p>Campari, fresh orange juice</p>
-                                        </div>
-
-                                        <div class="menu-item cocktails">
-                                            <img src="Assets\Images\main5.jpg" alt="Negroni" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>Negroni</h3>
-                                            <p>Bombay Sapphire Gin, Carpano Antica Formula, Campari</p>
-                                        </div>
-
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main6.jpeg" alt="Beef Tomahawk for two" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>Beef Tomahawk for two</h3>
-                                            <p>Charcoal grilled with whole charcoal baked potato with tzatziki sauce, grilled vegetables, mix of fresh salads and chips</p>
-                                            <p class="price">€63.98</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-                                <div class="carousel-item">
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main7.jpeg" alt="BEEF Fillet STEAK" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>BEEF Fillet STEAK</h3>
-                                            <p>Charcoal Grilled with whole charcoal backed potato with tzatziki sauce and grilled vegetables</p>
-                                            <p class="price">€23.98</p>
-                                        </div>
-
-
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main8.jpeg" alt="Orata" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>Orata</h3>
-                                            <p>Oven baked, served with cherry tomatoes whole charcoal baked potato with tzatziki sauce and fresh herbs</p>
-                                            <p class="price">€25.98</p>
-                                        </div>
-
-
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main9.jpeg" alt="BEEF SKEWER" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>BEEF SKEWER</h3>
-                                            <p>charcoal grilled in a special charcoal oven from beef fillet, portion of French fries and special sauce</p>
-                                            <p class="price">€29.98</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
-                                <div class="carousel-item">
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main10.jpeg" alt="BEEF Ribeye STEAK" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>BEEF Ribeye STEAK</h3>
-                                            <p>Charcoal Grilled served with whole charcoal backed potato with tzatziki sauce and charcoal grilled fresh vegetables</p>
-                                            <p class="price">€31.98</p>
-                                        </div>
-
-
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main11.jpeg" alt="BEEF Tagliata" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>BEEF Tagliata</h3>
-                                            <p>Charcoal Grilled served with cherry tomatoes, rucola, parmigiano cheese and French fries</p>
-                                            <p class="price">€26.98</p>
-                                        </div>
-
-
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main12.jpeg" alt="BEEF T-Bone STEAK" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>BEEF T-Bone STEAK</h3>
-                                            <p>Charcoal Grilled served with grilled vegetables who'll charcoal backed potato with tzatziki sauce</p>
-                                            <p class="price">€33.98</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="carousel-item">
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main13.jpeg" alt="CHICKEN Caprese" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>CHICKEN Caprese</h3>
-                                            <p>charcoal grilled garnished with mix of fresh greens, cherry tomatoes and whole charcoal baked potato with tzatziki sauce</p>
-                                            <p class="price">€18.97</p>
-                                        </div>
-
-
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main14.jpeg" alt="CHICKEN SKEWER" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>CHICKEN SKEWER</h3>
-                                            <p>charcoal grilled in a special charcoal oven, portion of French fries and special sauce / Ajvar/</p>
-                                            <p class="price">€21.98</p>
-                                        </div>
-
-
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main15.jpeg" alt="CHICKEN Piri-Piri" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>CHICKEN Piri-Piri</h3>
-                                            <p>garnished with French fries or sricy</p>
-                                            <p class="price">€16.98</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="carousel-item">
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main16.jpeg" alt="CHICKEN fillet Greek style" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>CHICKEN fillet Greek style</h3>
-                                            <p>Charcoal Grilled garnished with French fries and salsa Verde</p>
-                                            <p class="price">€15.78</p>
-                                        </div>
-
-
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main17.jpeg" alt="Pork Spare Ribs" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>Pork Spare Ribs</h3>
-                                            <p>charcoal grilled garnished with fried potatoes and BBQ sauce</p>
-                                            <p class="price">€18.98</p>
-                                        </div>
-
-
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main18.jpg" alt="Juicy PORK Neck STEAK" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>Juicy PORK Neck STEAK</h3>
-                                            <p>charcoal Grilled garnished with soft-fried egg, mushrooms, fried potatoes and Ajvar</p>
-                                            <p class="price">€16.98</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="carousel-item">
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main19.jpg" alt="PORK bally bacon on grill" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>PORK bally bacon on grill</h3>
-                                            <p>with BBQ sauce served with fried potatoes and fresh tomatoes</p>
-                                            <p class="price">€16.78</p>
-                                        </div>
-
-
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main20.jpeg" alt="PORK SKEWER" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>PORK SKEWER</h3>
-                                            <p>with vegetables, served with French fries and Ajvar</p>
-                                            <p class="price">€21.98</p>
-                                        </div>
-
-
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main21.jpeg" alt="LAMB French Rack CUTLETS" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>LAMB French Rack CUTLETS</h3>
-                                            <p>served with whole charcoal backed potato and grilled vegetables</p>
-                                            <p class="price">€28.98</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <div class="carousel-item">
-                                    <div class="d-flex justify-content-around">
-                                        <div class="menu-item maindishes">
-                                            <img src="Assets\Images\main22.jpg" alt="BBQ Grilled Danish PORK Chop" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                            <h3>BBQ Grilled Danish PORK Chop</h3>
-                                            <p>with BBQ sauce served with fried potatoes and fresh tomatoes</p>
-                                            <p class="price">€18.98</p>
-                                        </div>
-                                    </div>
-
-
-                                    <!-- Add more .carousel-item as needed -->
-                                </div>
-                                <a class="carousel-control-prev" href="#maindishesCarousel" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#maindishesCarousel" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
---%>
-
-
-
-
-
-
-
-
-
-
-
-                            <!-- Burgers Items -->
-
-
-                            <div id="burgersCarousel" class="carousel slide" data-interval="false">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <div class="d-flex justify-content-around">
-                                            <div class="menu-item burgers">
-                                                <img src="Assets\Images\burger1.jpeg" alt="Chicken Burger" class="menu-img" data-toggle="modal" data-target="#imageModal">>
-                                            <h3>Chicken Burger</h3>
-                                                <p>grilled chicken fillet, cheddar cheese, lettuce, pickles, tomatoes, dressing, French fries</p>
-                                                <p class="price">€14.98</p>
-                                            </div>
-
-                                            <div class="menu-item burgers">
-                                                <img src="Assets\Images\burger2.jpeg" alt="Veranda BEEF Burger" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                                <h3>"Veranda" BEEF Burger</h3>
-                                                <p>beef burger, cheddar cheese, tomatoes, onion rings, bacon, pickles, honey-mustard dressing, French fries and salad</p>
-                                                <p class="price">€16.78</p>
-                                            </div>
-
-                                            <div class="menu-item burgers">
-                                                <img src="Assets\Images\burger3.jpeg" alt="Avocado Burger vegetarian">
-                                                <h3>Avocado Burger vegetarian</h3>
-                                                <p>Avocado burger fried with avocado slices, cheddar, fresh greens, salsa tomatoes special mideterian sauce served with French fries</p>
-                                                <p class="price">€11.98</p>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-
-
-                                    <!-- Add more .carousel-item as needed -->
-                                </div>
-                                <%--  <a class="carousel-control-prev" href="#burgersCarousel" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#burgersCarousel" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>--%>
-                            </div>
-
-
-                            <!-- Gluten Free Items -->
-                            <div id="glutenFreeCarousel" class="carousel slide" data-interval="false">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <div class="d-flex justify-content-around">
-                                            <div class="menu-item glutenFree">
-                                                <img src="Assets\Images\glutenFree1.jpg" alt="Ricotta Ravioli" class="menu-img" data-toggle="modal" data-target="#imageModal">>
-                                            <h3>Ricotta Ravioli</h3>
-                                                <p>with tomato sauce and parsley</p>
-                                                <p class="price">€15.98</p>
-                                            </div>
-
-                                            <div class="menu-item glutenFree">
-                                                <img src="Assets\Images\glutenFree2.jpg" alt="Tortellini Spinach" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                                <h3>Tortellini Spinach</h3>
-                                                <p>creamy sauce, fresh tomatoes</p>
-                                                <p class="price">€15.98</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Add more .carousel-item as needed -->
-                                </div>
-                                <a class="carousel-control-prev" href="#glutenFreeCarousel" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#glutenFreeCarousel" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-
-
-
-                            <!-- Pizza Items -->
-                            <div id="pizzaCarousel" class="carousel slide" data-interval="false">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <div class="d-flex justify-content-around">
-                                            <div class="menu-item pizza">
-                                                <img src="Assets\Images\glutenFree1.jpg" alt="PIZZA Pepperoni" class="menu-img" data-toggle="modal" data-target="#imageModal">>
-                                            <h3>PIZZA Pepperoni</h3>
-                                                <p>tomato sauce, mozzarella, pepperoni salami</p>
-                                                <p class="price">€13.98</p>
-                                            </div>
-
-                                            <div class="menu-item pizza">
-                                                <img src="Assets\Images\glutenFree2.jpg" alt="PIZZA Parma Ham" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                                <h3>PIZZA Parma Ham</h3>
-                                                <p>tomato sauce, capers, parma ham, rucola, cherry and grana padano shavings</p>
-                                                <p class="price">€15.78</p>
-                                            </div>
-
-
-                                            <div class="menu-item pizza">
-                                                <img src="Assets\Images\glutenFree2.jpg" alt="PIZZA Tuna" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                                <h3>PIZZA Tuna</h3>
-                                                <p>with capers, onion, mozzarella and tomato sauce</p>
-                                                <p class="price">€15.78</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="carousel-item">
-                                        <div class="d-flex justify-content-around">
-                                            <div class="menu-item pizza">
-                                                <img src="Assets\Images\main19.jpg" alt="PIZZA Margarita" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                                <h3>PIZZA Margarita</h3>
-                                                <p>tomato sauce, mozzarella, basil, olive oil</p>
-                                                <p class="price">€9.98</p>
-                                            </div>
-
-
-                                            <div class="menu-item pizza">
-                                                <img src="Assets\Images\main20.jpeg" alt="PIZZA Quattro Formaggi" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                                <h3>PIZZA Quattro Formaggi</h3>
-                                                <p>mozzarella, Gozo pepper cheese, blue cheese, baby mozzarella and cream</p>
-                                                <p class="price">€13.98</p>
-                                            </div>
-
-
-                                            <div class="menu-item pizza">
-                                                <img src="Assets\Images\main21.jpeg" alt="Al Prosciutto e Funghi PIZZA" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                                <h3>Al Prosciutto e Funghi PIZZA</h3>
-                                                <p>tomato sauce, olive oil, oregano, mozzarella, prosciutto, funghi</p>
-                                                <p class="price">€14.98</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="carousel-item">
-                                        <div class="d-flex justify-content-around">
-                                            <div class="menu-item pizza">
-                                                <img src="Assets\Images\main19.jpg" alt="PIZZA VERANDA" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                                <h3>PIZZA "VERANDA"</h3>
-                                                <p>Ajvar, mozzarella, Bulgarian salami lukanka, white Bulgarian cheese, pickles, olives</p>
-                                                <p class="price">€15.98</p>
-                                            </div>
-
-
-                                            <div class="menu-item pizza">
-                                                <img src="Assets\Images\main20.jpeg" alt="PIZZA Capricciosa" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                                <h3>PIZZA Capricciosa</h3>
-                                                <p>tomato sauce, mozzarella, fresh mushrooms, ham, eggs, olives and oregano</p>
-                                                <p class="price">€14.98</p>
-                                            </div>
-
-
-                                            <div class="menu-item pizza">
-                                                <img src="Assets\Images\main21.jpeg" alt="PIZZA Calzone" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                                <h3>PIZZA Calzone</h3>
-                                                <p>tomato sauce, mozzarella, Beef mince, jalapeno, peppers, onion, mushrooms, rucola and grana padano shavings</p>
-                                                <p class="price">€15.78</p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="carousel-item">
-                                        <div class="d-flex justify-content-around">
-                                            <div class="menu-item pizza">
-                                                <img src="Assets\Images\main19.jpg" alt="Carbonara Pizza" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                                <h3>Carbonara Pizza</h3>
-                                                <p>mozzarella, pancetta, parmigiano, eggs, spices, touch of cream</p>
-                                                <p class="price">€15.98</p>
-                                            </div>
-
-
-
-                                        </div>
-                                    </div>
-
-
-
-                                    <!-- Add more .carousel-item as needed -->
-                                </div>
-                                <a class="carousel-control-prev" href="#pizzaCarousel" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                                <a class="carousel-control-next" href="#pizzaCarousel" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </div>
-
-
-
-
-
-
-
-
-                            <!-- Deserts Items -->
-                            <div id="desertsCarousel" class="carousel slide" data-interval="false">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <div class="d-flex justify-content-around">
-                                            <div class="menu-item deserts">
-                                                <img src="Assets\Images\desert1.jpg" alt="Home made Biscuit cake with Nutella" class="menu-img" data-toggle="modal" data-target="#imageModal">>
-                                            <h3>Home made Biscuit cake with Nutella</h3>
-                                                <p>ingredients is a secret, delicious</p>
-                                                <p class="price">€5.58</p>
-                                            </div>
-
-                                            <div class="menu-item deserts">
-                                                <img src="Assets\Images\desert2.jpg" alt="Set of ice cream" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                                <h3>Set of ice cream</h3>
-                                                <p>chocolate, vanilla or strawberry</p>
-                                                <p class="price">€15.98</p>
-                                            </div>
-
-                                            <div class="menu-item deserts">
-                                                <img src="Assets\Images\desert3.jpeg" alt="Soufflé chocolate" class="menu-img" data-toggle="modal" data-target="#imageModal">
-                                                <h3>Soufflé chocolate</h3>
-                                                <p>with scoop of ice-cream</p>
-                                                <p class="price">€4.98</p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="carousel-item">
-                                        <div class="d-flex justify-content-around">
-                                            <div class="menu-item deserts">
-                                                <img src="Assets\Images\desert4.jpeg" alt="Fresh Sweets From Our Display">
-                                                <h3>Fresh Sweets From Our Display</h3>
-                                                <p class="price">€5.78</p>
-                                            </div>
-                                        </div>
-
-                                        <!-- Add more .carousel-item as needed -->
-                                    </div>
-                                    <a class="carousel-control-prev" href="#desertsCarousel" role="button" data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#desertsCarousel" role="button" data-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </div>
-                            </div>
                     </section>
                 </div>
 
@@ -3729,7 +2729,7 @@
                             <!-- Previous Arrow -->
                             <div class="col-auto">
                                 <div class="menu-control-prev" role="button">
-                                    <img id="leftArrowMenuD" src="Assets\Images\leftArrow.png" alt="Previous" class="menu-control-prev-icon"/>
+                                    <img id="leftArrowMenuD" src="Assets\Images\leftArrow.png" alt="Previous" class="menu-control-prev-icon" />
                                 </div>
                             </div>
 
@@ -3741,7 +2741,7 @@
                                         <li data-category="easter" onclick="showMenu('easter', this)">Easter Set Menu</li>
                                         <li data-category="grigliatanights" onclick="showMenu('grigliatanights', this)">Grigliata Nights</li>
                                         <li data-category="cocktailnights" onclick="showMenu('cocktailnights', this)">Cocktail Nights</li>
-                           
+
                                     </ul>
                                 </div>
                             </div>
@@ -3749,7 +2749,7 @@
                             <!-- Next Arrow -->
                             <div class="col-auto">
                                 <div class="menu-control-next" role="button">
-                                    <img id="rightMenuD" src="Assets\Images\rightArrow.png" alt="Next" class="menu-control-next-icon"/>
+                                    <img id="rightMenuD" src="Assets\Images\rightArrow.png" alt="Next" class="menu-control-next-icon" />
                                 </div>
                             </div>
                         </div>
@@ -3759,196 +2759,70 @@
                     <div class="menu-items">
                         <section class="menu">
 
-                              <div id="lmCarousel" class="carousel slide" data-interval="false">
-                            <div class="carousel-inner">
-                                <!-- Carousel items will be added dynamically here -->
-                            </div>
-                            <a class="carousel-control-prev" href="#lmCarousel" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#lmCarousel" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-
-
-                             <div id="easterCarousel" class="carousel slide" data-interval="false">
-                            <div class="carousel-inner">
-                                <!-- Carousel items will be added dynamically here -->
-                            </div>
-                            <a class="carousel-control-prev" href="#easterCarousel" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#easterCarousel" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-
-                             <div id="grigliatanightsCarousel" class="carousel slide" data-interval="false">
-                            <div class="carousel-inner">
-                                <!-- Carousel items will be added dynamically here -->
-                            </div>
-                            <a class="carousel-control-prev" href="#grigliatanightsCarousel" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#grigliatanightsCarousel" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-
-                             <div id="cocktailnightsCarousel" class="carousel slide" data-interval="false">
-                            <div class="carousel-inner">
-                                <!-- Carousel items will be added dynamically here -->
-                            </div>
-                            <a class="carousel-control-prev" href="#cocktailnightsCarousel" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#cocktailnightsCarousel" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
-                        
-
-                       
-
-                             
-
-
-
-
-                            <div id="helloCarousel" class="carousel slide" data-interval="false">
+                            <div id="lmCarousel" class="carousel slide" data-interval="false">
                                 <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <div class="d-flex justify-content-around">
-                                            <div class="menu-item hello">
-                                                <img src="Assets\Images\Bruschetta.jpg" alt="Bruschetta">
-                                                <h3>Bruschetta</h3>
-                                                <p>with tomatoes, mus of cheese and home made pesto</p>
-                                                <p class="price">€6.98</p>
-                                            </div>
-
-                                            <div class="menu-item hello">
-                                                <img src="Assets\Images\BruschettaVeranda.jpg" alt="Bruschetta Veranda">
-                                                <h3>Bruschetta "Veranda"</h3>
-                                                <p>with lukanka and Ajvar</p>
-                                                <p class="price">€6.98</p>
-                                            </div>
-
-                                            <div class="menu-item lol">
-                                                <img src="Assets\Images\ChickenWings.jpeg" alt="Chicken Wings">
-                                                <h3>Chicken Wings</h3>
-                                                <p>with french fries and BBQ sauce</p>
-                                                <p class="price">€11.98</p>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <div class="d-flex justify-content-around">
-                                            <div class="menu-item hello">
-                                                <img src="Assets\Images\Mushrooms.jpeg" alt="Stuffed mushrooms">
-                                                <h3>Stuffed mushrooms</h3>
-                                                <p>charcoal grilled, stuffed with butter, bacon and cheese</p>
-                                                <p class="price">€8.78</p>
-                                            </div>
-
-                                            <div class="menu-item lol">
-                                                <img src="Assets\Images\shrimpss.jpeg" alt="Shrimps">
-                                                <h3>Shrimps with Pernod and cherry tomatoes</h3>
-                                                <p>glazed with butter and dill</p>
-                                                <p class="price">€14.78</p>
-                                            </div>
-
-                                            <div class="menu-item lol">
-                                                <img src="Assets\Images\freshVegtables.jpg" alt="Fresh vegetables">
-                                                <h3>Fresh vegetables</h3>
-                                                <p>charcoal grilled with aromatic marinate and mozzarella di'Bufala</p>
-                                                <p class="price">€11.98</p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="carousel-item">
-                                        <div class="d-flex justify-content-around">
-                                            <div class="menu-item lol">
-                                                <img src="Assets\Images\KingPrawns.jpeg" alt="King Prawns">
-                                                <h3>King Prawns</h3>
-                                                <p>6 king prawns fried in garlic oil, sweet chilli and fresh herbs served with special dip</p>
-                                                <p class="price">€11.78</p>
-                                            </div>
-
-                                            <div class="menu-item lol">
-                                                <img src="Assets\Images\fistomisto.jpg" alt="Frito Mistos">
-                                                <h3>Frito Misto</h3>
-                                                <p>with home made tzatziki sauce, breaded calamari, lanterini, shrimps and mussel meat</p>
-                                                <p class="price">€15.98</p>
-                                            </div>
-
-                                            <div class="menu-item lol">
-                                                <img src="Assets\Images\muscels.jpg" alt="Veranda Mussels">
-                                                <h3>Veranda Mussels</h3>
-                                                <p>fresh mussels, butter sauce, white wine with garlic and lemon slices, onions and parsley</p>
-                                                <p class="price">€10.98</p>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                    <!-- Add more .carousel-item as needed -->
+                                    <!-- Carousel items will be added dynamically here -->
                                 </div>
-                                <a class="carousel-control-prev" href="#helloCarousel" role="button" data-slide="prev">
+                                <a class="carousel-control-prev" href="#lmCarousel" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Previous</span>
                                 </a>
-                                <a class="carousel-control-next" href="#helloCarousel" role="button" data-slide="next">
+                                <a class="carousel-control-next" href="#lmCarousel" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                                <p>Monday To Friday 12pm-3pm - €25 for 2 courses/€30 for 3 courses</p>
+                                <p>v = vegetarian g = gluten free l = lactose free *gluten free spagetti and penne pasta available</p>
+                                <p>Please let your server know if you have any allergies or dietary requirements. Our dishes are made here and may contain trace ingredients.</p>
+                            </div>
+
+
+                            <div id="easterCarousel" class="carousel slide" data-interval="false">
+                                <div class="carousel-inner">
+                                    <!-- Carousel items will be added dynamically here -->
+                                </div>
+                                <a class="carousel-control-prev" href="#easterCarousel" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#easterCarousel" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                                <p>v = vegetarian g = gluten free l = lactose free *gluten free spagetti and penne pasta available</p>
+                                <p>Please let your server know if you have any allergies or dietary requirements. Our dishes are made here and may contain trace ingredients.</p>
+                            </div>
+
+                            <div id="grigliatanightsCarousel" class="carousel slide" data-interval="false">
+                                <div class="carousel-inner">
+                                    <!-- Carousel items will be added dynamically here -->
+                                </div>
+                                <a class="carousel-control-prev" href="#grigliatanightsCarousel" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#grigliatanightsCarousel" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                                <p>Please let your server know if you have any allergies or dietary requirements. Our dishes are made here and may contain trace ingredients.</p>
+                            </div>
+
+                            <div id="cocktailnightsCarousel" class="carousel slide" data-interval="false">
+                                <div class="carousel-inner">
+                                    <!-- Carousel items will be added dynamically here -->
+                                </div>
+                                <a class="carousel-control-prev" href="#cocktailnightsCarousel" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#cocktailnightsCarousel" role="button" data-slide="next">
                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                     <span class="sr-only">Next</span>
                                 </a>
                             </div>
 
-                            <!-- tet-->
 
-
-                            <div id="ttCarousel" class="carousel slide" data-interval="false">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <div class="d-flex justify-content-around">
-                                            <div class="menu-item tt">
-                                                <img src="Assets\Images\Bruschetta.jpg" alt="Bruschetta">
-                                                <h3>Bruschetta</h3>
-                                                <p>with tomatoes, mus of cheese and home made pesto</p>
-                                                <p class="price">€6.98</p>
-                                            </div>
-
-                                            <div class="menu-item tt">
-                                                <img src="Assets\Images\BruschettaVeranda.jpg" alt="Bruschetta Veranda">
-                                                <h3>Bruschetta "Veranda"</h3>
-                                                <p>with lukanka and Ajvar</p>
-                                                <p class="price">€6.98</p>
-                                            </div>
-
-                                            <div class="menu-item tt">
-                                                <img src="Assets\Images\ChickenWings.jpeg" alt="Chicken Wings">
-                                                <h3>Chicken Wings</h3>
-                                                <p>with french fries and BBQ sauce</p>
-                                                <p class="price">€11.98</p>
-                                            </div>
-
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </section>
                     </div>
 
@@ -4089,7 +2963,7 @@
                                 </div>
                             </div>
                             <div class="info-section">
-                                <img src="Assets\Images\loc-icon.png" alt="Location Icon" class="icon">
+                                <img src="Assets\Images\loc-icon.png" alt="Location Icon" class="icon"/>
                                 <div class="info-text">
                                     <h2>Address</h2>
                                     <p>
@@ -4100,7 +2974,7 @@
                                 </div>
                             </div>
                             <div class="info-section">
-                                <img src="Assets\Images\phone-icon.png" alt="Phone Icon" class="icon">
+                                <img src="Assets\Images\phone-icon.png" alt="Phone Icon" class="icon"/>
                                 <div class="info-text">
                                     <h2>Phone Number</h2>
                                     <p>+356 7941 8708</p>
