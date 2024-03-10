@@ -15,7 +15,7 @@
 
     <style>
         :root {
-            --base-font-size: 20px; /* Default base font size */
+            --base-font-size: 20px; /* Default base font sizesss */
             --background-color: #f6f6f6;
             --text-color: #363435;
         }
