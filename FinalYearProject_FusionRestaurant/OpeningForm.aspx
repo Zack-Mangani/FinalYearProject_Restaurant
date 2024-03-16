@@ -39,6 +39,7 @@
         .navbar-brand, .nav-link {
             color: #F6F6F6 !important;
             font-size: var(--base-font-size);
+
         }
 
             .nav-link:hover {
@@ -189,6 +190,7 @@
             border: #B01F21;
             border-radius: 5px;
             display: inline-block;
+            width: 180px;
         }
 
             .btn-primary:hover {
@@ -256,7 +258,7 @@
             border: 1px solid #F6F6F6;
             color: #F6F6F6;
             border-radius: 0;
-            padding-right: 50px; /* Make padding to fit the button inside */
+            padding-right: 50px;
         }
 
         .form-inline .btn-outline-success {
@@ -283,6 +285,7 @@
 
         h1 {
             font-size: calc(var(--base-font-size) + 10px);
+            padding-top: 22px;
         }
 
         .contact-wrapper {
@@ -348,10 +351,13 @@
 
             #menu-categories li:hover, #menu-categories li.active {
                 background-color: #B01F21;
+                                font-weight:bold;
+
             }
 
             #bar-menu-categories li:hover, #bar-menu-categories li.active {
                 background-color: #B01F21;
+                font-weight:bold;
             }
 
         .menu-item {
@@ -360,7 +366,7 @@
             border-radius: 8px;
             margin: 10px;
             padding: 10px;
-            width: 250px;
+            width: 300px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             background-color: #363435;
         }
@@ -375,6 +381,7 @@
                 color: #f3f3f3;
                 padding-top: 12px;
                 font-size: calc(var(--base-font-size) + 5px);
+                font-weight:bold;
             }
 
             .menu-item p {
@@ -384,7 +391,7 @@
             }
 
             .menu-item .price {
-                color: #B01F21;
+                color: #f3f3f3;
                 font-weight: bold;
             }
 
@@ -450,23 +457,22 @@
         }
 
         .menu-control-prev {
-            left: 0; /* Position at the start of the categories */
+            left: 0;
         }
 
         .menu-control-next {
-            right: 0; /* Position at the end of the categories */
+            right: 0;
         }
 
-        /* Use SVG or Font Awesome icons for the arrows */
         .menu-control-prev-icon:before,
         .menu-control-next-icon:before {
-            content: '\f104'; /* FontAwesome left arrow */
+            content: '\f104';
             font-family: 'Font Awesome 5 Free';
             font-weight: 900;
         }
 
         .menu-control-next-icon:before {
-            content: '\f105'; /* FontAwesome right arrow */
+            content: '\f105';
         }
 
         .menu-control-prev-icon, .menu-control-next-icon {
@@ -489,7 +495,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%; /* Ensure the row takes full width */
+            width: 100%;
         }
 
         .about-icon .icon {
@@ -650,18 +656,31 @@
                 text-decoration: underline; /* Underline on hover */
             }
 
-        /* Ensure buttons fit well */
         .btn {
             margin-top: 0.5rem;
             margin-bottom: 0.5rem;
         }
 
-        /* Add spacing and alignment for theme buttons */
+        /* Add splacing and alignment for theme buttons */
         #themeSelection .btn {
             width: 80px; /* Fixed width for a uniform look */
             margin: 0 5px; /* Margin for spacing */
             text-align: center;
+            font-weight: bold;
+    background-color: #111111;
+    color: #f6f6f6;
         }
+
+        #themeSelection .btn.active,
+#themeSelection .btn:hover {
+    background-color: #B01F21; 
+    color: #f6f6f6; 
+}
+
+/* Optional: if you want a smooth transition effect */
+#themeSelection .btn {
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color change */
+}
 
 
         /* Base Styles */
@@ -699,12 +718,12 @@
         }
 
         .feedback-box {
-            background-color: #333333;
+            background-color: #363435;
             color: #ffffff;
             padding: 20px;
             border-radius: 15px;
-            margin: 0 auto; /* Center the box and remove side margins */
-            width: 75%; /* Adjust width to accommodate padding */
+            margin: 0 auto;
+            width: 75%;
             position: relative;
             border-style: solid;
             border-color: #f6f6f6;
@@ -922,15 +941,13 @@
 
             #map {
                 order: 1; /* Map comes first */
-                height: 300px; /* Set a fixed height for the map on small screens */
-                width: 100%; /* Ensure the map is full width on smaller screens */
+                height: 300px; 
+                width: 100%;
             }
         }
 
 
 
-        /*        book styles
-*/
 
         #book-section {
             display: none;
@@ -1146,7 +1163,24 @@
                 transform: translateX(-100%);
             }
     </style>
+    <script>
+        // This assumes you're using pure JavaScript. If you're using a framework like jQuery, the syntax will be different.
+        document.addEventListener('DOMContentLoaded', function () {
+            var buttons = document.querySelectorAll('#themeSelection .btn');
 
+            buttons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    // Remove the 'active' class from all buttons
+                    buttons.forEach(function (btn) {
+                        btn.classList.remove('active');
+                    });
+                    // Add 'active' class to the clicked button
+                    this.classList.add('active');
+                });
+            });
+        });
+
+    </script>
 
 
 
@@ -1165,19 +1199,19 @@
 
                 // Define what happens when recognition starts
                 recognition.onstart = function () {
-                    document.getElementById('searchbox1').placeholder = 'Listening...'; // Feedback to show it's listening
+                    document.getElementById('searchbox').placeholder = 'Listening...'; // Feedback to show it's listening
                 };
 
                 // Define what happens when the recognition service returns a result
                 recognition.onresult = function (event) {
                     var transcript = event.results[0][0].transcript; // Get the transcript of the spoken text
-                    document.getElementById('searchbox1').value = transcript; // Set the content of the text input to the transcript
+                    document.getElementById('searchbox').value = transcript; // Set the content of the text input to the transcript
                     recognition.stop(); // Stop the recognition
                 };
 
                 // Define what happens when recognition ends
                 recognition.onend = function () {
-                    document.getElementById('searchbox1').placeholder = 'Search'; // Reset the placeholder
+                    document.getElementById('searchbox').placeholder = 'Search'; // Reset the placeholder
                 };
 
                 // Start the speech recognition
@@ -1202,13 +1236,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#welcome-section">HOME</a>
+                    <a class="nav-link" href="#welcome-section" id="navHome">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#menu-section">VIEW MENUS</a>
+                    <a class="nav-link" href="#menu-section" id="navMenu">VIEW MENUS</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#gallery-section">GALLERY</a>
+                    <a class="nav-link" href="#gallery-section" id="navGallery">GALLERY</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact-section" id="navContact">CONTACT</a>
@@ -1218,42 +1252,57 @@
                     <a class="nav-link" href="https://www.villabolognapottery.com/">VILLA BOLOGNA POTTERY</a>
                 </li>
                 <li class="nav-item">
-                    <button class="btn btn-outline-success my-2 my-sm-0" id="navBook" onclick="location.href='#book-section'" type="submit">BOOK</button>
+                    <button class="btn btn-outline-success my-2 my-sm-0" id="navBook" type="submit">BOOK</button>
                 </li>
 
                 <li class="nav-item">
-                    <%-- <form class="form-inline my-2 my-lg-0" id="searchbox">
-                        <div class="search-box">
-                            <input class="form-control" type="search" id="searchbox1" placeholder="Search" aria-label="Search">
-                            
-                            <button class="btn" type="button" onclick="startDictation()">
-                                <i class="fas fa-microphone"></i>
-                                <!-- Microphone icon (also FontAwesome or similar) -->
-                            </button>
+                    <style>
+                        #navBook:active {
+    color: #F6F6F6; /* This sets the text color you want when the button is pressed */
+    background-color: #B01F21; /* This sets the background color you want when the button is pressed */
+        border-color: transparent !important; /* This removes the green border */
+}
 
-                           
-                        </div>
-                        <div class="search-btr">
-                         <button class="btn btn-outline-success" type="submit">
-                                <i class="fas fa-search"></i>
-                                <!-- Magnifying glass icon (you can use FontAwesome or similar) -->
-                            </button>
-                            </div>
-                    </form>--%>
+                        #navBook:focus, #navBook:active {
+    border-color: transparent !important; /* This removes the green border on focus and active states */
+    box-shadow: none !important; /* This removes the glow effect when the button is clicked or focused */
+}
 
+
+
+                        #microphone {
+                            left: 175px; /* Align to the left side */
+                            width: 10px;
+                            color: #f6f6f6;
+                            /* Adjust button width if necessary */
+                        }
+
+                        #btnsubButton {
+                            color: #f6f6f6;
+                            /* Adjust button width if necessary */
+                        }
+
+                        .search-box input[type="text"] {
+                            width: 100%; /* Adjust width as needed */
+                            padding-left: 40px; /* Adjust padding to make space for the left button */
+                            padding-right: 40px; /* Adjust padding to make space for the right button */
+                            /* Add additional styling for input */
+                        }
+                    </style>
                     <form class="form-inline my-2 my-lg-0" id="searchbox8">
                         <div class="search-box">
                             <!-- Grouping the text input and search button together -->
+                            <button class="btn subButton" id="btnsubButton" type="submit">
+                                <i class="fas fa-search"></i>
+                                <!-- Magnifying glass icon -->
+                            </button>
                             <input class="form-control" type="search" id="searchbox" placeholder="Search" aria-label="Search">
 
                             <button class="btn microphone" type="button" id="microphone" onclick="startDictation()">
                                 <i class="fas fa-microphone"></i>
                                 <!-- Microphone icon -->
                             </button>
-                            <button class="btn subButton" type="submit">
-                                <i class="fas fa-search"></i>
-                                <!-- Magnifying glass icon -->
-                            </button>
+
                         </div>
 
                     </form>
@@ -1490,69 +1539,69 @@
                                     {
                                         "name": "Prosecco Bandarossa Valdobbiadene Bortolmiol",
                                         "price": "39 per bottle",
-                                        "imageUrl": "Assets/Images/wine1.png" 
+                                        "imageUrl": "Assets/Images/wine1.png"
                                     },
                                     {
                                         "name": "Sorella Bronca Particella DOCG",
                                         "price": "59 per bottle",
-                                        "imageUrl": "Assets/Images/salad4.jpeg" 
+                                        "imageUrl": "Assets/Images/wine2.jpg"
                                     },
                                     {
                                         "name": "Veuve Clicquot Brut",
                                         "price": "110 per bottle",
-                                        "imageUrl": "Assets/Images/wine3.png" 
+                                        "imageUrl": "Assets/Images/wine3.png"
                                     }
                                 ],
                                 "White Wine": [
                                     {
                                         "name": "Langhe Chardonnay Morino Beni Di Batasiolo 2023",
                                         "price": "35 per bottle or €9 per 150ml",
-                                        "imageUrl": "Assets/Images/wine4.jpg" 
+                                        "imageUrl": "Assets/Images/wine4.jpg"
                                     },
                                     {
                                         "name": "Pinot Bianco IGT Tenuta Monteloro Villa Antinori 2022",
                                         "price": "38 per bottle",
-                                        "imageUrl": "Assets/Images/wine5.png" 
+                                        "imageUrl": "Assets/Images/wine5.png"
                                     },
                                     {
                                         "name": "Vermentino Guado Al Tasso DOC Bolgheri 2022",
                                         "price": "38 per bottle",
-                                        "imageUrl": "Assets/Images/wine6.png" 
+                                        "imageUrl": "Assets/Images/wine6.png"
                                     }
                                 ],
                                 "Rosé Wine": [
                                     {
                                         "name": "Etna Rosato Murgo Tenuta San Michele 2021",
                                         "price": "40 per bottle or €8.50 per 150ml",//12
-                                        "imageUrl": "Assets/Images/wine12.jpg" 
+                                        "imageUrl": "Assets/Images/wine12.jpg"
                                     },
                                     {
                                         "name": "Provence Rosé Château Minuty 2022",
                                         "price": "40 per bottle",
-                                        "imageUrl": "Assets/Images/wine7.jpg" 
+                                        "imageUrl": "Assets/Images/wine7.jpg"
                                     },
                                     {
                                         "name": "Provence Rosé Whispering Angel Château d'Esclans 2022",
                                         "price": "50 per bottle",
-                                        "imageUrl": "Assets/Images/wine8.jpeg" 
+                                        "imageUrl": "Assets/Images/wine8.jpeg"
                                     }
                                 ],
                                 "Red Wine": [
                                     {
                                         "name": "Barbera D'Alba Palladino 2019",
                                         "price": "28 per bottle",
-                                        "imageUrl": "Assets/Images/wine9.jpg" 
+                                        "imageUrl": "Assets/Images/wine9.jpg"
 
                                     },
                                     {
                                         "name": "Sangiovese Rosso di Montepulciano Poliziano 2021",
                                         "price": "29 per bottle or €7 per 150ml",
-                                        "imageUrl": "Assets/Images/wine10.jpg" 
+                                        "imageUrl": "Assets/Images/wine10.jpg"
                                     },
                                     {
                                         "name": "Nero D'Avola Principi Di Butera Amira 2020",
                                         "price": "29 per bottle",
-                                        "imageUrl": "Assets/Images/wine11.jpg" 
+                                        "imageUrl": "Assets/Images/wine11.jpg"
                                     }
                                 ]
 
@@ -1564,150 +1613,182 @@
                                     {
                                         "name": "Villa Bologna Spritz",
                                         "price": "11",
-                                        "description": "Bombay Sapphire Gin, Limoncello di Capri, citrus cordial, lemon juice, Fever Tree Tonic Water"
+                                        "description": "Bombay Sapphire Gin, Limoncello di Capri, citrus cordial, lemon juice, Fever Tree Tonic Water",
+                                        "imageUrl": "Assets/Images/drink1.jpg"
                                     },
                                     {
                                         "name": "Queen Margarita",
                                         "price": "11",
-                                        "description": "Olmeca Silver Tequila, Lajita Mezcal, honey & ginger syrup, lime juice"
+                                        "description": "Olmeca Silver Tequila, Lajita Mezcal, honey & ginger syrup, lime juice",
+                                        "imageUrl": "Assets/Images/drink2.jpg"
+
                                     }
                                 ],
                                 "Classic Cocktails": [
                                     {
                                         "name": "Garibaldi",
                                         "price": "11",
-                                        "description": "Campari, fresh orange juice"
+                                        "description": "Campari, fresh orange juice",
+                                        "imageUrl": "Assets/Images/cocktail1.jpg"
                                     },
                                     {
                                         "name": "Sgroppino",
                                         "price": "11",
-                                        "description": "Bandarossa Prosecco, Limoncello di Capri Sorbet"
+                                        "description": "Bandarossa Prosecco, Limoncello di Capri Sorbet",
+                                        "imageUrl": "Assets/Images/cocktail2.jpg"
                                     },
                                     {
                                         "name": "Old Fashioned",
                                         "price": "11",
-                                        "description": "Makers Mark Bourbon, sugar syrup, Angostura Bitters"
+                                        "description": "Makers Mark Bourbon, sugar syrup, Angostura Bitters",
+                                        "imageUrl": "Assets/Images/cocktail3.jpg"
                                     },
                                     {
                                         "name": "Pisco Sour",
                                         "price": "11",
-                                        "description": "Capel Pisco, lemon juice, sugar syrup, egg white"
+                                        "description": "Capel Pisco, lemon juice, sugar syrup, egg white",
+                                        "imageUrl": "Assets/Images/cocktail4.jpg"
                                     },
                                     {
                                         "name": "Whiskey Sour",
                                         "price": "11",
-                                        "description": "J&B Rare Blended Scotch, lemon juice, sugar syrup, egg white"
+                                        "description": "J&B Rare Blended Scotch, lemon juice, sugar syrup, egg white",
+                                        "imageUrl": "Assets/Images/cocktail5.jpg"
                                     },
                                     {
                                         "name": "Margarita",
                                         "price": "11",
-                                        "description": "Olmeca Blanco Tequila, Triple Sec, lime juice"
+                                        "description": "Olmeca Blanco Tequila, Triple Sec, lime juice",
+                                        "imageUrl": "Assets/Images/cocktail6.jpg"
+
                                     },
                                     {
                                         "name": "Espresso Martini",
                                         "price": "11",
-                                        "description": "Absolut Vodka, Kahlua, espresso"
+                                        "description": "Absolut Vodka, Kahlua, espresso",
+                                        "imageUrl": "Assets/Images/cocktail7.jpg"
+
                                     },
                                     {
                                         "name": "Negroni",
                                         "price": "11",
-                                        "description": "Bombay Sapphire Gin, Carpano Antica Formula, Campari"
+                                        "description": "Bombay Sapphire Gin, Carpano Antica Formula, Campari",
+                                        "imageUrl": "Assets/Images/cocktail8.jpg"
                                     },
                                     {
                                         "name": "Aperol Spritz",
                                         "price": "11",
-                                        "description": "Aperol, Bandarossa Prosecco, Fever Tree Soda Water"
+                                        "description": "Aperol, Bandarossa Prosecco, Fever Tree Soda Water",
+                                        "imageUrl": "Assets/Images/cocktail9.jpg"
                                     },
                                     {
                                         "name": "Bramble",
                                         "price": "11",
-                                        "description": "Bombay Sapphire Gin, lemon juice, blackberry liqueur"
+                                        "description": "Bombay Sapphire Gin, lemon juice, blackberry liqueur",
+                                        "imageUrl": "Assets/Images/cocktail10.jpg"
                                     },
                                     {
                                         "name": "Penicillin",
                                         "price": "11",
-                                        "description": "Johnnie Walker Black Label Whiskey, Laphroaig 10yo, lemon juice, honey & ginger syrup"
+                                        "description": "Johnnie Walker Black Label Whiskey, Laphroaig 10yo, lemon juice, honey & ginger syrup",
+                                        "imageUrl": "Assets/Images/cocktail11.jpg"
+
                                     },
                                     {
                                         "name": "Sidecar",
                                         "price": "11",
-                                        "description": "Remy Martin VSOP, Grand Marnier, lemon juice"
+                                        "description": "Remy Martin VSOP, Grand Marnier, lemon juice",
+                                        "imageUrl": "Assets/Images/cocktail12.jpg"
                                     },
                                     {
                                         "name": "Moscow Mule",
                                         "price": "11",
-                                        "description": "Absolut Vodka, Fever Tree Ginger Beer, lime juice"
+                                        "description": "Absolut Vodka, Fever Tree Ginger Beer, lime juice",
+                                        "imageUrl": "Assets/Images/cocktail13.jpg"
                                     },
                                     {
                                         "name": "Dark N' Stormy",
                                         "price": "11",
-                                        "description": "Havana Club 7yo Rum, Fever Tree Ginger Beer, lime juice"
+                                        "description": "Havana Club 7yo Rum, Fever Tree Ginger Beer, lime juice",
+                                        "imageUrl": "Assets/Images/cocktail14.jpg"
                                     }
                                 ],
                                 "Non-Alcoholic Cocktails & Juices": [
                                     {
                                         "name": "Fresh Orange Juice",
                                         "price": "6",
-                                        "description": ""
+                                        "description": "",
+                                        "imageUrl": "Assets/Images/cocktail15.jpg"
                                     },
                                     {
                                         "name": "Virgin Mojito",
                                         "price": "7",
-                                        "description": "Lime juice, Fever Tree Soda Water, mint"
+                                        "description": "Lime juice, Fever Tree Soda Water, mint",
+                                        "imageUrl": "Assets/Images/cocktail16.jpg"
                                     },
                                     {
                                         "name": "Villa Bologna Lemonade",
                                         "price": "4.50",
-                                        "description": ""
+                                        "description": "",
+                                        "imageUrl": "Assets/Images/cocktail17.jpg"
                                     },
                                     {
                                         "name": "Virgin Spritz",
                                         "price": "7",
-                                        "description": "Martini Vibrante & Martini Floreale, citrus cordial, Fever Tree Soda Water"
-                                    }
+                                        "description": "Martini Vibrante & Martini Floreale, citrus cordial, Fever Tree Soda Water",
+                                        "imageUrl": "Assets/Images/cocktail18.jpg"
+                                    }//here
                                 ],
                                 "Wine by the Glass": {
                                     "Prosecco": [
                                         {
                                             "name": "Prosecco Bandarossa Valdobbiadene Bortolmiol",
-                                            "price": "8.50"
+                                            "price": "8.50",
+                                            "imageUrl": "Assets/Images/cocktail19.jpg"
                                         }
                                     ],
                                     "Rosé Wine": [
                                         {
                                             "name": "Murgo Etna Rosato",
-                                            "price": "8.50"
+                                            "price": "8.50",
+                                            "imageUrl": "Assets/Images/cocktail20.jpg"
                                         }
                                     ],
                                     "White Wine": [
                                         {
                                             "name": "Fleur de Thénac White Chateau Thénac Bergerac",
-                                            "price": "7"
+                                            "price": "7",
+                                            "imageUrl": "Assets/Images/cocktail21.jpg"
+
                                         },
                                         {
-                                            "name": "Gavi de Gavi Reserve Volo Superiore Morgassi",
+                                            "name": "Gavi de Gavi Reserve Volo Superiore Morgassi",//na
                                             "price": "9"
                                         }
                                     ],
                                     "Red Wine": [
                                         {
                                             "name": "Peppoli Chianti Antinori Classico",
-                                            "price": "9"
+                                            "price": "9",
+                                            "imageUrl": "Assets/Images/cocktail22.jpg"
                                         },
                                         {
                                             "name": "Nero D'Avola Principi Di Butera Amira",
-                                            "price": "7"
+                                            "price": "7",
+                                            "imageUrl": "Assets/Images/cocktail23.jpg"
                                         },
                                         {
                                             "name": "Fleur de Thénac Red Chateau Thénac Bergerac",
-                                            "price": "7"
+                                            "price": "7",
+                                            "imageUrl": "Assets/Images/cocktail24.jpg"
                                         }
                                     ],
 
                                     "Tonics & Mixers": [
                                         {
                                             "name": "Fever Tree Tonic",
-                                            "price": "3.50"
+                                            "price": "3.50",//he
+                                            "imageUrl": "Assets/Images/cocktail25.jpg"
                                         },
                                         {
                                             "name": "Fever Tree Slim Line Tonic",
@@ -1748,7 +1829,8 @@
                                         {
                                             "name": "Moretti Draft",
                                             "description": "250/500ml",
-                                            "price": "3.50/€6"
+                                            "price": "3.50/€6",
+                                            "imageUrl": "Assets/Images/moretti.jpg"
                                         },
                                         {
                                             "name": "Cisk",
@@ -1757,11 +1839,13 @@
                                         },
                                         {
                                             "name": "Cisk Excel",
-                                            "price": "3.50"
+                                            "price": "3.50",
+                                            "imageUrl": "Assets/Images/CiskEx.jpg"
                                         },
                                         {
                                             "name": "Cisk 0%",
-                                            "price": "3.50"
+                                            "price": "3.50",
+                                            "imageUrl": "Assets/Images/cisk0.jpg"
                                         },
                                         {
                                             "name": "Farsons Blue Label",
@@ -1771,12 +1855,14 @@
                                         {
                                             "name": "Kopperberg Pear Cider",
                                             "description": "330ml",
-                                            "price": "5.50"
+                                            "price": "5.50",
+                                            "imageUrl": "Assets/Images/Kopperberg.jpg"
                                         },
                                         {
                                             "name": "Bullmers Cider",
                                             "description": "500ml",
-                                            "price": "8"
+                                            "price": "8",
+                                            "imageUrl": "Assets/Images/bulmers.png"
                                         }
                                     ],
                                     "Vodka": [
@@ -1994,13 +2080,15 @@
                                         "name": "Minestrone con pesto Genovese",
                                         "price": "12",
                                         "description": "Traditional minestrone soup with pesto Genovese",
-                                        "dietary": ["vegetarian", "gluten-free"]
+                                        "dietary": ["vegetarian", "gluten-free"],
+                                        "imageUrl": "Assets/Images/food1.jpg"
                                     },
                                     {
                                         "name": "Bouillabaisse Provencal",
                                         "price": "22",
                                         "description": "Traditional French fish soup with garlic farmhouse bread",
-                                        "dietary": []
+                                        "dietary": [],
+                                        "imageUrl": "Assets/Images/food2.jpg"
                                     }
                                 ],
                                 "Antipasti": [
@@ -2008,37 +2096,43 @@
                                         "name": "Bruschetta Primavera",
                                         "price": "12",
                                         "description": "Grilled peppers, courgettes, aubergine, garlic, basil, and virgin olive oil",
-                                        "dietary": ["lactose-free", "vegetarian"]
+                                        "dietary": ["lactose-free", "vegetarian"],
+                                        "imageUrl": "Assets/Images/food3.jpg"
                                     },
                                     {
                                         "name": "Selection Of Italian Ham Salami & Cheese",
                                         "price": "18",
                                         "description": "",
-                                        "dietary": ["gluten"]
+                                        "dietary": ["gluten"],
+                                        "imageUrl": "Assets/Images/food4.jpg"
                                     },
                                     {
                                         "name": "Seppie Stufate alla 'Luciana' e Polenta Fritta",
                                         "price": "17",
                                         "description": "Cuttlefish in a rich tomato sauce with sweet peas, white wine, garlic, and fried polenta",
-                                        "dietary": []
+                                        "dietary": [],
+                                        "imageUrl": "Assets/Images/food5.jpg"
                                     },
                                     {
                                         "name": "Mozzarelline Fritte e Funghi Prataioli Ripieni al Burro All’Aglio",
                                         "price": "15",
                                         "description": "Mushrooms filled with garlic butter and crispy fried mozzarella balls served with salsa rossa",
-                                        "dietary": ["lactose-free", "vegetarian"]
+                                        "dietary": ["lactose-free", "vegetarian"],
+                                        "imageUrl": "Assets/Images/food6.jpg"
                                     },
                                     {
                                         "name": "Salsicce Toscane di Fattoria alla Griglia con Polenta Fritta E Aceto Di Vino Rosso",
                                         "price": "15",
                                         "description": "Grilled Tuscan sausages with fried polenta & red wine vinegar",
-                                        "dietary": ["lactose-free"]
+                                        "dietary": ["lactose-free"],
+                                        "imageUrl": "Assets/Images/food7.jpg"
                                     },
                                     {
                                         "name": "Calamari Fritti Alla Veneziana",
                                         "price": "14",
                                         "description": "Crispy squid with garlic mayonnaise",
-                                        "dietary": []
+                                        "dietary": [],
+                                        "imageUrl": "Assets/Images/food8.jpg"
                                     }
                                 ],
                                 "Paste e Risotti": [
@@ -2046,13 +2140,15 @@
                                         "name": "Spaetzli Tirolesi agli Spinaci con Crema di Tartufo e Speck",
                                         "price": "16",
                                         "description": "Spaetzli Tirolesi with spinach, speck, black truffle cream, sage, and parmesan",
-                                        "dietary": ["vegetarian"]
+                                        "dietary": ["vegetarian"],
+                                        "imageUrl": "Assets/Images/food9.jpg"
                                     },
                                     {
                                         "name": "Risotto con Spinaci e Mascarpone",
                                         "price": "17",
                                         "description": "Risotto with spinach and mascarpone cheese",
-                                        "dietary": ["vegetarian"]
+                                        "dietary": ["vegetarian"],
+                                        "imageUrl": "Assets/Images/food10.jpg"
                                     },
                                     {
                                         "name": "Conchiglie con Code di Gamberi e Ricotta",
@@ -2164,39 +2260,47 @@
                                         "name": "Mousse al Cioccolato Fondente con Praline di Niccioline Caramellate",
                                         "price": "8",
                                         "description": "Dark chocolate mousse with caramelised praline",
-                                        "attributes": ["gluten-free"]
+                                        "attributes": ["gluten-free"],
+                                        "imageUrl": "Assets/Images/desert1.jpg"
                                     },
                                     {
                                         "name": "Arance Marinate al Grand Marnier",
                                         "price": "8.50",
                                         "description": "Marinated oranges in Grand Marnier, lime juice & fresh mint",
-                                        "attributes": ["gluten-free", "lactose-free"]
+                                        "attributes": ["gluten-free", "lactose-free"],
+                                        "imageUrl": "Assets/Images/desert2.jpg"
                                     },
                                     {
                                         "name": "Tiramisu’ con Amaretto di Saronno",
                                         "price": "8.50",
-                                        "description": "Espresso coffee savoiardi sponge biscuits, mascarpone, dusted with cocoa powder"
+                                        "description": "Espresso coffee savoiardi sponge biscuits, mascarpone, dusted with cocoa powder",
+                                        "imageUrl": "Assets/Images/desert3.jpg"
                                     },
                                     {
                                         "name": "Torta di Mele",
                                         "price": "8.50",
-                                        "description": "Homemade apple tart served with vanilla ice cream"
+                                        "description": "Homemade apple tart served with vanilla ice cream",
+                                        "imageUrl": "Assets/Images/desert4.jpg"
                                     },
                                     {
                                         "name": "Torta di Ricotta al Forno",
                                         "price": "8.50",
-                                        "description": "Homemade baked ricotta cake with wild berry sauce"
+                                        "description": "Homemade baked ricotta cake with wild berry sauce",
+                                        "imageUrl": "Assets/Images/desert5.jpg"
+
                                     },
                                     {
                                         "name": "Profiterole con Panna",
                                         "price": "8.50",
-                                        "description": "Homemade profiteroles with cream and warm chocolate sauce"
+                                        "description": "Homemade profiteroles with cream and warm chocolate sauce",
+                                        "imageUrl": "Assets/Images/desert6.jpg"
                                     },
                                     {
                                         "name": "Affogato al Caffe",
                                         "price": "5.50",
                                         "description": "One scoop of gelato with espresso coffee",
-                                        "attributes": ["gluten-free"]
+                                        "attributes": ["gluten-free"],
+                                        "imageUrl": "Assets/Images/desert7.jpg"
                                     },
                                     {
                                         "name": "Gelato",
@@ -2205,22 +2309,26 @@
                                             "two_scoops": "6",
                                             "three_scoops": "8"
                                         },
-                                        "flavors": ["Vanilla", "Stracciatella", "Chocolate", "Nocciola", "Pistachio", "Strawberry"]
+                                        "description":"Vanilla, Stracciatella, Chocolate, Nocciola, Pistachio, Strawberry",
+                                        "imageUrl": "Assets/Images/desert8.jpg"
                                     },
                                     {
                                         "name": "Sorbetto al Limone",
                                         "price": "8",
-                                        "attributes": ["gluten-free", "lactose-free"]
+                                        "attributes": ["gluten-free", "lactose-free"],
+                                        "imageUrl": "Assets/Images/desert9.jpg"
                                     }
                                 ],
                                 "Coffees": [
                                     {
                                         "name": "Cappuccino",
-                                        "price": "3"
+                                        "price": "3",
+                                        "imageUrl": "Assets/Images/desert10.jpg"
                                     },
                                     {
                                         "name": "Caffé Latte",
-                                        "price": "2.50"
+                                        "price": "2.50",
+                                        "imageUrl": "Assets/Images/desert11.jpg"
                                     },
                                     {
                                         "name": "Flat White",
@@ -2337,24 +2445,24 @@
                                     {
                                         "name": "Penne Pasta",
                                         "description": "With tomato sauce, bolognese, or butter & cheese",
-                                         "imageUrl": "Assets/Images/children1.jpg" 
+                                        "imageUrl": "Assets/Images/children1.jpg"
                                     },
                                     {
                                         "name": "Fish Goujons",
                                         "description": "Served with fries & carrot sticks",
-                                        "imageUrl": "Assets/Images/children2.jpg" 
+                                        "imageUrl": "Assets/Images/children2.jpg"
                                     },
                                     {
                                         "name": "Salmone Scozzese",
                                         "description": "Served with fries & broccoli",
-                                        "imageUrl": "Assets/Images/children3.jpg" 
+                                        "imageUrl": "Assets/Images/children3.jpg"
                                     }
                                 ],
                                 "Dolci": [
                                     {
                                         "name": "One scoop of ice cream",
                                         "description": "Vanilla, Stracciatella, Chocoloate, Nocciola or Strawberry",
-                                        "imageUrl": "Assets/Images/children4.jpg" 
+                                        "imageUrl": "Assets/Images/children4.jpg"
 
                                     }
                                 ]
@@ -2368,19 +2476,19 @@
                                         "name": "Minestrone con Pesto Genovese",
                                         "description": "Traditional minestrone soup with pesto Genovese",
                                         "dietary": ["gluten-free", "vegetarian"],
-                                        "imageUrl": "Assets/Images/lunch1.jpg" 
+                                        "imageUrl": "Assets/Images/lunch1.jpg"
                                     },
                                     {
                                         "name": "Mozzarelline Fritte e Funghi Prataioli Ripieni al Burro All’aglio",
                                         "description": "Mushrooms filled with garlic butter and crispy fried mozzarella balls served with salsa rossa",
                                         "dietary": ["lactose-free", "vegetarian"],
-                                        "imageUrl": "Assets/Images/lunch2.jpg" 
+                                        "imageUrl": "Assets/Images/lunch2.jpg"
                                     },
                                     {
                                         "name": "Bruschetta Primavera",
                                         "description": "Grilled peppers, courgettes, aubergine, garlic, basil & virgin olive oil",
                                         "dietary": ["lactose-free", "vegetarian"],
-                                        "imageUrl": "Assets/Images/lunch3.jpg" 
+                                        "imageUrl": "Assets/Images/lunch3.jpg"
                                     }
                                 ],
                                 "Main Course": [
@@ -2388,19 +2496,19 @@
                                         "name": "Risotto con Spinaci e Mascarpone",
                                         "description": "Risotto with spinach & mascarpone cheese",
                                         "dietary": ["vegetarian"],
-                                        "imageUrl": "Assets/Images/lunch4.jpg" 
+                                        "imageUrl": "Assets/Images/lunch4.jpg"
                                     },
                                     {
                                         "name": "Penne alla Norma con Melanzane e Ricotta Salata",
                                         "description": "Penne, tomato sauce, egg plant, garlic, red chilli, salted ricotta & olive oil",
                                         "dietary": ["vegetarian"],
                                         "note": "gluten-free spaghetti and penne pasta available",
-                                        "imageUrl": "Assets/Images/lunch5.jpg" 
+                                        "imageUrl": "Assets/Images/lunch5.jpg"
                                     },
                                     {
                                         "name": "Spaetzli Tirolesi agli Spinaci con Crema di Tartufo e Speck",
                                         "description": "Spinach Spaetzli Tirolesi, speck, black truffle cream, sage & parmesan",
-                                        "imageUrl": "Assets/Images/lunch6.jpg" 
+                                        "imageUrl": "Assets/Images/lunch6.jpg"
                                     }
                                 ],
                                 "Dessert": [
@@ -2408,19 +2516,19 @@
                                         "name": "Mousse al Cioccolato Fondente con Praline di Niccioline Caramellate",
                                         "description": "Dark chocolate mousse with caramelised praline",
                                         "dietary": ["gluten-free"],
-                                        "imageUrl": "Assets/Images/lunch7.jpg" 
+                                        "imageUrl": "Assets/Images/lunch7.jpg"
                                     },
                                     {
                                         "name": "Affogato al Caffe",
                                         "description": "One scoop of gelato espresso coffee",
                                         "dietary": ["gluten-free"],
-                                        "imageUrl": "Assets/Images/lunch8.jpg" 
+                                        "imageUrl": "Assets/Images/lunch8.jpg"
                                     },
                                     {
                                         "name": "Arance Marinate al Grand Marnier",
                                         "description": "Marinated oranges in Grand Marnier, lime juice & fresh mint",
                                         "dietary": ["gluten-free", "lactose-free"],
-                                        "imageUrl": "Assets/Images/lunch9.jpg" 
+                                        "imageUrl": "Assets/Images/lunch9.jpg"
                                     }
                                 ],
 
@@ -2439,19 +2547,19 @@
                                         "name": "Bruschetta Primavera",
                                         "description": "Grilled peppers courgettes aubergine garlic basil & virgin olive oil",
                                         "attributes": ["vegetarian", "vegan"],
-                                        "imageUrl": "Assets/Images/easter1.jpg" 
+                                        "imageUrl": "Assets/Images/easter1.jpg"
                                     },
                                     {
                                         "name": "Quattro Conchiglie di San-Giacomo con Salsa al Prosecco e Burro al Limone",
                                         "description": "Four scallops gently pan fried topped with butter lemon & prosecco sauce",
                                         "attributes": ["gluten-free"],
-                                        "imageUrl": "Assets/Images/easter2.jpg" 
+                                        "imageUrl": "Assets/Images/easter2.jpg"
                                     },
                                     {
                                         "name": "Carpaccio Di Manzo Con Burrata Pugliese",
                                         "description": "Crudo of beef rocket burrata basil & olive oil",
                                         "attributes": ["gluten-free"],
-                                        "imageUrl": "Assets/Images/easter3.jpg" 
+                                        "imageUrl": "Assets/Images/easter3.jpg"
                                     }
                                 ],
                                 "Main Courses": [
@@ -2459,23 +2567,23 @@
                                         "name": "Cuore di Filetto di \"Scottona\" con salsa al Gorgonzola Dolce Profumato al Rosmarino",
                                         "description": "Grilled beef fillet \"Scottona\" gorgonzola sauce & rosemary olive oil served with french fries & rocket",
                                         "attributes": ["gluten-free"],
-                                        "imageUrl": "Assets/Images/easter4.jpg" 
+                                        "imageUrl": "Assets/Images/easter4.jpg"
                                     },
                                     {
                                         "name": "Salmone Scozzese con Salsa di Aragosta",
                                         "description": "Fillet of Scottish salmon lobster sauce scallops’ meat & fresh tarragon served with roast potatoes & broccoli",
-                                        "imageUrl": "Assets/Images/easter5.jpg" 
+                                        "imageUrl": "Assets/Images/easter5.jpg"
                                     },
                                     {
                                         "name": "Conchiglie con Code di Gamberi e Ricotta",
                                         "description": "Conchiglie pasta prawns ricotta cheese chilli basil & virgin olive oil",
-                                        "imageUrl": "Assets/Images/easter6.jpg" 
+                                        "imageUrl": "Assets/Images/easter6.jpg"
                                     },
                                     {
                                         "name": "Penne alla Norma con Melanzane Peperoncino Rosso Salsa di Pomodoro Basilico e Ricotta Salata",
                                         "description": "Penne tomato sauce eggplant garlic red chilli salted ricotta & olive oil",
                                         "attributes": ["vegetarian"],
-                                        "imageUrl": "Assets/Images/easter7.jpg" 
+                                        "imageUrl": "Assets/Images/easter7.jpg"
                                     }
                                 ],
                                 "Desserts": [
@@ -2483,18 +2591,18 @@
                                         "name": "Mousse al Cioccolato Fondente con Praline di Niccioline Caramellate",
                                         "description": "Dark chocolate mousse with caramelised praline",
                                         "attributes": ["gluten-free"],
-                                        "imageUrl": "Assets/Images/easter8.jpg" 
+                                        "imageUrl": "Assets/Images/easter8.jpg"
                                     },
                                     {
                                         "name": "Tiramisu’ con Amaretto Di Saronno",
                                         "description": "Espresso coffee savoiardi sponge biscuits mascarpone dusted with cocoa powder",
                                         "imageUrl": "Assets/Images/easter9.jpg"
-},
+                                    },
                                     {
                                         "name": "Sorbetto al Limone",
                                         "description": "Lemon sorbet",
                                         "attributes": ["gluten-free", "lactose-free"],
-                                        "imageUrl": "Assets/Images/easter10.jpg" 
+                                        "imageUrl": "Assets/Images/easter10.jpg"
                                     }
                                 ]
                             }
@@ -2504,47 +2612,59 @@
                                 "Cocktails": [
                                     {
                                         "name": "Negroni",
-                                        "description": "Bombay Sapphire Gin, Martini Rosso, Campari"
+                                        "description": "Bombay Sapphire Gin, Martini Rosso, Campari",
+                                        "imageUrl": "Assets/Images/cocktail8.jpg"
                                     },
                                     {
                                         "name": "Old Fashioned",
-                                        "description": "Makers Mark Bourbon, sugar syrup, Angostura Bitters"
+                                        "description": "Makers Mark Bourbon, sugar syrup, Angostura Bitters",
+                                        "imageUrl": "Assets/Images/cocktail3.jpg"
                                     },
                                     {
                                         "name": "Pisco Sour",
-                                        "description": "Capel Pisco, lemon juice, sugar syrup, egg white"
+                                        "description": "Capel Pisco, lemon juice, sugar syrup, egg white",
+                                        "imageUrl": "Assets/Images/cocktail4.jpg"
                                     },
                                     {
                                         "name": "Whiskey Sour",
-                                        "description": "J&B Rare Blended Scotch, lemon juice, sugar syrup, egg white"
+                                        "description": "J&B Rare Blended Scotch, lemon juice, sugar syrup, egg white",
+                                        "imageUrl": "Assets/Images/cocktail5.jpg"
                                     },
                                     {
                                         "name": "Bramble",
-                                        "description": "Bombay Sapphire Gin, lemon juice, blackberry liqueur"
+                                        "description": "Bombay Sapphire Gin, lemon juice, blackberry liqueur",
+                                        "imageUrl": "Assets/Images/cocktail10.jpg"
                                     },
                                     {
                                         "name": "Aperol Spritz",
-                                        "description": "Aperol, Bandarossa Prosecco, Fever Tree Soda Water"
+                                        "description": "Aperol, Bandarossa Prosecco, Fever Tree Soda Water",
+                                        "imageUrl": "Assets/Images/cocktail9.jpg"
                                     },
                                     {
                                         "name": "Garibaldi",
-                                        "description": "Campari, fresh orange juice"
+                                        "description": "Campari, fresh orange juice",
+                                        "imageUrl": "Assets/Images/cocktail1.jpg"
                                     },
                                     {
                                         "name": "Margarita",
-                                        "description": "Olmeca Blanco Tequila, Triple Sec, lime juice"
+                                        "description": "Olmeca Blanco Tequila, Triple Sec, lime juice",
+                                        "imageUrl": "Assets/Images/cocktail6.jpg"
                                     },
                                     {
                                         "name": "Espresso Martini",
-                                        "description": "Absolut Vodka, Kahlua, espresso"
+                                        "description": "Absolut Vodka, Kahlua, espresso",
+                                        "imageUrl": "Assets/Images/cocktail7.jpg"
                                     },
                                     {
                                         "name": "Moscow Mule",
-                                        "description": "Absolut Vodka, Fever Tree Ginger Beer, lime juice"
+                                        "description": "Absolut Vodka, Fever Tree Ginger Beer, lime juice",
+                                        "imageUrl": "Assets/Images/cocktail13.jpg"
                                     },
                                     {
                                         "name": "Dark N' Stormy",
-                                        "description": "Havana Club 7yo Rum, Fever Tree Ginger Beer, lime juice"
+                                        "description": "Havana Club 7yo Rum, Fever Tree Ginger Beer, lime juice",
+                                        "imageUrl": "Assets/Images/cocktail14.jpg"
+
                                     }
                                 ],
                                 "Cicchetti": [
@@ -2552,30 +2672,36 @@
                                         "name": "Bruschetta Primavera",
                                         "description": "Grilled peppers, courgettes, aubergine, garlic, basil & virgin olive oil",
                                         "price": "12",
-                                        "attributes": ["lactose-free", "vegetarian"]
+                                        "attributes": ["lactose-free", "vegetarian"],
+                                        "imageUrl": "Assets/Images/cicchetti.jpg"
+
                                     },
                                     {
                                         "name": "Antipasti Platter",
                                         "description": "Selection of Italian Ham, Salami & Cheese",
                                         "price": "18",
-                                        "attributes": ["gluten-free"]
+                                        "attributes": ["gluten-free"],
+                                        "imageUrl": "Assets/Images/cicchetti2.jpg"
                                     },
                                     {
                                         "name": "Calamari Fritti Alla Veneziana",
                                         "description": "Crispy squid, garlic mayonnaise",
-                                        "price": "14"
+                                        "price": "14",
+                                        "imageUrl": "Assets/Images/cicchetti3.jpg"
                                     },
                                     {
                                         "name": "Salsicce Toscane di Fattoria alla Griglia con Polenta Fritta e Aceto Di Vino Rosso",
                                         "description": "Grilled Tuscan sausages, fried polenta & red wine vinegar",
                                         "price": "15",
-                                        "attributes": ["gluten-free", "lactose-free"]
+                                        "attributes": ["gluten-free", "lactose-free"],
+                                        "imageUrl": "Assets/Images/cicchetti4.jpg"
                                     },
                                     {
                                         "name": "Mozzarelline Fritte e Funghi Prataioli Ripieni al Burro All’aglio",
                                         "description": "Mushrooms filled with garlic butter and crispy fried mozzarella balls, served with salsa rossa",
                                         "price": "15",
-                                        "attributes": ["lactose-free", "vegetarian"]
+                                        "attributes": ["lactose-free", "vegetarian"],
+                                        "imageUrl": "Assets/Images/cicchetti5.jpg"
                                     }
                                 ]
                             }
@@ -2585,12 +2711,12 @@
                                     {
                                         "name": "GRIGLIATA DI CARNI ALL’ITALIANA CON SPINACI AL BURRO E PATATE ARROSTE PICCANTI AL ROSMARINO",
                                         "description": "Italian Style BBQ of beef fillet, veal fillets, Tuscan pork sausage & chicken wings marinated in garden fresh herbs & olive oil. Served with buttered spinach, spicy rosemary roast potatoes.",
-                                        "imageUrl": "Assets/Images/thursday1.jpg" 
+                                        "imageUrl": "Assets/Images/thursday1.jpg"
                                     },
                                     {
                                         "name": "Choose Your Sauce",
                                         "description": "Porcini Mushroom Sauce or Gorgonzola Sauce or Green Peppercorns Sauce",
-                                        "imageUrl": "Assets/Images/thursday2.jpg" 
+                                        "imageUrl": "Assets/Images/thursday2.jpg"
 
                                     }
                                 ]
@@ -2608,6 +2734,7 @@
                                 img.src = item.imageUrl;
                                 img.alt = item.name;
 
+
                                 const h3 = document.createElement('h3');
                                 h3.textContent = item.name;
 
@@ -2622,6 +2749,8 @@
                                 menuItem.appendChild(h3);
                                 menuItem.appendChild(pDesc);
                                 menuItem.appendChild(pPrice);
+                                img.setAttribute('data-toggle', 'modal');
+                                img.setAttribute('data-target', '#imageModal');
 
                                 container.appendChild(menuItem);
                             }
@@ -2841,7 +2970,7 @@
             </div>
 
             <div class="header">
-                <h1>TESTIMONIALS</h1>
+                <h1>OUR CLIENTS FEEDBACK</h1>
             </div>
             <div class="feedback-navigation left" onclick="changeFeedback(-1)">
                 <img id="FeedbackLeftIcon" src="Assets\Images\leftArrow.png" alt="Previous" class="menu-control-prev-icon">
@@ -2963,7 +3092,7 @@
                                 </div>
                             </div>
                             <div class="info-section">
-                                <img src="Assets\Images\loc-icon.png" alt="Location Icon" class="icon"/>
+                                <img src="Assets\Images\loc-icon.png" alt="Location Icon" class="icon" />
                                 <div class="info-text">
                                     <h2>Address</h2>
                                     <p>
@@ -2974,7 +3103,7 @@
                                 </div>
                             </div>
                             <div class="info-section">
-                                <img src="Assets\Images\phone-icon.png" alt="Phone Icon" class="icon"/>
+                                <img src="Assets\Images\phone-icon.png" alt="Phone Icon" class="icon" />
                                 <div class="info-text">
                                     <h2>Phone Number</h2>
                                     <p>+356 7941 8708</p>
@@ -3135,7 +3264,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div id="themeSelection">
-                                <button type="button" class="btn" data-theme="light">Light</button>
+                                <button type="button" class="btn active" data-theme="light">Light</button>
                                 <button type="button" class="btn" data-theme="dark">Dark</button>
                             </div>
                         </div>
@@ -3182,18 +3311,15 @@
 
             themeButtons.forEach(function (btn) {
                 btn.addEventListener('click', function () {
-                    var theme = this.getAttribute('data-theme'); // Get the theme from the button
+                    var theme = this.getAttribute('data-theme');
 
-                    // Update the body class with the selected theme
-                    document.body.className = ''; // Clear existing theme classes
-                    document.body.classList.add(theme); // Add the selected theme class
+                    document.body.className = '';
+                    document.body.classList.add(theme);
 
-                    // Optionally, save the selected theme to local storage
                     localStorage.setItem('selectedTheme', theme);
                 });
             });
 
-            // Optionally, apply the saved theme on page load
             var savedTheme = localStorage.getItem('selectedTheme');
             if (savedTheme) {
                 document.body.className = '';
@@ -3222,12 +3348,6 @@
             --text-color: #f6f6f6;
             --icon-color: #f6f6f6;
         }
-
-
-        /*body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-}*/
     </style>
 
     <script>
@@ -3240,7 +3360,6 @@
             // Directly apply the Light theme without checking localStorage
             applyTheme('light');
 
-            // Setup theme selection buttons
             var themeButtons = document.querySelectorAll('#themeSelection .btn');
             themeButtons.forEach(function (btn) {
                 btn.addEventListener('click', function () {
@@ -3256,35 +3375,35 @@
 
     </script>
 
-    <script><!-- Include this at the bottom of your HTML, right before the closing </body> tag -->
+    <script>
 
-    // Function to adjust brightness
-    function adjustBrightness() {
-        var brightnessValue = document.getElementById('brightnessSlider').value;
-        document.body.style.filter = `brightness(${brightnessValue}%)`;
-    }
+        // Function to adjust brightness
+        function adjustBrightness() {
+            var brightnessValue = document.getElementById('brightnessSlider').value;
+            document.body.style.filter = `brightness(${brightnessValue}%)`;
+        }
 
-    // Function to adjust contrast
-    function adjustContrast() {
-        var contrastValue = document.getElementById('contrastSlider').value;
-        document.body.style.filter = `contrast(${contrastValue}%)`;
-    }
+        // Function to adjust contrast
+        function adjustContrast() {
+            var contrastValue = document.getElementById('contrastSlider').value;
+            document.body.style.filter = `contrast(${contrastValue}%)`;
+        }
 
-    // Event listeners for the sliders
-    document.getElementById('brightnessSlider').addEventListener('input', adjustBrightness);
-    document.getElementById('contrastSlider').addEventListener('input', adjustContrast);
+        // Event listeners for the sliders
+        document.getElementById('brightnessSlider').addEventListener('input', adjustBrightness);
+        document.getElementById('contrastSlider').addEventListener('input', adjustContrast);
 
-    // Function to reset brightness and contrast to defaults
-    function resetPreferences() {
-        document.getElementById('brightnessSlider').value = 100; // Default brightness
-        document.getElementById('contrastSlider').value = 100; // Default contrast
-        adjustBrightness();
-        adjustContrast();
-        document.documentElement.style.setProperty('--base-font-size', '20px');
+        // Function to reset brightness and contrast to defaults
+        function resetPreferences() {
+            document.getElementById('brightnessSlider').value = 100; // Default brightness
+            document.getElementById('contrastSlider').value = 100; // Default contrast
+            adjustBrightness();
+            adjustContrast();
+            document.documentElement.style.setProperty('--base-font-size', '20px');
 
-    }
+        }
 
-    document.getElementById('resetPreferences').addEventListener('click', resetPreferences);
+        document.getElementById('resetPreferences').addEventListener('click', resetPreferences);
 
 
     </script>
@@ -3556,14 +3675,12 @@
 
 
     <script>
-        //dan tal feedback
         let feedbacks = [
             {
                 title: "Best restaurant from St.Julian Malta",
                 text: "This restaurant is perfect for all occasions, good food, good people (Dian the best waiter, kind and funny) Recommend it 100%",
                 author: "- Andrei T"
             },
-            // Add more feedback entries here
             {
                 title: "Stunning Views",
                 text: "Absolutely stunning views and incredibly delicious seafood. A must-visit for anyone traveling to Malta!",
@@ -3606,7 +3723,7 @@
         /*contact*/
 
         function initMap() {
-            var location = { lat: 35.9125, lng: 14.5028 }; // Coordinates of St. Julian's
+            var location = { lat: 35.8953681, lng: 14.4449836}; // Coordinates of St. Julian's
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 15,
                 center: location
@@ -3645,7 +3762,6 @@
         });
     </script>
     <script>
-        //contact script
         function validateForm() {
             var notification = document.getElementById('notification');
             // Clear previous messages
@@ -3681,9 +3797,17 @@
             var reservationTime = time.split(':');
             var hours = parseInt(reservationTime[0], 10);
             var minutes = parseInt(reservationTime[1], 10);
-            // Adjusting condition to check within the 11:30 AM to 11:30 PM range
-            if (hours < 11 || (hours === 11 && minutes < 30) || hours > 23 || (hours === 23 && minutes > 30)) {
-                displayNotification('Reservation time must be between 11:30 AM and 11:30 PM', false);
+
+            // Check if the reservation time is within opening hours
+            var isOpen = false;
+            if ((hours === 12 && minutes >= 0) || (hours > 12 && hours < 15) ||
+                (hours === 15 && minutes === 0) || (hours === 18 && minutes >= 0) ||
+                (hours > 18 && hours < 23) || (hours === 23 && minutes <= 0)) {
+                isOpen = true;
+            }
+
+            if (!isOpen) {
+                displayNotification('Reservation time must be within opening hours: 12:00 PM - 3:00 PM or 6:00 PM - 11:00 PM', false);
                 return false;
             }
 
@@ -3699,8 +3823,7 @@
             notification.className = isSuccess ? 'notification success' : 'notification';
             notification.style.display = 'block'; // Show notification
         }
-
-    </script>
+</script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsCmXBRVldFnmUC-TiRAfHK23TQQv0Zwc&callback=initMap" async defer></script>
 </body>
@@ -3752,6 +3875,12 @@
         document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
     }
 
+
+    function navigate(sectionId) {
+
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    }
+
     // Add click event listener to the CONTACT navigation link
     document.getElementById('navContact').addEventListener('click', function (event) {
         event.preventDefault(); // Prevent the default anchor behavior
@@ -3763,6 +3892,25 @@
         event.preventDefault(); // Prevent the default button behavior
         navigateAndToggle('toggleBook', 'book-section');
     });
+
+
+    document.getElementById('navHome').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default button behavior
+        navigate('welcome-section');
+    });
+
+    document.getElementById('navGallery').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default button behavior
+        navigate('gallery-section');
+    });
+
+    document.getElementById('navMenu').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent the default button behavior
+        navigate('menu-section');
+    });
+
+
+
 
 </script>
 
@@ -3785,6 +3933,8 @@
         var rightDrinkIcon = document.getElementById('rightMenuD'); // Get the img element
         var leftFoodIcon = document.getElementById('leftArrowMenu'); // Get the img element
         var rightFoodIcon = document.getElementById('rightMenu'); // Get the img element
+
+       
 
 
 
