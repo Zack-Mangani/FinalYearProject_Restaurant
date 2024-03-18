@@ -39,7 +39,6 @@
         .navbar-brand, .nav-link {
             color: #F6F6F6 !important;
             font-size: var(--base-font-size);
-
         }
 
             .nav-link:hover {
@@ -351,13 +350,12 @@
 
             #menu-categories li:hover, #menu-categories li.active {
                 background-color: #B01F21;
-                                font-weight:bold;
-
+                font-weight: bold;
             }
 
             #bar-menu-categories li:hover, #bar-menu-categories li.active {
                 background-color: #B01F21;
-                font-weight:bold;
+                font-weight: bold;
             }
 
         .menu-item {
@@ -381,7 +379,7 @@
                 color: #f3f3f3;
                 padding-top: 12px;
                 font-size: calc(var(--base-font-size) + 5px);
-                font-weight:bold;
+                font-weight: bold;
             }
 
             .menu-item p {
@@ -667,20 +665,20 @@
             margin: 0 5px; /* Margin for spacing */
             text-align: center;
             font-weight: bold;
-    background-color: #111111;
-    color: #f6f6f6;
+            background-color: #111111;
+            color: #f6f6f6;
         }
 
-        #themeSelection .btn.active,
-#themeSelection .btn:hover {
-    background-color: #B01F21; 
-    color: #f6f6f6; 
-}
+            #themeSelection .btn.active,
+            #themeSelection .btn:hover {
+                background-color: #B01F21;
+                color: #f6f6f6;
+            }
 
-/* Optional: if you want a smooth transition effect */
-#themeSelection .btn {
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color change */
-}
+        /* Optional: if you want a smooth transition effect */
+        #themeSelection .btn {
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color change */
+        }
 
 
         /* Base Styles */
@@ -941,7 +939,7 @@
 
             #map {
                 order: 1; /* Map comes first */
-                height: 300px; 
+                height: 300px;
                 width: 100%;
             }
         }
@@ -1163,6 +1161,70 @@
                 transform: translateX(-100%);
             }
     </style>
+
+    <style>
+        .modal-footer {
+            background-color: #363435; /* Dark background based on your image */
+            padding: 1rem;
+            display: flex;
+            justify-content: flex-end; /* Aligns buttons to the right */
+            gap: 1rem; /* Spacing between buttons */
+        }
+
+            .modal-footer .btn {
+                border: none;
+                padding: 0.5rem 1rem;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+
+        #resetPreferencesButton {
+            background-color: #363435; /* Dark background color */
+            color: #f6f6f6; /* White text color */
+            border: none;
+            border-radius: 4px; /* Rounded corners */
+            padding: 10px 20px; /* Top & Bottom | Left & Right padding */
+            font-size: 16px; /* Text size */
+            display: flex; /* To align icon and text */
+            align-items: center; /* Align items vertically */
+            justify-content: center; /* Center items horizontally */
+            gap: 10px; /* Space between icon and text */
+            cursor: pointer; /* Mouse cursor as pointer */
+            transition: background-color 0.3s; /* Transition for hover effect */
+        }
+
+            #resetPreferencesButton:hover {
+                background-color: #444; /* Slightly lighter background on hover */
+            }
+
+            #resetPreferencesButton::before {
+                content: ''; /* Icon will be placed as a pseudo-element */
+                display: inline-block;
+                background: url('Assets/Images/reset.png');
+                no-repeat center center; /* Path to your reset icon image */
+                background-size: contain; /* Ensure the icon size fits the button */
+                width: 20px; /* Width of the icon */
+                height: 20px; /* Height of the icon */
+            }
+
+
+        /* Style for the cancel button */
+        #cancelButton {
+            background-color: #F6F6F6; /* Light grey background */
+            color: #363435; /* Black text color */
+        }
+
+        /* Style for the save preferences button */
+        #savePreferencesButton {
+            background-color: #B01F21; /* Red background, as per your image */
+            color: #f6f6f6; /* White text color */
+        }
+
+        /* Hover effects for interactive buttons */
+        .modal-footer .btn:not(#resetPreferencesButton):hover {
+            opacity: 0.8; /* Slightly transparent on hover */
+        }
+    </style>
     <script>
         // This assumes you're using pure JavaScript. If you're using a framework like jQuery, the syntax will be different.
         document.addEventListener('DOMContentLoaded', function () {
@@ -1179,6 +1241,45 @@
                 });
             });
         });
+
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Attach the click event listener to the container that holds the menu items.
+            // Make sure to replace 'containerSelector' with the actual selector of your container.
+            document.querySelector('containerSelector').addEventListener('click', function (event) {
+                // Check if the clicked element is an image within a .menu-item.
+                if (event.target.tagName === 'IMG' && event.target.closest('.menu-item')) {
+                    const src = event.target.getAttribute('src');
+                    const alt = event.target.getAttribute('alt');
+
+                    // Update the modal with the new image and information
+                    updateModalContent(src, alt);
+                }
+            });
+        });
+
+
+        function updateModalContent(src, alt) {
+            const imagePreview = document.getElementById('imagePreview');
+            const imageModalLabel = document.getElementById('imageModalLabel');
+
+            // Update the src and alt attributes for the image in the modal
+            imagePreview.src = src;
+            imagePreview.alt = alt; // If you also want to update the alt attribute
+
+            // Optionally, update the modal's title or any other information
+            imageModalLabel.textContent = alt; // Update the modal label if needed
+
+            // Show the modal using Bootstrap's API
+            // For Bootstrap 5
+            //var myModal = new bootstrap.Modal(document.getElementById('imageModal'));
+            //myModal.show();
+
+             $('#imageModal').modal('show');
+        }
+
 
     </script>
 
@@ -1258,15 +1359,15 @@
                 <li class="nav-item">
                     <style>
                         #navBook:active {
-    color: #F6F6F6; /* This sets the text color you want when the button is pressed */
-    background-color: #B01F21; /* This sets the background color you want when the button is pressed */
-        border-color: transparent !important; /* This removes the green border */
-}
+                            color: #F6F6F6; /* This sets the text color you want when the button is pressed */
+                            background-color: #B01F21; /* This sets the background color you want when the button is pressed */
+                            border-color: transparent !important; /* This removes the green border */
+                        }
 
                         #navBook:focus, #navBook:active {
-    border-color: transparent !important; /* This removes the green border on focus and active states */
-    box-shadow: none !important; /* This removes the glow effect when the button is clicked or focused */
-}
+                            border-color: transparent !important; /* This removes the green border on focus and active states */
+                            box-shadow: none !important; /* This removes the glow effect when the button is clicked or focused */
+                        }
 
 
 
@@ -1296,7 +1397,7 @@
                                 <i class="fas fa-search"></i>
                                 <!-- Magnifying glass icon -->
                             </button>
-                            <input class="form-control" type="search" id="searchbox" placeholder="Search" aria-label="Search">
+                            <input class="form-control" type="search" id="searchbox" placeholder="Search" aria-label="Search" />
 
                             <button class="btn microphone" type="button" id="microphone" onclick="startDictation()">
                                 <i class="fas fa-microphone"></i>
@@ -1311,14 +1412,37 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="modal" data-target="#preferencesModal">
-                        <i class="fas fa-cog"></i>SETTINGS
+                        <img src="Assets\Images\settingsIcon.png" alt="Settings" class="settings-icon" />
+                        <span>SETTINGS</span>
                     </a>
                 </li>
+
             </ul>
         </div>
     </nav>
 
+    <style>
+        .nav-item .nav-link {
+            color: #ffffff; /* Adjust the color to match your design */
+            text-align: center; /* Centers the icon and text */
+            text-decoration: none; /* Removes underline from links */
+            display: flex; /* Enables flexbox */
+            flex-direction: column; /* Stacks items vertically */
+            align-items: center; /* Centers items horizontally in the flex container */
+            padding: 10px; /* Adds some padding around the link */
+        }
 
+            .nav-item .nav-link .settings-icon {
+                width: 30px; /* Adjust width as necessary */
+                height: auto; /* Keeps the aspect ratio of the image */
+                margin-bottom: 4px; /* Adjust spacing between icon and text as necessary */
+            }
+
+            .nav-item .nav-link span {
+                font-size: 16px; /* Adjust text size as necessary */
+                display: block; /* Ensures the text takes up the full width for centering */
+            }
+    </style>
     <div id="welcome-section">
         <h1>The Villa Bologna Restaurant</h1>
         <h2>Italian - Mediterranean - Vegetarian Friendly</h2>
@@ -1530,8 +1654,7 @@
 
 
 
-                        <script>
-                            // Your JSON data
+                        <script>                          
 
                             const winemenuSection = {
 
@@ -2154,25 +2277,29 @@
                                         "name": "Conchiglie con Code di Gamberi e Ricotta",
                                         "price": "19",
                                         "description": "Conchiglie pasta with prawns, ricotta cheese, chilli, basil, and virgin olive oil",
-                                        "dietary": []
+                                        "dietary": [],
+                                        "imageUrl": "Assets/Images/food11.jpg"
                                     },
                                     {
                                         "name": "Rigatoni alla Bolognese",
                                         "price": "16",
                                         "description": "Rigatoni pasta with traditional beef and pork ragu and red wine",
-                                        "dietary": ["gluten-free option available"]
+                                        "dietary": ["gluten-free option available"],
+                                        "imageUrl": "Assets/Images/food12.jpg"
                                     },
                                     {
                                         "name": "Penne alla Norma con Melanzane, Peperoncino Rosso, Salsa di Pomodoro, Basilico e Ricotta",
                                         "price": "16",
                                         "description": "Penne with tomato sauce, eggplant, garlic, red chilli, ricotta, and olive oil",
-                                        "dietary": ["vegetarian", "gluten-free option available"]
+                                        "dietary": ["vegetarian", "gluten-free option available"],
+                                        "imageUrl": "Assets/Images/food13.jpg"
                                     },
                                     {
                                         "name": "Risotto con Salsiccia Toscana",
                                         "price": "17",
                                         "description": "Risotto with Tuscan sausage and Chianti red wine",
-                                        "dietary": []
+                                        "dietary": [],
+                                        "imageUrl": "Assets/Images/food14.jpg"
                                     }
                                 ],
                                 "Secondi": [
@@ -2180,31 +2307,36 @@
                                         "name": "Bocconcini di Coda di Rospo in Umido alla Livornese",
                                         "price": "27",
                                         "description": "Braised chunks of Monkfish in white wine, garlic, tomato sauce, served with toasted garlic bruschetta",
-                                        "dietary": ["lactose-free"]
+                                        "dietary": ["lactose-free"],
+                                        "imageUrl": "Assets/Images/food15.jpg"
                                     },
                                     {
                                         "name": "Salmone Scozzese con Salsa di Aragosta",
                                         "price": "29",
                                         "description": "Fillet of Scottish salmon with lobster sauce, scallops’ meat, & fresh tarragon",
-                                        "dietary": []
+                                        "dietary": [],
+                                        "imageUrl": "Assets/Images/food16.jpg"
                                     },
                                     {
                                         "name": "Filetto di Branzino alla Griglia Con Timo Fresco, Olio D'oliva e Limone",
                                         "price": "29",
                                         "description": "Grilled fillet of Seabass with fresh thyme, olive oil, and lemon",
-                                        "dietary": ["gluten-free", "lactose-free"]
+                                        "dietary": ["gluten-free", "lactose-free"],
+                                        "imageUrl": "Assets/Images/food17.jpg"
                                     },
                                     {
                                         "name": "Tagliata di Manzo alla Griglia con Rucola",
                                         "price": "28",
                                         "description": "Grilled sirloin steak with rocket salad & rosemary oil",
-                                        "dietary": ["lactose-free"]
+                                        "dietary": ["lactose-free"],
+                                        "imageUrl": "Assets/Images/food18.jpg"
                                     },
                                     {
                                         "name": "Filetti di Vitello Funghi Porcini",
                                         "price": "31",
                                         "description": "Pan-fried fillets of Veal with porcini mushrooms, sage, & Brandy sauce",
-                                        "dietary": []
+                                        "dietary": [],
+                                        "imageUrl": "Assets/Images/food19.jpg"
                                     }
                                 ],
                                 "Contorni": [
@@ -2212,43 +2344,50 @@
                                         "name": "Rucola & Parmesan Salad",
                                         "price": "7.50",
                                         "description": "",
-                                        "dietary": []
+                                        "dietary": [],
+                                        "imageUrl": "Assets/Images/food20.jpg"
                                     },
                                     {
                                         "name": "Spicy Roast Potatoes",
                                         "price": "4.50",
                                         "description": "",
-                                        "dietary": []
+                                        "dietary": [],
+                                        "imageUrl": "Assets/Images/food21.jpg"
                                     },
                                     {
                                         "name": "Spinaci al Burro",
                                         "price": "4.50",
                                         "description": "",
-                                        "dietary": []
+                                        "dietary": [],
+                                        "imageUrl": "Assets/Images/food22.jpg"
                                     },
                                     {
                                         "name": "Grilled Vegetables",
                                         "price": "13",
                                         "description": "Basil, garlic & olive oil",
-                                        "dietary": []
+                                        "dietary": [],
+                                        "imageUrl": "Assets/Images/food23.jpg"
                                     },
                                     {
                                         "name": "Broccoli",
                                         "price": "4.50",
                                         "description": "",
-                                        "dietary": []
+                                        "dietary": [],
+                                        "imageUrl": "Assets/Images/food24.jpg"
                                     },
                                     {
                                         "name": "French Fries",
                                         "price": "4.50",
                                         "description": "",
-                                        "dietary": []
+                                        "dietary": [],
+                                        "imageUrl": "Assets/Images/food25.jpg"
                                     },
                                     {
                                         "name": "Peas & Mint",
                                         "price": "4.50",
                                         "description": "",
-                                        "dietary": []
+                                        "dietary": [],
+                                        "imageUrl": "Assets/Images/food26.jpg"
                                     }
                                 ]
                             }
@@ -2309,7 +2448,7 @@
                                             "two_scoops": "6",
                                             "three_scoops": "8"
                                         },
-                                        "description":"Vanilla, Stracciatella, Chocolate, Nocciola, Pistachio, Strawberry",
+                                        "description": "Vanilla, Stracciatella, Chocolate, Nocciola, Pistachio, Strawberry",
                                         "imageUrl": "Assets/Images/desert8.jpg"
                                     },
                                     {
@@ -2332,110 +2471,145 @@
                                     },
                                     {
                                         "name": "Flat White",
-                                        "price": "3"
+                                        "price": "3",
+                                        "imageUrl": "Assets/Images/desert12.jpg"
+
+
                                     },
                                     {
                                         "name": "Espresso",
-                                        "price": "2"
+                                        "price": "2",
+                                        "imageUrl": "Assets/Images/desert13.jpg"
+
                                     },
                                     {
                                         "name": "Double Espresso",
-                                        "price": "2.80"
+                                        "price": "2.80",
+                                        "imageUrl": "Assets/Images/desert14.jpg"
+
                                     },
                                     {
                                         "name": "Espresso Longo",
-                                        "price": "2"
+                                        "price": "2",
+                                        "imageUrl": "Assets/Images/desert15.jpg"
+
                                     },
                                     {
                                         "name": "Espresso Macchiato",
-                                        "price": "2.50"
+                                        "price": "2.50",
+                                        "imageUrl": "Assets/Images/desert16.jpg"
+
                                     },
                                     {
                                         "name": "Italian Hot Chocolate",
-                                        "price": "4.50"
+                                        "price": "4.50",
+                                        "imageUrl": "Assets/Images/desert17.jpg"
+
                                     }
                                 ],
                                 "Teas": [
                                     {
                                         "name": "Three Chamomile",
                                         "price": "3.50",
-                                        "imageUrl": "Assets/Images/salad4.jpeg" // Replace with your actual image path
+                                        "imageUrl": "Assets/Images/desert35.jpg"
 
                                     },
                                     {
                                         "name": "Three Ginger",
-                                        "price": "3.50"
+                                        "price": "3.50",
+                                        "imageUrl": "Assets/Images/desert23.jpg"
                                     },
                                     {
                                         "name": "Three Fennel",
-                                        "price": "3.50"
+                                        "price": "3.50",
+                                        "imageUrl": "Assets/Images/desert24.jpg"
                                     },
                                     {
                                         "name": "Fresh Mint",
-                                        "price": "3.50"
+                                        "price": "3.50",
+                                        "imageUrl": "Assets/Images/desert25.jpg"
                                     },
                                     {
                                         "name": "English Breakfast",
-                                        "price": "3.50"
+                                        "price": "3.50",
+                                        "imageUrl": "Assets/Images/desert26.jpg"
                                     },
                                     {
                                         "name": "Earl Grey",
-                                        "price": "3.50"
+                                        "price": "3.50",
+                                        "imageUrl": "Assets/Images/desert27.jpg"
                                     }
                                 ],
                                 "Cocktails": [
                                     {
                                         "name": "Nuovo Martini",
-                                        "price": "11"
+                                        "price": "11",
+                                        "imageUrl": "Assets/Images/desert18.jpg"
+
                                     },
                                     {
                                         "name": "Sgroppino",
-                                        "price": "11"
+                                        "price": "11",
+                                        "imageUrl": "Assets/Images/desert19.jpg"
+
                                     },
                                     {
                                         "name": "Espresso Martini",
-                                        "price": "11"
+                                        "price": "11",
+                                        "imageUrl": "Assets/Images/desert20.jpg"
+
                                     }
                                 ],
                                 "Amaro & Liquers": [
                                     {
                                         "name": "Limoncello di Capri",
-                                        "price": "6"
+                                        "price": "6",
+                                        "imageUrl": "Assets/Images/desert21.jpg"
+
                                     },
                                     {
                                         "name": "Frangelico",
-                                        "price": "6"
+                                        "price": "6",
+                                        "imageUrl": "Assets/Images/desert22.jpg"
+
                                     },
                                     {
                                         "name": "Fernet Branca",
-                                        "price": "7"
+                                        "price": "7",
+                                        "imageUrl": "Assets/Images/desert28.jpg"
                                     },
                                     {
                                         "name": "Montenegro",
-                                        "price": "8"
+                                        "price": "8",
+                                        "imageUrl": "Assets/Images/desert29.jpg"
                                     },
                                     {
                                         "name": "Averna",
-                                        "price": "8"
+                                        "price": "8",
+                                        "imageUrl": "Assets/Images/desert30.jpg"
                                     }
                                 ],
                                 "Grappa": [
                                     {
                                         "name": "Pinot Nero",
-                                        "price": "6"
+                                        "price": "6",
+                                        "imageUrl": "Assets/Images/desert31.jpg"
 
                                     },
                                     {
                                         "name": "Borgo Antico San Vitale",
-                                        "price": "10"
+                                        "price": "10",
+                                        "imageUrl": "Assets/Images/desert32.jpg"
                                     },
                                     {
                                         "name": "Passone Bianca",
-                                        "price": "7"
+                                        "price": "7",
+                                        "imageUrl": "Assets/Images/desert33.jpg"
                                     },
                                     {
                                         "name": "Piave Cuore",
-                                        "price": "6"
+                                        "price": "6",
+                                        "imageUrl": "Assets/Images/desert34.jpg"
                                     }
                                 ]
                             }
@@ -3264,7 +3438,7 @@
                         </div>
                         <div class="col-sm-6">
                             <div id="themeSelection">
-                                <button type="button" class="btn active" data-theme="light">Light</button>
+                                <button type="button" id="lightButton" class="btn active" data-theme="light">Light</button>
                                 <button type="button" class="btn" data-theme="dark">Dark</button>
                             </div>
                         </div>
@@ -3297,10 +3471,11 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-secondary" id="resetPreferences">Reset to defaults</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary">Save Preferences</button>
+                    <button id="resetPreferencesButton" onclick="resetPreferences()" type="button" class="btn btn-outline-secondary">Reset to defaults</button>
+                    <button id="cancelButton" onclick="cancelButton()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button id="savePreferencesButton" onclick="saveButton()" type="button" class="btn btn-primary">Save Preferences</button>
                 </div>
+
             </div>
         </div>
     </div>
@@ -3399,6 +3574,13 @@
             document.getElementById('contrastSlider').value = 100; // Default contrast
             adjustBrightness();
             adjustContrast();
+            var checkbox = document.getElementById("toggleSwitch");
+            if (checkbox.checked) {
+                checkbox.click();
+            }
+            var button = document.getElementById("lightButton");
+            button.click();
+
             document.documentElement.style.setProperty('--base-font-size', '20px');
 
         }
@@ -3547,6 +3729,21 @@
 
 
 
+            document.addEventListener('DOMContentLoaded', function () {
+                // Attach click event listener to the container that holds the menu items.
+                // Replace 'containerSelector' with the actual selector of your container.
+                document.querySelector('menu-container').addEventListener('click', function (event) {
+                    // Check if the clicked element is an image within a menu-item.
+                    if (event.target.tagName === 'IMG' && event.target.closest('.menu-item')) {
+                        const src = event.target.getAttribute('src');
+                        document.getElementById('imagePreview').src = src;
+                        // Optional: Update the modal title to the image's alt text
+                        document.getElementById('imageModalLabel').textContent = event.target.alt;
+                        // Assuming Bootstrap 4 with jQuery for modal handling:
+                        $('#imageModal').modal('show');
+                    }
+                });
+            });
 
         });
 
@@ -3597,7 +3794,7 @@
                 if (document.body.classList.contains('dark')) {
                     menuIcon.src = 'Assets/Images/BarMenuIconDark.png'; // Dark theme icon for bar menu
                 } else {
-                    menuIcon.src = 'Assets/Images/BarMenuIcon.png'; // Light theme icon for bar menu
+                    menuIcon.src = 'Assets/Images/BarMenuIcon.png'; // Light theme icon for bar menu                 
                 }
 
 
@@ -3723,7 +3920,7 @@
         /*contact*/
 
         function initMap() {
-            var location = { lat: 35.8953681, lng: 14.4449836}; // Coordinates of St. Julian's
+            var location = { lat: 35.8953681, lng: 14.4449836 }; // Coordinates of St. Julian's
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 15,
                 center: location
@@ -3823,7 +4020,7 @@
             notification.className = isSuccess ? 'notification success' : 'notification';
             notification.style.display = 'block'; // Show notification
         }
-</script>
+    </script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsCmXBRVldFnmUC-TiRAfHK23TQQv0Zwc&callback=initMap" async defer></script>
 </body>
@@ -3850,7 +4047,11 @@
             contactSection.style.display = 'block';
             bookSection.style.display = 'none';
             setActiveButton(toggleContact);
-            ContactIcon.src = 'Assets/Images/contactIcon.png'; // Change image source for food menu
+            if (document.body.classList.contains('dark')) {
+                ContactIcon.src = 'Assets/Images/DarkcontactIcon.png';
+            } else {
+                ContactIcon.src = 'Assets/Images/contactIcon.png';
+            }
 
 
         });
@@ -3858,8 +4059,14 @@
         toggleBook.addEventListener('click', function () {
             contactSection.style.display = 'none';
             bookSection.style.display = 'block';
-            setActiveButton(toggleBook); // Set active styling on contact button
-            ContactIcon.src = 'Assets/Images/bookIcon.png'; // Change image source for food menu
+            setActiveButton(toggleBook);
+            if (document.body.classList.contains('dark')) {
+                ContactIcon.src = 'Assets/Images/DarkbookIcon.png';
+            } else {
+                ContactIcon.src = 'Assets/Images/bookIcon.png';
+
+            }
+            //ContactIcon.src = 'Assets/Images/bookIcon.png'; // Change image source for food menu
 
 
 
@@ -3930,11 +4137,11 @@
         var leftIcon = document.getElementById('FeedbackLeftIcon'); // Get the img element
 
         var leftDrinkIcon = document.getElementById('leftArrowMenuD'); // Get the img element
-        var rightDrinkIcon = document.getElementById('rightMenuD'); // Get the img element
-        var leftFoodIcon = document.getElementById('leftArrowMenu'); // Get the img element
-        var rightFoodIcon = document.getElementById('rightMenu'); // Get the img element
+        var rightDrinkIcon = document.getElementById('rightMenuD');
+        var leftFoodIcon = document.getElementById('leftArrowMenu');
+        var rightFoodIcon = document.getElementById('rightMenu');
 
-       
+
 
 
 
@@ -3985,7 +4192,25 @@
 
     // Also update the image source initially
     updateImageSource();
+
+
+    function cancelButton() {
+        var button1 = document.getElementById("resetButton");
+        var button2 = document.getElementById("closePreferences");
+        button1.click();
+        button2.click();
+    }
+
+    function saveButton() {
+        var button2 = document.getElementById("closePreferences");
+        button2.click();
+    }
+
+
+
+
 </script>
+
 
 
 
