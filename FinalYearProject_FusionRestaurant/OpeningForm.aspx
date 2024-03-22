@@ -1263,19 +1263,16 @@
 
         function updateModalContent(src, alt) {
             const imagePreview = document.getElementById('imagePreview');
-            const imageModalLabel = document.getElementById('imageModalLabel');
 
             // Update the src and alt attributes for the image in the modal
             imagePreview.src = src;
-            imagePreview.alt = alt; // If you also want to update the alt attribute
 
             // Optionally, update the modal's title or any other information
-            imageModalLabel.textContent = alt; // Update the modal label if needed
 
             // Show the modal using Bootstrap's API
             // For Bootstrap 5
-            //var myModal = new bootstrap.Modal(document.getElementById('imageModal'));
-            //myModal.show();
+            var myModal = new bootstrap.Modal(document.getElementById('imageModal'));
+            myModal.show();
 
              $('#imageModal').modal('show');
         }
@@ -1389,24 +1386,25 @@
                             padding-right: 40px; /* Adjust padding to make space for the right button */
                             /* Add additional styling for input */
                         }
+
+
+
                     </style>
                     <form class="form-inline my-2 my-lg-0" id="searchbox8">
                         <div class="search-box">
-                            <!-- Grouping the text input and search button together -->
                             <button class="btn subButton" id="btnsubButton" type="submit">
                                 <i class="fas fa-search"></i>
-                                <!-- Magnifying glass icon -->
-                            </button>
+                          </button>
                             <input class="form-control" type="search" id="searchbox" placeholder="Search" aria-label="Search" />
 
                             <button class="btn microphone" type="button" id="microphone" onclick="startDictation()">
                                 <i class="fas fa-microphone"></i>
-                                <!-- Microphone icon -->
                             </button>
 
                         </div>
 
                     </form>
+
 
 
                 </li>
@@ -1589,7 +1587,6 @@
 
                         <div id="carteCarousel" class="carousel slide" data-interval="false">
                             <div class="carousel-inner">
-                                <!-- Carousel items will be added dynamically here -->
                             </div>
                             <a class="carousel-control-prev" href="#carteCarousel" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -1608,7 +1605,6 @@
 
 
                             <div class="carousel-inner">
-                                <!-- Carousel items will be added dynamically here -->
                             </div>
                             <a class="carousel-control-prev" href="#lunchCarousel" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -1695,7 +1691,7 @@
                                 "Rosé Wine": [
                                     {
                                         "name": "Etna Rosato Murgo Tenuta San Michele 2021",
-                                        "price": "40 per bottle or €8.50 per 150ml",//12
+                                        "price": "40 per bottle or €8.50 per 150ml",
                                         "imageUrl": "Assets/Images/wine12.jpg"
                                     },
                                     {
