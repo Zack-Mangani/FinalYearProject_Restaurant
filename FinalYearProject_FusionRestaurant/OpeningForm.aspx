@@ -1244,41 +1244,7 @@
 
     </script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Attach the click event listener to the container that holds the menu items.
-            // Make sure to replace 'containerSelector' with the actual selector of your container.
-            document.querySelector('containerSelector').addEventListener('click', function (event) {
-                // Check if the clicked element is an image within a .menu-item.
-                if (event.target.tagName === 'IMG' && event.target.closest('.menu-item')) {
-                    const src = event.target.getAttribute('src');
-                    const alt = event.target.getAttribute('alt');
-
-                    // Update the modal with the new image and information
-                    updateModalContent(src, alt);
-                }
-            });
-        });
-
-
-        function updateModalContent(src, alt) {
-            const imagePreview = document.getElementById('imagePreview');
-
-            // Update the src and alt attributes for the image in the modal
-            imagePreview.src = src;
-
-            // Optionally, update the modal's title or any other information
-
-            // Show the modal using Bootstrap's API
-            // For Bootstrap 5
-            var myModal = new bootstrap.Modal(document.getElementById('imageModal'));
-            myModal.show();
-
-             $('#imageModal').modal('show');
-        }
-
-
-    </script>
+   
 
 
 
@@ -3366,7 +3332,35 @@
 
     <!-- Book -->
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    // Listen for clicks on the menu items
+    document.querySelectorAll('.menu-item img').forEach(item => {
+        item.addEventListener('click', function () {
+            // Get the image source and alt text from the clicked item
+            var imgSrc = this.getAttribute('src');
+            var imgAlt = this.getAttribute('alt');
 
+            // Find the modal elements where you want to set the image and alt text
+            var modalImg = document.querySelector('#imageModal img');
+            var modalTitle = document.querySelector('#imageModal .modal-title');
+
+            // Update the modal content
+            if (modalImg) {
+                modalImg.src = imgSrc;
+                modalImg.alt = imgAlt;
+            }
+
+            if (modalTitle) {
+                modalTitle.textContent = imgAlt;
+            }
+
+            // Now, the modal content has been updated. Bootstrap should automatically display the modal as per the data-toggle and data-target attributes.
+        });
+    });
+});
+
+    </script>
 
 
     <!-- Image Modal -->
