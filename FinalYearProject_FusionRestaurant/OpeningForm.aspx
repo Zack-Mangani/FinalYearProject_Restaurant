@@ -15,7 +15,7 @@
 
     <style>
         :root {
-            --base-font-size: 20px; /* Default base font sizesss */
+            --base-font-size: 20px; 
             --background-color: #f6f6f6;
             --text-color: #363435;
         }
@@ -120,7 +120,7 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
-            background-color: var(--background-color); /* Your desired background color */
+            background-color: var(--background-color); 
         }
 
 
@@ -128,7 +128,7 @@
             max-width: 50%;
         }
 
-        .about-icon {
+        .section-icon {
             font-size: 3rem;
             color: var(--text-color);
             margin-bottom: 15px;
@@ -193,11 +193,11 @@
         }
 
             .btn-primary:hover {
-                background-color: #333; /* Change to match your design */
+                background-color: #333; 
             }
 
         .fab {
-            font-size: var(--base-font-size); /* Change as per your design */
+            font-size: var(--base-font-size); 
         }
 
         @media (max-width: 768px) {
@@ -227,9 +227,9 @@
         }
 
             .search-box .form-control {
-                padding-right: 2.5rem; /* Make room for the microphone button */
-                border-radius: 20px; /* Rounded corners for the input */
-                border: 1px solid #ced4da; /* Default Bootstrap border color */
+                padding-right: 2.5rem; 
+                border-radius: 20px;
+                border: 1px solid #ced4da; 
             }
 
             .search-box button {
@@ -241,12 +241,11 @@
                 cursor: pointer;
             }
 
-                /* Optional: hide the outline that appears when the button is clicked */
+               
                 .search-box button:focus {
                     outline: none;
                 }
-
-                /* Optional: add hover effect for the buttons */
+          
                 .search-box button:hover {
                     opacity: 0.7;
                 }
@@ -267,8 +266,8 @@
             border: 1px solid #F6F6F6;
             color: #F6F6F6;
             background-color: transparent;
-            border-top-right-radius: 0.25rem; /* Match the border-radius of the form-control */
-            border-bottom-right-radius: 0.25rem; /* Match the border-radius of the form-control */
+            border-top-right-radius: 0.25rem; 
+            border-bottom-right-radius: 0.25rem; 
         }
 
         .container {
@@ -439,19 +438,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative; /* Ensure that the navigation arrows are positioned relative to this container */
+            position: relative;
         }
 
 
 
-        /* Adjust arrow button positioning */
         .menu-control-prev, .menu-control-next {
-            position: absolute; /* Position arrows absolutely within the parent */
-            top: 50%; /* Center vertically */
-            transform: translateY(-50%); /* Adjust alignment to the middle */
-            z-index: 10; /* Ensure arrows are above other content */
+            position: absolute; 
+            top: 50%; 
+            transform: translateY(-50%); 
+            z-index: 10; 
             cursor: pointer;
-            flex: 0 0 auto; /* Do not grow or shrink */
+            flex: 0 0 auto;
         }
 
         .menu-control-prev {
@@ -496,7 +494,7 @@
             width: 100%;
         }
 
-        .about-icon .icon {
+        .section-icon .icon {
             width: 80px;
             height: auto;
             display: block;
@@ -527,7 +525,6 @@
 
         .menu-content {
             display: none;
-            /* Add styling for your menu content */
         }
 
             .menu-content.active {
@@ -578,20 +575,18 @@
         }
 
 
-        /* Modal content general styling */
-        /* Reset button styling */
         #resetPreferences {
-            color: #aaa; /* Light text for the reset link */
-            border: 1px solid #aaa; /* Light border for the reset button */
-            background-color: transparent; /* Transparent background for the reset button */
-            margin-top: 10px; /* Spacing from the content above */
+            color: #aaa; 
+            border: 1px solid #aaa;
+            background-color: transparent; 
+            margin-top: 10px; 
         }
 
             #resetPreferences:hover {
-                color: #fff; /* White text on hover for better contrast */
-                border-color: #fff; /* White border on hover for better contrast */
-                background-color: #555; /* Slightly darker background on hover */
-                text-decoration: none; /* No underline on hover */
+                color: #fff;
+                border-color: #fff; 
+                background-color: #555; 
+                text-decoration: none; 
             }
 
         .modal-content {
@@ -600,7 +595,6 @@
             border-radius: 15px;
         }
 
-        /* Modal header styling */
         .modal-header {
             border-bottom: 1px solid #444;
         }
@@ -611,47 +605,40 @@
             font-weight: bold;
         }
 
-        /* Modal body styling */
+        
         .modal-body {
-            font-size: 1rem; /* Standard font size */
+            font-size: 1rem;
         }
 
             .modal-body p {
-                color: #bbb; /* Lighter text for descriptions */
+                color: #bbb; 
             }
 
-
-
-
-
-        /* Toggle switch */
+        
         .form-check-input:checked {
-            background-color: #2196f3; /* Blue background for checked state */
-            border-color: #2196f3; /* Blue border for checked state */
+            background-color: #2196f3; 
+            border-color: #2196f3; 
         }
 
-        /* Modal footer styling */
         .modal-footer {
-            border-top: 1px solid #444; /* Slightly lighter border for separation */
-            padding: 1rem; /* Padding around the buttons */
+            border-top: 1px solid #444; 
+            padding: 1rem; 
         }
 
-        /* Reset button styling */
         .btn-secondary {
-            background-color: #555; /* Darker background for the secondary button */
+            background-color: #555; 
         }
 
 
-        /* Reset link styling */
         #resetPreferences {
-            color: #aaa; /* Light text for the reset link */
-            text-decoration: none; /* No underline */
-            cursor: pointer; /* Pointer cursor to indicate clickable */
+            color: #aaa; 
+            text-decoration: none; 
+            cursor: pointer; 
         }
 
             #resetPreferences:hover {
-                color: #ddd; /* Lighter text on hover */
-                text-decoration: underline; /* Underline on hover */
+                color: #ddd; 
+                text-decoration: underline; 
             }
 
         .btn {
@@ -659,10 +646,10 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Add splacing and alignment for theme buttons */
+        
         #themeSelection .btn {
-            width: 80px; /* Fixed width for a uniform look */
-            margin: 0 5px; /* Margin for spacing */
+            width: 80px; 
+            margin: 0 5px; 
             text-align: center;
             font-weight: bold;
             background-color: #111111;
@@ -675,13 +662,11 @@
                 color: #f6f6f6;
             }
 
-        /* Optional: if you want a smooth transition effect */
         #themeSelection .btn {
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color change */
+            transition: background-color 0.3s, color 0.3s; 
         }
 
 
-        /* Base Styles */
         .feedback-wrapper {
             font-family: 'Raleway', sans-serif;
             display: flex;
@@ -693,24 +678,24 @@
         }
 
         .feedback-container {
-            width: 100%; /* Start with 100% width for small devices */
-            max-width: 70%; /* Max width to prevent it from becoming too wide on larger screens */
+            width: 100%; 
+            max-width: 70%; 
             padding: 20px;
             text-align: center;
             position: relative;
-            box-sizing: border-box; /* Ensure padding doesn't affect the overall width */
+            box-sizing: border-box; 
         }
 
         .feedback-header,
         .feedback-title,
         .feedback-text,
         .feedback-author {
-            margin: 0 auto; /* Centering text elements */
-            padding: 0 15px; /* Adding padding for small screens */
+            margin: 0 auto; 
+            padding: 0 15px;
         }
 
         .feedback-header {
-            font-size: 1.5rem; /* Responsive font size */
+            font-size: 1.5rem;
             color: #333333;
             margin-bottom: 20px;
         }
@@ -749,7 +734,7 @@
         .stars {
             color: #FFD700;
             margin-bottom: 15px;
-            font-size: 4.375rem; /* Responsive font size */
+            font-size: 4.375rem;
         }
 
         .feedback-text {
@@ -782,32 +767,31 @@
                 right: 10px;
             }
 
-        /* Responsive Adjustments */
         @media (max-width: 768px) {
             .feedback-container {
-                max-width: 90%; /* Allow more width on smaller screens */
+                max-width: 90%; 
             }
 
             .feedback-header, .feedback-title, .feedback-text, .feedback-author {
-                font-size: smaller; /* Adjust font size for smaller screens */
+                font-size: smaller;
             }
 
             .stars {
-                font-size: 3rem; /* Smaller stars for smaller screens */
+                font-size: 3rem;
             }
         }
 
         @media (max-width: 480px) {
             .feedback-navigation {
-                display: none; /* Hide navigation on very small screens */
+                display: none; 
             }
         }
 
 
-        /*footer*/
+      
 
         footer {
-            background-color: #B01F21; /* Dark red color */
+            background-color: #B01F21; 
             color: white;
             text-align: center;
             padding: 20px 0;
@@ -819,8 +803,7 @@
             margin: 0;
             padding: 5px;
         }
-        /*        form style
-*/
+    
         label {
             font-size: calc(var(--base-font-size) + 5px);
             font-weight: bold;
@@ -830,69 +813,67 @@
             position: relative;
             display: inline-flex;
             align-items: center;
-            border: 1px solid #ccc; /* Example border, change as needed */
-            border-radius: 20px; /* Rounded borders as per your image */
-            width: 300px; /* Adjust width as needed */
+            border: 1px solid #ccc; 
+            border-radius: 20px; 
+            width: 300px; 
         }
 
             .form-input-box input[type="text"] {
                 flex-grow: 1;
                 border: none;
-                border-radius: 20px; /* Ensure the input has rounded corners */
+                border-radius: 20px; 
                 padding: 10px;
-                padding-right: 40px; /* Make padding to accommodate the microphone icon */
-                height: 40px; /* Adjust height as needed */
+                padding-right: 40px; 
+                height: 40px; 
             }
 
             .form-input-box input[type="tel"] {
                 flex-grow: 1;
                 border: none;
-                border-radius: 20px; /* Ensure the input has rounded corners */
+                border-radius: 20px; 
                 padding: 10px;
-                padding-right: 40px; /* Make padding to accommodate the microphone icon */
-                height: 40px; /* Adjust height as needed */
+                padding-right: 40px; 
+                height: 40px; 
             }
 
             .form-input-box .mic-btn {
-                margin-left: -40px; /* Negative margin to pull the button into the input */
-                background: none;
+                margin-left: -40px; 
                 border: none;
                 cursor: pointer;
             }
 
                 .form-input-box .mic-btn img {
-                    width: 24px; /* Adjust as needed */
+                    width: 24px; 
                     height: auto;
                 }
 
-            /* Remove input focus outline */
             .form-input-box input[type="text"]:focus {
                 outline: none;
             }
 
-        /*contact*/
+        /*contac*/
 
 
         .contact-card {
             display: flex;
-            flex-direction: row; /* Align children horizontally */
+            flex-direction: row; 
             align-items: stretch;
             background-color: #f9f9f9;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            margin: 40px auto; /* Increase margin for more space around the card */
-            max-width: 1100px; /* Increase the max-width for a larger card */
+            margin: 40px auto; 
+            max-width: 1100px; 
         }
 
         .contact-info {
-            padding: 40px; /* Increase padding for more space inside the info section */
-            background-color: #363435; /* Dark background */
+            padding: 40px; 
+            background-color: #363435; 
             color: #fff;
-            flex-basis: 50%; /* Increase the width of the contact info section */
+            flex-basis: 50%; 
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Spread out the content vertically */
+            justify-content: space-between; 
             border-style: solid;
             border-color: #f6f6f6;
         }
@@ -900,7 +881,7 @@
         .info-section {
             display: flex;
             align-items: center;
-            margin-bottom: 20px; /* Add more space between info sections */
+            margin-bottom: 20px; 
         }
 
             .info-section .icon {
@@ -922,23 +903,22 @@
         }
 
         #map {
-            flex-grow: 1; /* Allow the map to fill the remaining space */
-            /* The width and height will be automatically adjusted by flexbox */
+            flex-grow: 1;         
         }
 
         @media (max-width: 768px) {
             .contact-card {
-                flex-direction: column; /* Stack the children vertically on smaller screens */
+                flex-direction: column; 
             }
 
             .contact-info {
-                order: 2; /* Ensure the contact info is below the map on small screens */
-                width: 100%; /* Full width on small screens */
-                padding: 20px; /* Adjust padding on smaller screens */
+                order: 2; 
+                width: 100%; 
+                padding: 20px; 
             }
 
             #map {
-                order: 1; /* Map comes first */
+                order: 1; 
                 height: 300px;
                 width: 100%;
             }
@@ -963,7 +943,7 @@
             padding: 20px;
             border-radius: 8px;
             color: #f6f6f6;
-            width: calc(100% - 60px); /* Adjusted to account for the left and right margins */
+            width: calc(100% - 60px);
             border-style: solid;
             border-color: #f6f6f6;
         }
@@ -982,7 +962,7 @@
         .form-group {
             display: flex;
             flex-direction: column;
-            width: 48%; /* Adjust width for spacing */
+            width: 48%; 
         }
 
             .form-group label {
@@ -1029,7 +1009,7 @@
             text-align: center;
             padding: 10px;
             margin-bottom: 20px;
-            display: none; /* Initially hidden */
+            display: none; 
             border-radius: 5px;
         }
 
@@ -1100,27 +1080,24 @@
         }
 
 
-
-        /* Existing styles remain unchanged */
-
         .slider-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 440px; /* Adjust based on slider width + label padding */
+            width: 440px; 
         }
 
         .settings-label {
-            color: #333; /* Match your design */
-            font-size: var(--base-font-size); /* Adjust as needed */
-            padding: 0 10px; /* Space around labels */
+            color: #333; 
+            font-size: var(--base-font-size); 
+            padding: 0 10px; 
         }
 
 
         .toggle-container {
             display: flex;
             justify-content: center;
-            margin-top: 20px; /* Adjust based on your layout */
+            margin-top: 20px; 
         }
 
         #toggleSwitch {
@@ -1132,8 +1109,8 @@
         .toggle-label {
             cursor: pointer;
             text-indent: -9999px;
-            width: 60px; /* Toggle width */
-            height: 30px; /* Toggle height */
+            width: 60px; 
+            height: 30px; 
             background: grey;
             display: block;
             border-radius: 100px;
@@ -1164,11 +1141,11 @@
 
     <style>
         .modal-footer {
-            background-color: #363435; /* Dark background based on your image */
+            background-color: #363435; 
             padding: 1rem;
             display: flex;
-            justify-content: flex-end; /* Aligns buttons to the right */
-            gap: 1rem; /* Spacing between buttons */
+            justify-content: flex-end; 
+            gap: 1rem; 
         }
 
             .modal-footer .btn {
@@ -1179,64 +1156,58 @@
             }
 
         #resetPreferencesButton {
-            background-color: #363435; /* Dark background color */
-            color: #f6f6f6; /* White text color */
+            background-color: #363435; 
+            color: #f6f6f6; 
             border: none;
-            border-radius: 4px; /* Rounded corners */
-            padding: 10px 20px; /* Top & Bottom | Left & Right padding */
-            font-size: 16px; /* Text size */
-            display: flex; /* To align icon and text */
-            align-items: center; /* Align items vertically */
-            justify-content: center; /* Center items horizontally */
-            gap: 10px; /* Space between icon and text */
-            cursor: pointer; /* Mouse cursor as pointer */
-            transition: background-color 0.3s; /* Transition for hover effect */
+            border-radius: 4px; 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px; 
+            cursor: pointer; 
+            transition: background-color 0.3s;
         }
 
             #resetPreferencesButton:hover {
-                background-color: #444; /* Slightly lighter background on hover */
+                background-color: #444; 
             }
 
             #resetPreferencesButton::before {
-                content: ''; /* Icon will be placed as a pseudo-element */
+                content: ''; 
                 display: inline-block;
                 background: url('Assets/Images/reset.png');
-                no-repeat center center; /* Path to your reset icon image */
-                background-size: contain; /* Ensure the icon size fits the button */
-                width: 20px; /* Width of the icon */
-                height: 20px; /* Height of the icon */
+                no-repeat center center; 
+                background-size: contain; 
+                width: 20px; 
+                height: 20px; 
             }
 
 
-        /* Style for the cancel button */
         #cancelButton {
-            background-color: #F6F6F6; /* Light grey background */
-            color: #363435; /* Black text color */
+            background-color: #F6F6F6; 
+            color: #363435; 
         }
 
-        /* Style for the save preferences button */
         #savePreferencesButton {
-            background-color: #B01F21; /* Red background, as per your image */
-            color: #f6f6f6; /* White text color */
+            background-color: #B01F21; 
+            color: #f6f6f6; 
         }
 
-        /* Hover effects for interactive buttons */
         .modal-footer .btn:not(#resetPreferencesButton):hover {
-            opacity: 0.8; /* Slightly transparent on hover */
+            opacity: 0.8; 
         }
     </style>
     <script>
-        // This assumes you're using pure JavaScript. If you're using a framework like jQuery, the syntax will be different.
         document.addEventListener('DOMContentLoaded', function () {
             var buttons = document.querySelectorAll('#themeSelection .btn');
 
             buttons.forEach(function (button) {
                 button.addEventListener('click', function () {
-                    // Remove the 'active' class from all buttons
                     buttons.forEach(function (btn) {
                         btn.classList.remove('active');
                     });
-                    // Add 'active' class to the clicked button
                     this.classList.add('active');
                 });
             });
@@ -1251,37 +1222,29 @@
     <script>
         //search
         function startDictation() {
-            // Check if the browser supports speech recognition
             if (window.hasOwnProperty('webkitSpeechRecognition')) {
 
-                // Create a new instance of the webkitSpeechRecognition
                 var recognition = new webkitSpeechRecognition();
 
-                // Set properties for the recognition
-                recognition.continuous = false; // The default is single-shot recognition
-                recognition.interimResults = false; // We don't need interim results for this use case
+                recognition.continuous = false; 
+                recognition.interimResults = false; 
 
-                // Define what happens when recognition starts
                 recognition.onstart = function () {
-                    document.getElementById('searchbox').placeholder = 'Listening...'; // Feedback to show it's listening
+                    document.getElementById('searchbox').placeholder = 'Listening...'; 
                 };
 
-                // Define what happens when the recognition service returns a result
                 recognition.onresult = function (event) {
-                    var transcript = event.results[0][0].transcript; // Get the transcript of the spoken text
-                    document.getElementById('searchbox').value = transcript; // Set the content of the text input to the transcript
-                    recognition.stop(); // Stop the recognition
+                    var transcript = event.results[0][0].transcript; 
+                    document.getElementById('searchbox').value = transcript;
+                    recognition.stop();
                 };
 
-                // Define what happens when recognition ends
                 recognition.onend = function () {
-                    document.getElementById('searchbox').placeholder = 'Search'; // Reset the placeholder
+                    document.getElementById('searchbox').placeholder = 'Search';
                 };
 
-                // Start the speech recognition
                 recognition.start();
             } else {
-                // If the browser doesn't support speech recognition, maybe hide the button or inform the user
                 alert('Sorry, your browser does not support speech recognition.');
             }
         }
@@ -1322,35 +1285,35 @@
                 <li class="nav-item">
                     <style>
                         #navBook:active {
-                            color: #F6F6F6; /* This sets the text color you want when the button is pressed */
-                            background-color: #B01F21; /* This sets the background color you want when the button is pressed */
-                            border-color: transparent !important; /* This removes the green border */
+                            color: #F6F6F6; 
+                            background-color: #B01F21; 
+                            border-color: transparent !important; 
                         }
 
                         #navBook:focus, #navBook:active {
-                            border-color: transparent !important; /* This removes the green border on focus and active states */
-                            box-shadow: none !important; /* This removes the glow effect when the button is clicked or focused */
+                            border-color: transparent !important; 
+                            box-shadow: none !important; 
                         }
 
 
 
                         #microphone {
-                            left: 175px; /* Align to the left side */
+                            left: 175px; 
                             width: 10px;
                             color: #f6f6f6;
-                            /* Adjust button width if necessary */
+                            
                         }
 
                         #btnsubButton {
                             color: #f6f6f6;
-                            /* Adjust button width if necessary */
+                            
                         }
 
                         .search-box input[type="text"] {
-                            width: 100%; /* Adjust width as needed */
-                            padding-left: 40px; /* Adjust padding to make space for the left button */
-                            padding-right: 40px; /* Adjust padding to make space for the right button */
-                            /* Add additional styling for input */
+                            width: 100%; 
+                            padding-left: 40px; 
+                            padding-right: 40px; 
+                            
                         }
 
 
@@ -1387,24 +1350,24 @@
 
     <style>
         .nav-item .nav-link {
-            color: #ffffff; /* Adjust the color to match your design */
-            text-align: center; /* Centers the icon and text */
-            text-decoration: none; /* Removes underline from links */
-            display: flex; /* Enables flexbox */
-            flex-direction: column; /* Stacks items vertically */
-            align-items: center; /* Centers items horizontally in the flex container */
-            padding: 10px; /* Adds some padding around the link */
+            color: #ffffff; 
+            text-align: center; 
+            text-decoration: none; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            padding: 10px; 
         }
 
             .nav-item .nav-link .settings-icon {
-                width: 30px; /* Adjust width as necessary */
-                height: auto; /* Keeps the aspect ratio of the image */
-                margin-bottom: 4px; /* Adjust spacing between icon and text as necessary */
+                width: 30px; 
+                height: auto;
+                margin-bottom: 4px; 
             }
 
             .nav-item .nav-link span {
-                font-size: 16px; /* Adjust text size as necessary */
-                display: block; /* Ensures the text takes up the full width for centering */
+                font-size: 16px; 
+                display: block; 
             }
     </style>
     <div id="welcome-section">
@@ -1422,7 +1385,7 @@
 
     <div id="aboutUsSection" class="about-section">
         <div class="container">
-            <div class="about-icon">
+            <div class="section-icon">
                 <img id="aboutIcon" src="Assets\Images\about-us.png" alt="About Us Icon" class="icon" />
             </div>
             <div class="header">
@@ -1468,31 +1431,27 @@
 
         <div class="container">
 
-            <div class="about-icon">
+            <div class="section-icon">
                 <img id="menuIcon" src="Assets\Images\FoodMenuIcon.png" alt="Food Menu Icon" class="icon" />
             </div>
 
             <div class="menu-container">
 
-                <!-- Toggle Switch -->
                 <div class="menu-toggle">
                     <button id="foodMenuButton" class="toggle-button active">MENU</button>
                     <button id="barMenuButton" class="toggle-button">WHAT'S ON</button>
                 </div>
 
-                <!-- Food Menu Content -->
                 <div id="foodMenuContent" class="menu-content active">
 
                     <div class="container menu-navigation">
                         <div class="row align-items-center justify-content-between">
-                            <!-- Previous Arrow -->
                             <div class="col-auto">
                                 <div class="menu-control-prev" role="button">
                                     <img id="leftArrowMenu" src="Assets\Images\leftArrow.png" alt="Previous" class="menu-control-prev-icon" />
                                 </div>
                             </div>
 
-                            <!-- Menu Categories -->
                             <div class="col overflow-hidden">
                                 <div class="d-flex justify-content-center menu-categories-scroll">
                                     <ul id="menu-categories" class="list-unstyled d-flex mb-0">
@@ -1506,10 +1465,9 @@
                                 </div>
                             </div>
 
-                            <!-- Next Arrow -->
                             <div class="col-auto">
                                 <div class="menu-control-next" role="button">
-                                    <img id="rightMenu" src="Assets\Images\rightArrow.png" alt="Next" class="menu-control-next-icon">
+                                    <img id="rightMenu" src="Assets\Images\rightArrow.png" alt="Next" class="menu-control-next-icon"/>
                                 </div>
                             </div>
                         </div>
@@ -1519,7 +1477,6 @@
                 <div class="menu-items">
                     <section class="menu">
 
-                        <!-- Carousel container -->
                         <div id="desertCarousel" class="carousel slide" data-interval="false">
                             <div class="carousel-inner">
                             </div>
@@ -1538,7 +1495,6 @@
 
                         <div id="childrenCarousel" class="carousel slide" data-interval="false">
                             <div class="carousel-inner">
-                                <!-- Carousel items will be added dynamically here -->
 
                             </div>
                             <a class="carousel-control-prev" href="#childrenCarousel" role="button" data-slide="prev">
@@ -1587,7 +1543,6 @@
 
                         <div id="wineCarousel" class="carousel slide" data-interval="false">
                             <div class="carousel-inner">
-                                <!-- Carousel items will be added dynamically here -->
                             </div>
                             <a class="carousel-control-prev" href="#wineCarousel" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -1601,7 +1556,6 @@
 
                         <div id="cocktailsCarousel" class="carousel slide" data-interval="false">
                             <div class="carousel-inner">
-                                <!-- Carousel items will be added dynamically here -->
                             </div>
                             <a class="carousel-control-prev" href="#cocktailsCarousel" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -1822,7 +1776,7 @@
                                         "price": "7",
                                         "description": "Martini Vibrante & Martini Floreale, citrus cordial, Fever Tree Soda Water",
                                         "imageUrl": "Assets/Images/cocktail18.jpg"
-                                    }//here
+                                    }
                                 ],
                                 "Wine by the Glass": {
                                     "Prosecco": [
@@ -1847,7 +1801,7 @@
 
                                         },
                                         {
-                                            "name": "Gavi de Gavi Reserve Volo Superiore Morgassi",//na
+                                            "name": "Gavi de Gavi Reserve Volo Superiore Morgassi",
                                             "price": "9"
                                         }
                                     ],
@@ -1872,7 +1826,7 @@
                                     "Tonics & Mixers": [
                                         {
                                             "name": "Fever Tree Tonic",
-                                            "price": "3.50",//he
+                                            "price": "3.50",
                                             "imageUrl": "Assets/Images/cocktail25.jpg"
                                         },
                                         {
@@ -2671,12 +2625,6 @@
                             }
 
 
-
-
-
-
-
-
                             const EasterSundaySetMenu = {
                                 "Starters": [
                                     {
@@ -2899,11 +2847,9 @@
                                 const h1 = document.createElement('h1');
                                 h1.textContent = sectionName;
 
-                                // Create a flex container to hold exactly three items
                                 const flexContainer = document.createElement('div');
                                 flexContainer.className = 'd-flex justify-content-around';
 
-                                // Add exactly three items to the flex container
                                 group.forEach(item => addMenuItem(flexContainer, item));
 
                                 carouselItem.appendChild(h1);
@@ -2915,14 +2861,12 @@
 
                             function appendCarouselItems(carouselSelector, menuSections) {
                                 const carouselInner = document.querySelector(`${carouselSelector} .carousel-inner`);
-                                carouselInner.innerHTML = ''; // Clear existing items, if any
+                                carouselInner.innerHTML = ''; 
 
                                 Object.entries(menuSections).forEach(([sectionName, items], sectionIndex) => {
-                                    // Split items into groups of 3 and create a carousel item for each group
                                     for (let i = 0; i < items.length; i += 3) {
                                         const group = items.slice(i, i + 3);
                                         const carouselItem = createCarouselItem(sectionName, group);
-                                        // Only mark the first carousel item of the first section as active
                                         if (i === 0 && sectionIndex === 0) {
                                             carouselItem.classList.add('active');
                                         }
@@ -2938,14 +2882,11 @@
                                 });
                             }
 
-                            // When the DOM is fully loaded, initialize carousels
                             document.addEventListener('DOMContentLoaded', () => {
-                                // Initialize the desert menu carousel
                                 initializeCarousel('#desertCarousel');
                                 appendCarouselItems('#desertCarousel', menuSections);
 
 
-                                // Initialize the children menu carousel
                                 initializeCarousel('#childrenCarousel');
                                 appendCarouselItems('#childrenCarousel', childrenmenusection);
 
@@ -2985,20 +2926,17 @@
                 </div>
 
 
-                <!-- Bar Menu Content -->
+                <!-- What's On Content -->
                 <div id="barMenuContent" class="menu-content">
-                    <!-- Bar menu items go here -->
 
                     <div class="container menu-navigation">
                         <div class="row align-items-center justify-content-between">
-                            <!-- Previous Arrow -->
                             <div class="col-auto">
                                 <div class="menu-control-prev" role="button">
                                     <img id="leftArrowMenuD" src="Assets\Images\leftArrow.png" alt="Previous" class="menu-control-prev-icon" />
                                 </div>
                             </div>
 
-                            <!-- Menu Categories -->
                             <div class="col overflow-hidden">
                                 <div class="d-flex justify-content-center menu-categories-scroll">
                                     <ul id="bar-menu-categories" class="list-unstyled d-flex mb-0">
@@ -3011,7 +2949,6 @@
                                 </div>
                             </div>
 
-                            <!-- Next Arrow -->
                             <div class="col-auto">
                                 <div class="menu-control-next" role="button">
                                     <img id="rightMenuD" src="Assets\Images\rightArrow.png" alt="Next" class="menu-control-next-icon" />
@@ -3026,7 +2963,6 @@
 
                             <div id="lmCarousel" class="carousel slide" data-interval="false">
                                 <div class="carousel-inner">
-                                    <!-- Carousel items will be added dynamically here -->
                                 </div>
                                 <a class="carousel-control-prev" href="#lmCarousel" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -3044,7 +2980,6 @@
 
                             <div id="easterCarousel" class="carousel slide" data-interval="false">
                                 <div class="carousel-inner">
-                                    <!-- Carousel items will be added dynamically here -->
                                 </div>
                                 <a class="carousel-control-prev" href="#easterCarousel" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -3060,7 +2995,7 @@
 
                             <div id="grigliatanightsCarousel" class="carousel slide" data-interval="false">
                                 <div class="carousel-inner">
-                                    <!-- Carousel items will be added dynamically here -->
+                             
                                 </div>
                                 <a class="carousel-control-prev" href="#grigliatanightsCarousel" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -3074,8 +3009,7 @@
                             </div>
 
                             <div id="cocktailnightsCarousel" class="carousel slide" data-interval="false">
-                                <div class="carousel-inner">
-                                    <!-- Carousel items will be added dynamically here -->
+                                <div class="carousel-inner">                           
                                 </div>
                                 <a class="carousel-control-prev" href="#cocktailnightsCarousel" role="button" data-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -3101,7 +3035,7 @@
     <!-- Feedback -->
     <div class="feedback-wrapper">
         <div class="feedback-container">
-            <div class="about-icon">
+            <div class="section-icon">
                 <img id="feedbackIcon" src="Assets\Images\FeedbackIcon.png" alt="Feedback Icon" class="icon" />
             </div>
 
@@ -3109,7 +3043,7 @@
                 <h1>OUR CLIENTS FEEDBACK</h1>
             </div>
             <div class="feedback-navigation left" onclick="changeFeedback(-1)">
-                <img id="FeedbackLeftIcon" src="Assets\Images\leftArrow.png" alt="Previous" class="menu-control-prev-icon">
+                <img id="FeedbackLeftIcon" src="Assets\Images\leftArrow.png" alt="Previous" class="menu-control-prev-icon"/>
             </div>
             <div id="feedback-box" class="feedback-box">
                 <div class="stars">★★★★★</div>
@@ -3131,7 +3065,7 @@
 
     <div id="gallery-section">
         <div class="container">
-            <div class="about-icon">
+            <div class="section-icon">
                 <img id="galleryIcon" src="Assets\Images\galleryicon.png" alt="Feedback Icon" class="icon" />
             </div>
 
@@ -3199,7 +3133,7 @@
 
     <div class="container">
         <div class="menu-container">
-            <div class="about-icon">
+            <div class="section-icon">
                 <img id="ContactIcon" src="Assets\Images\contactIcon.png" alt="Feedback Icon" class="icon" />
             </div>
             <div class="menu-toggle">
@@ -3332,35 +3266,7 @@
 
     <!-- Book -->
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-    // Listen for clicks on the menu items
-    document.querySelectorAll('.menu-item img').forEach(item => {
-        item.addEventListener('click', function () {
-            // Get the image source and alt text from the clicked item
-            var imgSrc = this.getAttribute('src');
-            var imgAlt = this.getAttribute('alt');
-
-            // Find the modal elements where you want to set the image and alt text
-            var modalImg = document.querySelector('#imageModal img');
-            var modalTitle = document.querySelector('#imageModal .modal-title');
-
-            // Update the modal content
-            if (modalImg) {
-                modalImg.src = imgSrc;
-                modalImg.alt = imgAlt;
-            }
-
-            if (modalTitle) {
-                modalTitle.textContent = imgAlt;
-            }
-
-            // Now, the modal content has been updated. Bootstrap should automatically display the modal as per the data-toggle and data-target attributes.
-        });
-    });
-});
-
-    </script>
+ 
 
 
     <!-- Image Modal -->
@@ -3382,7 +3288,7 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Preferences Modal -->
     <div class="modal fade" id="preferencesModal" tabindex="-1" role="dialog" aria-labelledby="preferencesModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -3394,7 +3300,6 @@
 
                 </div>
                 <div class="modal-body">
-                    <!-- Font Size Slider -->
                     <div class="row align-items-center mb-3">
                         <div class="col-sm-8">
                             <label for="fontSizeRangeSlider" class="form-label">Font Size</label>
@@ -3408,7 +3313,6 @@
                         </div>
                     </div>
 
-                    <!-- Voice Over Toggle -->
                     <div class="row align-items-center mb-3">
                         <div class="col-sm-8">
                             <label class="form-check-label" for="toggleSwitch">Voice Over</label>
@@ -3420,7 +3324,6 @@
                         </div>
                     </div>
 
-                    <!-- Interface Theme Selection -->
                     <div class="row align-items-center mb-3">
                         <div class="col-sm-8">
                             <label for="themeSelection" class="form-label">Interface Theme</label>
@@ -3434,7 +3337,6 @@
                         </div>
                     </div>
 
-                    <!-- Brightness Slider -->
                     <div class="row align-items-center mb-3">
                         <div class="col-sm-8">
                             <label for="brightnessSlider" class="form-label">Brightness</label>
@@ -3447,7 +3349,6 @@
                         </div>
                     </div>
 
-                    <!-- Contrast Slider -->
                     <div class="row align-items-center mb-3">
                         <div class="col-sm-8">
                             <label for="contrastSlider" class="form-label">Contrast</label>
@@ -3498,16 +3399,12 @@
 
 </script>
     <style>
-        /* Default system theme styles */
-
-        /* Light theme styles */
         body.light {
             --background-color: #f6f6f6;
             --text-color: #363435;
             --icon-color: #363435;
         }
 
-        /* Dark theme styles */
         body.dark {
             --background-color: #363435;
             --text-color: #f6f6f6;
@@ -3522,7 +3419,6 @@
                 document.body.classList.add(theme);
             }
 
-            // Directly apply the Light theme without checking localStorage
             applyTheme('light');
 
             var themeButtons = document.querySelectorAll('#themeSelection .btn');
@@ -3530,8 +3426,6 @@
                 btn.addEventListener('click', function () {
                     var theme = this.getAttribute('data-theme');
                     applyTheme(theme);
-                    // Note: This will apply the selected theme when clicked,
-                    // but it won't persist after a page reload since we're not using localStorage to save the preference.
                 });
             });
         });
@@ -3554,14 +3448,13 @@
             document.body.style.filter = `contrast(${contrastValue}%)`;
         }
 
-        // Event listeners for the sliders
         document.getElementById('brightnessSlider').addEventListener('input', adjustBrightness);
         document.getElementById('contrastSlider').addEventListener('input', adjustContrast);
 
         // Function to reset brightness and contrast to defaults
         function resetPreferences() {
-            document.getElementById('brightnessSlider').value = 100; // Default brightness
-            document.getElementById('contrastSlider').value = 100; // Default contrast
+            document.getElementById('brightnessSlider').value = 100; 
+            document.getElementById('contrastSlider').value = 100; 
             adjustBrightness();
             adjustContrast();
             var checkbox = document.getElementById("toggleSwitch");
@@ -3584,8 +3477,8 @@
         document.addEventListener('DOMContentLoaded', function () {
             const slider = document.getElementById('fontSizeRangeSlider');
             slider.addEventListener('input', function () {
-                const scaleFactor = slider.value; // Assuming the slider value is between 0 and 100
-                const newBaseSize = scaleFactor / 50 * 20; // Example: slider at 50 equals 16px base size
+                const scaleFactor = slider.value; 
+                const newBaseSize = scaleFactor / 50 * 20; 
                 document.documentElement.style.setProperty('--base-font-size', `${newBaseSize}px`);
             });
         });
@@ -3594,24 +3487,21 @@
 
 
     <script>
-        // Optimized function to speak text immediately on hover
         function speakText(event) {
             var text = event.target.textContent || event.target.innerText;
-            if (!text.trim()) return; // Skip empty text nodes
-
+            if (!text.trim()) return; 
             var synth = window.speechSynthesis;
             if (synth.speaking) {
-                synth.cancel(); // Only cancel if it's currently speaking
+                synth.cancel(); 
             }
 
-            // Start speaking with a slight delay to ensure cancellation is processed
+            
             setTimeout(() => {
                 var utterance = new SpeechSynthesisUtterance(text);
                 synth.speak(utterance);
-            }, 10); // A minimal delay can help in ensuring a smooth transition between speeches
+            }, 10); 
         }
 
-        // Function to stop speaking
         function stopSpeaking() {
             var synth = window.speechSynthesis;
             if (synth.speaking) {
@@ -3619,10 +3509,9 @@
             }
         }
 
-        // Function to add or remove speech synthesis event listeners based on toggle
         function toggleVoiceOver() {
             const isChecked = document.getElementById('toggleSwitch').checked;
-            const textElements = document.querySelectorAll('p, label, h1, h2, h3, h4, h5, h6, div'); // Extend selector as needed
+            const textElements = document.querySelectorAll('p, label, h1, h2, h3, h4, h5, h6, div'); 
 
             textElements.forEach(el => {
                 if (isChecked) {
@@ -3635,22 +3524,10 @@
             });
         }
 
-        // Event listener for the voice-over toggle
         document.getElementById('toggleSwitch').addEventListener('change', toggleVoiceOver);
 
-        // Initialize
         toggleVoiceOver();
     </script>
-
-
-
-
-
-
-
-
-
-
 
     <footer>
         <div class="footer-content">
@@ -3660,21 +3537,14 @@
     </footer>
 
 
-
-
-
-
-
     <!-- jQuery and Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Configure the click listeners for scrolling the menu categories
             document.querySelectorAll('.menu-control-next').forEach(function (button) {
                 button.addEventListener('click', function () {
-                    // Determine which menu is active
                     if (document.getElementById('foodMenuContent').classList.contains('active')) {
                         document.querySelector('#menu-categories').scrollLeft += 100;
                     } else if (document.getElementById('barMenuContent').classList.contains('active')) {
@@ -3683,10 +3553,8 @@
                 });
             });
 
-            // Attach event listeners for both the food and bar menu 'previous' buttons
             document.querySelectorAll('.menu-control-prev').forEach(function (button) {
                 button.addEventListener('click', function () {
-                    // Determine which menu is active
                     if (document.getElementById('foodMenuContent').classList.contains('active')) {
                         document.querySelector('#menu-categories').scrollLeft -= 100;
                     } else if (document.getElementById('barMenuContent').classList.contains('active')) {
@@ -3699,7 +3567,6 @@
 
             showMenu('carte', document.querySelector('#menu-categories li.active') || document.querySelector('#menu-categories li:first-child'));
 
-            // Setup click event listeners for the menu and bar buttons
             document.getElementById('foodMenuButton').addEventListener('click', function () {
                 toggleMenu('food');
             });
@@ -3713,23 +3580,18 @@
                 image.addEventListener('click', function () {
                     const src = this.getAttribute('src');
                     document.getElementById('imagePreview').src = src;
-                    $('#imageModalLabel').text(this.alt); // Optional: Update the modal title to the image's alt text
+                    $('#imageModalLabel').text(this.alt); 
                 });
             });
 
 
 
             document.addEventListener('DOMContentLoaded', function () {
-                // Attach click event listener to the container that holds the menu items.
-                // Replace 'containerSelector' with the actual selector of your container.
                 document.querySelector('menu-container').addEventListener('click', function (event) {
-                    // Check if the clicked element is an image within a menu-item.
                     if (event.target.tagName === 'IMG' && event.target.closest('.menu-item')) {
                         const src = event.target.getAttribute('src');
                         document.getElementById('imagePreview').src = src;
-                        // Optional: Update the modal title to the image's alt text
                         document.getElementById('imageModalLabel').textContent = event.target.alt;
-                        // Assuming Bootstrap 4 with jQuery for modal handling:
                         $('#imageModal').modal('show');
                     }
                 });
@@ -3738,23 +3600,20 @@
         });
 
         function toggleMenu(type) {
-            console.log('toggleMenu called with type:', type); // Debugging line
-
+            console.log('toggleMenu called with type:', type); 
             var foodMenuContent = document.getElementById('foodMenuContent');
             var barMenuContent = document.getElementById('barMenuContent');
             var foodMenuButton = document.getElementById('foodMenuButton');
             var barMenuButton = document.getElementById('barMenuButton');
             var menuCategories = document.getElementById('menu-categories');
             var startersCategory = menuCategories.querySelector('li:first-child');
-            const menuIcon = document.getElementById('menuIcon'); // Get the image element by its ID
+            const menuIcon = document.getElementById('menuIcon'); 
 
 
-            // Hide all menu items
             document.querySelectorAll('.menu-item').forEach(function (menuItem) {
                 menuItem.style.display = 'none';
             });
 
-            // Remove active class from all category buttons
             document.querySelectorAll('#menu-categories li').forEach(function (button) {
                 button.classList.remove('active');
             });
@@ -3764,14 +3623,12 @@
                 barMenuContent.classList.remove('active');
                 foodMenuButton.classList.add('active');
                 barMenuButton.classList.remove('active');
-                // Check if the body class is 'dark' to decide which icon to use
                 if (document.body.classList.contains('dark')) {
-                    menuIcon.src = 'Assets/Images/DarkMenuIcon.png'; // Dark theme icon for food menu
+                    menuIcon.src = 'Assets/Images/DarkMenuIcon.png'; 
                 } else {
-                    menuIcon.src = 'Assets/Images/FoodMenuIcon.png'; // Light theme icon for food menu
+                    menuIcon.src = 'Assets/Images/FoodMenuIcon.png'; 
                 }
 
-                // Show the starters category by default when switching to the food menu
                 showMenu('carte', document.querySelector('#menu-categories li.active') || document.querySelector('#menu-categories li:first-child'));
 
             } else if (type === 'bar') {
@@ -3780,15 +3637,13 @@
                 barMenuButton.classList.add('active');
                 foodMenuButton.classList.remove('active');
 
-                // Check if the body class is 'dark' to decide which icon to use
                 if (document.body.classList.contains('dark')) {
-                    menuIcon.src = 'Assets/Images/BarMenuIconDark.png'; // Dark theme icon for bar menu
+                    menuIcon.src = 'Assets/Images/BarMenuIconDark.png'; 
                 } else {
-                    menuIcon.src = 'Assets/Images/BarMenuIcon.png'; // Light theme icon for bar menu                 
+                    menuIcon.src = 'Assets/Images/BarMenuIcon.png';                 
                 }
 
 
-                // Ensure the starters carousel and other elements are not displayed
                 document.getElementById('carteCarousel').style.display = 'none';
                 startersCategory.classList.remove('active');
 
@@ -3798,33 +3653,27 @@
             }
         }
 
-        // Debugging lines to see if event listeners are being attached properly
         console.log('Attaching event listeners...');
 
 
 
         function showMenu(category, element) {
-            // Hide all menu items first
             document.querySelectorAll('.menu-item').forEach(function (menuItem) {
                 menuItem.style.display = 'none';
             });
 
-            // Hide all carousels
             document.querySelectorAll('.carousel').forEach(function (carousel) {
                 carousel.style.display = 'none';
             });
 
-            // Remove 'active' class from all category buttons in both menus
             document.querySelectorAll('#menu-categories li, #bar-menu-categories li').forEach(function (li) {
                 li.classList.remove('active');
             });
 
-            // Add 'active' class to the clicked category
             if (element) {
                 element.classList.add('active');
             }
 
-            // Display the selected category's menu items
             document.querySelectorAll('.' + category).forEach(function (item) {
                 item.style.display = 'block';
             });
@@ -3843,7 +3692,7 @@
 
         document.querySelectorAll('#food-menu-categories li').forEach(function (li) {
             li.addEventListener('click', function () {
-                console.log("Category clicked:", this.innerText); // Debugging line
+                console.log("Category clicked:", this.innerText);
                 showMenu(this.getAttribute('data-category'), this);
             });
         });
@@ -3851,7 +3700,6 @@
 
         document.querySelectorAll('#bar-menu-categories li').forEach(function (li) {
             li.addEventListener('click', function () {
-                // Assuming 'data-category' attribute holds the category identifier for bar menu items
                 var category = this.getAttribute('data-category');
                 showMenu(category, this);
             });
@@ -3907,10 +3755,8 @@
 
 
     <script>
-        /*contact*/
-
         function initMap() {
-            var location = { lat: 35.8953681, lng: 14.4449836 }; // Coordinates of St. Julian's
+            var location = { lat: 35.8953681, lng: 14.4449836 }; 
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 15,
                 center: location
@@ -3948,10 +3794,34 @@
             button.addEventListener('click', startSpeechRecognition);
         });
     </script>
+
+       <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.menu-item img').forEach(item => {
+        item.addEventListener('click', function () {
+            var imgSrc = this.getAttribute('src');
+            var imgAlt = this.getAttribute('alt');
+
+            var modalImg = document.querySelector('#imageModal img');
+            var modalTitle = document.querySelector('#imageModal .modal-title');
+
+            if (modalImg) {
+                modalImg.src = imgSrc;
+                modalImg.alt = imgAlt;
+            }
+
+            if (modalTitle) {
+                modalTitle.textContent = imgAlt;
+            }
+
+        });
+    });
+});
+
+       </script>
     <script>
         function validateForm() {
             var notification = document.getElementById('notification');
-            // Clear previous messages
             notification.style.display = 'none';
             notification.innerHTML = '';
 
@@ -3967,7 +3837,6 @@
                 return false;
             }
 
-            // Check if phone number is exactly 8 digits
             if (!/^\d{8}$/.test(phone)) {
                 displayNotification('Phone number must be exactly 8 digits', false);
                 return false;
@@ -3975,7 +3844,7 @@
 
             var currentDate = new Date();
             var reservationDate = new Date(date);
-            currentDate.setHours(0, 0, 0, 0); // Reset time part for accurate comparison
+            currentDate.setHours(0, 0, 0, 0); 
             if (reservationDate < currentDate) {
                 displayNotification('Reservation date must be in the future', false);
                 return false;
@@ -3985,7 +3854,6 @@
             var hours = parseInt(reservationTime[0], 10);
             var minutes = parseInt(reservationTime[1], 10);
 
-            // Check if the reservation time is within opening hours
             var isOpen = false;
             if ((hours === 12 && minutes >= 0) || (hours > 12 && hours < 15) ||
                 (hours === 15 && minutes === 0) || (hours === 18 && minutes >= 0) ||
@@ -3998,9 +3866,8 @@
                 return false;
             }
 
-            // If all validations passed, display a success message
-            displayNotification('Reservation successful!', true);
-            // Prevent actual form submission for demonstration
+           
+            displayNotification('Reservation successful!', true);          
             return false;
         }
 
@@ -4008,7 +3875,7 @@
             var notification = document.getElementById('notification');
             notification.innerHTML = message;
             notification.className = isSuccess ? 'notification success' : 'notification';
-            notification.style.display = 'block'; // Show notification
+            notification.style.display = 'block'; 
         }
     </script>
 
@@ -4056,7 +3923,6 @@
                 ContactIcon.src = 'Assets/Images/bookIcon.png';
 
             }
-            //ContactIcon.src = 'Assets/Images/bookIcon.png'; // Change image source for food menu
 
 
 
@@ -4065,10 +3931,7 @@
 </script>
 <script>
     function navigateAndToggle(buttonId, sectionId) {
-        // Simulate button click
         document.getElementById(buttonId).click();
-
-        // Scroll to the section smoothly
         document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
     }
 
@@ -4078,31 +3941,29 @@
         document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Add click event listener to the CONTACT navigation link
     document.getElementById('navContact').addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default anchor behavior
+        event.preventDefault(); 
         navigateAndToggle('toggleContact', 'contact-section');
     });
 
-    // Add click event listener to the BOOK navigation button
     document.getElementById('navBook').addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default button behavior
+        event.preventDefault(); 
         navigateAndToggle('toggleBook', 'book-section');
     });
 
 
     document.getElementById('navHome').addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default button behavior
+        event.preventDefault(); 
         navigate('welcome-section');
     });
 
     document.getElementById('navGallery').addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default button behavior
+        event.preventDefault(); 
         navigate('gallery-section');
     });
 
     document.getElementById('navMenu').addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent the default button behavior
+        event.preventDefault(); 
         navigate('menu-section');
     });
 
@@ -4116,17 +3977,17 @@
 </script>
 
 <script>
-    // Function to set the image source based on body class
+    
     function updateImageSource() {
-        var bodyClass = document.body.className; // Get the current class of the body
-        var aboutIcon = document.getElementById('aboutIcon'); // Get the img element
-        var menuIcon = document.getElementById('menuIcon'); // Get the img element
-        var feedbackIcon = document.getElementById('feedbackIcon'); // Get the img element
-        var galleryIcon = document.getElementById('galleryIcon'); // Get the img element
-        var rightIcon = document.getElementById('FeedbackRightIcon'); // Get the img element
-        var leftIcon = document.getElementById('FeedbackLeftIcon'); // Get the img element
+        var bodyClass = document.body.className; 
+        var aboutIcon = document.getElementById('aboutIcon'); 
+        var menuIcon = document.getElementById('menuIcon'); 
+        var feedbackIcon = document.getElementById('feedbackIcon');
+        var galleryIcon = document.getElementById('galleryIcon'); 
+        var rightIcon = document.getElementById('FeedbackRightIcon'); 
+        var leftIcon = document.getElementById('FeedbackLeftIcon'); 
 
-        var leftDrinkIcon = document.getElementById('leftArrowMenuD'); // Get the img element
+        var leftDrinkIcon = document.getElementById('leftArrowMenuD'); 
         var rightDrinkIcon = document.getElementById('rightMenuD');
         var leftFoodIcon = document.getElementById('leftArrowMenu');
         var rightFoodIcon = document.getElementById('rightMenu');
@@ -4137,9 +3998,8 @@
 
 
         if (bodyClass === "light") {
-            // Set the source for "light" theme
             aboutIcon.src = "Assets/Images/about-us.png";
-            menuIcon.src = "Assets/Images/FoodMenuIcon.png";// still to arrange
+            menuIcon.src = "Assets/Images/FoodMenuIcon.png";
             feedbackIcon.src = "Assets/Images/FeedbackIcon.png";
             galleryIcon.src = "Assets/Images/galleryicon.png";
             leftIcon.src = "Assets/Images/leftArrow.png";
@@ -4150,7 +4010,6 @@
             rightFoodIcon.src = "Assets/Images/rightArrow.png";
 
         } else if (bodyClass === "dark") {
-            // Set another source for "dark" theme
 
             aboutIcon.src = "Assets/Images/about-usW.png";
             feedbackIcon.src = "Assets/Images/FeedbackIconW.png";
@@ -4165,22 +4024,18 @@
         }
     }
 
-    // Initialize the observer to monitor class changes on the body
     var observer = new MutationObserver(function (mutations) {
         mutations.forEach(function (mutation) {
             if (mutation.attributeName === "class") {
-                updateImageSource(); // Call the function to update the image source
+                updateImageSource(); 
             }
         });
     });
 
-    // Configuration of the observer:
     var config = { attributes: true };
 
-    // Start observing the body element for changes in attributes
     observer.observe(document.body, config);
 
-    // Also update the image source initially
     updateImageSource();
 
 
